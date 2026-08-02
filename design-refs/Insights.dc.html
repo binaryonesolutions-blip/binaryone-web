@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #E9EEF2; -webkit-font-smoothing: antialiased; }
+  a { color: #005c55; text-decoration: none; }
+  a:hover { color: #006e1b; }
+  ::selection { background: #005c55; color: #F8FAFB; }
+  *, *::before, *::after { box-sizing: border-box; }
+  img, svg, video, iframe { max-width: 100%; }
+  /*hardened*/
+      @keyframes b1-beacon { 0%, 100% { box-shadow:0 0 4px rgba(124,220,121,0.95), 0 0 10px rgba(124,220,121,0.5), 0 0 18px rgba(124,220,121,0.24); } 50% { box-shadow:0 0 6px rgba(124,220,121,1), 0 0 16px rgba(124,220,121,0.75), 0 0 28px rgba(124,220,121,0.42); } }
+    </style>
+<script>
+(function(){
+  function fit(){
+    var basis = document.documentElement.clientWidth || window.innerWidth;
+    var r = basis / 1440;
+    if (r > 1.6) r = 1.6;
+    if (r < 0.15) r = 0.15;
+    document.documentElement.style.zoom = r;
+  }
+  window.addEventListener('resize', fit);
+  fit();
+})();
+</script>
+</helmet>
+
+<div style="width:1440px; margin:0 auto; background:#F8FAFB; font-family:Inter, sans-serif; color:#1c1b1b;">
+
+  <!-- Nav -->
+  <header style="display:flex; align-items:center; justify-content:space-between; padding:0 64px; height:76px; background:rgba(237,241,242,0.94); backdrop-filter:blur(12px); border-bottom:1px solid #E0E5E6; position:sticky; top:0; z-index:50;">
+    <a href="Homepage.dc.html" style="display:flex; align-items:center;"><img src="assets/b1s-logo-light.png" alt="Binary One Solutions — Towards Digital Transformation" style="height:45px; width:auto; display:block;"></a>
+    <nav style="display:flex; align-items:center; gap:32px; font:500 14.5px Inter, sans-serif;">
+      <a href="Homepage.dc.html" style="color:#1c1b1b;">Home</a>
+          <a href="Managed IT.dc.html" style="color:#1c1b1b;">Managed IT</a>
+      <a href="ERP Consulting.dc.html" style="color:#1c1b1b;">ERP Consulting</a>
+      <details style="position:relative; display:inline-block;">
+          <summary style="list-style:none; cursor:pointer; display:inline-flex; align-items:center; gap:6px; color:#1c1b1b; font:500 14.5px Inter, sans-serif;">Digital Products <span style="font-size:10px; color:#3e4947;">▾</span></summary>
+          <div style="position:absolute; top:34px; left:50%; transform:translateX(-50%); width:360px; background:#FFFFFF; border:1px solid #E5E7EB; border-radius:12px; box-shadow:0 12px 32px rgba(0,0,0,0.08); padding:18px 0 8px; z-index:100;">
+            <span style="display:block; padding:2px 24px 14px; font:700 11px 'JetBrains Mono', monospace; color:#0f766e; letter-spacing:0.14em; border-bottom:1px solid #E5E7EB;">DIGITAL SOLUTIONS &amp; PLATFORMS</span>
+            <div style="padding-top:8px;">
+              <a href="NAWIRI.dc.html" style="display:flex; align-items:flex-start; gap:13px; padding:11px 24px; color:#1c1b1b;" style-hover="background:#f1f5f4; color:#1c1b1b;"><span style="flex-shrink:0; width:40px; height:40px; border-radius:10px; background:#eef4f3; display:inline-flex; align-items:center; justify-content:center; margin-top:1px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M12 3l1.9 4.6L18.5 9.5 13.9 11.4 12 16l-1.9-4.6L5.5 9.5 10.1 7.6z"></path><path d="M18.5 14.5l.8 1.9 1.9.8-1.9.8-.8 1.9-.8-1.9-1.9-.8 1.9-.8z"></path></svg></span><span style="display:block;"><span style="display:block; font:700 15px Inter, sans-serif; color:#0c1512; margin-bottom:2px;">NAWIRI Platform</span><span style="display:block; font:400 13px/1.4 Inter, sans-serif; color:#6e7977;">Digital Loyalty &amp; Last-mile intelligence</span></span></a>
+              <a href="Agentic AI.dc.html" style="display:flex; align-items:flex-start; gap:13px; padding:11px 24px; color:#1c1b1b;" style-hover="background:#f1f5f4; color:#1c1b1b;"><span style="flex-shrink:0; width:40px; height:40px; border-radius:10px; background:#eef4f3; display:inline-flex; align-items:center; justify-content:center; margin-top:1px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><rect x="6" y="6" width="12" height="12" rx="1.5"></rect><rect x="9.5" y="9.5" width="5" height="5" rx="0.6"></rect><path d="M9 3v2M15 3v2M9 19v2M15 19v2M3 9h2M3 14h2M19 9h2M19 14h2"></path></svg></span><span style="display:block;"><span style="display:block; font:700 15px Inter, sans-serif; color:#0c1512; margin-bottom:2px;">Agentic AI Workflows</span><span style="display:block; font:400 13px/1.4 Inter, sans-serif; color:#6e7977;">Autonomous reasoning agents interfacing ERPs</span></span></a>
+              <a href="Custom Software.dc.html" style="display:flex; align-items:flex-start; gap:13px; padding:11px 24px; color:#1c1b1b;" style-hover="background:#f1f5f4; color:#1c1b1b;"><span style="flex-shrink:0; width:40px; height:40px; border-radius:10px; background:#eef4f3; display:inline-flex; align-items:center; justify-content:center; margin-top:1px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="m9 8-4 4 4 4M15 8l4 4-4 4"></path></svg></span><span style="display:block;"><span style="display:block; font:700 15px Inter, sans-serif; color:#0c1512; margin-bottom:2px;">Custom Software</span><span style="display:block; font:400 13px/1.4 Inter, sans-serif; color:#6e7977;">Bespoke high-performance systems engineering</span></span></a>
+              <div style="height:1px; background:#E5E7EB; margin:10px 24px 8px;"></div>
+              <a href="Digital Products.dc.html" style="display:flex; align-items:flex-start; gap:13px; padding:11px 24px; color:#1c1b1b;" style-hover="background:#f1f5f4; color:#1c1b1b;"><span style="flex-shrink:0; width:40px; height:40px; border-radius:10px; background:#eef4f3; display:inline-flex; align-items:center; justify-content:center; margin-top:1px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg></span><span style="display:block;"><span style="display:block; font:700 15px Inter, sans-serif; color:#0c1512; margin-bottom:2px;">Digital Products Hub Overview</span><span style="display:block; font:400 13px/1.4 Inter, sans-serif; color:#6e7977;">Our Digital Solutions at a glance</span></span></a>
+            </div>
+          </div>
+        </details>
+      <a href="About.dc.html" style="color:#1c1b1b;">About</a>
+      <a href="Insights.dc.html" style="color:#1c1b1b; border-bottom:2px solid #006e1b; padding-bottom:3px;">Insights</a>
+      <a href="Contact.dc.html" style="display:inline-flex; align-items:center; gap:10px; background:#d9f5ef; color:#06332e; border:1px solid rgba(56,224,196,0.75); border-radius:11px; padding:11px 20px; font:600 14.5px Inter, sans-serif; box-shadow:0 1px 2px rgba(6,35,30,0.10), 0 4px 14px rgba(6,35,30,0.08); transition:background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;" style-hover="background:#bfeee4; border-color:#38e0c4; box-shadow:0 0 0 1px rgba(56,224,196,0.6), 0 0 22px rgba(56,224,196,0.42), 0 8px 20px rgba(6,35,30,0.26); transform:translateY(-2px);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="3" y="5" width="18" height="16" rx="3"></rect><path d="M8 3v4"></path><path d="M16 3v4"></path><path d="M3 10h18"></path></svg>Book a Free IT Assessment</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <div style="padding:88px 64px 64px; max-width:900px;">
+    <span style="display:block; font:500 13px 'JetBrains Mono', monospace; color:#0f766e; letter-spacing:0.18em; margin-bottom:22px;">KNOWLEDGE &amp; INSIGHTS</span>
+    <h1 style="margin:0 0 24px; font:700 52px/1.15 Sora, sans-serif; letter-spacing:-0.02em; color:#1c1b1b; text-wrap:pretty;">Technical briefs, advisory papers and practical IT strategies.</h1>
+    <p style="margin:0; font:400 17.5px/1.65 Inter, sans-serif; color:#3e4947; text-wrap:pretty;">Written by our active partners and systems architects for business leaders in East Africa.</p>
+  </div>
+
+  <!-- Brief grid -->
+  <div style="background:#E9EEF2; padding:72px 64px 104px; border-top:1px solid #E5E7EB;">
+    <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:28px;">
+      <sc-for list="{{ articles }}" as="a" hint-placeholder-count="3">
+        <div onClick="{{ a.open }}" style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:14px; overflow:hidden; box-shadow:0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.05); display:flex; flex-direction:column; cursor:pointer;" style-hover="box-shadow:0 1px 2px rgba(0,0,0,0.05), 0 16px 40px rgba(15,118,110,0.14); transform:translateY(-2px);">
+          <img src="{{ a.thumb }}" alt="" style="width:100%; height:178px; object-fit:cover; display:block;">
+          <div style="padding:26px 26px 0; display:flex; align-items:center; justify-content:space-between; gap:12px;">
+            <span style="display:inline-flex; align-items:center; gap:7px; font:600 11.5px 'JetBrains Mono', monospace; color:#0f766e; letter-spacing:0.12em;"><svg viewBox="0 0 24 24" style="width:13px; height:13px; flex-shrink:0;" fill="none" stroke="#0f766e" stroke-width="2"><path d="M20.59 13.41 12 22 2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82Z"></path><circle cx="7.5" cy="7.5" r="0.5" fill="#0f766e"></circle></svg>{{ a.category }}</span>
+            <span style="font:600 11.5px 'JetBrains Mono', monospace; color:#3e4947; letter-spacing:0.10em; white-space:nowrap;">{{ a.date }}</span>
+          </div>
+          <div style="padding:16px 26px 22px; display:flex; flex-direction:column; gap:12px; flex:1;">
+            <h3 style="margin:0; font:700 20px/1.35 Sora, sans-serif; color:#1c1b1b; letter-spacing:-0.01em; text-wrap:pretty;">{{ a.title }}</h3>
+            <p style="margin:0; font:400 14px/1.65 Inter, sans-serif; color:#3e4947; flex:1; text-wrap:pretty;">{{ a.excerpt }}</p>
+          </div>
+          <div style="border-top:1px solid #E5E7EB; margin:0 26px; padding:16px 0 20px; display:flex; align-items:center; justify-content:space-between;">
+            <span style="display:inline-flex; align-items:center; gap:10px;">
+              <span style="width:30px; height:30px; border-radius:50%; background:#071e1b; display:inline-flex; align-items:center; justify-content:center; font:700 9.5px 'JetBrains Mono', monospace; color:#38e0c4; flex-shrink:0;">{{ a.initials }}</span>
+              <span style="font:400 13.5px Inter, sans-serif; color:#3e4947;">{{ a.author }}</span>
+            </span>
+            <span style="display:inline-flex; align-items:center; gap:6px; font:700 13.5px Inter, sans-serif; color:#005c55;">Read Brief <span style="font-size:12px;">›</span></span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- Brief modal -->
+  <sc-if value="{{ activeBrief }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeBrief }}" style="position:fixed; inset:0; background:rgba(7,30,27,0.55); z-index:200; display:flex; align-items:center; justify-content:center; padding:40px;">
+      <div onClick="{{ stopClick }}" style="position:relative; width:700px; max-height:82vh; background:#FFFFFF; border-radius:16px; overflow:hidden; display:flex; flex-direction:column; box-shadow:0 32px 80px rgba(0,0,0,0.35);">
+        <div style="height:14px; background:linear-gradient(90deg, #071e1b, #0f766e 45%, #38e0c4); flex-shrink:0;"></div>
+        <button onClick="{{ closeBrief }}" aria-label="Close" style="position:absolute; top:26px; right:24px; width:32px; height:32px; border-radius:50%; border:1px solid #E5E7EB; background:#FFFFFF; color:#3e4947; font:400 15px Inter, sans-serif; cursor:pointer; display:flex; align-items:center; justify-content:center; z-index:2;" style-hover="background:#f1f5f4;">✕</button>
+        <div style="padding:36px 44px 32px; overflow-y:auto;">
+          <div style="display:flex; align-items:center; gap:18px; margin-bottom:22px;">
+            <span style="background:#d8f3ee; color:#0f766e; font:600 12px 'JetBrains Mono', monospace; letter-spacing:0.12em; padding:7px 14px; border-radius:4px;">{{ activeBrief.category }}</span>
+            <span style="font:500 13px 'JetBrains Mono', monospace; color:#3e4947; letter-spacing:0.10em;">{{ activeBrief.dateLong }}</span>
+          </div>
+          <h2 style="margin:0 0 22px; font:700 30px/1.25 Sora, sans-serif; color:#1c1b1b; letter-spacing:-0.015em; text-wrap:pretty; padding-right:36px;">{{ activeBrief.title }}</h2>
+          <div style="display:flex; align-items:center; gap:12px; padding-bottom:24px; border-bottom:1px solid #E5E7EB; margin-bottom:26px;">
+            <span style="width:38px; height:38px; border-radius:50%; background:#071e1b; display:inline-flex; align-items:center; justify-content:center; font:700 11px 'JetBrains Mono', monospace; color:#38e0c4; flex-shrink:0;">{{ activeBrief.initials }}</span>
+            <span style="display:flex; flex-direction:column; gap:2px;">
+              <span style="font:600 14.5px Inter, sans-serif; color:#1c1b1b;">{{ activeBrief.author }}</span>
+              <span style="font:400 12.5px Inter, sans-serif; color:#6e7977;">{{ activeBrief.role }}</span>
+            </span>
+          </div>
+          <sc-for list="{{ activeBrief.body }}" as="para" hint-placeholder-count="4">
+            <p style="margin:0 0 18px; font:400 15px/1.7 Inter, sans-serif; color:#3e4947; text-wrap:pretty;">{{ para }}</p>
+          </sc-for>
+          <div style="border-top:1px solid #E5E7EB; margin-top:8px; padding-top:24px; display:flex; justify-content:flex-end;">
+            <button onClick="{{ closeBrief }}" style="background:#071e1b; color:#FFFFFF; border:none; border-radius:999px; padding:12px 26px; font:600 14px Inter, sans-serif; cursor:pointer;" style-hover="background:#0f766e;">Close Advisory Brief</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- Footer -->
+  <footer style="background:#071e1b; padding:64px 64px 32px;">
+    <div style="display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:48px; padding-bottom:56px;">
+      <div style="display:flex; flex-direction:column; gap:16px; align-items:flex-start;">
+        <a href="Homepage.dc.html" style="display:inline-flex; align-items:center;"><img src="assets/b1s-logo-dark.png" alt="Binary One Solutions — Towards Digital Transformation" style="height:47px; width:auto; display:block;"></a>
+        <span style="display:inline-flex; align-items:center; gap:9px; font:400 15px Inter, sans-serif; color:#c7d0dc;">Possibilities<span style="width:6px; height:6px; border-radius:50%; background:#7cdc79; box-shadow:0 0 4px rgba(124,220,121,0.95), 0 0 10px rgba(124,220,121,0.55), 0 0 18px rgba(124,220,121,0.28); flex-shrink:0; animation:b1-beacon 2.4s ease-in-out infinite;"></span>Realised</span>
+        <div style="display:flex; align-items:center; gap:18px; margin-top:6px;">
+        <a href="https://www.linkedin.com/company/binary1solutions/" target="_blank" rel="noopener" aria-label="LinkedIn" style="color:#c7d0dc; display:inline-flex;" style-hover="color:#FFFFFF;"><svg viewBox="0 0 24 24" style="width:22px; height:22px;" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"></path></svg></a>
+        <a href="https://twitter.com/Binary_One_Sol" target="_blank" rel="noopener" aria-label="X (Twitter)" style="color:#c7d0dc; display:inline-flex;" style-hover="color:#FFFFFF;"><svg viewBox="0 0 24 24" style="width:20px; height:20px;" fill="currentColor"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.67l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23Zm-1.16 17.52h1.83L7.08 4.13H5.12l11.96 15.64Z"></path></svg></a>
+        <a href="https://www.facebook.com/binary1solutions/" target="_blank" rel="noopener" aria-label="Facebook" style="color:#c7d0dc; display:inline-flex;" style-hover="color:#FFFFFF;"><svg viewBox="0 0 24 24" style="width:22px; height:22px;" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.5-3.91 3.78-3.91 1.09 0 2.23.2 2.23.2v2.46H15.2c-1.24 0-1.63.77-1.63 1.57v1.88h2.78l-.45 2.9h-2.33V22c4.78-.76 8.44-4.92 8.44-9.94Z"></path></svg></a>
+      </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:14px; font:400 14.5px Inter, sans-serif;">
+        <span style="font:600 12px Inter, sans-serif; color:#7cdc79; letter-spacing:0.12em; margin-bottom:4px;">SOLUTIONS</span>
+        <a href="Managed IT.dc.html" style="color:#eef2f7;" style-hover="color:#FFFFFF;">Managed IT</a>
+        <a href="ERP Consulting.dc.html" style="color:#eef2f7;" style-hover="color:#FFFFFF;">ERP Consulting</a>
+        <a href="NAWIRI.dc.html" style="color:#eef2f7;" style-hover="color:#FFFFFF;">NAWIRI</a>
+        <a href="Agentic AI.dc.html" style="color:#eef2f7;" style-hover="color:#FFFFFF;">Agentic AI</a>
+        <a href="Custom Software.dc.html" style="color:#eef2f7;" style-hover="color:#FFFFFF;">Custom Software</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:14px; font:400 14.5px Inter, sans-serif;">
+        <span style="font:600 12px Inter, sans-serif; color:#7cdc79; letter-spacing:0.12em; margin-bottom:4px;">COMPANY</span>
+        <a href="About.dc.html" style="color:#eef2f7;" style-hover="color:#FFFFFF;">About</a>
+        <a href="About.dc.html" style="color:#eef2f7;" style-hover="color:#FFFFFF;">Leadership</a>
+        <a href="Insights.dc.html" style="color:#eef2f7;" style-hover="color:#FFFFFF;">Insights</a>
+        <a href="Contact.dc.html?tab=enquiry" style="color:#eef2f7;" style-hover="color:#FFFFFF;">Careers</a>
+        <a href="Data Protection.dc.html" style="color:#8fae9a;" style-hover="color:#c7d0dc;">Data Protection Policy</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:14px; font:400 14.5px/1.5 Inter, sans-serif;">
+        <span style="font:600 12px Inter, sans-serif; color:#7cdc79; letter-spacing:0.12em; margin-bottom:4px;">CONNECT</span>
+        <a href="mailto:info@binaryone.co.ke" style="color:#eef2f7;" style-hover="color:#FFFFFF;">info@binaryone.co.ke</a>
+        <a href="tel:+254787990220" style="color:#eef2f7;" style-hover="color:#FFFFFF;">+254 787 990 220</a>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Binary+One+Solutions+Ngong+Road+Nairobi" target="_blank" rel="noopener" style="color:#8fa0b5;" style-hover="color:#FFFFFF;">St Charles Lwanga House,<br>Ngong Road, Nairobi</a>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Binary+One+Solutions+Ngong+Road+Nairobi" target="_blank" rel="noopener" style="color:#c7d0dc; text-decoration:underline; text-underline-offset:3px; font-size:13.5px; margin-top:-6px; line-height:1.5;" style-hover="color:#FFFFFF;">Find us on Google →</a>
+      </div>
+    </div>
+    <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid rgba(255,255,255,0.10); padding-top:28px; font:400 14px Inter, sans-serif; color:#8fa0b5;">
+      <span>© 2026 Binary One Solutions Ltd · Nairobi, Kenya</span>
+      <a href="Contact.dc.html?tab=enquiry" style="color:#FFFFFF; font-weight:600;" style-hover="color:#c7d0dc;">Talk to a consultant →</a>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { active: null };
+  briefs() {
+    return [
+      { thumb: "assets/insight-erp-thumb.png",
+        category: "ERP GOVERNANCE", date: "OCTOBER 12, 2025", dateLong: "OCTOBER 12, 2025",
+        title: "The True Cost of ERP Failure: Why 60% of Local Implementations Stall",
+        excerpt: "An analysis of common pitfalls in regional ERP deployments, focusing on licensing traps, poor process mapping, and failure to design for offline cooperative sites.",
+        author: "Michael Kiai", initials: "MK", role: "Virtual CIO / Advisory",
+        body: [
+          "Enterprise Resource Planning (ERP) systems represent a major capital expenditure. Yet, in East Africa, our research and audit engagements reveal a stark reality: over 60% of ERP implementations fail to achieve their primary business objectives or stall indefinitely during deployment.",
+          "The primary cause is not the underlying technology; rather, it is a mismatch between rigid software templates and regional operational realities. Companies are frequently pushed into licensing agreements that penalize their operating model.",
+          "Licensing Traps: Global software suites often charge per-user, which becomes prohibitively expensive when scaled to field agents or cooperative collectors. The solution is transactional or open-source foundation pricing (like Odoo), which permits unlimited user growth.",
+          "Designing for Offline Sites: Many implementations assume permanent high-speed fiber connection. When agricultural scales or regional depots lose connectivity, the entire ERP stalls. Successful architectures must incorporate a hybrid local-offline cache model, syncing with the central database only when internet is recovered.",
+          "Process Mapping Before Code: Never configure a single database table before mapping the physical ledger paths. Systems must bend to real operations, not vice-versa, to ensure immediate staff adoption."
+        ] },
+      { thumb: "assets/insight-nawiri-v3.png",
+        category: "DIGITAL LOYALTY", date: "NOVEMBER 3, 2025", dateLong: "NOVEMBER 3, 2025",
+        title: "Every visit remembered: how NAWIRI turns walk-ins into regulars",
+        excerpt: "NAWIRI is our digital loyalty platform for Kenyan retailers \u2014 points, tiers and M-Pesa-linked rewards that run on a phone at the till. We build it, host it and support it, so shops keep customers coming back without spreadsheets or plastic cards.",
+        author: "Humphrey Kirui", initials: "HK", role: "Founder & Lead Consultant",
+        body: [
+          "Most retailers already know their best customers by face. What they cannot do is prove it, reward it, or notice the moment a regular quietly stops coming.",
+          "NAWIRI is our digital loyalty platform built for that gap \u2014 designed for Kenyan shops, pharmacies, salons, restaurants and fuel courts where the till is a phone or a modest POS terminal.",
+          "Enrolment in seconds: A customer joins with a phone number at the counter. No plastic card, no app download, no queue. Points attach to the number and are visible to the cashier on the next visit.",
+          "Points, tiers and rewards that fit the business: Earn rules, tier thresholds and reward catalogues are configured per merchant, so a coffee retailer and a hardware store can run entirely different economics on the same platform.",
+          "M-Pesa-linked redemption: Rewards can be redeemed as discounts, free items or mobile-money value, settled through the same rails merchants already trust for payment.",
+          "Insight the owner can act on: Visit frequency, basket value and lapsed-customer lists replace guesswork \u2014 so a targeted SMS goes to the people who actually stopped coming.",
+          "We build, host and support it. Merchants get onboarding, staff training and a support line; we handle uptime, updates and data protection in the background.",
+        ] },
+      { thumb: "assets/insight-managed-it-v2.png",
+        category: "MANAGED IT", date: "JANUARY 14, 2026", dateLong: "JANUARY 14, 2026",
+        title: "Someone is watching your systems at 2am \u2014 inside our managed IT desk",
+        excerpt: "Monitoring, patching, backups and a helpdesk your team can actually reach \u2014 with AI agents watching alongside our engineers. Agents spot the quiet failures and propose the fix; a human approves it, so incidents are caught before your users are.",
+        author: "Eugene Hillary", initials: "EH", role: "IT Operations Lead",
+        body: [
+          "02:14. A disk on the finance server crosses 91% while Nairobi sleeps. Nobody is awake to notice \u2014 but something is.",
+          "An agentic monitoring bot on our managed IT desk sees the trend, checks it against three weeks of growth, and works out that the volume fills in roughly nine hours. Long before the first user logs in, it has already written the story: what is filling, how fast, and what it wants to do about it.",
+          "02:15 \u2014 human in the middle. The bot does not touch production on its own. It raises a one-line alert to the on-call engineer with a proposed action and a confidence score. Eugene approves the log-rotation and archive job from his phone in under a minute. The disk drops to 62%. No outage, no ticket, no 8am panic.",
+          "That is the shape of the service. Agents do the watching, the correlating and the first draft of the fix. Engineers own the decision. Managed IT is still a human service \u2014 the bots simply mean our humans arrive early and informed instead of late and guessing.",
+          "Monitoring and alerting: Servers, networks, endpoints and business applications are watched continuously. Agents cluster related alarms into one incident with a probable cause, so an engineer reads a situation rather than sixty notifications.",
+          "Patching and hardening: Patch cycles are planned and staged, with configuration baselines enforced so security drift does not quietly accumulate. Anything that touches a production change window is approved by a named engineer, never auto-applied.",
+          "Backup and recovery you have actually tested: Backups are scheduled, verified and restore-tested, with agents flagging the silent failures \u2014 a job that finished suspiciously fast, a set that shrank overnight. A backup nobody has restored is a hope, not a control.",
+          "A helpdesk your staff can reach: One number, one email, one portal. Routine requests are triaged and resolved fast; anything sensitive, judgement-heavy or user-facing goes straight to a person, with site visits where remote support is not enough.",
+          "Reporting against SLAs: Monthly reporting shows availability, incidents caught before impact, response times and recurring root causes \u2014 so IT spend becomes a conversation about evidence rather than opinion.",
+        ] },
+    ];
+  }
+  renderVals() {
+    const briefs = this.briefs();
+    return {
+      activeBrief: this.state.active === null ? null : briefs[this.state.active],
+      closeBrief: () => this.setState({ active: null }),
+      stopClick: (e) => e.stopPropagation(),
+      articles: briefs.map((b, i) => Object.assign({}, b, { open: () => this.setState({ active: i }) })),
+    };
+  }
+}
+</script>
+</body>
+</html>

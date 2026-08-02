@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #E9EEF2; -webkit-font-smoothing: antialiased; }
+  a { color: #005c55; text-decoration: none; }
+  a:hover { color: #006e1b; }
+  ::selection { background: #005c55; color: #F8FAFB; }
+  *, *::before, *::after { box-sizing: border-box; }
+  [data-adv-panel] input::placeholder, [data-adv-panel] textarea::placeholder { color: #7fa9a3; }
+  img, svg, video, iframe { max-width: 100%; }
+  /*hardened*/
+      @keyframes b1-beacon { 0%, 100% { box-shadow:0 0 4px rgba(124,220,121,0.95), 0 0 10px rgba(124,220,121,0.5), 0 0 18px rgba(124,220,121,0.24); } 50% { box-shadow:0 0 6px rgba(124,220,121,1), 0 0 16px rgba(124,220,121,0.75), 0 0 28px rgba(124,220,121,0.42); } }
+    </style>
+<script>
+(function(){
+  function fit(){
+    var basis = document.documentElement.clientWidth || window.innerWidth;
+    var r = basis / 1440;
+    if (r > 1.6) r = 1.6;
+    if (r < 0.15) r = 0.15;
+    document.documentElement.style.zoom = r;
+  }
+  window.addEventListener('resize', fit);
+  fit();
+})();
+</script>
+</helmet>
+
+<div style="width:1440px; margin:0 auto; background:#F8FAFB; font-family:Inter, sans-serif; color:#1c1b1b;">
+
+  <!-- Nav -->
+  <header style="display:flex; align-items:center; justify-content:space-between; padding:0 64px; height:76px; background:rgba(237,241,242,0.94); backdrop-filter:blur(12px); border-bottom:1px solid #E0E5E6; position:sticky; top:0; z-index:50;">
+    <a href="Homepage.dc.html" style="display:flex; align-items:center;"><img src="assets/b1s-logo-light.png" alt="Binary One Solutions — Towards Digital Transformation" style="height:45px; width:auto; display:block;"></a>
+    <nav style="display:flex; align-items:center; gap:32px; font:500 14.5px Inter, sans-serif;">
+      <a href="Homepage.dc.html" style="color:#1c1b1b;">Home</a>
+          <a href="Managed IT.dc.html" style="color:#1c1b1b;">Managed IT</a>
+      <a href="ERP Consulting.dc.html" style="color:#1c1b1b;">ERP Consulting</a>
+      <details style="position:relative; display:inline-block;">
+          <summary style="list-style:none; cursor:pointer; display:inline-flex; align-items:center; gap:6px; color:#1c1b1b; font:500 14.5px Inter, sans-serif;">Digital Products <span style="font-size:10px; color:#3e4947;">▾</span></summary>
+          <div style="position:absolute; top:34px; left:50%; transform:translateX(-50%); width:360px; background:#FFFFFF; border:1px solid #E5E7EB; border-radius:12px; box-shadow:0 12px 32px rgba(0,0,0,0.08); padding:18px 0 8px; z-index:100;">
+            <span style="display:block; padding:2px 24px 14px; font:700 11px 'JetBrains Mono', monospace; color:#0f766e; letter-spacing:0.14em; border-bottom:1px solid #E5E7EB;">DIGITAL SOLUTIONS &amp; PLATFORMS</span>
+            <div style="padding-top:8px;">
+              <a href="NAWIRI.dc.html" style="display:flex; align-items:flex-start; gap:13px; padding:11px 24px; color:#1c1b1b;" style-hover="background:#f1f5f4; color:#1c1b1b;"><span style="flex-shrink:0; width:40px; height:40px; border-radius:10px; background:#eef4f3; display:inline-flex; align-items:center; justify-content:center; margin-top:1px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M12 3l1.9 4.6L18.5 9.5 13.9 11.4 12 16l-1.9-4.6L5.5 9.5 10.1 7.6z"></path><path d="M18.5 14.5l.8 1.9 1.9.8-1.9.8-.8 1.9-.8-1.9-1.9-.8 1.9-.8z"></path></svg></span><span style="display:block;"><span style="display:block; font:700 15px Inter, sans-serif; color:#0c1512; margin-bottom:2px;">NAWIRI Platform</span><span style="display:block; font:400 13px/1.4 Inter, sans-serif; color:#6e7977;">Digital Loyalty &amp; Last-mile intelligence</span></span></a>
+              <a href="Agentic AI.dc.html" style="display:flex; align-items:flex-start; gap:13px; padding:11px 24px; color:#1c1b1b;" style-hover="background:#f1f5f4; color:#1c1b1b;"><span style="flex-shrink:0; width:40px; height:40px; border-radius:10px; background:#eef4f3; display:inline-flex; align-items:center; justify-content:center; margin-top:1px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><rect x="6" y="6" width="12" height="12" rx="1.5"></rect><rect x="9.5" y="9.5" width="5" height="5" rx="0.6"></rect><path d="M9 3v2M15 3v2M9 19v2M15 19v2M3 9h2M3 14h2M19 9h2M19 14h2"></path></svg></span><span style="display:block;"><span style="display:block; font:700 15px Inter, sans-serif; color:#0c1512; margin-bottom:2px;">Agentic AI Workflows</span><span style="display:block; font:400 13px/1.4 Inter, sans-serif; color:#6e7977;">Autonomous reasoning agents interfacing ERPs</span></span></a>
+              <a href="Custom Software.dc.html" style="display:flex; align-items:flex-start; gap:13px; padding:11px 24px; color:#1c1b1b;" style-hover="background:#f1f5f4; color:#1c1b1b;"><span style="flex-shrink:0; width:40px; height:40px; border-radius:10px; background:#eef4f3; display:inline-flex; align-items:center; justify-content:center; margin-top:1px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="m9 8-4 4 4 4M15 8l4 4-4 4"></path></svg></span><span style="display:block;"><span style="display:block; font:700 15px Inter, sans-serif; color:#0c1512; margin-bottom:2px;">Custom Software</span><span style="display:block; font:400 13px/1.4 Inter, sans-serif; color:#6e7977;">Bespoke high-performance systems engineering</span></span></a>
+              <div style="height:1px; background:#E5E7EB; margin:10px 24px 8px;"></div>
+              <a href="Digital Products.dc.html" style="display:flex; align-items:flex-start; gap:13px; padding:11px 24px; color:#1c1b1b;" style-hover="background:#f1f5f4; color:#1c1b1b;"><span style="flex-shrink:0; width:40px; height:40px; border-radius:10px; background:#eef4f3; display:inline-flex; align-items:center; justify-content:center; margin-top:1px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg></span><span style="display:block;"><span style="display:block; font:700 15px Inter, sans-serif; color:#0c1512; margin-bottom:2px;">Digital Products Hub Overview</span><span style="display:block; font:400 13px/1.4 Inter, sans-serif; color:#6e7977;">Our Digital Solutions at a glance</span></span></a>
+            </div>
+          </div>
+        </details>
+      <a href="About.dc.html" style="color:#1c1b1b;">About</a>
+      <a href="Insights.dc.html" style="color:#1c1b1b;">Insights</a>
+      <a href="Contact.dc.html" style="display:inline-flex; align-items:center; gap:10px; background:#d9f5ef; color:#06332e; border:1px solid rgba(56,224,196,0.75); border-radius:11px; padding:11px 20px; font:600 14.5px Inter, sans-serif; box-shadow:0 1px 2px rgba(6,35,30,0.10), 0 4px 14px rgba(6,35,30,0.08); transition:background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;" style-hover="background:#bfeee4; border-color:#38e0c4; box-shadow:0 0 0 1px rgba(56,224,196,0.6), 0 0 22px rgba(56,224,196,0.42), 0 8px 20px rgba(6,35,30,0.26); transform:translateY(-2px);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="3" y="5" width="18" height="16" rx="3"></rect><path d="M8 3v4"></path><path d="M16 3v4"></path><path d="M3 10h18"></path></svg>Book a Free IT Assessment</a>
+    </nav>
+  </header>
+
+  <!-- Hero strip -->
+  <div style="padding:72px 64px 48px; border-bottom:1px solid #E5E7EB;">
+    <h1 style="margin:0 0 16px; font:700 46px/1.12 Sora, sans-serif; letter-spacing:-0.02em; color:#1c1b1b;">Talk to a senior consultant.</h1>
+    <p style="margin:0; font:400 17px/1.65 Inter, sans-serif; color:#3e4947; max-width:760px; text-wrap:pretty;">Not a bot, not a junior. A response within one business day. Every enquiry triaged personally by our Business Development Lead.</p>
+  </div>
+
+  <!-- Body -->
+  <div style="display:grid; grid-template-columns:1.35fr 0.65fr; gap:48px; padding:56px 64px 104px; align-items:start;">
+
+    <!-- Left: tabs + form -->
+    <div>
+      <!-- Segmented control -->
+      <div style="display:flex; gap:0; background:#f0eded; border:1px solid #E5E7EB; border-radius:12px; padding:4px; margin-bottom:32px;">
+        <button onClick="{{ showAssessment }}" style="flex:1; border:none; cursor:pointer; padding:13px 20px; border-radius:9px; font:600 15px Inter, sans-serif; background:{{ tabAssessmentBg }}; color:{{ tabAssessmentColor }}; box-shadow:{{ tabAssessmentShadow }};">Book a Free IT Assessment</button>
+        <button onClick="{{ showEnquiry }}" style="flex:1; border:none; cursor:pointer; padding:13px 20px; border-radius:9px; font:600 15px Inter, sans-serif; background:{{ tabEnquiryBg }}; color:{{ tabEnquiryColor }}; box-shadow:{{ tabEnquiryShadow }};">General Enquiry</button>
+      </div>
+
+      <!-- Success state -->
+      <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+        <div style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:16px; padding:48px; display:flex; flex-direction:column; gap:16px; align-items:flex-start; box-shadow:0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.05);">
+          <span style="width:48px; height:48px; border-radius:50%; background:#006e1b; color:#FFFFFF; display:flex; align-items:center; justify-content:center; font:600 22px Inter, sans-serif;">✓</span>
+          <h3 style="margin:0; font:700 28px Sora, sans-serif; color:#1c1b1b;">Thank you. Your request has been received.</h3>
+          <p style="margin:0; font:400 16px/1.65 Inter, sans-serif; color:#3e4947;">Binary One will review the details and respond with the recommended next step.</p>
+          <p style="margin:0; font:400 13.5px/1.6 Inter, sans-serif; color:#6e7977;">Your details will only be used to respond to your enquiry or Free IT Assessment request.</p>
+          <button onClick="{{ resetForm }}" style="background:none; border:none; cursor:pointer; padding:0; font:600 14.5px Inter, sans-serif; color:#005c55; border-bottom:1.5px solid #005c55;" style-hover="color:#006e1b;">Send another request</button>
+        </div>
+      </sc-if>
+
+      <!-- Tab 1: Assessment -->
+      <sc-if value="{{ showTabAssessment }}" hint-placeholder-val="{{ true }}">
+        <div style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:16px; padding:40px; box-shadow:0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.05);">
+          <p style="margin:0 0 28px; font:400 15.5px/1.65 Inter, sans-serif; color:#3e4947; text-wrap:pretty;">The Free IT Assessment is a structured 90-minute session with your Virtual CIO. We review your current IT setup, identify the three biggest risks, and leave you with a written one-page brief — no obligation, no sales pitch.</p>
+          <div style="display:flex; flex-direction:column; gap:16px;">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+              <input placeholder="Name *" style="padding:13px 16px; border:1px solid #E5E7EB; border-radius:10px; font:400 15px Inter, sans-serif; background:#FFFFFF; color:#1c1b1b; outline:none; box-sizing:border-box; width:100%;" style-focus="border:1px solid #0f766e;">
+              <input placeholder="Organisation *" style="padding:13px 16px; border:1px solid #E5E7EB; border-radius:10px; font:400 15px Inter, sans-serif; background:#FFFFFF; color:#1c1b1b; outline:none; box-sizing:border-box; width:100%;" style-focus="border:1px solid #0f766e;">
+              <input placeholder="Role / Title *" style="padding:13px 16px; border:1px solid #E5E7EB; border-radius:10px; font:400 15px Inter, sans-serif; background:#FFFFFF; color:#1c1b1b; outline:none; box-sizing:border-box; width:100%;" style-focus="border:1px solid #0f766e;">
+              <input placeholder="Work email *" type="email" style="padding:13px 16px; border:1px solid #E5E7EB; border-radius:10px; font:400 15px Inter, sans-serif; background:#FFFFFF; color:#1c1b1b; outline:none; box-sizing:border-box; width:100%;" style-focus="border:1px solid #0f766e;">
+              <input placeholder="Phone *" type="tel" style="padding:13px 16px; border:1px solid #E5E7EB; border-radius:10px; font:400 15px Inter, sans-serif; background:#FFFFFF; color:#1c1b1b; outline:none; box-sizing:border-box; width:100%;" style-focus="border:1px solid #0f766e;">
+              <input placeholder="Number of users / workstations *" type="number" style="padding:13px 16px; border:1px solid #E5E7EB; border-radius:10px; font:400 15px Inter, sans-serif; background:#FFFFFF; color:#1c1b1b; outline:none; box-sizing:border-box; width:100%;" style-focus="border:1px solid #0f766e;">
+            </div>
+            <textarea placeholder="Current IT setup *" rows="3" style="padding:13px 16px; border:1px solid #E5E7EB; border-radius:10px; font:400 15px Inter, sans-serif; background:#FFFFFF; color:#1c1b1b; outline:none; box-sizing:border-box; width:100%; resize:vertical;" style-focus="border:1px solid #0f766e;"></textarea>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+              <select style="padding:13px 16px; border:1px solid #E5E7EB; border-radius:10px; font:400 15px Inter, sans-serif; background:#FFFFFF; color:#3e4947; outline:none; width:100%;">
+                <option>Main concern *</option>
+                <option>Cybersecurity</option><option>Cost control</option><option>Reliability &amp; uptime</option><option>Cloud migration</option><option>Compliance &amp; audit</option><option>ERP fit</option><option>Other</option>
+              </select>
+              <input placeholder="Preferred meeting date *" type="date" style="padding:12px 16px; border:1px solid #E5E7EB; border-radius:10px; font:400 15px Inter, sans-serif; background:#FFFFFF; color:#3e4947; outline:none; box-sizing:border-box; width:100%;" style-focus="border:1px solid #0f766e;">
+            </div>
+            <textarea placeholder="Anything we should know? (optional)" rows="2" style="padding:13px 16px; border:1px solid #E5E7EB; border-radius:10px; font:400 15px Inter, sans-serif; background:#FFFFFF; color:#1c1b1b; outline:none; box-sizing:border-box; width:100%; resize:vertical;" style-focus="border:1px solid #0f766e;"></textarea>
+            <label style="display:flex; gap:10px; align-items:flex-start; font:400 13px/1.5 Inter, sans-serif; color:#3e4947; cursor:pointer;">
+              <input type="checkbox" style="margin-top:2px; accent-color:#006e1b;">
+              <span>I consent to Binary One Solutions processing this information under their <a href="Data Protection.dc.html" style="color:#0f766e; border-bottom:1px solid rgba(15,118,110,0.4);" style-hover="color:#12897f;">Data Protection Policy</a>. (Kenya Data Protection Act 2019)</span>
+            </label>
+            <button onClick="{{ submit }}" style="background:#0f766e; color:#FFFFFF; border:none; border-radius:12px; padding:15px 28px; font:600 16px Inter, sans-serif; cursor:pointer; align-self:flex-start; box-shadow:0 1px 2px rgba(15,118,110,0.20), 0 6px 16px rgba(15,118,110,0.14);" style-hover="background:#0d655e;">Send &amp; confirm my slot</button>
+          </div>
+        </div>
+      </sc-if>
+
+      <!-- Tab 2: Enquiry -->
+      <sc-if value="{{ showTabEnquiry }}" hint-placeholder-val="{{ false }}">
+        <div style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:16px; padding:40px; box-shadow:0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.05);">
+          <p style="margin:0 0 28px; font:400 15.5px/1.65 Inter, sans-serif; color:#3e4947;">Question about NAWIRI? ERP audit? Custom build? Tell us briefly and we will route your enquiry to the right specialist.</p>
+          <div style="display:flex; flex-direction:column; gap:16px;">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+              <input placeholder="Name *" style="padding:13px 16px; border:1px solid #E5E7EB; border-radius:10px; font:400 15px Inter, sans-serif; background:#FFFFFF; color:#1c1b1b; outline:none; box-sizing:border-box; width:100%;" style-focus="border:1px solid #0f766e;">
+              <input placeholder="Organisation *" style="padding:13px 16px; border:1px solid #E5E7EB; border-radius:10px; font:400 15px Inter, sans-serif; background:#FFFFFF; color:#1c1b1b; outline:none; box-sizing:border-box; width:100%;" style-focus="border:1px solid #0f766e;">
+              <input placeholder="Role / Title *" style="padding:13px 16px; border:1px solid #E5E7EB; border-radius:10px; font:400 15px Inter, sans-serif; background:#FFFFFF; color:#1c1b1b; outline:none; box-sizing:border-box; width:100%;" style-focus="border:1px solid #0f766e;">
+              <input placeholder="Work email *" type="email" style="padding:13px 16px; border:1px solid #E5E7EB; border-radius:10px; font:400 15px Inter, sans-serif; background:#FFFFFF; color:#1c1b1b; outline:none; box-sizing:border-box; width:100%;" style-focus="border:1px solid #0f766e;">
+              <input placeholder="Phone (optional)" type="tel" style="padding:13px 16px; border:1px solid #E5E7EB; border-radius:10px; font:400 15px Inter, sans-serif; background:#FFFFFF; color:#1c1b1b; outline:none; box-sizing:border-box; width:100%;" style-focus="border:1px solid #0f766e;">
+              <select style="padding:13px 16px; border:1px solid #E5E7EB; border-radius:10px; font:400 15px Inter, sans-serif; background:#FFFFFF; color:#3e4947; outline:none; width:100%;">
+                <option>Product of interest *</option>
+                <option>Managed IT</option><option>ERP Consulting</option><option>NAWIRI Digital Loyalty</option><option>Agentic AI Workflows</option><option>Custom Enterprise Software Builds</option><option>Other</option>
+              </select>
+            </div>
+            <textarea placeholder="Message *" rows="5" style="padding:13px 16px; border:1px solid #E5E7EB; border-radius:10px; font:400 15px Inter, sans-serif; background:#FFFFFF; color:#1c1b1b; outline:none; box-sizing:border-box; width:100%; resize:vertical;" style-focus="border:1px solid #0f766e;"></textarea>
+            <label style="display:flex; gap:10px; align-items:flex-start; font:400 13px/1.5 Inter, sans-serif; color:#3e4947; cursor:pointer;">
+              <input type="checkbox" style="margin-top:2px; accent-color:#006e1b;">
+              <span>I consent to Binary One Solutions processing this information under their <a href="Data Protection.dc.html" style="color:#0f766e; border-bottom:1px solid rgba(15,118,110,0.4);" style-hover="color:#12897f;">Data Protection Policy</a>.</span>
+            </label>
+            <button onClick="{{ submit }}" style="background:#0f766e; color:#FFFFFF; border:none; border-radius:12px; padding:15px 28px; font:600 16px Inter, sans-serif; cursor:pointer; align-self:flex-start; box-shadow:0 1px 2px rgba(15,118,110,0.20), 0 6px 16px rgba(15,118,110,0.14);" style-hover="background:#0d655e;">Send enquiry</button>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+
+    <!-- Right: side panel -->
+    <div style="display:flex; flex-direction:column; gap:20px;">
+      <div style="background:#d9f5ef; border:1px solid rgba(56,224,196,0.75); border-radius:16px; padding:32px; display:flex; align-items:stretch; gap:22px; box-shadow:0 0 0 1px rgba(56,224,196,0.18), 0 0 28px rgba(56,224,196,0.30), 0 18px 40px -30px rgba(6,35,30,0.35);">
+        <span style="flex-shrink:0; width:38px; display:flex; align-items:center; justify-content:center;">
+          <span style="display:flex; align-items:stretch; gap:3px; height:30px; width:160px; justify-content:center; transform:rotate(90deg); filter:drop-shadow(0 0 10px rgba(63,174,73,0.35));"><span style="width:3px; height:100%; background:#3fae49; display:block;"></span><span style="width:3px; height:100%; background:#3fae49; display:block;"></span><span style="width:5.5px; height:100%; background:#3fae49; display:block;"></span><span style="width:3px; height:100%; background:#3fae49; display:block;"></span><span style="height:100%; background:#3fae49; border-radius:3px; display:flex; align-items:center; justify-content:center; padding:0 8px; margin:0 3px;"><span style="font:800 13px Sora, Verdana, sans-serif; color:#fff; letter-spacing:0.03em;">B1S</span></span><span style="width:3px; height:100%; background:#3fae49; display:block;"></span><span style="width:4.5px; height:100%; background:#3fae49; display:block;"></span></span>
+        </span>
+        <span style="flex-shrink:0; width:1px; align-self:stretch; background:linear-gradient(180deg, rgba(15,118,110,0) 0%, rgba(15,118,110,0.30) 18%, rgba(15,118,110,0.30) 82%, rgba(15,118,110,0) 100%);"></span>
+        <div style="display:flex; flex-direction:column; gap:16px; flex:1;">
+        <span style="font:600 12px Inter, sans-serif; color:#0f766e; letter-spacing:0.14em;">CONTACT CARD</span>
+        <p style="margin:0; font:400 15px/1.75 Inter, sans-serif; color:#2c4b46;"><strong style="color:#06332e; font-weight:700;">Binary One Solutions Ltd</strong><br>St Charles Lwanga House, 1st Floor,<br>Ngong Road, Nairobi, Kenya<br>P.O. Box 52883 (00100)</p>
+        <p style="margin:0; font:400 15px/1.75 Inter, sans-serif; color:#2c4b46;"><a href="tel:+254787990220" style="color:#2c4b46;" style-hover="color:#06332e;">+254 787 990 220</a><br><a href="mailto:info@binaryone.co.ke" style="color:#2c4b46;" style-hover="color:#06332e;">info@binaryone.co.ke</a></p>
+        <button onClick="{{ openAdvisory }}" style="display:inline-flex; align-items:center; gap:9px; align-self:flex-start; cursor:pointer; white-space:nowrap; background:#00332f; border:1px solid #00332f; border-radius:9px; padding:9px 14px; font:700 10.5px 'JetBrains Mono', monospace; letter-spacing:0.1em; color:#eafaf6; transition:background 0.2s ease, border-color 0.2s ease;" style-hover="background:#0a4a42; border-color:#0f766e; color:#FFFFFF;"><svg viewBox="0 0 24 24" style="width:14px; height:14px; flex-shrink:0;" fill="none" stroke="#38e0c4" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"></rect><path d="M3.5 10h17M8.5 3v4M15.5 3v4"></path></svg>BOOK BOARDROOM ADVISORY</button>
+        </div>
+      </div>
+      <div style="border-radius:16px; border:1px solid #E5E7EB; background:#FFFFFF; overflow:hidden; box-shadow:0 1px 2px rgba(6,35,30,0.05), 0 18px 40px -30px rgba(6,35,30,0.35);">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 16px; border-bottom:1px solid #E5E7EB;">
+          <span style="display:inline-flex; align-items:center; gap:9px; font:700 10.5px 'JetBrains Mono', monospace; letter-spacing:0.16em; color:#0f766e;"><svg viewBox="0 0 24 24" style="width:15px; height:15px; flex-shrink:0;" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>NGONG ROAD, NAIROBI</span>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Binary+One+Solutions+Ngong+Road+Nairobi" target="_blank" rel="noopener" style="font:600 12px Inter, sans-serif; color:#0f766e; white-space:nowrap;" style-hover="color:#12897f;">Open in Maps ↗</a>
+        </div>
+        <div style="height:320px;">
+          <iframe src="{{ mapSrc }}" style="width:100%; height:100%; border:none; display:block;" loading="lazy" title="Binary One Solutions location"></iframe>
+        </div>
+      </div>
+      <div style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:16px; padding:24px 28px; display:flex; flex-direction:column; gap:6px;">
+        <span style="font:600 12px Inter, sans-serif; color:#3e4947; letter-spacing:0.14em;">OFFICE HOURS</span>
+        <span style="font:500 16px Inter, sans-serif; color:#1c1b1b;">Monday – Friday, 08:30 – 17:30 EAT</span>
+      </div>
+    </div>
+  </div>
+
+  <sc-if value="{{ advisoryOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed; inset:0; z-index:70; background:rgba(3,20,18,0.66); backdrop-filter:blur(9px); -webkit-backdrop-filter:blur(9px); display:flex; align-items:center; justify-content:center; padding:24px;">
+      <div onClick="{{ closeAdvisory }}" style="position:absolute; inset:0;"></div>
+      <div data-adv-panel="1" style="position:relative; width:760px; max-width:100%; max-height:92vh; background:#00332f; border:1px solid rgba(56,224,196,0.28); border-radius:20px; padding:22px 28px 22px; box-shadow:0 40px 90px rgba(0,0,0,0.55); display:flex; flex-direction:column; gap:13px;">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:18px;">
+          <span style="display:inline-flex; align-items:center; gap:12px; font:700 16px Sora, sans-serif; letter-spacing:0.005em; color:#FFFFFF;"><svg viewBox="0 0 24 24" style="width:21px; height:21px; flex-shrink:0;" fill="none" stroke="#38e0c4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"></rect><path d="M3.5 10h17M8.5 3v4M15.5 3v4"></path></svg>BOOK BOARDROOM ADVISORY</span>
+          <button onClick="{{ closeAdvisory }}" aria-label="Close" style="flex-shrink:0; width:32px; height:32px; border-radius:9px; cursor:pointer; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.14); color:#c2dbd7; display:inline-flex; align-items:center; justify-content:center;" style-hover="background:rgba(255,255,255,0.12); color:#FFFFFF;"><svg viewBox="0 0 24 24" style="width:15px; height:15px;" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+        </div>
+
+        <sc-if value="{{ advDone }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex; flex-direction:column; gap:14px; padding:18px 0 8px;">
+            <span style="display:inline-flex; align-items:center; gap:10px; font:700 11.5px Inter, sans-serif; letter-spacing:0.12em; text-transform:uppercase; color:#5df0d0;"><span style="width:8px; height:8px; border-radius:50%; background:#7cdc79; box-shadow:0 0 8px rgba(124,220,121,0.9);"></span>RESERVATION LOGGED</span>
+            <p style="margin:0; font:600 19px/1.5 Inter, sans-serif; color:#FFFFFF; text-wrap:pretty;">{{ advConfirm }}</p>
+            <p style="margin:0; font:400 14.5px/1.7 Inter, sans-serif; color:#c2dbd7; text-wrap:pretty;">Mary Kalama will confirm the slot by email within one business day, with a short agenda and the partner's brief.</p>
+            <button onClick="{{ closeAdvisory }}" style="align-self:flex-start; margin-top:6px; cursor:pointer; background:rgba(56,224,196,0.1); border:1px solid rgba(56,224,196,0.4); border-radius:10px; padding:12px 20px; font:700 13px Inter, sans-serif; letter-spacing:0.06em; color:#d8ece8;" style-hover="background:rgba(56,224,196,0.18); color:#FFFFFF;">CLOSE</button>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ advForm }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <div style="display:flex; flex-direction:column; gap:6px; position:relative;">
+              <span style="font:700 11px Inter, sans-serif; letter-spacing:0.1em; text-transform:uppercase; color:#5df0d0;">SELECT SENIOR PARTNER</span>
+              <button onClick="{{ togglePartners }}" style="width:100%; display:flex; align-items:center; justify-content:space-between; gap:12px; cursor:pointer; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.16); border-radius:10px; padding:10px 14px; font:400 14px Inter, sans-serif; color:#FFFFFF; text-align:left;" style-hover="border-color:rgba(56,224,196,0.55);">{{ partnerLabel }}<svg viewBox="0 0 24 24" style="width:15px; height:15px; flex-shrink:0;" fill="none" stroke="#38e0c4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9.5l6 6 6-6"></path></svg></button>
+              <sc-if value="{{ partnersOpen }}" hint-placeholder-val="{{ false }}">
+                <div style="position:absolute; top:100%; left:0; right:0; margin-top:6px; z-index:5; border:1px solid rgba(56,224,196,0.4); border-radius:12px; padding:6px; background-color:#04413a; background-image:radial-gradient(120% 90% at 6% 0%, rgba(56,224,196,0.28), transparent 58%), radial-gradient(90% 120% at 100% 100%, rgba(124,220,121,0.16), transparent 60%), linear-gradient(160deg, #075f55 0%, #00332f 72%); box-shadow:0 24px 50px rgba(0,0,0,0.5), inset 0 1px 0 rgba(56,224,196,0.16); display:flex; flex-direction:column; gap:2px;">
+                  <sc-for list="{{ partners }}" as="p" hint-placeholder-count="4">
+                    <button onClick="{{ p.pick }}" style="width:100%; text-align:left; cursor:pointer; background:{{ p.bg }}; border:none; border-radius:8px; padding:10px 13px; font:{{ p.font }} 13.5px Inter, sans-serif; color:{{ p.color }};" style-hover="background:rgba(56,224,196,0.16); color:#FFFFFF;">{{ p.name }}</button>
+                  </sc-for>
+                </div>
+              </sc-if>
+            </div>
+
+            <div style="display:flex; flex-direction:column; gap:6px;">
+              <span style="font:700 11px Inter, sans-serif; letter-spacing:0.1em; text-transform:uppercase; color:#5df0d0;">SELECT DATE (UPCOMING SLOTS)</span>
+              <div style="display:flex; flex-wrap:nowrap; gap:8px;">
+                <sc-for list="{{ dateChips }}" as="d" hint-placeholder-count="5">
+                  <button onClick="{{ d.pick }}" style="flex:1; white-space:nowrap; cursor:pointer; background:{{ d.bg }}; border:1px solid {{ d.border }}; border-radius:9px; padding:9px 10px; font:600 13px Inter, sans-serif; color:{{ d.color }};" style-hover="border-color:#38e0c4;">{{ d.label }}</button>
+                </sc-for>
+              </div>
+            </div>
+
+            <div style="display:flex; flex-direction:column; gap:6px;">
+              <span style="font:700 11px Inter, sans-serif; letter-spacing:0.1em; text-transform:uppercase; color:#5df0d0;">AVAILABLE TIME SLOTS</span>
+              <div style="display:flex; flex-wrap:nowrap; gap:8px;">
+                <sc-for list="{{ slotChips }}" as="t" hint-placeholder-count="5">
+                  <button onClick="{{ t.pick }}" style="flex:1; white-space:nowrap; cursor:pointer; background:{{ t.bg }}; border:1px solid {{ t.border }}; border-radius:9px; padding:8px 10px; font:600 13px Inter, sans-serif; letter-spacing:0.01em; color:{{ t.color }};" style-hover="border-color:#38e0c4;">{{ t.label }}</button>
+                </sc-for>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:10px;">
+              <label style="display:flex; flex-direction:column; gap:6px;">
+                <span style="font:700 11px Inter, sans-serif; letter-spacing:0.1em; text-transform:uppercase; color:#5df0d0;">YOUR NAME</span>
+                <input type="text" placeholder="Full name" style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.16); border-radius:10px; padding:9px 13px; font:400 14px Inter, sans-serif; color:#FFFFFF;">
+              </label>
+              <label style="display:flex; flex-direction:column; gap:6px;">
+                <span style="font:700 11px Inter, sans-serif; letter-spacing:0.1em; text-transform:uppercase; color:#5df0d0;">ORGANISATION</span>
+                <input type="text" placeholder="Company name" style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.16); border-radius:10px; padding:9px 13px; font:400 14px Inter, sans-serif; color:#FFFFFF;">
+              </label>
+              <label style="display:flex; flex-direction:column; gap:6px;">
+                <span style="font:700 11px Inter, sans-serif; letter-spacing:0.1em; text-transform:uppercase; color:#5df0d0;">WORK EMAIL</span>
+                <input type="email" placeholder="you@company.co.ke" style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.16); border-radius:10px; padding:9px 13px; font:400 14px Inter, sans-serif; color:#FFFFFF;">
+              </label>
+              <label style="display:flex; flex-direction:column; gap:6px;">
+                <span style="font:700 11px Inter, sans-serif; letter-spacing:0.1em; text-transform:uppercase; color:#5df0d0;">MOBILE NUMBER</span>
+                <input type="tel" placeholder="+254 700 000 000" style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.16); border-radius:10px; padding:9px 13px; font:400 14px Inter, sans-serif; color:#FFFFFF;">
+              </label>
+            </div>
+
+            <label style="display:flex; flex-direction:column; gap:6px;">
+              <span style="font:700 11px Inter, sans-serif; letter-spacing:0.1em; text-transform:uppercase; color:#5df0d0;">BRIEFING SCOPE</span>
+              <textarea rows="1" placeholder="vCIO, ERP advisory, NAWIRI, Agentic AI or Custom Software — and the decision you need to make." style="width:100%; resize:vertical; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.16); border-radius:10px; padding:10px 14px; font:400 14px/1.55 Inter, sans-serif; color:#FFFFFF;"></textarea>
+            </label>
+
+            <!-- BUILD NOTE: on submit, auto-send a Microsoft 365 / Outlook calendar invite from info@binaryone.co.ke to the email entered above (selected partner as required attendee, 90-min slot, EAT, briefing scope in the body). -->
+            <button onClick="{{ submitAdvisory }}" style="width:100%; cursor:pointer; background:#38e0c4; color:#06231e; border:none; border-radius:12px; padding:13px 24px; font:700 14.5px Sora, sans-serif; letter-spacing:0.03em;" style-hover="background:#5eead4;">Secure Advisory Reservation</button>
+            <p style="margin:4px 0 0; font:400 12px/1.5 Inter, sans-serif; color:#8fb3ae;">Ninety minutes, no charge, no obligation. Processed under our <a href="Data Protection.dc.html" style="color:#9EFF5A;" style-hover="color:#c4ff9e;">Data Protection Policy</a>.</p>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- Footer -->
+  <footer style="background:#071e1b; padding:64px 64px 32px;">
+    <div style="display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:48px; padding-bottom:56px;">
+      <div style="display:flex; flex-direction:column; gap:16px; align-items:flex-start;">
+        <a href="Homepage.dc.html" style="display:inline-flex; align-items:center;"><img src="assets/b1s-logo-dark.png" alt="Binary One Solutions — Towards Digital Transformation" style="height:47px; width:auto; display:block;"></a>
+        <span style="display:inline-flex; align-items:center; gap:9px; font:400 15px Inter, sans-serif; color:#c7d0dc;">Possibilities<span style="width:6px; height:6px; border-radius:50%; background:#7cdc79; box-shadow:0 0 4px rgba(124,220,121,0.95), 0 0 10px rgba(124,220,121,0.55), 0 0 18px rgba(124,220,121,0.28); flex-shrink:0; animation:b1-beacon 2.4s ease-in-out infinite;"></span>Realised</span>
+        <div style="display:flex; align-items:center; gap:18px; margin-top:6px;">
+        <a href="https://www.linkedin.com/company/binary1solutions/" target="_blank" rel="noopener" aria-label="LinkedIn" style="color:#c7d0dc; display:inline-flex;" style-hover="color:#FFFFFF;"><svg viewBox="0 0 24 24" style="width:22px; height:22px;" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"></path></svg></a>
+        <a href="https://twitter.com/Binary_One_Sol" target="_blank" rel="noopener" aria-label="X (Twitter)" style="color:#c7d0dc; display:inline-flex;" style-hover="color:#FFFFFF;"><svg viewBox="0 0 24 24" style="width:20px; height:20px;" fill="currentColor"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.67l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23Zm-1.16 17.52h1.83L7.08 4.13H5.12l11.96 15.64Z"></path></svg></a>
+        <a href="https://www.facebook.com/binary1solutions/" target="_blank" rel="noopener" aria-label="Facebook" style="color:#c7d0dc; display:inline-flex;" style-hover="color:#FFFFFF;"><svg viewBox="0 0 24 24" style="width:22px; height:22px;" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.5-3.91 3.78-3.91 1.09 0 2.23.2 2.23.2v2.46H15.2c-1.24 0-1.63.77-1.63 1.57v1.88h2.78l-.45 2.9h-2.33V22c4.78-.76 8.44-4.92 8.44-9.94Z"></path></svg></a>
+      </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:14px; font:400 14.5px Inter, sans-serif;">
+        <span style="font:600 12px Inter, sans-serif; color:#7cdc79; letter-spacing:0.12em; margin-bottom:4px;">SOLUTIONS</span>
+        <a href="Managed IT.dc.html" style="color:#eef2f7;" style-hover="color:#FFFFFF;">Managed IT</a>
+        <a href="ERP Consulting.dc.html" style="color:#eef2f7;" style-hover="color:#FFFFFF;">ERP Consulting</a>
+        <a href="NAWIRI.dc.html" style="color:#eef2f7;" style-hover="color:#FFFFFF;">NAWIRI</a>
+        <a href="Agentic AI.dc.html" style="color:#eef2f7;" style-hover="color:#FFFFFF;">Agentic AI</a>
+        <a href="Custom Software.dc.html" style="color:#eef2f7;" style-hover="color:#FFFFFF;">Custom Software</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:14px; font:400 14.5px Inter, sans-serif;">
+        <span style="font:600 12px Inter, sans-serif; color:#7cdc79; letter-spacing:0.12em; margin-bottom:4px;">COMPANY</span>
+        <a href="About.dc.html" style="color:#eef2f7;" style-hover="color:#FFFFFF;">About</a>
+        <a href="About.dc.html" style="color:#eef2f7;" style-hover="color:#FFFFFF;">Leadership</a>
+        <a href="Insights.dc.html" style="color:#eef2f7;" style-hover="color:#FFFFFF;">Insights</a>
+        <a href="Contact.dc.html?tab=enquiry" style="color:#eef2f7;" style-hover="color:#FFFFFF;">Careers</a>
+        <a href="Data Protection.dc.html" style="color:#8fae9a;" style-hover="color:#c7d0dc;">Data Protection Policy</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:14px; font:400 14.5px/1.5 Inter, sans-serif;">
+        <span style="font:600 12px Inter, sans-serif; color:#7cdc79; letter-spacing:0.12em; margin-bottom:4px;">CONNECT</span>
+        <a href="mailto:info@binaryone.co.ke" style="color:#eef2f7;" style-hover="color:#FFFFFF;">info@binaryone.co.ke</a>
+        <a href="tel:+254787990220" style="color:#eef2f7;" style-hover="color:#FFFFFF;">+254 787 990 220</a>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Binary+One+Solutions+Ngong+Road+Nairobi" target="_blank" rel="noopener" style="color:#8fa0b5;" style-hover="color:#FFFFFF;">St Charles Lwanga House,<br>Ngong Road, Nairobi</a>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Binary+One+Solutions+Ngong+Road+Nairobi" target="_blank" rel="noopener" style="color:#c7d0dc; text-decoration:underline; text-underline-offset:3px; font-size:13.5px; margin-top:-6px; line-height:1.5;" style-hover="color:#FFFFFF;">Find us on Google →</a>
+      </div>
+    </div>
+    <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid rgba(255,255,255,0.10); padding-top:28px; font:400 14px Inter, sans-serif; color:#8fa0b5;">
+      <span>© 2026 Binary One Solutions Ltd · Nairobi, Kenya</span>
+      <a href="Contact.dc.html?tab=enquiry" style="color:#FFFFFF; font-weight:600;" style-hover="color:#c7d0dc;">Talk to a consultant →</a>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;mapQuery&quot;: {
+    &quot;editor&quot;: &quot;text&quot;,
+    &quot;default&quot;: &quot;PQ2W+JX7, Ngong Rd, Nairobi&quot;,
+    &quot;tsType&quot;: &quot;string&quot;,
+    &quot;section&quot;: &quot;Map&quot;
+  },
+  &quot;mapZoom&quot;: {
+    &quot;editor&quot;: &quot;range&quot;,
+    &quot;default&quot;: 16,
+    &quot;min&quot;: 12,
+    &quot;max&quot;: 19,
+    &quot;step&quot;: 1,
+    &quot;tsType&quot;: &quot;number&quot;,
+    &quot;section&quot;: &quot;Map&quot;
+  }
+}">
+class Component extends DCLogic {
+  state = { tab: "assessment", submitted: false, advisoryOpen: false, advDate: 0, advSlot: 0, advDone: false, advPartner: 0, partnersOpen: false };
+  ADV_SLOTS = ["09:00 AM", "10:30 AM", "01:00 PM", "02:30 PM", "04:00 PM"];
+  ADV_PARTNERS = [
+    { name: "Humphrey Kirui (Founder / Lead Consultant)" },
+    { name: "Mike Kiai (Virtual CIO)" },
+    { name: "Eugene Hillary (IT Operations Lead)" },
+    { name: "Mary Kalama (Business Development Lead)" },
+  ];
+  advisoryDates() {
+    const out = [], d = new Date();
+    while (out.length < 5) {
+      d.setDate(d.getDate() + 1);
+      const day = d.getDay();
+      if (day === 0 || day === 6) continue;
+      out.push(d.toLocaleDateString("en-GB", { weekday: "short", month: "short", day: "numeric" }).replace(/^(\w+)\s/, "$1, "));
+    }
+    return out;
+  }
+  componentDidMount() {
+    const params = new URLSearchParams(window.location.search);
+    const t = params.get("tab");
+    if (t === "enquiry" || t === "assessment") this.setState({ tab: t });
+  }
+  advisoryVals() {
+    const dates = this.advisoryDates();
+    const chip = (active) => ({
+      bg: active ? "#0f766e" : "rgba(255,255,255,0.05)",
+      border: active ? "#38e0c4" : "rgba(255,255,255,0.16)",
+      color: active ? "#FFFFFF" : "#c2dbd7",
+    });
+    return {
+      advisoryOpen: this.state.advisoryOpen,
+      advDone: this.state.advDone,
+      advForm: !this.state.advDone,
+      advConfirm: "Boardroom advisory held for " + dates[this.state.advDate] + " at " + this.ADV_SLOTS[this.state.advSlot] + " EAT.",
+      partnerLabel: this.ADV_PARTNERS[this.state.advPartner].name,
+      partnersOpen: this.state.partnersOpen,
+      togglePartners: () => this.setState(st => ({ partnersOpen: !st.partnersOpen })),
+      partners: this.ADV_PARTNERS.map((p, i) => ({
+        name: p.name,
+        bg: i === this.state.advPartner ? "rgba(56,224,196,0.14)" : "transparent",
+        color: i === this.state.advPartner ? "#FFFFFF" : "#c2dbd7",
+        font: i === this.state.advPartner ? "600" : "400",
+        pick: () => this.setState({ advPartner: i, partnersOpen: false }),
+      })),
+      dateChips: dates.map((label, i) => ({ label, ...chip(i === this.state.advDate), pick: () => this.setState({ advDate: i }) })),
+      slotChips: this.ADV_SLOTS.map((label, i) => ({ label, ...chip(i === this.state.advSlot), pick: () => this.setState({ advSlot: i }) })),
+      openAdvisory: () => this.setState({ advisoryOpen: true, advDone: false, partnersOpen: false }),
+      closeAdvisory: () => this.setState({ advisoryOpen: false, advDone: false }),
+      submitAdvisory: () => this.setState({ advDone: true }),
+    };
+  }
+  renderVals() {
+    const { tab, submitted } = this.state;
+    const mapQuery = this.props.mapQuery ?? "PQ2W+JX7, Ngong Rd, Nairobi";
+    const activeBg = "#FFFFFF";
+    const activeShadow = "0 1px 3px rgba(15,118,110,0.12)";
+    return {
+      ...this.advisoryVals(),
+      mapSrc: "https://maps.google.com/maps?q=" + encodeURIComponent(mapQuery) + "&z=" + (this.props.mapZoom ?? 16) + "&output=embed",
+      submitted,
+      showTabAssessment: !submitted && tab === "assessment",
+      showTabEnquiry: !submitted && tab === "enquiry",
+      showAssessment: () => this.setState({ tab: "assessment", submitted: false }),
+      showEnquiry: () => this.setState({ tab: "enquiry", submitted: false }),
+      submit: () => this.setState({ submitted: true }),
+      resetForm: () => this.setState({ submitted: false }),
+      tabAssessmentBg: tab === "assessment" ? activeBg : "transparent",
+      tabAssessmentColor: tab === "assessment" ? "#1c1b1b" : "#3e4947",
+      tabAssessmentShadow: tab === "assessment" ? activeShadow : "none",
+      tabEnquiryBg: tab === "enquiry" ? activeBg : "transparent",
+      tabEnquiryColor: tab === "enquiry" ? "#1c1b1b" : "#3e4947",
+      tabEnquiryShadow: tab === "enquiry" ? activeShadow : "none",
+    };
+  }
+}
+</script>
+</body>
+</html>

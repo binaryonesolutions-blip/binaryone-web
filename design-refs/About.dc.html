@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #E9EEF2; -webkit-font-smoothing: antialiased; }
+  a { color: #005c55; text-decoration: none; }
+  a:hover { color: #006e1b; }
+  ::selection { background: #005c55; color: #F8FAFB; }
+  *, *::before, *::after { box-sizing: border-box; }
+  img, svg, video, iframe { max-width: 100%; }
+  /*hardened*/
+      @keyframes b1-beacon { 0%, 100% { box-shadow:0 0 4px rgba(124,220,121,0.95), 0 0 10px rgba(124,220,121,0.5), 0 0 18px rgba(124,220,121,0.24); } 50% { box-shadow:0 0 6px rgba(124,220,121,1), 0 0 16px rgba(124,220,121,0.75), 0 0 28px rgba(124,220,121,0.42); } }
+    </style>
+<script>
+(function(){
+  function fit(){
+    var basis = document.documentElement.clientWidth || window.innerWidth;
+    var r = basis / 1440;
+    if (r > 1.6) r = 1.6;
+    if (r < 0.15) r = 0.15;
+    document.documentElement.style.zoom = r;
+  }
+  window.addEventListener('resize', fit);
+  fit();
+})();
+</script>
+</helmet>
+
+<div style="width:1440px; margin:0 auto; background:#F8FAFB; font-family:Inter, sans-serif; color:#1c1b1b;">
+
+  <!-- Nav -->
+  <header style="display:flex; align-items:center; justify-content:space-between; padding:0 64px; height:76px; background:rgba(237,241,242,0.94); backdrop-filter:blur(12px); border-bottom:1px solid #E0E5E6; position:sticky; top:0; z-index:50;">
+    <a href="Homepage.dc.html" style="display:flex; align-items:center;"><img src="assets/b1s-logo-light.png" alt="Binary One Solutions — Towards Digital Transformation" style="height:45px; width:auto; display:block;"></a>
+    <nav style="display:flex; align-items:center; gap:32px; font:500 14.5px Inter, sans-serif;">
+      <a href="Homepage.dc.html" style="color:#1c1b1b;">Home</a>
+          <a href="Managed IT.dc.html" style="color:#1c1b1b;">Managed IT</a>
+      <a href="ERP Consulting.dc.html" style="color:#1c1b1b;">ERP Consulting</a>
+      <details style="position:relative; display:inline-block;">
+          <summary style="list-style:none; cursor:pointer; display:inline-flex; align-items:center; gap:6px; color:#1c1b1b; font:500 14.5px Inter, sans-serif;">Digital Products <span style="font-size:10px; color:#3e4947;">▾</span></summary>
+          <div style="position:absolute; top:34px; left:50%; transform:translateX(-50%); width:360px; background:#FFFFFF; border:1px solid #E5E7EB; border-radius:12px; box-shadow:0 12px 32px rgba(0,0,0,0.08); padding:18px 0 8px; z-index:100;">
+            <span style="display:block; padding:2px 24px 14px; font:700 11px 'JetBrains Mono', monospace; color:#0f766e; letter-spacing:0.14em; border-bottom:1px solid #E5E7EB;">DIGITAL SOLUTIONS &amp; PLATFORMS</span>
+            <div style="padding-top:8px;">
+              <a href="NAWIRI.dc.html" style="display:flex; align-items:flex-start; gap:13px; padding:11px 24px; color:#1c1b1b;" style-hover="background:#f1f5f4; color:#1c1b1b;"><span style="flex-shrink:0; width:40px; height:40px; border-radius:10px; background:#eef4f3; display:inline-flex; align-items:center; justify-content:center; margin-top:1px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M12 3l1.9 4.6L18.5 9.5 13.9 11.4 12 16l-1.9-4.6L5.5 9.5 10.1 7.6z"></path><path d="M18.5 14.5l.8 1.9 1.9.8-1.9.8-.8 1.9-.8-1.9-1.9-.8 1.9-.8z"></path></svg></span><span style="display:block;"><span style="display:block; font:700 15px Inter, sans-serif; color:#0c1512; margin-bottom:2px;">NAWIRI Platform</span><span style="display:block; font:400 13px/1.4 Inter, sans-serif; color:#6e7977;">Digital Loyalty &amp; Last-mile intelligence</span></span></a>
+              <a href="Agentic AI.dc.html" style="display:flex; align-items:flex-start; gap:13px; padding:11px 24px; color:#1c1b1b;" style-hover="background:#f1f5f4; color:#1c1b1b;"><span style="flex-shrink:0; width:40px; height:40px; border-radius:10px; background:#eef4f3; display:inline-flex; align-items:center; justify-content:center; margin-top:1px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><rect x="6" y="6" width="12" height="12" rx="1.5"></rect><rect x="9.5" y="9.5" width="5" height="5" rx="0.6"></rect><path d="M9 3v2M15 3v2M9 19v2M15 19v2M3 9h2M3 14h2M19 9h2M19 14h2"></path></svg></span><span style="display:block;"><span style="display:block; font:700 15px Inter, sans-serif; color:#0c1512; margin-bottom:2px;">Agentic AI Workflows</span><span style="display:block; font:400 13px/1.4 Inter, sans-serif; color:#6e7977;">Autonomous reasoning agents interfacing ERPs</span></span></a>
+              <a href="Custom Software.dc.html" style="display:flex; align-items:flex-start; gap:13px; padding:11px 24px; color:#1c1b1b;" style-hover="background:#f1f5f4; color:#1c1b1b;"><span style="flex-shrink:0; width:40px; height:40px; border-radius:10px; background:#eef4f3; display:inline-flex; align-items:center; justify-content:center; margin-top:1px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="m9 8-4 4 4 4M15 8l4 4-4 4"></path></svg></span><span style="display:block;"><span style="display:block; font:700 15px Inter, sans-serif; color:#0c1512; margin-bottom:2px;">Custom Software</span><span style="display:block; font:400 13px/1.4 Inter, sans-serif; color:#6e7977;">Bespoke high-performance systems engineering</span></span></a>
+              <div style="height:1px; background:#E5E7EB; margin:10px 24px 8px;"></div>
+              <a href="Digital Products.dc.html" style="display:flex; align-items:flex-start; gap:13px; padding:11px 24px; color:#1c1b1b;" style-hover="background:#f1f5f4; color:#1c1b1b;"><span style="flex-shrink:0; width:40px; height:40px; border-radius:10px; background:#eef4f3; display:inline-flex; align-items:center; justify-content:center; margin-top:1px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg></span><span style="display:block;"><span style="display:block; font:700 15px Inter, sans-serif; color:#0c1512; margin-bottom:2px;">Digital Products Hub Overview</span><span style="display:block; font:400 13px/1.4 Inter, sans-serif; color:#6e7977;">Our Digital Solutions at a glance</span></span></a>
+            </div>
+          </div>
+        </details>
+      <a href="About.dc.html" style="color:#1c1b1b; border-bottom:2px solid #006e1b; padding-bottom:3px;">About</a>
+      <a href="Insights.dc.html" style="color:#1c1b1b;">Insights</a>
+      <a href="Contact.dc.html" style="display:inline-flex; align-items:center; gap:10px; background:#d9f5ef; color:#06332e; border:1px solid rgba(56,224,196,0.75); border-radius:11px; padding:11px 20px; font:600 14.5px Inter, sans-serif; box-shadow:0 1px 2px rgba(6,35,30,0.10), 0 4px 14px rgba(6,35,30,0.08); transition:background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;" style-hover="background:#bfeee4; border-color:#38e0c4; box-shadow:0 0 0 1px rgba(56,224,196,0.6), 0 0 22px rgba(56,224,196,0.42), 0 8px 20px rgba(6,35,30,0.26); transform:translateY(-2px);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="3" y="5" width="18" height="16" rx="3"></rect><path d="M8 3v4"></path><path d="M16 3v4"></path><path d="M3 10h18"></path></svg>Book a Free IT Assessment</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <div style="display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; padding:88px 64px 88px; align-items:center;">
+    <div>
+      <h1 style="margin:0 0 24px; font:700 50px/1.1 Sora, sans-serif; letter-spacing:-0.02em; color:#1c1b1b; text-wrap:pretty;">Technology consulting for organisations that need order, direction and delivery.</h1>
+      <p style="margin:0; font:400 17.5px/1.65 Inter, sans-serif; color:#3e4947; text-wrap:pretty;">Binary One Solutions is a Nairobi-based digital transformation consulting firm helping medium-sized and larger organisations make better technology decisions, run IT more reliably and build digital tools that create measurable business value. Our team brings over 20 years of cross-industry experience, including work with Fortune 500 companies.</p>
+    </div>
+    <div style="height:380px; border-radius:16px; border:1px solid #E5E7EB;  display:flex; align-items:center; justify-content:center;   overflow:hidden;"><img src="assets/about-hero.png" alt="Binary One boardroom, Nairobi" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
+  </div>
+
+  <!-- Our story -->
+  <div style="background:#00332f; padding:96px 64px;">
+    <span style="display:block; font:500 12px 'JetBrains Mono', monospace; color:#7cdc79; letter-spacing:0.18em; margin-bottom:24px;">OUR STORY</span>
+    <p style="margin:0; font:600 28px/1.55 Sora, sans-serif; color:#F8FAFB; max-width:980px; text-wrap:pretty;">Binary One was founded to close a gap many African organisations experience: too much technology pressure, <span style="color:#7cdc79;">too little structured IT leadership.</span> Over the years, our work has grown across Managed IT, ERP advisory, digital loyalty, cloud collaboration, cybersecurity, software projects and executive IT governance.</p>
+  </div>
+
+  <!-- What we believe -->
+  <div style="padding:96px 64px;">
+    <h2 style="margin:0 0 36px; font:700 36px/1.2 Sora, sans-serif; letter-spacing:-0.02em; color:#1c1b1b;">What we believe.</h2>
+    <div style="display:grid; grid-template-columns:300px 1fr; gap:40px; align-items:center;">
+      <div style="max-width:300px; aspect-ratio:1/1; border-radius:18px; background:#ffffff; border:1px solid #E5E7EB; box-shadow:0 1px 2px rgba(15,23,42,0.04), 0 12px 30px rgba(15,23,42,0.05); display:flex; align-items:center; justify-content:center; padding:24px; box-sizing:border-box;">
+        <img src="assets/about-believe-icon.png" alt="Governed technology decisions" style="width:100%; height:100%; object-fit:contain; display:block;">
+      </div>
+      <div style="display:flex; flex-direction:column; margin-top:-8px;">
+      <sc-for list="{{ beliefs }}" as="b" hint-placeholder-count="5">
+        <div style="display:flex; gap:18px; align-items:flex-start; padding:13px 0; border-bottom:1px solid #E5E7EB;">
+          <span style="width:8px; height:8px; border-radius:50%; background:#006e1b; margin-top:9px; flex-shrink:0;"></span>
+          <p style="margin:0; font:500 18px/1.6 Inter, sans-serif; color:#1c1b1b;">{{ b }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- Belief image -->
+  <div style="padding:88px 64px 96px;">
+    <div style="height:420px; border-radius:16px; border:1px solid #E5E7EB; overflow:hidden;">
+      <img src="assets/about-belief.png" alt="Binary One team at work" style="width:100%; height:100%; object-fit:cover; display:block;">
+    </div>
+  </div>
+
+  <!-- Leadership -->
+  <div style="background:#FFFFFF; border-top:1px solid #E5E7EB; border-bottom:1px solid #E5E7EB; padding:96px 64px;">
+    <h2 style="margin:0 0 48px; font:700 36px/1.2 Sora, sans-serif; letter-spacing:-0.02em; color:#1c1b1b;">Leadership and delivery.</h2>
+    <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:24px;">
+      <sc-for list="{{ leaders }}" as="l" hint-placeholder-count="4">
+        <div style="background:#F8FAFB; border:1px solid #E5E7EB; border-radius:16px; padding:32px; display:flex; gap:24px; align-items:flex-start;">
+          <div style="width:88px; height:88px; border-radius:50%; flex-shrink:0;  border:1px solid #E5E7EB;  overflow:hidden;"><img src="{{ l.photo }}" alt="{{ l.area }}" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
+          <div>
+            <span style="display:block; font:600 12px Inter, sans-serif; color:#006e1b; letter-spacing:0.12em; margin-bottom:8px;">{{ l.area }}</span>
+            <p style="margin:0; font:400 15.5px/1.65 Inter, sans-serif; color:#3e4947;"><strong style="color:#1c1b1b; font-weight:600;">{{ l.lead }}</strong> {{ l.copy }}</p>
+          </div>
+        </div>
+      </sc-for>
+      <div style="background:#F8FAFB; border:1px solid #E5E7EB; border-radius:16px; padding:32px; display:flex; gap:24px; align-items:flex-start;">
+        <div style="width:88px; height:88px; border-radius:50%; flex-shrink:0; border:1px solid #E5E7EB; overflow:hidden;"><img src="assets/delivery-team.png" alt="Binary One delivery team" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
+        <div>
+          <span style="display:block; font:600 12px Inter, sans-serif; color:#006e1b; letter-spacing:0.12em; margin-bottom:8px;">DELIVERY TEAM</span>
+          <p style="margin:0; font:400 15.5px/1.65 Inter, sans-serif; color:#3e4947; text-wrap:pretty;"><strong style="color:#1c1b1b; font-weight:600;">Engineers, developers and vendor partners</strong> — a bench of managed IT engineers, software developers and certified IT OEM vendor partners behind every engagement, so escalation paths and specialist skills never depend on a single individual.</p>
+          <p style="margin:12px 0 0; font:400 14.5px/1.7 Inter, sans-serif; color:#3e4947; text-wrap:pretty;">A great team that runs our managed IT SLAs and helpdesk, delivers Odoo ERP rollouts, and builds NAWIRI, agentic AI and custom enterprise software. OEM and cloud vendor partnerships give us licensing, hardware and escalation paths direct to source.</p>
+        </div>
+      </div>
+      <div style="background:#F8FAFB; border:1px solid #E5E7EB; border-radius:16px; padding:32px; display:flex; gap:24px; align-items:flex-start;">
+        <div style="width:88px; height:88px; border-radius:50%; flex-shrink:0; border:1px solid #E5E7EB; overflow:hidden;"><img src="assets/edwin-kairu.png" alt="Edwin Kairu" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
+        <div>
+          <span style="display:block; font:600 12px Inter, sans-serif; color:#006e1b; letter-spacing:0.12em; margin-bottom:8px;">ADVISOR &amp; SHAREHOLDER</span>
+          <p style="margin:0 0 12px; font:400 15.5px/1.65 Inter, sans-serif; color:#3e4947;"><strong style="color:#1c1b1b; font-weight:600;">Edwin Kairu</strong> — Distinguished Service Professor at Carnegie Mellon University; AI research and cybersecurity expert.</p>
+          <p style="margin:0; font:400 14.5px/1.7 Inter, sans-serif; color:#3e4947; text-wrap:pretty;">15+ years strengthening the security posture of organisations across security reviews, incident response, vulnerability management and network forensics. MS Information Security Policy &amp; Management, Carnegie Mellon University.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Final CTA -->
+  <div style="padding:104px 64px; text-align:center;">
+    <h2 style="margin:0 auto 36px; font:700 38px/1.25 Sora, sans-serif; letter-spacing:-0.02em; color:#1c1b1b; max-width:800px; text-wrap:pretty;">Talk to a senior consultant about where your organisation is trying to go.</h2>
+    <a href="Contact.dc.html?tab=enquiry" style="display:inline-block; background:#38e0c4; color:#06231e; border-radius:12px; padding:16px 32px; font:600 16.5px Inter, sans-serif; box-shadow:0 1px 2px rgba(56,224,196,0.24), 0 6px 16px rgba(56,224,196,0.16);" style-hover="background:#5ceace; color:#06231e;">Talk to a consultant</a>
+  </div>
+
+  <!-- Footer -->
+  <footer style="background:#071e1b; padding:64px 64px 32px;">
+    <div style="display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:48px; padding-bottom:56px;">
+      <div style="display:flex; flex-direction:column; gap:16px; align-items:flex-start;">
+        <a href="Homepage.dc.html" style="display:inline-flex; align-items:center;"><img src="assets/b1s-logo-dark.png" alt="Binary One Solutions — Towards Digital Transformation" style="height:47px; width:auto; display:block;"></a>
+        <span style="display:inline-flex; align-items:center; gap:9px; font:400 15px Inter, sans-serif; color:#c7d0dc;">Possibilities<span style="width:6px; height:6px; border-radius:50%; background:#7cdc79; box-shadow:0 0 4px rgba(124,220,121,0.95), 0 0 10px rgba(124,220,121,0.55), 0 0 18px rgba(124,220,121,0.28); flex-shrink:0; animation:b1-beacon 2.4s ease-in-out infinite;"></span>Realised</span>
+        <div style="display:flex; align-items:center; gap:18px; margin-top:6px;">
+        <a href="https://www.linkedin.com/company/binary1solutions/" target="_blank" rel="noopener" aria-label="LinkedIn" style="color:#c7d0dc; display:inline-flex;" style-hover="color:#FFFFFF;"><svg viewBox="0 0 24 24" style="width:22px; height:22px;" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"></path></svg></a>
+        <a href="https://twitter.com/Binary_One_Sol" target="_blank" rel="noopener" aria-label="X (Twitter)" style="color:#c7d0dc; display:inline-flex;" style-hover="color:#FFFFFF;"><svg viewBox="0 0 24 24" style="width:20px; height:20px;" fill="currentColor"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.67l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23Zm-1.16 17.52h1.83L7.08 4.13H5.12l11.96 15.64Z"></path></svg></a>
+        <a href="https://www.facebook.com/binary1solutions/" target="_blank" rel="noopener" aria-label="Facebook" style="color:#c7d0dc; display:inline-flex;" style-hover="color:#FFFFFF;"><svg viewBox="0 0 24 24" style="width:22px; height:22px;" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.5-3.91 3.78-3.91 1.09 0 2.23.2 2.23.2v2.46H15.2c-1.24 0-1.63.77-1.63 1.57v1.88h2.78l-.45 2.9h-2.33V22c4.78-.76 8.44-4.92 8.44-9.94Z"></path></svg></a>
+      </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:14px; font:400 14.5px Inter, sans-serif;">
+        <span style="font:600 12px Inter, sans-serif; color:#7cdc79; letter-spacing:0.12em; margin-bottom:4px;">SOLUTIONS</span>
+        <a href="Managed IT.dc.html" style="color:#eef2f7;" style-hover="color:#FFFFFF;">Managed IT</a>
+        <a href="ERP Consulting.dc.html" style="color:#eef2f7;" style-hover="color:#FFFFFF;">ERP Consulting</a>
+        <a href="NAWIRI.dc.html" style="color:#eef2f7;" style-hover="color:#FFFFFF;">NAWIRI</a>
+        <a href="Agentic AI.dc.html" style="color:#eef2f7;" style-hover="color:#FFFFFF;">Agentic AI</a>
+        <a href="Custom Software.dc.html" style="color:#eef2f7;" style-hover="color:#FFFFFF;">Custom Software</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:14px; font:400 14.5px Inter, sans-serif;">
+        <span style="font:600 12px Inter, sans-serif; color:#7cdc79; letter-spacing:0.12em; margin-bottom:4px;">COMPANY</span>
+        <a href="About.dc.html" style="color:#eef2f7;" style-hover="color:#FFFFFF;">About</a>
+        <a href="About.dc.html" style="color:#eef2f7;" style-hover="color:#FFFFFF;">Leadership</a>
+        <a href="Insights.dc.html" style="color:#eef2f7;" style-hover="color:#FFFFFF;">Insights</a>
+        <a href="Contact.dc.html?tab=enquiry" style="color:#eef2f7;" style-hover="color:#FFFFFF;">Careers</a>
+        <a href="Data Protection.dc.html" style="color:#8fae9a;" style-hover="color:#c7d0dc;">Data Protection Policy</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:14px; font:400 14.5px/1.5 Inter, sans-serif;">
+        <span style="font:600 12px Inter, sans-serif; color:#7cdc79; letter-spacing:0.12em; margin-bottom:4px;">CONNECT</span>
+        <a href="mailto:info@binaryone.co.ke" style="color:#eef2f7;" style-hover="color:#FFFFFF;">info@binaryone.co.ke</a>
+        <a href="tel:+254787990220" style="color:#eef2f7;" style-hover="color:#FFFFFF;">+254 787 990 220</a>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Binary+One+Solutions+Ngong+Road+Nairobi" target="_blank" rel="noopener" style="color:#8fa0b5;" style-hover="color:#FFFFFF;">St Charles Lwanga House,<br>Ngong Road, Nairobi</a>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Binary+One+Solutions+Ngong+Road+Nairobi" target="_blank" rel="noopener" style="color:#c7d0dc; text-decoration:underline; text-underline-offset:3px; font-size:13.5px; margin-top:-6px; line-height:1.5;" style-hover="color:#FFFFFF;">Find us on Google →</a>
+      </div>
+    </div>
+    <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid rgba(255,255,255,0.10); padding-top:28px; font:400 14px Inter, sans-serif; color:#8fa0b5;">
+      <span>© 2026 Binary One Solutions Ltd · Nairobi, Kenya</span>
+      <a href="Contact.dc.html?tab=enquiry" style="color:#FFFFFF; font-weight:600;" style-hover="color:#c7d0dc;">Talk to a consultant →</a>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;showBeliefImage&quot;: {
+    &quot;editor&quot;: &quot;boolean&quot;,
+    &quot;default&quot;: true,
+    &quot;tsType&quot;: &quot;boolean&quot;,
+    &quot;section&quot;: &quot;Belief image&quot;
+  },
+  &quot;beliefImageUrl&quot;: {
+    &quot;editor&quot;: &quot;text&quot;,
+    &quot;default&quot;: &quot;assets/about-prop-default.png&quot;,
+    &quot;tsType&quot;: &quot;string&quot;,
+    &quot;section&quot;: &quot;Belief image&quot;
+  }
+}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      showBeliefImage: this.props.showBeliefImage ?? true,
+      beliefImageUrl: this.props.beliefImageUrl ?? "assets/about-belief.png",
+      beliefs: [
+        "Technology must serve business value, not vendor fashion.",
+        "Good IT needs both strategy and operational discipline.",
+        "ERP, AI and software projects must be governed before they are built.",
+        "The right partner should complement internal teams, not make them irrelevant.",
+        "Proof should come before promise.",
+      ],
+      leaders: [
+        { photo: "assets/humphrey-kirui-v2.png", area: "FOUNDER / LEAD CONSULTANT", lead: "Humphrey Kirui", copy: "— Business Leader and IT Strategist with two decades of enterprise IT across retail, manufacturing, agribusiness, energy, telecom and government, including multi-country ERP deployments on Odoo and SAP HANA. Creator of NAWIRI \u2014 a novel digital loyalty platform that lifted a listed manufacturer's sales 30% in its first year." },
+        { photo: "assets/mike-kiai.png", area: "VIRTUAL CIO", lead: "Mike Kiai", copy: "— Group CTO with 25+ years leading IT strategy, digital transformation and enterprise platform delivery across banking, healthcare, retail and international development in five African markets. PMP, ITIL and ISC2-certified; equally at home in a board risk review or an integration debug." },
+        { photo: "assets/eugene-hillary.png", area: "IT OPERATIONS LEAD", lead: "Eugene Hillary", copy: "— across systems and network administration, software development and support supervision. Builds our real-world agentic AI use cases: alert triage, automated patch and backup checks, first-line resolution \u2014 with a human approving every change." },
+        { photo: "assets/about-leader-4.png", area: "BUSINESS DEVELOPMENT", lead: "Mary Kalama", copy: "— Business Development Manager who matches business requirements to digital transformation strategies, shortening the customer journey from first conversation to honest scoping and a proposal built on your numbers, not ours." },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

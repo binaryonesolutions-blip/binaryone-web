@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Caveat:wght@600;700&amp;display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #0A1628; -webkit-font-smoothing: antialiased; }
+  a { color: #FFFFFF; text-decoration: none; }
+  a:hover { color: #9EFF5A; }
+  ::selection { background: #9EFF5A; color: #0A1628; }
+  *, *::before, *::after { box-sizing: border-box; }
+  img, svg, video, iframe { max-width: 100%; }
+  /*hardened*/
+</style>
+<script>
+(function(){
+  function fit(){
+    var basis = document.documentElement.clientWidth || window.innerWidth;
+    var r = basis / 1440;
+    if (r > 1.6) r = 1.6;
+    if (r < 0.15) r = 0.15;
+    document.documentElement.style.zoom = r;
+  }
+  window.addEventListener('resize', fit);
+  fit();
+})();
+</script>
+</helmet>
+
+<div style="width:1440px; margin:0 auto; background:#0A1628; background-image:linear-gradient(rgba(45,212,191,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(45,212,191,0.05) 1px, transparent 1px); background-size:48px 48px; font-family:Inter, sans-serif; color:#FFFFFF;">
+
+  <!-- Mini general nav -->
+  <div style="display:flex; align-items:center; justify-content:space-between; padding:0 64px; height:40px; background:#071120;">
+    <a href="Homepage.dc.html" style="font:600 12px Inter, sans-serif; color:#94A3B8;" style-hover="color:#9EFF5A;">← binaryone.co.ke</a>
+    <nav style="display:flex; align-items:center; gap:24px; font:500 12px Inter, sans-serif;">
+      <a href="Homepage.dc.html" style="color:#94A3B8;" style-hover="color:#9EFF5A;">Home</a>
+      <a href="Managed IT.dc.html" style="color:#94A3B8;" style-hover="color:#9EFF5A;">Managed IT</a>
+      <a href="ERP Consulting.dc.html" style="color:#94A3B8;" style-hover="color:#9EFF5A;">ERP Consulting</a>
+      <a href="Digital Products.dc.html" style="color:#94A3B8;" style-hover="color:#9EFF5A;">Digital Products</a>
+      <a href="About.dc.html" style="color:#94A3B8;" style-hover="color:#9EFF5A;">About</a>
+      <a href="Insights.dc.html" style="color:#94A3B8;" style-hover="color:#9EFF5A;">Insights</a>
+      <a href="Contact.dc.html" style="color:#94A3B8;" style-hover="color:#9EFF5A;">Contact</a>
+    </nav>
+  </div>
+  <div style="height:1px; background:linear-gradient(90deg, rgba(158,255,90,0), #9EFF5A 18%, #9EFF5A 82%, rgba(158,255,90,0)); box-shadow:0 0 12px rgba(158,255,90,0.45);"></div>
+
+  <!-- Nav -->
+  <header style="display:flex; align-items:center; justify-content:space-between; padding:0 64px; height:76px; border-bottom:1px solid rgba(45,212,191,0.25); position:sticky; top:0; background:rgba(10,22,40,0.92); backdrop-filter:blur(12px); z-index:50;">
+    <div style="display:flex; align-items:center; gap:16px;">
+      <div style="display:flex; align-items:baseline; gap:8px;">
+        <span style="font:800 20px Sora, sans-serif; color:#FFFFFF; letter-spacing:0.02em;">NAWIRI</span>
+        <span style="font:500 10px Inter, sans-serif; color:#94A3B8; letter-spacing:0.16em;">DIGITAL LOYALTY</span>
+      </div>
+      <span style="width:1px; height:22px; background:rgba(45,212,191,0.4);"></span>
+      <span style="font:500 12px Inter, sans-serif; color:#94A3B8;">by Binary One Solutions</span>
+    </div>
+    <nav style="display:flex; align-items:center; gap:32px; font:500 14.5px Inter, sans-serif;">
+      <a href="#features" style="color:#E2E8F0;">Features</a>
+      <a href="#proof" style="color:#E2E8F0;">Proof</a>
+      <a href="#pricing" style="color:#E2E8F0;">Pricing</a>
+      <a href="#demo" style="display:inline-flex; align-items:center; gap:10px; background:#071A2E; color:#FFFFFF; border:1px solid rgba(158,255,90,0.45); border-radius:11px; padding:11px 20px; font:600 14.5px Inter, sans-serif; transition:background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;" style-hover="background:#0d2942; border-color:#9EFF5A; box-shadow:0 0 0 1px rgba(158,255,90,0.6), 0 0 22px rgba(158,255,90,0.42), 0 8px 20px rgba(4,12,24,0.4); transform:translateY(-2px);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9EFF5A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="3" y="5" width="18" height="16" rx="3"></rect><path d="M8 3v4"></path><path d="M16 3v4"></path><path d="M3 10h18"></path></svg>Book a NAWIRI Demo</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <div style="display:grid; grid-template-columns:1.05fr 0.95fr; gap:56px; padding:96px 64px 56px; align-items:center;">
+    <div>
+      <div style="display:flex; align-items:center; gap:28px; margin-bottom:24px;">
+        <img src="assets/nawiri-logo.png" alt="NAWIRI" style="height:150px; width:auto; display:block; flex-shrink:0; filter:drop-shadow(0 0 24px rgba(158,255,90,0.35));">
+        <h1 style="margin:0; font:800 52px/1.08 Sora, sans-serif; letter-spacing:-0.01em; color:#FFFFFF; text-wrap:pretty;">NAWIRI Digital Loyalty — <span style="color:#9EFF5A;">Own the Last Mile.</span></h1>
+      </div>
+      <p style="margin:0 0 36px; font:400 18px/1.65 Inter, sans-serif; color:#94A3B8; text-wrap:pretty;">A mobile-first loyalty platform that connects Kenyan and East African manufacturers directly to the painters, mechanics, fundis, farmers, shopkeepers and households who actually influence what gets bought.</p>
+      <div style="display:flex; align-items:center; gap:20px;">
+        <a href="Loyalty Self-Score.dc.html" style="display:inline-block; background:#9EFF5A; color:#0A1628; border-radius:12px; padding:16px 30px; font:700 16px Sora, sans-serif; box-shadow:0 0 32px rgba(158,255,90,0.25);" style-hover="background:#B4FF7E; color:#0A1628;">Compute Your Customer Loyalty Maturity</a>
+        <a href="#features" style="font:600 15.5px Inter, sans-serif; color:#FFFFFF; border-bottom:1.5px solid #2dd4bf; padding-bottom:2px;" style-hover="color:#9EFF5A; border-bottom:1.5px solid #9EFF5A;">See the features →</a>
+      </div>
+    </div>
+    <div style="height:440px; border-radius:16px; border:1px solid rgba(45,212,191,0.35); background:#11203A; display:flex; align-items:center; justify-content:center;   box-shadow:0 24px 64px rgba(0,0,0,0.4); overflow:hidden;"><img src="assets/nawiri-retail-hero.png" alt="Kenyan retail loyalty moment" style="width:100%; height:100%; object-fit:cover; object-position:center 45%; display:block;"></div>
+  </div>
+
+  <!-- Trust strip -->
+  <div style="display:flex; flex-wrap:wrap; gap:10px; padding:0 64px 88px;">
+    <sc-for list="{{ trustChips }}" as="chip" hint-placeholder-count="5">
+      <span style="display:inline-block; padding:9px 16px; border:1px solid rgba(45,212,191,0.4); border-radius:100px; background:linear-gradient(180deg, rgba(45,212,191,0.1), rgba(45,212,191,0.03)); font:500 13.5px Inter, sans-serif; color:#E2E8F0;">{{ chip }}</span>
+    </sc-for>
+  </div>
+
+  <!-- Loyalty Has Changed — era timeline -->
+  <div style="padding:88px 64px; border-top:1px solid rgba(45,212,191,0.2);">
+    <span style="display:block; font:500 12px 'JetBrains Mono', monospace; color:#2dd4bf; letter-spacing:0.18em; margin-bottom:16px;">LOYALTY HAS CHANGED</span>
+    <h2 style="margin:0 0 20px; font:800 38px/1.15 Sora, sans-serif; color:#FFFFFF; max-width:820px; text-wrap:pretty;">Loyalty is no longer a retention gimmick. It is a <span style="color:#9EFF5A;">real-time data channel.</span></h2>
+    <p style="margin:0 0 56px; font:400 16.5px/1.65 Inter, sans-serif; color:#94A3B8; max-width:820px; text-wrap:pretty;">Kenyan loyalty has matured. Manufacturers and distributors now need a direct view of the retailer, fundi, mechanic, painter or farmer who decides what moves at the last mile. NAWIRI turns those interactions into rewards, insights and repeat behaviour.</p>
+    <div style="position:relative; padding-top:24px;">
+      <svg viewBox="0 0 1200 190" preserveAspectRatio="none" style="position:absolute; top:0; left:0; width:100%; height:190px; pointer-events:none;">
+        <defs>
+          <linearGradient id="eraline" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#2dd4bf" stop-opacity="0.35"></stop>
+            <stop offset="0.62" stop-color="#2dd4bf" stop-opacity="0.8"></stop>
+            <stop offset="1" stop-color="#9EFF5A"></stop>
+          </linearGradient>
+        </defs>
+        <path d="M 0 168 C 150 168 190 128 300 122 C 410 116 450 92 600 82 C 750 72 790 52 900 40 C 990 30 1080 16 1200 10" fill="none" stroke="url(#eraline)" stroke-width="3"></path>
+      </svg>
+      <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:20px; position:relative;">
+        <sc-for list="{{ eras }}" as="era" hint-placeholder-count="4">
+          <div style="display:flex; flex-direction:column;">
+            <div style="height:{{ era.rise }}; flex-shrink:0;"></div>
+            <div style="position:relative; background:{{ era.cardBg }}; border:1px solid {{ era.cardBorder }}; border-radius:16px; padding:26px 26px 24px; box-shadow:{{ era.cardShadow }}; flex:1; display:flex; flex-direction:column; gap:14px;">
+              <span style="position:absolute; top:-14px; left:22px; display:inline-flex; align-items:center; gap:8px; background:#0A1628; border:1px solid {{ era.chipBorder }}; border-radius:100px; padding:5px 14px;">
+                <span style="width:9px; height:9px; border-radius:50%; background:{{ era.dot }}; box-shadow:0 0 14px {{ era.glow }}, 0 0 4px {{ era.dot }};"></span>
+                <span style="font:600 11.5px 'JetBrains Mono', monospace; color:{{ era.yearColor }}; letter-spacing:0.06em;">{{ era.years }}</span>
+              </span>
+              <span style="position:absolute; top:10px; right:18px; font:800 44px/1 Sora, sans-serif; color:{{ era.ghost }};">{{ era.num }}</span>
+              <div style="display:flex; align-items:flex-end; gap:3px; height:22px; margin-top:10px;">
+                <span style="width:6px; height:25%; border-radius:2px; background:{{ era.bar1 }};"></span>
+                <span style="width:6px; height:50%; border-radius:2px; background:{{ era.bar2 }};"></span>
+                <span style="width:6px; height:75%; border-radius:2px; background:{{ era.bar3 }};"></span>
+                <span style="width:6px; height:100%; border-radius:2px; background:{{ era.bar4 }};"></span>
+              </div>
+              <span style="font:800 19px/1.25 Sora, sans-serif; color:#FFFFFF;">{{ era.name }}</span>
+              <div style="display:flex; flex-direction:column; gap:10px; font:400 13.5px/1.5 Inter, sans-serif;">
+                <span style="color:#94A3B8;"><span style="display:block; font:600 10.5px Inter, sans-serif; color:{{ era.labelColor }}; letter-spacing:0.14em; margin-bottom:2px;">MECHANISM</span>{{ era.mechanic }}</span>
+                <span style="color:#94A3B8;"><span style="display:block; font:600 10.5px Inter, sans-serif; color:{{ era.labelColor }}; letter-spacing:0.14em; margin-bottom:2px;">OPTIMISED FOR</span>{{ era.optimised }}</span>
+                <span style="color:#94A3B8;"><span style="display:block; font:600 10.5px Inter, sans-serif; color:{{ era.labelColor }}; letter-spacing:0.14em; margin-bottom:2px;">LIMITATION</span>{{ era.limitation }}</span>
+              </div>
+              <sc-if value="{{ era.isNow }}">
+                <span style="display:inline-flex; align-self:flex-start; align-items:center; gap:7px; background:rgba(158,255,90,0.12); border:1px solid rgba(158,255,90,0.4); border-radius:100px; padding:6px 14px; font:700 11px Sora, sans-serif; color:#9EFF5A; letter-spacing:0.1em;">◉ NAWIRI OPERATES HERE</span>
+              </sc-if>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <!-- Why traditional loyalty fails -->
+  <div style="padding:88px 64px; border-top:1px solid rgba(45,212,191,0.2); background:linear-gradient(180deg, rgba(45,212,191,0.045), rgba(45,212,191,0.015)); ">
+    <h2 style="margin:0 0 36px; font:800 34px/1.2 Sora, sans-serif; color:#FFFFFF; text-wrap:pretty;">Why traditional loyalty <span style="color:#9EFF5A;">fails.</span></h2>
+    <div style="display:grid; grid-template-columns:360px 1fr; gap:40px; align-items:start;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+        <sc-for list="{{ failIcons }}" as="fi" hint-placeholder-count="4">
+          <div style="background:#11203A; background-image:radial-gradient(135% 105% at 18% 0%, rgba(158,255,90,0.16) 0%, rgba(45,212,191,0.08) 38%, transparent 68%); border:1px solid rgba(158,255,90,0.28); border-radius:14px; padding:20px 18px; display:flex; flex-direction:column; gap:12px; align-items:center; text-align:center; box-shadow:inset 0 1px 0 rgba(158,255,90,0.08), 0 12px 28px rgba(0,0,0,0.28); transition:border-color 0.25s ease, transform 0.25s ease;" style-hover="border-color:rgba(158,255,90,0.55); transform:translateY(-3px);">
+            <span style="width:52px; height:52px; border-radius:13px; background:radial-gradient(circle at 50% 35%, rgba(158,255,90,0.18), rgba(45,212,191,0.06)); border:1px solid rgba(158,255,90,0.22); display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" style="width:26px; height:26px;"><path d="{{ fi.icon }}" fill="none" stroke="#9EFF5A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            <span style="font:600 12px/1.4 Inter, sans-serif; color:#c3d3cf; letter-spacing:0.04em;">{{ fi.label }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex; flex-direction:column;">
+      <sc-for list="{{ failures }}" as="f" hint-placeholder-count="4">
+        <div style="display:flex; gap:18px; align-items:flex-start; padding:20px 0; border-bottom:1px solid rgba(45,212,191,0.2);">
+          <span style="width:8px; height:8px; background:#2dd4bf; margin-top:9px; flex-shrink:0; transform:rotate(45deg);"></span>
+          <p style="margin:0; font:400 16.5px/1.6 Inter, sans-serif; color:#E2E8F0;">{{ f }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <div id="features" style="padding:88px 64px; border-top:1px solid rgba(45,212,191,0.2); scroll-margin-top:78px;">
+    <span style="display:block; font:500 12px 'JetBrains Mono', monospace; color:#2dd4bf; letter-spacing:0.18em; margin-bottom:16px;">NAWIRI PLATFORM</span>
+    <h2 style="margin:0 0 56px; font:800 38px/1.15 Sora, sans-serif; color:#FFFFFF;">Eight capabilities. <span style="color:#9EFF5A;">One platform.</span></h2>
+    <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:20px;">
+      <sc-for list="{{ features }}" as="ft" hint-placeholder-count="8">
+        <div style="background:#11203A; background-image:radial-gradient(130% 100% at 12% 0%, rgba(45,212,191,0.14) 0%, rgba(45,212,191,0.04) 42%, transparent 70%); border:1px solid rgba(45,212,191,0.32); border-radius:16px; padding:28px; display:flex; flex-direction:column; gap:12px;" style-hover="border:1px solid rgba(45,212,191,0.6);">
+          <div style="display:flex; align-items:center; justify-content:space-between;">
+            <span style="width:44px; height:44px; border-radius:12px; background:rgba(158,255,90,0.08); border:1px solid rgba(45,212,191,0.35); display:flex; align-items:center; justify-content:center;">
+              <svg viewBox="0 0 24 24" style="width:22px; height:22px;"><path d="{{ ft.icon }}" fill="none" stroke="#9EFF5A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </span>
+            <span style="font:500 12px 'JetBrains Mono', monospace; color:#9EFF5A;">{{ ft.num }}</span>
+          </div>
+          <span style="font:700 17px/1.3 Sora, sans-serif; color:#FFFFFF;">{{ ft.name }}</span>
+          <p style="margin:0; font:400 14px/1.6 Inter, sans-serif; color:#94A3B8;">{{ ft.copy }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- Proof -->
+  <div id="proof" style="padding:88px 64px; border-top:1px solid rgba(45,212,191,0.2); scroll-margin-top:78px; background:linear-gradient(180deg, rgba(45,212,191,0.045), rgba(45,212,191,0.015)); ">
+    <div style="display:grid; grid-template-columns:auto 1fr; gap:80px; align-items:center; margin-bottom:56px;">
+      <div style="display:flex; flex-direction:column; gap:6px;">
+        <span style="font:800 128px/1 Sora, sans-serif; color:#9EFF5A; text-shadow:0 0 48px rgba(158,255,90,0.35);">30%+</span>
+        <span style="font:500 14px Inter, sans-serif; color:#94A3B8; letter-spacing:0.08em;">YEAR-ON-YEAR SALES LIFT IN YEAR ONE</span>
+      </div>
+      <p style="margin:0; font:400 18px/1.65 Inter, sans-serif; color:#E2E8F0; max-width:540px; text-wrap:pretty;">Prototype to live deployment possible within two months, subject to scope and readiness.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:20px;">
+      <div style="background:#11203A; border:1px solid rgba(45,212,191,0.3); border-radius:16px; padding:32px; display:flex; flex-direction:column; gap:14px;">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <span style="width:40px; height:40px; border-radius:10px; background:rgba(248,250,251,0.92); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <img src="assets/logo-crown-paints.png" alt="Crown Paints" style="width:32px; height:26px; object-fit:contain; display:block;">
+          </span>
+          <span style="font:700 19px Sora, sans-serif; color:#9EFF5A;">Crown Paints Team Kubwa</span>
+        </div>
+        <p style="margin:0; font:400 15px/1.65 Inter, sans-serif; color:#94A3B8;">NAWIRI originates from the painter-focused loyalty programme that helped Crown Paints build a large registered influencer base and connect reward activity to market growth.</p>
+      </div>
+      <div style="background:#11203A; border:1px solid rgba(45,212,191,0.3); border-radius:16px; padding:32px; display:flex; flex-direction:column; gap:14px;">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <span style="width:40px; height:40px; border-radius:10px; background:rgba(248,250,251,0.92); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <img src="assets/isuzu-logo.png" alt="Isuzu East Africa" style="width:26px; height:26px; object-fit:contain; display:block;">
+          </span>
+          <span style="font:700 19px Sora, sans-serif; color:#9EFF5A;">Isuzu MAXIT</span>
+        </div>
+        <p style="margin:0; font:400 15px/1.65 Inter, sans-serif; color:#94A3B8;">NAWIRI connected Isuzu East Africa directly to mechanics and parts buyers through rewards, points and anti-counterfeit visibility.</p>
+      </div>
+      <div style="background:#11203A; border:1px solid rgba(45,212,191,0.3); border-radius:16px; padding:32px; display:flex; flex-direction:column; gap:14px;">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <span style="width:40px; height:40px; border-radius:10px; background:rgba(158,255,90,0.12); border:1px solid rgba(158,255,90,0.28); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <svg viewBox="0 0 24 24" style="width:22px; height:22px; display:block;" fill="none" stroke="#9EFF5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3.5" y="3.5" width="7" height="7" rx="1.5"></rect>
+              <rect x="13.5" y="3.5" width="7" height="7" rx="1.5"></rect>
+              <rect x="3.5" y="13.5" width="7" height="7" rx="1.5"></rect>
+              <path d="M17 13.5v7M13.5 17h7"></path>
+            </svg>
+          </span>
+          <span style="font:700 19px Sora, sans-serif; color:#9EFF5A;">Sector breadth</span>
+        </div>
+        <p style="margin:0; font:400 15px/1.65 Inter, sans-serif; color:#94A3B8;">Paints and coatings · Lubricants and automotive parts · Cement and building materials · Seeds, fertilisers and agrochemicals · Detergents, beauty and foodstuffs</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pricing position -->
+  <div id="pricing" style="padding:88px 64px; border-top:1px solid rgba(45,212,191,0.2); scroll-margin-top:78px;">
+    <div style="display:grid; grid-template-columns:auto 380px 1fr; gap:56px; align-items:center;">
+      <div style="display:flex; flex-direction:column; gap:6px;">
+        <h2 style="margin:0; font:800 34px/1.2 Sora, sans-serif; color:#FFFFFF; white-space:nowrap;">Pricing <span style="color:#9EFF5A;">position.</span></h2>
+        <span style="font:700 38px/1.1 Caveat, cursive; color:#2dd4bf; white-space:nowrap;">meets <span style="position:relative; display:inline-block;" style-after="content:''; position:absolute; left:-4px; right:-6px; bottom:1px; height:2.5px; background:#9EFF5A; border-radius:2px; transform:rotate(-5deg); transform-origin:left center;">Sales</span> Explosion!</span>
+      </div>
+      <img src="assets/nawiri-growth.png" alt="Growth chart with rocket" style="width:100%; height:auto; display:block; border-radius:16px;">
+      <div style="background:#11203A; border:1px solid rgba(45,212,191,0.3); border-radius:16px; padding:36px;">
+        <p style="margin:0; font:400 17px/1.7 Inter, sans-serif; color:#E2E8F0; text-wrap:pretty;">NAWIRI is sold as a white-labelled SaaS subscription with a fixed setup fee and monthly platform fee scaled to active members and reward volume. <strong style="color:#9EFF5A; font-weight:700;">We do not take a cut of your rewards budget. You own your data.</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Final CTA -->
+  <div id="demo" style="padding:112px 64px; border-top:1px solid rgba(45,212,191,0.2); scroll-margin-top:78px; text-align:center; background:radial-gradient(60% 100% at 50% 0%, rgba(158,255,90,0.08), rgba(158,255,90,0) 70%);">
+    <h2 style="margin:0 auto 40px; font:800 44px/1.15 Sora, sans-serif; color:#FFFFFF; max-width:780px; text-wrap:balance;">Ready to own the last mile of <span style="color:#9EFF5A;">your market?</span></h2>
+    <div style="display:flex; justify-content:center; align-items:center; gap:24px;">
+      <a href="Contact.dc.html?tab=enquiry" style="display:inline-block; background:#9EFF5A; color:#0A1628; border-radius:12px; padding:17px 34px; font:700 16.5px Sora, sans-serif; box-shadow:0 0 40px rgba(158,255,90,0.3);" style-hover="background:#B4FF7E; color:#0A1628;">Book a NAWIRI Demo</a>
+      <a href="Loyalty Self-Score.dc.html" style="font:600 15.5px Inter, sans-serif; color:#FFFFFF; border-bottom:1.5px solid #2dd4bf; padding-bottom:2px;" style-hover="color:#9EFF5A; border-bottom:1.5px solid #9EFF5A;">Compute the Loyalty Programme Maturity Self-Score →</a>
+    </div>
+  </div>
+
+  <!-- Footer strip -->
+  <footer style="border-top:1px solid rgba(45,212,191,0.25); padding:32px 64px; display:flex; justify-content:space-between; align-items:center; font:400 13.5px Inter, sans-serif; color:#94A3B8;">
+    <span><span style="font:800 14px Sora, sans-serif; color:#FFFFFF;">NAWIRI</span> · a Binary One Solutions product</span>
+    <span>+254 787 990 220 · info@binaryone.co.ke · Nairobi · <a href="Data Protection.dc.html" style="color:inherit; border-bottom:1px solid rgba(255,255,255,0.3); padding-bottom:1px;" style-hover="color:#7cdc79;">Data Protection Policy</a></span>
+    <a href="Homepage.dc.html" style="color:#E2E8F0; border-bottom:1px solid rgba(45,212,191,0.5); padding-bottom:1px;" style-hover="color:#9EFF5A;">← Back to binaryone.co.ke</a>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      trustChips: [
+        "30%+ year-one sales lift",
+        "M-PESA integrated",
+        "Works on basic phones",
+        "Built in Nairobi",
+        "White-label ready",
+      ],
+      eras: [
+        { years: "2015–2018", name: "Punch-card era", mechanic: "Stamps, plastic cards, manual lists", optimised: "Repeat purchase", limitation: "No data, no insight, easy to lose" },
+        { years: "2018–2021", name: "Points & discounts", mechanic: "SMS codes, basic apps, supermarket cards", optimised: "Transaction frequency", limitation: "Anonymous buyers, little behavioural insight" },
+        { years: "2021–2024", name: "App-based engagement", mechanic: "Branded apps, push notifications", optimised: "Member acquisition", limitation: "High drop-off and abandoned apps" },
+        { years: "2024–2026", name: "Data-driven, last-mile", mechanic: "Real-time rewards, dashboards, mobile-money payouts", optimised: "Relationship intelligence", limitation: "Needs clean data, governance and integration" },
+      ].map((e, i) => {
+        const now = i === 3;
+        const blue = "#2dd4bf", neon = "#9EFF5A", off = "#1B2C47";
+        return {
+          ...e,
+          num: "0" + (i + 1),
+          rise: (156 - i * 52) + "px",
+          isNow: now,
+          dot: now ? neon : blue,
+          glow: now ? "rgba(158,255,90,0.7)" : "rgba(45,212,191,0.85)",
+          yearColor: now ? neon : blue,
+          labelColor: now ? "rgba(158,255,90,0.75)" : "#2dd4bf",
+          chipBorder: now ? "rgba(158,255,90,0.45)" : "rgba(45,212,191,0.4)",
+          cardBg: now ? "#0F2438" : "#11203A",
+          cardBorder: now ? "rgba(158,255,90,0.5)" : "rgba(45,212,191,0.3)",
+          cardShadow: now ? "0 0 44px rgba(158,255,90,0.14), 0 20px 48px rgba(0,0,0,0.4)" : "0 12px 32px rgba(0,0,0,0.3)",
+          ghost: now ? "rgba(158,255,90,0.16)" : "rgba(45,212,191,0.16)",
+          bar1: i >= 0 ? (now ? neon : blue) : off,
+          bar2: i >= 1 ? (now ? neon : blue) : off,
+          bar3: i >= 2 ? (now ? neon : blue) : off,
+          bar4: i >= 3 ? neon : off,
+        };
+      }),
+      failIcons: [
+        { label: "Invisible end consumer", icon: "M3 3l18 18M10.6 10.7a2 2 0 0 0 2.8 2.8M6.6 6.8C4.6 8 3.2 9.9 2.5 12c1.5 4 5.2 6.5 9.5 6.5 1.7 0 3.3-.4 4.7-1.1M9.9 5.8A10 10 0 0 1 12 5.5c4.3 0 8 2.5 9.5 6.5-.5 1.4-1.3 2.6-2.3 3.6" },
+        { label: "Counterfeit leakage", icon: "M12 3 20 6.5v5c0 4.5-3.4 7.9-8 9.5-4.6-1.6-8-5-8-9.5v-5zM9 9.5l6 6M15 9.5l-6 6" },
+        { label: "POS data dead-end", icon: "M4 20.5h16M6.5 20.5v-6h3v6M14.5 20.5v-10h3v10M4 8.5 9 5l4 2.5 7-4M16.5 3.5H20v3.5" },
+        { label: "Delayed incentives", icon: "M12 7.5v5l3.5 2M12 21a8.5 8.5 0 1 1 0-17 8.5 8.5 0 0 1 0 17ZM9.5 1.5h5" },
+      ],
+      failures: [
+        "You sell through distributors, so the end consumer is invisible to you.",
+        "Counterfeits and informal channels erode margin before head office notices.",
+        "POS data ends at the till and rarely shows why a product was chosen.",
+        "Retailers respond to instant value. Mobile-money rewards make incentives immediate.",
+      ],
+      features: [
+        { num: "01", name: "Distributor & retailer tracking", copy: "Trace engagement from product movement to last-mile influencer activity.", icon: "M5.5 20a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM18.5 9a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM7.6 16.4 16.4 8.1M18.5 13.5V20M15.5 17h6" },
+        { num: "02", name: "Real-time airtime rewards", copy: "Reward users instantly through phone-based redemption across all mobile phone networks in Kenya.", icon: "M7 3.5h7v17H7zM10.5 17.5h.01M17 7.5c1.4 1.4 1.4 4.2 0 5.6M19.5 5.5c2.4 2.4 2.4 7.2 0 9.6" },
+        { num: "03", name: "M-PESA cashback", copy: "Disburse value directly to the redeemer's phone after approved redemption.", icon: "M3 8h18v9H3zM12 14.5a2 2 0 1 1 0-4 2 2 0 0 1 0 4ZM6.5 11v.01M17.5 14v.01" },
+        { num: "04", name: "Points progression", copy: "Creates a mix of tiered rewards — earned on merit to drive repeat purchase through last-mile influence.", icon: "M4 20v-4.5h4.5V20zM9.8 20v-9h4.5v9zM15.5 20V5.5H20V20" },
+        { num: "05", name: "Mobile app + SMS + USSD", copy: "Serve smartphone and basic-phone users without excluding the real market.", icon: "M4 4.5h16V16H9.5L4 20.5zM8.5 8.5h7M8.5 12h4.5" },
+        { num: "06", name: "Scratch-to-reveal coupons", copy: "Support anti-counterfeit controls through secure coupons and hidden product codes.", icon: "M4 7h16v3.2a1.8 1.8 0 0 0 0 3.6V17H4v-3.2a1.8 1.8 0 0 0 0-3.6zM13.5 8.5v1.5M13.5 11.8v1.5M13.5 15v1.5" },
+        { num: "07", name: "Dashboards & heat maps", copy: "Give sales and marketing teams visibility by region, brand and user behaviour.", icon: "M4 20V11M9 20V4.5M14 20v-6.5M19 20V8.5M3 21.5h18" },
+        { num: "08", name: "White-label ready", copy: "Your brand, your data, your customer relationship: and your own customized mobile app!", icon: "M12 3h8.5v8.5L11.5 20.5 3 12zM16.2 7.8h.01" },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="omelette-owns-print" content="true">
+  <style>doc-page:not(:defined){visibility:hidden}</style>
+  <script src="./doc-page.js"></script>
+</helmet>
+<doc-page margin="0.7in">
+  <div style="font-family:Inter, sans-serif; color:#1c1b1b;">
+    <span style="display:block; font:700 11px 'JetBrains Mono', monospace; color:#0f766e; letter-spacing:0.16em; margin-bottom:6px;">BINARY ONE SOLUTIONS</span>
+    <h1 style="margin:0 0 6px; font:700 30px/1.2 Sora, sans-serif; letter-spacing:-0.02em;">Website Site Map</h1>
+    <p style="margin:0 0 28px; font:400 13.5px/1.6 Inter, sans-serif; color:#6e7977;">15 pages · primary navigation, products hub, and supporting tools/policies.</p>
+
+    <h2 style="margin:0 0 10px; font:700 16px Sora, sans-serif; color:#0f766e; border-bottom:1px solid #E5E7EB; padding-bottom:6px;">1. Primary navigation</h2>
+    <p style="margin:0 0 14px; font:400 13px/1.6 Inter, sans-serif; color:#3e4947;">Present in the header on every page.</p>
+    <ul style="margin:0 0 26px; padding-left:20px; font:400 14px/2 Inter, sans-serif;">
+      <li><strong>Home</strong> — Homepage.dc.html</li>
+      <li><strong>Managed IT</strong> — Managed IT.dc.html</li>
+      <li><strong>ERP Consulting</strong> — ERP Consulting.dc.html</li>
+      <li><strong>Digital Products</strong> — Digital Products.dc.html <em style="color:#6e7977; font-style:normal;">(dropdown hub, see §2)</em></li>
+      <li><strong>About</strong> — About.dc.html</li>
+      <li><strong>Insights</strong> — Insights.dc.html</li>
+      <li><strong>Contact</strong> — Contact.dc.html <em style="color:#6e7977; font-style:normal;">(header CTA button)</em></li>
+    </ul>
+
+    <h2 style="margin:0 0 10px; font:700 16px Sora, sans-serif; color:#0f766e; border-bottom:1px solid #E5E7EB; padding-bottom:6px;">2. Digital Products hub (nav dropdown)</h2>
+    <p style="margin:0 0 14px; font:400 13px/1.6 Inter, sans-serif; color:#3e4947;">Digital Products.dc.html is the hub page; the header dropdown links directly to each product.</p>
+    <ul style="margin:0 0 26px; padding-left:20px; font:400 14px/2 Inter, sans-serif;">
+      <li><strong>NAWIRI</strong> (digital loyalty) — NAWIRI.dc.html</li>
+      <li><strong>Agentic AI</strong> — Agentic AI.dc.html</li>
+      <li><strong>Custom Software</strong> — Custom Software.dc.html</li>
+      <li style="color:#6e7977;">— divider —</li>
+      <li><strong>Digital Products</strong> (hub overview) — Digital Products.dc.html</li>
+    </ul>
+
+    <h2 style="margin:0 0 10px; font:700 16px Sora, sans-serif; color:#0f766e; border-bottom:1px solid #E5E7EB; padding-bottom:6px;">3. Supporting tools (linked in-context)</h2>
+    <p style="margin:0 0 14px; font:400 13px/1.6 Inter, sans-serif; color:#3e4947;">Not in the main nav — reached from a specific parent page's content or CTA.</p>
+    <ul style="margin:0 0 26px; padding-left:20px; font:400 14px/2 Inter, sans-serif;">
+      <li><strong>ERP Pitfalls Guide</strong> — ERP Pitfalls Guide.dc.html <span style="color:#6e7977;">← linked from ERP Consulting</span></li>
+      <li><strong>IT Readiness</strong> (self-assessment) — IT Readiness.dc.html <span style="color:#6e7977;">← linked from Managed IT</span></li>
+      <li><strong>Loyalty Self-Score</strong> — Loyalty Self-Score.dc.html <span style="color:#6e7977;">← linked from NAWIRI</span></li>
+    </ul>
+
+    <h2 style="margin:0 0 10px; font:700 16px Sora, sans-serif; color:#0f766e; border-bottom:1px solid #E5E7EB; padding-bottom:6px;">4. Footer-only / policy</h2>
+    <ul style="margin:0 0 26px; padding-left:20px; font:400 14px/2 Inter, sans-serif;">
+      <li><strong>Data Protection Policy</strong> — Data Protection.dc.html</li>
+    </ul>
+
+    <h2 style="margin:0 0 10px; font:700 16px Sora, sans-serif; color:#0f766e; border-bottom:1px solid #E5E7EB; padding-bottom:6px;">5. On-page tools (not separate pages)</h2>
+    <ul style="margin:0 0 8px; padding-left:20px; font:400 14px/2 Inter, sans-serif;">
+      <li><strong>Enterprise IT &amp; AI Diagnostic</strong> — modal launched from Homepage ("Run a Digital Diagnostic")</li>
+      <li><strong>Boardroom Advisory booking</strong> — panel on Contact.dc.html</li>
+    </ul>
+  </div>
+</doc-page>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#0f766e"/><text x="50" y="58" font-size="34" text-anchor="middle" fill="#fff" font-family="sans-serif">SM</text></svg></template>
+</x-dc>
+</body>
+</html>

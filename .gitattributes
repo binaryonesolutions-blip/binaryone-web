@@ -1,0 +1,15 @@
+# Normalise line endings: LF in the repo, checked out native on each OS.
+# Keeps the tree clean when building on Linux (Cloudflare) from Windows dev.
+* text=auto eol=lf
+
+# Binary assets — never touch line endings.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.avif binary
+*.woff binary
+*.woff2 binary
+*.pdf binary

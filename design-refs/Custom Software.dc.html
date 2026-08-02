@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #0B1D33; -webkit-font-smoothing: antialiased; }
+  a { color: #FFFFFF; text-decoration: none; }
+  a:hover { color: #7cdc79; }
+  ::selection { background: #0f766e; color: #FFFFFF; }
+  @keyframes b1-rail { from { background-position: 0 0; } to { background-position: 26px 0; } }
+  *, *::before, *::after { box-sizing: border-box; }
+  img, svg, video, iframe { max-width: 100%; }
+  /*hardened*/
+</style>
+<script>
+(function(){
+  function fit(){
+    var basis = document.documentElement.clientWidth || window.innerWidth;
+    var r = basis / 1440;
+    if (r > 1.6) r = 1.6;
+    if (r < 0.15) r = 0.15;
+    document.documentElement.style.zoom = r;
+  }
+  window.addEventListener('resize', fit);
+  fit();
+})();
+</script>
+</helmet>
+
+<div style="width:1440px; margin:0 auto; background:#0B1D33; background-image:linear-gradient(rgba(59,130,246,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.04) 1px, transparent 1px); background-size:48px 48px; font-family:Inter, sans-serif; color:#FFFFFF;">
+
+  <!-- Nav -->
+  <header style="display:flex; align-items:center; justify-content:space-between; padding:0 64px; height:76px; background:rgba(237,241,242,0.94); backdrop-filter:blur(12px); border-bottom:1px solid #E0E5E6; position:sticky; top:0; z-index:50;">
+    <a href="Homepage.dc.html" style="display:flex; align-items:center;"><img src="assets/b1s-logo-light.png" alt="Binary One Solutions — Towards Digital Transformation" style="height:45px; width:auto; display:block;"></a>
+    <nav style="display:flex; align-items:center; gap:32px; font:500 14.5px Inter, sans-serif;">
+      <a href="Homepage.dc.html" style="color:#1c1b1b;">Home</a>
+      <a href="Managed IT.dc.html" style="color:#1c1b1b;">Managed IT</a>
+      <a href="ERP Consulting.dc.html" style="color:#1c1b1b;">ERP Consulting</a>
+      <details style="position:relative; display:inline-block;">
+          <summary style="list-style:none; cursor:pointer; display:inline-flex; align-items:center; gap:6px; color:#1c1b1b; font:500 14.5px Inter, sans-serif; border-bottom:2px solid #006e1b; padding-bottom:3px;">Digital Products <span style="font-size:10px; color:#3e4947;">▾</span></summary>
+          <div style="position:absolute; top:34px; left:50%; transform:translateX(-50%); width:360px; background:#FFFFFF; border:1px solid #E5E7EB; border-radius:12px; box-shadow:0 12px 32px rgba(0,0,0,0.08); padding:18px 0 8px; z-index:100;">
+            <span style="display:block; padding:2px 24px 14px; font:700 11px 'JetBrains Mono', monospace; color:#0f766e; letter-spacing:0.14em; border-bottom:1px solid #E5E7EB;">DIGITAL SOLUTIONS &amp; PLATFORMS</span>
+            <div style="padding-top:8px;">
+              <a href="NAWIRI.dc.html" style="display:flex; align-items:flex-start; gap:13px; padding:11px 24px; color:#1c1b1b;" style-hover="background:#f1f5f4; color:#1c1b1b;"><span style="flex-shrink:0; width:40px; height:40px; border-radius:10px; background:#eef4f3; display:inline-flex; align-items:center; justify-content:center; margin-top:1px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M12 3l1.9 4.6L18.5 9.5 13.9 11.4 12 16l-1.9-4.6L5.5 9.5 10.1 7.6z"></path><path d="M18.5 14.5l.8 1.9 1.9.8-1.9.8-.8 1.9-.8-1.9-1.9-.8 1.9-.8z"></path></svg></span><span style="display:block;"><span style="display:block; font:700 15px Inter, sans-serif; color:#0c1512; margin-bottom:2px;">NAWIRI Platform</span><span style="display:block; font:400 13px/1.4 Inter, sans-serif; color:#6e7977;">Digital Loyalty &amp; Last-mile intelligence</span></span></a>
+              <a href="Agentic AI.dc.html" style="display:flex; align-items:flex-start; gap:13px; padding:11px 24px; color:#1c1b1b;" style-hover="background:#f1f5f4; color:#1c1b1b;"><span style="flex-shrink:0; width:40px; height:40px; border-radius:10px; background:#eef4f3; display:inline-flex; align-items:center; justify-content:center; margin-top:1px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><rect x="6" y="6" width="12" height="12" rx="1.5"></rect><rect x="9.5" y="9.5" width="5" height="5" rx="0.6"></rect><path d="M9 3v2M15 3v2M9 19v2M15 19v2M3 9h2M3 14h2M19 9h2M19 14h2"></path></svg></span><span style="display:block;"><span style="display:block; font:700 15px Inter, sans-serif; color:#0c1512; margin-bottom:2px;">Agentic AI Workflows</span><span style="display:block; font:400 13px/1.4 Inter, sans-serif; color:#6e7977;">Autonomous reasoning agents interfacing ERPs</span></span></a>
+              <a href="Custom Software.dc.html" style="display:flex; align-items:flex-start; gap:13px; padding:11px 24px; color:#1c1b1b;" style-hover="background:#f1f5f4; color:#1c1b1b;"><span style="flex-shrink:0; width:40px; height:40px; border-radius:10px; background:#eef4f3; display:inline-flex; align-items:center; justify-content:center; margin-top:1px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="m9 8-4 4 4 4M15 8l4 4-4 4"></path></svg></span><span style="display:block;"><span style="display:block; font:700 15px Inter, sans-serif; color:#0c1512; margin-bottom:2px;">Custom Software</span><span style="display:block; font:400 13px/1.4 Inter, sans-serif; color:#6e7977;">Bespoke high-performance systems engineering</span></span></a>
+              <div style="height:1px; background:#E5E7EB; margin:10px 24px 8px;"></div>
+              <a href="Digital Products.dc.html" style="display:flex; align-items:flex-start; gap:13px; padding:11px 24px; color:#1c1b1b;" style-hover="background:#f1f5f4; color:#1c1b1b;"><span style="flex-shrink:0; width:40px; height:40px; border-radius:10px; background:#eef4f3; display:inline-flex; align-items:center; justify-content:center; margin-top:1px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg></span><span style="display:block;"><span style="display:block; font:700 15px Inter, sans-serif; color:#0c1512; margin-bottom:2px;">Digital Products Hub Overview</span><span style="display:block; font:400 13px/1.4 Inter, sans-serif; color:#6e7977;">Our Digital Solutions at a glance</span></span></a>
+            </div>
+          </div>
+        </details>
+      <a href="About.dc.html" style="color:#1c1b1b;">About</a>
+      <a href="Insights.dc.html" style="color:#1c1b1b;">Insights</a>
+      <a href="Contact.dc.html?tab=assessment" style="display:inline-flex; align-items:center; gap:10px; background:#d9f5ef; color:#06332e; border:1px solid rgba(56,224,196,0.75); border-radius:11px; padding:11px 20px; font:600 14.5px Inter, sans-serif; box-shadow:0 1px 2px rgba(6,35,30,0.10), 0 4px 14px rgba(6,35,30,0.08); transition:background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;" style-hover="background:#bfeee4; border-color:#38e0c4; box-shadow:0 0 0 1px rgba(56,224,196,0.6), 0 0 22px rgba(56,224,196,0.42), 0 8px 20px rgba(6,35,30,0.26); transform:translateY(-2px);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="3" y="5" width="18" height="16" rx="3"></rect><path d="M8 3v4"></path><path d="M16 3v4"></path><path d="M3 10h18"></path></svg>Book a Free IT Assessment</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <div style="position:relative; overflow:hidden; background:radial-gradient(120% 130% at 8% 0%, #0a2a24 0%, #071e1b 42%, #06181f 72%, #071627 100%); padding:88px 64px 84px;">
+    <div style="position:absolute; inset:0; pointer-events:none; background-image:linear-gradient(90deg, rgba(56,224,196,0.06) 1px, transparent 1px); background-size:58px 100%; mask-image:linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.9) 40%, rgba(0,0,0,0.9) 100%); -webkit-mask-image:linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.9) 40%, rgba(0,0,0,0.9) 100%);"></div>
+    <div style="position:relative; display:grid; grid-template-columns:1.08fr 0.92fr; gap:60px; align-items:center;">
+      <div>
+        <span style="display:inline-flex; align-items:center; gap:9px; border:1px solid rgba(45,212,191,0.4); border-radius:999px; padding:8px 18px; font:700 12px 'JetBrains Mono', monospace; color:#5eead4; letter-spacing:0.12em; margin-bottom:30px;"><span style="width:7px; height:7px; border-radius:50%; background:#38e0c4; box-shadow:0 0 6px rgba(56,224,196,0.9);"></span>BESPOKE ENGINEERING SOLUTIONS</span>
+        <h1 style="margin:0 0 26px; font:700 56px/1.06 Sora, sans-serif; letter-spacing:-0.025em; color:#FFFFFF; text-wrap:pretty;">Off-the-shelf software solves common problems. <span style="color:#38e0c4;">Custom software creates unfair advantages.</span></h1>
+        <p style="margin:0 0 34px; font:400 17.5px/1.65 Inter, sans-serif; color:#aebfba; max-width:560px; text-wrap:pretty;">We design, compile and support high-performing custom applications, secure integrations, and mobile platforms tailored for organisations with unique operating models.</p>
+        <a href="Contact.dc.html?tab=enquiry" style="display:inline-flex; align-items:center; gap:11px; background:#2bbfa4; color:#06231e; border-radius:12px; padding:16px 28px; font:700 15.5px Inter, sans-serif;" style-hover="background:#38e0c4; color:#06231e;"><svg viewBox="0 0 24 24" style="width:18px; height:18px;" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 17 6-6-6-6"></path><path d="M12 19h8"></path></svg>Book a Systems Scoping Session</a>
+        <div style="border-top:1px solid rgba(255,255,255,0.14); margin-top:36px; padding-top:26px; display:flex; flex-wrap:wrap; gap:12px; max-width:620px;">
+          <sc-for list="{{ heroChips }}" as="c" hint-placeholder-count="5">
+            <span style="background:linear-gradient(180deg, rgba(56,224,196,0.12), rgba(56,224,196,0.03)); border:1px solid rgba(56,224,196,0.3); border-radius:999px; padding:9px 16px; font:600 12.5px 'JetBrains Mono', monospace; color:#c7ede6;">{{ c }}</span>
+          </sc-for>
+        </div>
+      </div>
+      <div style="position:relative; border-radius:18px; overflow:hidden; border:1px solid rgba(45,212,191,0.22); background:#05100e; box-shadow:0 34px 80px rgba(0,0,0,0.55);">
+        <img src="assets/custom-software-hero.png" alt="High-performance code stack" style="display:block; width:100%; height:360px; object-fit:cover; opacity:0.95; transition:transform 0.6s ease;" style-hover="transform:scale(1.06);">
+        <div style="position:absolute; inset:0; pointer-events:none; background:linear-gradient(180deg, rgba(5,16,14,0) 40%, rgba(5,16,14,0.6) 100%);"></div>
+        <div style="position:absolute; left:20px; right:20px; bottom:10px; background:rgba(6,58,52,0.55); backdrop-filter:blur(8px); border:1px solid rgba(56,224,196,0.2); border-radius:12px; padding:10px 20px; pointer-events:none;">
+          <span style="display:block; font:700 11.5px 'JetBrains Mono', monospace; color:#38e0c4; letter-spacing:0.18em; margin-bottom:2px;">BESPOKE SOFTWARE DEV</span>
+          <span style="font:400 14px Inter, sans-serif; color:#FFFFFF;">High-Performance Code Stack</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Build vs Buy -->
+  <div style="padding:88px 64px; border-top:1px solid rgba(255,255,255,0.10);">
+    <h2 style="margin:0 0 48px; font:700 38px/1.15 Sora, sans-serif; letter-spacing:-0.02em; color:#FFFFFF;">The Build vs Buy framework.</h2>
+    <table style="width:100%; border-collapse:collapse; margin-bottom:36px;">
+      <thead>
+        <tr>
+          <th style="text-align:left; padding:16px 24px; font:600 13px Inter, sans-serif; color:#94A3B8; letter-spacing:0.1em; border-bottom:1px solid rgba(59,130,246,0.35); width:16%;">INDICATOR</th>
+          <th style="text-align:left; padding:16px 24px; font:600 13px Inter, sans-serif; color:#3B82F6; letter-spacing:0.1em; border-bottom:1px solid rgba(59,130,246,0.35); width:42%;">LEAN TOWARDS BUY</th>
+          <th style="text-align:left; padding:16px 24px; font:600 13px Inter, sans-serif; color:#7cdc79; letter-spacing:0.1em; border-bottom:1px solid rgba(59,130,246,0.35);">LEAN TOWARDS BUILD</th>
+        </tr>
+      </thead>
+      <tbody>
+        <sc-for list="{{ buildVsBuy }}" as="row" hint-placeholder-count="6">
+          <tr>
+            <td style="padding:18px 24px; font:600 15.5px Inter, sans-serif; color:#FFFFFF; border-bottom:1px solid rgba(255,255,255,0.08); vertical-align:top;">{{ row.indicator }}</td>
+            <td style="padding:18px 24px; font:400 15px/1.6 Inter, sans-serif; color:#94A3B8; border-bottom:1px solid rgba(255,255,255,0.08); vertical-align:top;">{{ row.buy }}</td>
+            <td style="padding:18px 24px; font:400 15px/1.6 Inter, sans-serif; color:#E2E8F0; border-bottom:1px solid rgba(255,255,255,0.08); background:rgba(124,220,121,0.05); vertical-align:top;">{{ row.build }}</td>
+          </tr>
+        </sc-for>
+      </tbody>
+    </table>
+    <div style="background:rgba(124,220,121,0.06); border:1px solid rgba(124,220,121,0.35); border-radius:16px; padding:32px 36px; display:flex; align-items:flex-start; gap:24px;">
+      <span style="width:54px; height:54px; border-radius:50%; flex-shrink:0; border:1px solid rgba(124,220,121,0.5); background:rgba(124,220,121,0.08); box-shadow:0 0 24px rgba(124,220,121,0.22), inset 0 0 14px rgba(0,0,0,0.35); display:flex; align-items:center; justify-content:center;">
+        <svg viewBox="0 0 24 24" style="width:27px; height:27px; display:block; filter:drop-shadow(0 0 6px rgba(124,220,121,0.65));" fill="none" stroke="#9EFF5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.1 4.1h5.8l4.1 4.1v5.8l-4.1 4.1H9.1L5 14V8.2z"></path><path d="M12 8.9v4.2"></path><path d="M12 16.2h.01"></path></svg>
+      </span>
+      <div style="display:flex; flex-direction:column;">
+      <p style="margin:0 0 10px; font:600 19px Inter, sans-serif; color:#7cdc79;">Rule of thumb: if you tick fewer than four BUILD boxes, do not build. We will tell you so.</p>
+      <p style="margin:0; font:400 15.5px/1.6 Inter, sans-serif; color:#94A3B8;">If you are unsure whether you qualify, the Discovery itself is designed to answer the question honestly — even when the honest answer is "buy, don't build."</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- What we build -->
+  <div style="padding:88px 64px; border-top:1px solid rgba(255,255,255,0.10);">
+    <h2 style="margin:0 0 48px; font:700 38px/1.15 Sora, sans-serif; letter-spacing:-0.02em; color:#FFFFFF;">What we build.</h2>
+    <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:20px;">
+      <sc-for list="{{ builds }}" as="b" hint-placeholder-count="7">
+        <div style="position:relative; background:#10263F; background-image:radial-gradient(120% 90% at 15% 0%, rgba(45,212,191,0.16) 0%, rgba(45,212,191,0.05) 38%, transparent 68%); border:1px solid rgba(148,163,184,0.16); border-radius:16px; padding:26px; display:flex; flex-direction:column; gap:10px; overflow:hidden;" style-hover="border:1px solid rgba(45,212,191,0.5);">
+          <span style="font:500 12px 'JetBrains Mono', monospace; color:#7cdc79; position:relative;">{{ b.num }}</span>
+          <span style="font:600 16.5px/1.35 Inter, sans-serif; color:#FFFFFF; position:relative;">{{ b.name }}</span>
+          <p style="margin:0; font:400 13.5px/1.6 Inter, sans-serif; color:#94A3B8; position:relative;">{{ b.desc }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- Delivery model -->
+  <div style="padding:88px 64px; border-top:1px solid rgba(255,255,255,0.10);">
+    <div style="display:flex; flex-direction:column; align-items:flex-start; gap:16px; margin-bottom:44px;">
+      <span style="font:700 11.5px 'JetBrains Mono', monospace; color:#2dd4bf; letter-spacing:0.22em;">DELIVERY SEQUENCE</span>
+      <h2 style="margin:0; font:700 38px/1.15 Sora, sans-serif; letter-spacing:-0.02em; color:#FFFFFF;">The delivery model.</h2>
+      <span style="display:inline-flex; align-items:center; gap:11px; font:700 10.5px 'JetBrains Mono', monospace; letter-spacing:0.16em; color:#8ff5e2; border:1px solid rgba(45,212,191,0.28); background:rgba(45,212,191,0.06); border-radius:999px; padding:9px 16px;">SCOPE<span style="color:#2dd4bf;">&#8594;</span>BUILD<span style="color:#9EFF5A;">&#8594;</span>SUPPORT</span>
+    </div>
+    <div style="position:relative;">
+      <div style="position:absolute; top:23px; left:22px; right:6px; height:2px; border-radius:2px; background:linear-gradient(90deg, rgba(45,212,191,0.18) 0%, rgba(45,212,191,0.55) 46%, rgba(158,255,90,0.85) 100%);"></div>
+      <div style="position:absolute; top:22px; left:22px; right:6px; height:4px; opacity:0.4; background-image:linear-gradient(90deg, rgba(255,255,255,0.6) 0 7px, rgba(255,255,255,0) 7px 26px); background-size:26px 100%; animation:b1-rail 1.5s linear infinite; mask-image:linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%); -webkit-mask-image:linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%);"></div>
+      <div style="display:grid; grid-template-columns:repeat(6, 1fr); gap:18px; position:relative;">
+        <sc-for list="{{ delivery }}" as="s" hint-placeholder-count="6">
+          <div style="display:flex; flex-direction:column; gap:18px;">
+            <span style="position:relative; width:46px; height:46px; border-radius:50%; background:#0B1D33; border:1.5px solid {{ s.ring }}; box-shadow:{{ s.glow }}; display:flex; align-items:center; justify-content:center; font:700 13px 'JetBrains Mono', monospace; color:{{ s.tint }}; flex-shrink:0;">{{ s.num }}</span>
+            <div style="flex:1; border:1px solid rgba(255,255,255,0.07); border-top:2px solid {{ s.ring }}; border-radius:0 0 14px 14px; background:rgba(255,255,255,0.022); padding:18px 16px 20px; display:flex; flex-direction:column; gap:8px; transition:transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;" style-hover="transform:translateY(-4px); background:rgba(45,212,191,0.06); border-color:rgba(45,212,191,0.45); box-shadow:0 18px 40px -22px rgba(45,212,191,0.55);">
+              <span style="display:flex; align-items:center; gap:10px;">
+                <svg viewBox="0 0 24 24" style="width:19px; height:19px; flex-shrink:0; filter:{{ s.iconGlow }};" fill="none" stroke="{{ s.tint }}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="{{ s.icon }}"></path></svg>
+                <span style="font:600 16px/1.3 Inter, sans-serif; color:#FFFFFF; text-wrap:pretty;">{{ s.name }}</span>
+              </span>
+              <p style="margin:0; font:400 13.5px/1.6 Inter, sans-serif; color:#94A3B8; text-wrap:pretty;">{{ s.copy }}</p>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <!-- Engineering stack -->
+  <div style="padding:88px 64px; border-top:1px solid rgba(255,255,255,0.10); display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;">
+    <div>
+      <span style="display:block; font:500 13px 'JetBrains Mono', monospace; color:#7cdc79; letter-spacing:0.18em; margin-bottom:20px;">CLEAN ENGINEERING</span>
+      <h2 style="margin:0 0 22px; font:700 38px/1.2 Sora, sans-serif; letter-spacing:-0.02em; color:#FFFFFF; text-wrap:pretty;">Our engineering stack: modern, fast and maintainable.</h2>
+      <p style="margin:0 0 28px; font:400 16.5px/1.7 Inter, sans-serif; color:#94A3B8; text-wrap:pretty;">We construct solutions that are secure, scalable and cost-effective. We avoid legacy bloat and vendor lock-in by utilising open standards:</p>
+      <div style="display:flex; flex-direction:column; gap:16px; margin-bottom:28px;">
+        <div style="display:flex; align-items:flex-start; gap:12px;">
+          <svg viewBox="0 0 24 24" style="width:20px; height:20px; flex-shrink:0; margin-top:2px;" fill="none" stroke="#7cdc79" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="m8.5 12.5 2.5 2.5 5-6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <p style="margin:0; font:400 15px/1.6 Inter, sans-serif; color:#E2E8F0;">Strict TypeScript definitions across both client and server layers for maximum type-safety.</p>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:12px;">
+          <svg viewBox="0 0 24 24" style="width:20px; height:20px; flex-shrink:0; margin-top:2px;" fill="none" stroke="#7cdc79" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="m8.5 12.5 2.5 2.5 5-6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <p style="margin:0; font:400 15px/1.6 Inter, sans-serif; color:#E2E8F0;">API gateway design with integrated rate-limit protection, OAuth tokens and request telemetry.</p>
+        </div>
+      </div>
+      <p style="margin:0; font:600 16px/1.6 Inter, sans-serif; color:#7cdc79; text-wrap:pretty;">We do not have a stack to sell you. We have an outcome to deliver.</p>
+    </div>
+    <div style="background:#10263F; border:1px solid rgba(59,130,246,0.3); border-radius:18px; padding:34px 34px 26px;">
+      <h3 style="margin:0 0 22px; font:700 20px Sora, sans-serif; color:#FFFFFF; letter-spacing:-0.01em;">Standards &amp; Technologies</h3>
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        <sc-for list="{{ stack }}" as="s" hint-placeholder-count="3">
+          <div style="background:#0B1D33; border:1px solid rgba(59,130,246,0.25); border-radius:12px; padding:18px 22px; display:flex; flex-direction:column; gap:7px;" style-hover="border:1px solid rgba(124,220,121,0.45);">
+            <span style="font:600 11.5px 'JetBrains Mono', monospace; color:#7cdc79; letter-spacing:0.12em;">{{ s.label }}</span>
+            <span style="font:500 15.5px Inter, sans-serif; color:#FFFFFF;">{{ s.items }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <p style="margin:20px 0 0; font:400 13px/1.6 Inter, sans-serif; color:#94A3B8;">Stack-agnostic by design — cross-platform mobile where sensible, native where the use case demands it.</p>
+    </div>
+  </div>
+
+  <!-- Scoping program -->
+  <div style="padding:0 64px 88px;">
+    <div style="position:relative; overflow:hidden; background-color:#0c1512; background-image:radial-gradient(circle at 90% 8%, rgba(56,224,196,0.16), transparent 44%), radial-gradient(circle at 2% 98%, rgba(56,224,196,0.12), transparent 42%), linear-gradient(90deg, rgba(56,224,196,0.05) 1px, transparent 1px), linear-gradient(rgba(56,224,196,0.05) 1px, transparent 1px), linear-gradient(140deg, #10201c 0%, #0c1512 52%, #0a1310 100%); background-size:auto, auto, 54px 54px, 54px 54px, auto; border:1px solid rgba(56,224,196,0.16); box-shadow:inset 0 1px 0 rgba(56,224,196,0.08), 0 24px 60px rgba(0,0,0,0.35); border-radius:20px; padding:52px 56px; display:grid; grid-template-columns:1.5fr auto; gap:48px; align-items:center;">
+      <div style="position:relative;">
+        <span style="display:block; font:600 12.5px 'JetBrains Mono', monospace; color:#7cdc79; letter-spacing:0.18em; margin-bottom:14px;">SCOPING PROGRAM</span>
+        <h2 style="margin:0 0 16px; font:700 32px/1.2 Sora, sans-serif; letter-spacing:-0.02em; color:#FFFFFF;">Bring your technical roadmap to life.</h2>
+        <p style="margin:0; font:400 15.5px/1.7 Inter, sans-serif; color:#c2dbd7; max-width:560px; text-wrap:pretty;">Have a complex software concept but need an expert architecture partner to scope the technical limits, database schemas and API pathways? Book a 2-hour technical scoping session with our Lead Architect.</p>
+      </div>
+      <a href="Contact.dc.html?tab=enquiry" style="position:relative; display:inline-flex; align-items:center; gap:10px; background:#38e0c4; color:#0c1512; border-radius:12px; padding:16px 28px; font:700 15.5px Inter, sans-serif; white-space:nowrap;" style-hover="background:#5ceace; color:#0c1512;"><svg viewBox="0 0 24 24" style="width:19px; height:19px;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M9 13h6M9 17h6"></path></svg>Request Scoping Session</a>
+    </div>
+  </div>
+
+  <!-- Final CTA -->
+  <div style="padding:96px 64px; border-top:1px solid rgba(255,255,255,0.10); text-align:center;">
+    <h2 style="margin:0 auto 36px; font:700 40px/1.2 Sora, sans-serif; letter-spacing:-0.02em; color:#FFFFFF; max-width:720px;">Build the things worth building.</h2>
+    <a href="Contact.dc.html?tab=enquiry" style="position:relative; display:inline-block; overflow:hidden; background:#38e0c4; color:#06231e; border-radius:12px; padding:16px 32px; font:700 16.5px Inter, sans-serif;" style-hover="background:#5eead4; color:#06231e;"><span style="position:absolute; inset:0; pointer-events:none; background-image:linear-gradient(rgba(6,35,30,0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(6,35,30,0.18) 1px, transparent 1px); background-size:16px 16px; -webkit-mask-image:radial-gradient(120% 140% at 50% 50%, transparent 34%, #000 100%); mask-image:radial-gradient(120% 140% at 50% 50%, transparent 34%, #000 100%);"></span><span style="position:relative;">Book a Custom Software Discovery</span></a>
+  </div>
+
+  <!-- Footer strip -->
+  <footer style="border-top:1px solid rgba(255,255,255,0.10); padding:32px 64px; display:flex; justify-content:space-between; align-items:center; font:400 13.5px Inter, sans-serif; color:#94A3B8;">
+    <span><span style="font:700 15px Sora, sans-serif; color:#FFFFFF;">Binary One</span> Solutions Ltd · Digital Products</span>
+    <span>info@binaryone.co.ke · +254 787 990 220 · Nairobi · <a href="Data Protection.dc.html" style="color:inherit; border-bottom:1px solid rgba(255,255,255,0.3); padding-bottom:1px;" style-hover="color:#7cdc79;">Data Protection Policy</a></span>
+    <a href="Digital Products.dc.html" style="color:#E2E8F0; border-bottom:1px solid rgba(255,255,255,0.3); padding-bottom:1px;" style-hover="color:#7cdc79;">← All Digital Products</a>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  deliveryStages() {
+    const stages = [
+      { num: "01", name: "Discovery", copy: "Stakeholders, user journeys, success metrics and scope." },
+      { num: "02", name: "Design", copy: "Wireframes, prototypes, technical architecture and security posture." },
+      { num: "03", name: "Agile delivery", copy: "Two-week sprints with working software at the end of each sprint." },
+      { num: "04", name: "Testing", copy: "Functional, integration, user acceptance and security testing." },
+      { num: "05", name: "Deployment", copy: "Pilot users first, then broader rollout." },
+      { num: "06", name: "Post-launch support", copy: "Defect window, optional support retainer and managed handover." },
+    ];
+    const tint = ["#2dd4bf", "#3edcc4", "#5ce3b4", "#7aeaa0", "#8cf47f", "#9EFF5A"];
+    const icons = ["M10.5 17a6.5 6.5 0 1 1 0-13 6.5 6.5 0 0 1 0 13zM15.2 15.2 20 20","M4 20h4l10-10a2.47 2.47 0 0 0-3.5-3.5L4.5 16.5zM13 6.5 17.5 11","M20 12a8 8 0 0 1-13.7 5.6M4 12a8 8 0 0 1 13.7-5.6M4.2 17.4v-3.2h3.2M19.8 6.6v3.2h-3.2","M12 3l7 3v6c0 4-3 6.6-7 8-4-1.4-7-4-7-8V6zM9 12l2.1 2.1L15.2 10","M12 3c3 2.2 4.9 5.6 4.9 9.1L12 15.2 7.1 12.1C7.1 8.6 9 5.2 12 3zM12 9.6v.01M9.2 16.9 7.7 21l4.3-2 4.3 2-1.5-4.1","M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18zM12 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7zM5.6 5.6l3.9 3.9M14.5 14.5l3.9 3.9M18.4 5.6l-3.9 3.9M9.5 14.5l-3.9 3.9"];
+    return stages.map((st, i) => {
+      const t = i / (stages.length - 1);
+      return {
+        ...st,
+        tint: tint[i],
+        icon: icons[i],
+        iconGlow: "drop-shadow(0 0 6px " + (i < 5 ? "rgba(45,212,191,0.5)" : "rgba(158,255,90,0.55)") + ")",
+        ring: i < 5 ? "rgba(45,212,191," + (0.35 + 0.45 * t).toFixed(2) + ")" : "rgba(158,255,90,0.85)",
+        glow: "0 0 " + Math.round(10 + 16 * t) + "px " + (i < 5 ? "rgba(45,212,191," : "rgba(158,255,90,") + (0.12 + 0.26 * t).toFixed(2) + "), inset 0 0 12px rgba(0,0,0,0.5)",
+      };
+    });
+  }
+  renderVals() {
+    return {
+      heroChips: ["Tailored architecture", "Clean code guidelines", "Secure API design", "Mobile-first build", "Cloud native architecture"],
+      buildVsBuy: [
+        { indicator: "Process", buy: "A well-known process such as HR, visitor management, IoT integration or CRM.", build: "A workflow unique to your business and competitive advantage." },
+        { indicator: "Market", buy: "Several mature SaaS tools solve it.", build: "No product solves it well without forcing the workflow." },
+        { indicator: "Data sensitivity", buy: "Standard business data.", build: "Highly sensitive, regulated or strategically valuable data." },
+        { indicator: "Volume", buy: "Low-to-moderate transaction volume.", build: "High-volume, real-time or low-latency requirements." },
+        { indicator: "Time horizon", buy: "Need it live in 30 days.", build: "Can invest 6\u201312 months for a 5+ year asset." },
+        { indicator: "Budget", buy: "Prefer predictable monthly subscription.", build: "Capex appetite for a strategic asset." },
+      ],
+      builds: [
+        { num: "01", name: "Line-of-business web applications", desc: "Secure customer extranets, supply-chain monitoring panels and dealer management dashboards." },
+        { num: "02", name: "Mobile apps for field, customer or partner use", desc: "Offline-capable collection logs, farmer registries and logistics apps built for low-bandwidth regions." },
+        { num: "03", name: "API integrations between ERP, banks, loyalty platforms and CRMs", desc: "Connecting legacy systems, core banking engines, accounting databases and payment aggregators (M-Pesa, Safaricom)." },
+        { num: "04", name: "Internal dashboards", desc: "Real-time operational visibility for management — from service desks to factory throughput." },
+        { num: "05", name: "Customer and partner portals", desc: "Self-service portals that cut call volume and keep partners transacting around the clock." },
+        { num: "06", name: "AI-augmented applications", desc: "Practical AI inside existing workflows — classification, drafting, retrieval — with human control." },
+        { num: "07", name: "IoT or device integrations", desc: "Weighbridges, POS terminals and telemetry devices feeding your central ledger securely." },
+        { num: "08", name: "Database migration & optimization", desc: "Refining slow relational schemas, optimizing query locks and executing zero-downtime migrations." },
+      ],
+      stack: [
+        { label: "FRONTEND LANGUAGES", items: "React, Tailwind CSS, TypeScript, Vite, Next.js" },
+        { label: "BACKEND LANGUAGES", items: "Node.js, Express, Go, Python, FastAPI" },
+        { label: "DATABASE & INFRASTRUCTURE", items: "PostgreSQL, MongoDB, AWS, Google Cloud, Docker" },
+      ],
+      delivery: this.deliveryStages(),
+    };
+  }
+}
+</script>
+</body>
+</html>

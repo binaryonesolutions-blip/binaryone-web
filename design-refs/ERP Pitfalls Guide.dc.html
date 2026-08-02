@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #E9EEF2; -webkit-font-smoothing: antialiased; }
+  a { color: #005c55; text-decoration: none; }
+  a:hover { color: #006e1b; }
+  ::selection { background: #005c55; color: #F8FAFB; }
+  *, *::before, *::after { box-sizing: border-box; }
+  img, svg, video, iframe { max-width: 100%; }
+  @keyframes b1-beacon { 0%, 100% { box-shadow:0 0 4px rgba(124,220,121,0.95), 0 0 10px rgba(124,220,121,0.5), 0 0 18px rgba(124,220,121,0.24); } 50% { box-shadow:0 0 6px rgba(124,220,121,1), 0 0 16px rgba(124,220,121,0.75), 0 0 28px rgba(124,220,121,0.42); } }
+</style>
+<script>
+(function(){
+  function fit(){
+    var basis = document.documentElement.clientWidth || window.innerWidth;
+    var r = basis / 1440;
+    if (r > 1.6) r = 1.6;
+    if (r < 0.15) r = 0.15;
+    document.documentElement.style.zoom = r;
+  }
+  window.addEventListener('resize', fit);
+  fit();
+  function jumpToHash(){
+    var h = location.hash;
+    if (!h || h.length < 2) return;
+    var tries = 0;
+    (function go(){
+      var el = document.querySelector(h);
+      if (el) {
+        var r = el.getBoundingClientRect();
+        window.scrollTo({ top: r.top + window.scrollY - 84, behavior: 'smooth' });
+        return;
+      }
+      if (tries++ < 40) setTimeout(go, 120);
+    })();
+  }
+  window.addEventListener('load', function(){ setTimeout(jumpToHash, 260); });
+  window.addEventListener('hashchange', jumpToHash);
+})();
+</script>
+</helmet>
+
+<div style="width:1440px; margin:0 auto; background:#F8FAFB; font-family:Inter, sans-serif; color:#1c1b1b;">
+
+  <header style="display:flex; align-items:center; justify-content:space-between; padding:0 64px; height:76px; background:rgba(237,241,242,0.94); backdrop-filter:blur(12px); border-bottom:1px solid #E0E5E6; position:sticky; top:0; z-index:50;">
+    <a href="Homepage.dc.html" style="display:flex; align-items:center;"><img src="assets/b1s-logo-light.png" alt="Binary One Solutions — Towards Digital Transformation" style="height:45px; width:auto; display:block;"></a>
+    <div style="display:flex; align-items:center; gap:28px;">
+      <a href="ERP Consulting.dc.html" style="display:inline-flex; align-items:center; gap:9px; color:#1c1b1b; font:500 15px Inter, sans-serif;" style-hover="color:#0f766e;"><span style="font-size:16px;">&#8592;</span>Back to ERP Consulting</a>
+      <a href="Contact.dc.html?tab=enquiry" style="display:inline-block; background:#0f766e; color:#FFFFFF; border-radius:12px; padding:12px 22px; font:600 14.5px Inter, sans-serif; box-shadow:0 1px 2px rgba(15,118,110,0.3); transition:background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;" style-hover="background:#FFFFFF; color:#0b3d38; box-shadow:0 0 0 1px rgba(56,224,196,0.9), 0 0 18px rgba(56,224,196,0.55), 0 6px 18px rgba(6,35,30,0.25); transform:translateY(-2px);">Request a Scoping Session</a>
+    </div>
+  </header>
+
+  <!-- Cover -->
+  <div style="position:relative; background:#071e1b; overflow:hidden; padding:88px 64px 72px;">
+    <div style="position:absolute; inset:0; background-image:linear-gradient(rgba(56,224,196,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(56,224,196,0.07) 1px, transparent 1px); background-size:44px 44px; pointer-events:none;"></div>
+    <div style="position:absolute; top:-140px; right:-120px; width:520px; height:520px; border-radius:50%; background:radial-gradient(circle, rgba(56,224,196,0.20) 0%, rgba(7,30,27,0) 68%); pointer-events:none;"></div>
+    <div style="position:relative; display:grid; grid-template-columns:1.15fr 0.85fr; gap:64px; align-items:center;">
+      <div>
+        <svg viewBox="0 0 24 24" style="width:56px; height:56px; display:block; margin-bottom:18px; filter:drop-shadow(0 0 14px rgba(56,224,196,0.45));"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5V5.5M19 18v3H6.5M8.5 7.5h7M8.5 11h5" fill="none" stroke="#38e0c4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        <span style="display:inline-flex; align-items:center; gap:10px; font:700 11.5px 'JetBrains Mono', monospace; color:#38e0c4; letter-spacing:0.2em; margin-bottom:26px;">FIELD GUIDE<span style="width:5px; height:5px; border-radius:50%; background:#38e0c4; display:inline-block;"></span>VENDOR-NEUTRAL<span style="width:5px; height:5px; border-radius:50%; background:#38e0c4; display:inline-block;"></span>EDITION 2026</span>
+        <h1 style="margin:0 0 22px; font:800 60px/1.05 Sora, sans-serif; letter-spacing:-0.03em; color:#FFFFFF; text-wrap:pretty;">The ERP <span style="color:#38e0c4;">Pitfalls</span> Guide</h1>
+        <p style="margin:0 0 30px; font:400 18px/1.7 Inter, sans-serif; color:#c2dbd7; max-width:600px; text-wrap:pretty;">Seven ways ERP programmes quietly go wrong in East Africa — what each one looks like from the inside, what it costs, and the antidote we apply before a single licence is signed.</p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="#self-check" style="display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg, rgba(56,224,196,0.26) 0%, rgba(15,118,110,0.30) 100%); border:1px solid rgba(56,224,196,0.62); border-radius:999px; padding:9px 18px; font:700 13px Inter, sans-serif; color:#8ff5e2; white-space:nowrap; box-shadow:0 0 18px rgba(56,224,196,0.22); transition:box-shadow 0.25s ease, transform 0.25s ease;" style-hover="box-shadow:0 0 26px rgba(56,224,196,0.42); transform:translateY(-1px); color:#FFFFFF;">8-point self-check<span style="font-size:14px;">↓</span></a>
+          <span style="background:rgba(12,21,18,0.6); border:1px solid rgba(56,224,196,0.45); border-radius:999px; padding:9px 16px; font:600 13px Inter, sans-serif; color:#c2dbd7; white-space:nowrap;">7 pitfalls</span>
+          <a href="#counter-programme" style="background:rgba(12,21,18,0.6); border:1px solid rgba(56,224,196,0.45); border-radius:999px; padding:9px 16px; font:600 13px Inter, sans-serif; color:#c2dbd7; white-space:nowrap;" style-hover="color:#38e0c4;">6-stage counter-programme</a>
+          <span style="background:rgba(12,21,18,0.6); border:1px solid rgba(56,224,196,0.45); border-radius:999px; padding:9px 16px; font:600 13px Inter, sans-serif; color:#c2dbd7; white-space:nowrap;">~10 min read</span>
+        </div>
+      </div>
+      <div style="border:1px solid rgba(56,224,196,0.22); border-radius:18px; background:rgba(4,13,11,0.55); backdrop-filter:blur(6px); padding:32px;">
+        <span style="display:block; font:700 11px 'JetBrains Mono', monospace; color:#38e0c4; letter-spacing:0.18em; margin-bottom:20px;">CONTENTS</span>
+        <sc-for list="{{ pitfalls }}" as="p" hint-placeholder-count="7">
+          <a href="{{ p.anchor }}" style="display:flex; align-items:baseline; gap:14px; padding:11px 0; border-bottom:1px solid rgba(255,255,255,0.08); color:#e6efec;" style-hover="color:#38e0c4;">
+            <span style="font:700 12px 'JetBrains Mono', monospace; color:#38e0c4; flex-shrink:0;">{{ p.num }}</span>
+            <span style="font:500 15px/1.45 Inter, sans-serif;">{{ p.title }}</span>
+          </a>
+        </sc-for>
+        <a href="#counter-programme" style="display:flex; align-items:baseline; gap:14px; padding:11px 0; color:#e6efec;" style-hover="color:#38e0c4;">
+          <span style="font:700 12px 'JetBrains Mono', monospace; color:#38e0c4; flex-shrink:0;">08</span>
+          <span style="font:500 15px/1.45 Inter, sans-serif;">The counter-programme: six stages</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- How to read -->
+  <div style="padding:80px 64px; background:#FFFFFF; border-bottom:1px solid #E5E7EB;">
+    <div style="display:grid; grid-template-columns:0.9fr 1.1fr; gap:64px; align-items:start;">
+      <div>
+        <span style="display:block; font:700 12px 'JetBrains Mono', monospace; color:#0f766e; letter-spacing:0.22em; margin-bottom:18px;">HOW TO USE THIS GUIDE</span>
+        <h2 style="margin:0 0 20px; font:700 34px/1.2 Sora, sans-serif; letter-spacing:-0.02em; color:#1c1b1b; text-wrap:pretty;">ERP rarely fails at the software layer.</h2>
+        <p style="margin:0; font:400 16.5px/1.7 Inter, sans-serif; color:#3e4947; text-wrap:pretty;">It fails at sponsorship, data, scope and change — long before anyone blames the product. Read each pitfall against your own programme and mark it green, amber or red. Anything amber or red is a decision you still have time to make cheaply.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:20px;">
+        <sc-for list="{{ lenses }}" as="l" hint-placeholder-count="3">
+          <div style="background:linear-gradient(160deg, #ffffff 0%, #f2fbf9 55%, #e3f5f1 100%); border:1px solid rgba(15,118,110,0.18); border-radius:14px; padding:24px; box-shadow:0 1px 2px rgba(15,118,110,0.06);">
+            <svg viewBox="0 0 24 24" style="width:30px; height:30px; margin-bottom:14px;"><path d="{{ l.icon }}" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            <span style="display:block; font:700 15.5px Sora, sans-serif; color:#1c1b1b; margin-bottom:6px;">{{ l.title }}</span>
+            <span style="font:400 13.5px/1.6 Inter, sans-serif; color:#3e4947;">{{ l.copy }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pitfalls -->
+  <div style="padding:88px 64px 40px;">
+    <h2 style="margin:0 0 8px; font:700 38px/1.15 Sora, sans-serif; letter-spacing:-0.02em; color:#1c1b1b;">Seven pitfalls.</h2>
+    <p style="margin:0 0 52px; font:400 16.5px Inter, sans-serif; color:#6e7977;">Symptom · what it costs · the antidote.</p>
+    <div style="display:flex; flex-direction:column; gap:28px;">
+      <sc-for list="{{ pitfalls }}" as="p" hint-placeholder-count="7">
+        <div id="{{ p.id }}" style="background:#FFFFFF; border:1px solid #E5E7EB; border-left:4px solid #0f766e; border-radius:16px; padding:36px 40px; display:grid; grid-template-columns:120px 1fr; gap:32px; box-shadow:0 1px 2px rgba(15,23,42,0.04); transition:box-shadow 0.25s ease, transform 0.25s ease;" style-hover="box-shadow:0 14px 34px rgba(15,118,110,0.12); transform:translateY(-2px);">
+          <div>
+            <span style="display:block; font:800 46px/1 Sora, sans-serif; color:#e3f5f1; letter-spacing:-0.03em;">{{ p.num }}</span>
+            <span style="display:inline-block; margin-top:12px; background:{{ p.riskBg }}; color:{{ p.riskColor }}; border-radius:999px; padding:5px 11px; font:700 10.5px 'JetBrains Mono', monospace; letter-spacing:0.1em;">{{ p.risk }}</span>
+          </div>
+          <div>
+            <h3 style="margin:0 0 16px; font:700 25px/1.25 Sora, sans-serif; letter-spacing:-0.01em; color:#1c1b1b; text-wrap:pretty;">{{ p.title }}</h3>
+            <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:28px;">
+              <div>
+                <span style="display:block; font:700 10.5px 'JetBrains Mono', monospace; color:#6e7977; letter-spacing:0.16em; margin-bottom:8px;">SYMPTOM</span>
+                <span style="font:400 15px/1.65 Inter, sans-serif; color:#3e4947;">{{ p.symptom }}</span>
+              </div>
+              <div>
+                <span style="display:block; font:700 10.5px 'JetBrains Mono', monospace; color:#a4462f; letter-spacing:0.16em; margin-bottom:8px;">WHAT IT COSTS</span>
+                <span style="font:400 15px/1.65 Inter, sans-serif; color:#3e4947;">{{ p.cost }}</span>
+              </div>
+              <div>
+                <span style="display:block; font:700 10.5px 'JetBrains Mono', monospace; color:#0f766e; letter-spacing:0.16em; margin-bottom:8px;">THE ANTIDOTE</span>
+                <span style="font:400 15px/1.65 Inter, sans-serif; color:#1c1b1b;">{{ p.antidote }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- Self-check -->
+  <div id="self-check" style="padding:88px 64px; background:#0c1512; margin-top:48px; scroll-margin-top:90px;">
+    <div style="display:grid; grid-template-columns:0.85fr 1.15fr; gap:56px; align-items:stretch;">
+      <div style="display:flex; flex-direction:column;">
+        <span style="display:block; font:700 12px 'JetBrains Mono', monospace; color:#38e0c4; letter-spacing:0.22em; margin-bottom:18px;">TWO-MINUTE SELF-CHECK</span>
+        <h2 style="margin:0 0 20px; font:700 34px/1.2 Sora, sans-serif; letter-spacing:-0.02em; color:#FFFFFF; text-wrap:pretty;">Eight statements. Count the ones you can say honestly.</h2>
+        <p style="margin:0 0 26px; font:400 16.5px/1.7 Inter, sans-serif; color:#c2dbd7; text-wrap:pretty;">Six or more and you are ready to talk to vendors. Four or five and you need a scoping exercise first. Three or fewer and choosing software now is the most expensive thing you could do.</p>
+        <div style="border-radius:16px; border:2px solid #38e0c4; box-shadow:0 0 0 1px rgba(56,224,196,0.22), 0 0 28px rgba(56,224,196,0.28); overflow:hidden; height:250px; margin-bottom:26px;">
+          <img src="assets/erp-pitfalls-square.png" alt="ERP scoping session in progress" style="width:100%; height:100%; object-fit:cover; object-position:center 35%; display:block;">
+        </div>
+        <a href="Contact.dc.html?tab=enquiry" style="display:inline-flex; align-self:center; align-items:center; gap:10px; background:#38e0c4; color:#06231e; border-radius:12px; padding:16px 30px; font:700 15.5px Inter, sans-serif; margin-top:auto;" style-hover="background:#5ceace; color:#06231e;">Score it with a consultant<span style="font-size:16px;">&#8594;</span></a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:20px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:28px; background:rgba(255,255,255,0.04); border:1px solid rgba(56,224,196,0.28); border-radius:16px; padding:24px 28px;">
+          <div>
+            <div style="display:flex; align-items:baseline; gap:14px;">
+              <span style="font:800 64px/1 Sora, sans-serif; color:#38e0c4; letter-spacing:-0.03em;">{{ score }}</span>
+              <span style="font:700 26px Sora, sans-serif; color:#7f9c96;">/ 8</span>
+            </div>
+            <span style="display:block; margin-top:8px; font:700 10.5px 'JetBrains Mono', monospace; color:#7f9c96; letter-spacing:0.18em;">YOUR SCORE</span>
+          </div>
+          <span style="font:600 17px Inter, sans-serif; color:#38e0c4; text-align:right;">{{ verdict }}</span>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:14px;">
+          <sc-for list="{{ checks }}" as="c" hint-placeholder-count="8">
+            <div style="{{ c.rowStyle }}" onClick="{{ c.onClick }}">
+              <span style="{{ c.boxStyle }}"><span style="{{ c.tickStyle }}">&#10003;</span></span>
+              <span style="{{ c.textStyle }}">{{ c.text }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Counter-programme -->
+  <div id="counter-programme" style="padding:88px 64px; background:#FFFFFF;">
+    <span style="display:block; font:700 12px 'JetBrains Mono', monospace; color:#0f766e; letter-spacing:0.22em; margin-bottom:18px;">THE COUNTER-PROGRAMME</span>
+    <h2 style="margin:0 0 12px; font:700 38px/1.15 Sora, sans-serif; letter-spacing:-0.02em; color:#1c1b1b;">Six stages that remove the pitfalls.</h2>
+    <p style="margin:0 0 52px; font:400 16.5px Inter, sans-serif; color:#6e7977; max-width:720px; text-wrap:pretty;">Our ERP consulting sequence exists because every stage closes one of the seven pitfalls above before it can cost money.</p>
+    <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:24px;">
+      <sc-for list="{{ stages }}" as="s" hint-placeholder-count="6">
+        <div style="background:linear-gradient(160deg, #ffffff 0%, #f6fcfa 60%, #e9f6f3 100%); border:1px solid rgba(15,118,110,0.18); border-radius:16px; padding:30px; box-shadow:0 1px 2px rgba(15,118,110,0.06);">
+          <span style="display:block; font:700 12px 'JetBrains Mono', monospace; color:#0f766e; letter-spacing:0.14em; margin-bottom:12px;">STAGE {{ s.num }}</span>
+          <span style="display:block; font:700 19px Sora, sans-serif; color:#1c1b1b; margin-bottom:10px;">{{ s.name }}</span>
+          <span style="display:block; font:400 14.5px/1.65 Inter, sans-serif; color:#3e4947; margin-bottom:16px;">{{ s.copy }}</span>
+          <span style="display:inline-block; background:rgba(15,118,110,0.09); color:#0f766e; border-radius:999px; padding:5px 11px; font:600 11.5px Inter, sans-serif;">Closes: {{ s.closes }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div style="padding:96px 64px; background:#F8FAFB; text-align:center;">
+    <h2 style="margin:0 auto 18px; font:700 36px/1.25 Sora, sans-serif; letter-spacing:-0.02em; color:#1c1b1b; max-width:780px; text-wrap:pretty;">Have a look at your own programme against these seven. Then let's talk about the amber ones.</h2>
+    <p style="margin:0 auto 36px; font:400 16.5px/1.7 Inter, sans-serif; color:#6e7977; max-width:620px; text-wrap:pretty;">A scoping session is vendor-neutral, evidence-first and costs you nothing but an honest hour.</p>
+    <div style="display:flex; justify-content:center; gap:16px;">
+      <a href="Contact.dc.html?tab=enquiry" style="display:inline-block; background:#38e0c4; color:#06231e; border-radius:12px; padding:16px 32px; font:600 16.5px Inter, sans-serif; box-shadow:0 1px 2px rgba(15,118,110,0.2);" style-hover="background:#5ceace; color:#06231e;">Request a Scoping Session</a>
+      <a href="ERP Consulting.dc.html" style="display:inline-block; background:#FFFFFF; color:#0f766e; border:1.5px solid rgba(15,118,110,0.35); border-radius:12px; padding:14.5px 30px; font:600 16.5px Inter, sans-serif;" style-hover="background:#f2fbf9; color:#0b5f58;">Back to ERP Consulting</a>
+    </div>
+  </div>
+
+  <footer style="background:#071e1b; padding:64px 64px 32px;">
+    <div style="display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:48px; padding-bottom:56px;">
+      <div style="display:flex; flex-direction:column; gap:16px; align-items:flex-start;">
+        <a href="Homepage.dc.html" style="display:inline-flex; align-items:center;"><img src="assets/b1s-logo-dark.png" alt="Binary One Solutions — Towards Digital Transformation" style="height:47px; width:auto; display:block;"></a>
+        <span style="display:inline-flex; align-items:center; gap:9px; font:400 15px Inter, sans-serif; color:#c7d0dc;">Possibilities<span style="width:6px; height:6px; border-radius:50%; background:#7cdc79; box-shadow:0 0 4px rgba(124,220,121,0.95), 0 0 10px rgba(124,220,121,0.55), 0 0 18px rgba(124,220,121,0.28); flex-shrink:0; animation:b1-beacon 2.4s ease-in-out infinite;"></span>Realised</span>
+        <div style="display:flex; align-items:center; gap:18px; margin-top:6px;">
+        <a href="https://www.linkedin.com/company/binary1solutions/" target="_blank" rel="noopener" aria-label="LinkedIn" style="color:#c7d0dc; display:inline-flex;" style-hover="color:#FFFFFF;"><svg viewBox="0 0 24 24" style="width:22px; height:22px;" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"></path></svg></a>
+        <a href="https://twitter.com/Binary_One_Sol" target="_blank" rel="noopener" aria-label="X (Twitter)" style="color:#c7d0dc; display:inline-flex;" style-hover="color:#FFFFFF;"><svg viewBox="0 0 24 24" style="width:20px; height:20px;" fill="currentColor"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.67l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23Zm-1.16 17.52h1.83L7.08 4.13H5.12l11.96 15.64Z"></path></svg></a>
+        <a href="https://www.facebook.com/binary1solutions/" target="_blank" rel="noopener" aria-label="Facebook" style="color:#c7d0dc; display:inline-flex;" style-hover="color:#FFFFFF;"><svg viewBox="0 0 24 24" style="width:22px; height:22px;" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.5-3.91 3.78-3.91 1.09 0 2.23.2 2.23.2v2.46H15.2c-1.24 0-1.63.77-1.63 1.57v1.88h2.78l-.45 2.9h-2.33V22c4.78-.76 8.44-4.92 8.44-9.94Z"></path></svg></a>
+      </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:14px; font:400 14.5px Inter, sans-serif;">
+        <span style="font:600 12px Inter, sans-serif; color:#7cdc79; letter-spacing:0.12em; margin-bottom:4px;">SOLUTIONS</span>
+        <a href="Managed IT.dc.html" style="color:#eef2f7;" style-hover="color:#FFFFFF;">Managed IT</a>
+        <a href="ERP Consulting.dc.html" style="color:#eef2f7;" style-hover="color:#FFFFFF;">ERP Consulting</a>
+        <a href="NAWIRI.dc.html" style="color:#eef2f7;" style-hover="color:#FFFFFF;">NAWIRI</a>
+        <a href="Agentic AI.dc.html" style="color:#eef2f7;" style-hover="color:#FFFFFF;">Agentic AI</a>
+        <a href="Custom Software.dc.html" style="color:#eef2f7;" style-hover="color:#FFFFFF;">Custom Software</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:14px; font:400 14.5px Inter, sans-serif;">
+        <span style="font:600 12px Inter, sans-serif; color:#7cdc79; letter-spacing:0.12em; margin-bottom:4px;">COMPANY</span>
+        <a href="About.dc.html" style="color:#eef2f7;" style-hover="color:#FFFFFF;">About</a>
+        <a href="About.dc.html" style="color:#eef2f7;" style-hover="color:#FFFFFF;">Leadership</a>
+        <a href="Insights.dc.html" style="color:#eef2f7;" style-hover="color:#FFFFFF;">Insights</a>
+        <a href="Contact.dc.html?tab=enquiry" style="color:#eef2f7;" style-hover="color:#FFFFFF;">Careers</a>
+        <a href="Data Protection.dc.html" style="color:#8fae9a;" style-hover="color:#c7d0dc;">Data Protection Policy</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:14px; font:400 14.5px/1.5 Inter, sans-serif;">
+        <span style="font:600 12px Inter, sans-serif; color:#7cdc79; letter-spacing:0.12em; margin-bottom:4px;">CONNECT</span>
+        <a href="mailto:info@binaryone.co.ke" style="color:#eef2f7;" style-hover="color:#FFFFFF;">info@binaryone.co.ke</a>
+        <a href="tel:+254787990220" style="color:#eef2f7;" style-hover="color:#FFFFFF;">+254 787 990 220</a>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Binary+One+Solutions+Ngong+Road+Nairobi" target="_blank" rel="noopener" style="color:#8fa0b5;" style-hover="color:#FFFFFF;">St Charles Lwanga House,<br>Ngong Road, Nairobi</a>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Binary+One+Solutions+Ngong+Road+Nairobi" target="_blank" rel="noopener" style="color:#c7d0dc; text-decoration:underline; text-underline-offset:3px; font-size:13.5px; margin-top:-6px; line-height:1.5;" style-hover="color:#FFFFFF;">Find us on Google →</a>
+      </div>
+    </div>
+    <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid rgba(255,255,255,0.10); padding-top:28px; font:400 14px Inter, sans-serif; color:#8fa0b5;">
+      <span>© 2026 Binary One Solutions Ltd · Nairobi, Kenya</span>
+      <a href="Contact.dc.html?tab=enquiry" style="color:#FFFFFF; font-weight:600;" style-hover="color:#c7d0dc;">Talk to a consultant →</a>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { ticked: {} };
+  toggle(i) {
+    this.setState(s => ({ ticked: { ...s.ticked, [i]: !s.ticked[i] } }));
+  }
+  renderVals() {
+    const red = { risk: "HIGH RISK", riskBg: "rgba(186,26,26,0.10)", riskColor: "#a4462f" };
+    const amber = { risk: "COMMON", riskBg: "rgba(217,119,6,0.12)", riskColor: "#8a5a12" };
+    const teal = { risk: "SILENT", riskBg: "rgba(15,118,110,0.10)", riskColor: "#0f766e" };
+    const pitfalls = [
+      { ...red, title: "Weak executive sponsorship", symptom: "The programme is delegated to IT or finance. Steering meetings slip, decisions wait for a monthly slot.", cost: "Cross-departmental decisions stall; the implementer bills for waiting.", antidote: "Name one accountable executive sponsor with authority to settle process disputes, and hold a fortnightly steering committee with a live risk register." },
+      { ...red, title: "Dirty data going in", symptom: "Customer, supplier and stock masters live in several spreadsheets with different codes and duplicates.", cost: "Messy data migrates faster than clean data — and reappears as distrust in every report after go-live.", antidote: "Cleanse and de-duplicate masters before migration, with named data owners per domain and a signed-off cut-off." },
+      { ...amber, title: "Scope creep", symptom: "Every department asks for “just one more report”, and each is individually reasonable.", cost: "Timelines stretch, change requests multiply, and the original business case quietly disappears.", antidote: "Freeze a phase-one scope tied to the business case; everything else goes to a phase-two backlog with its own approval." },
+      { ...red, title: "Vendor finger-pointing", symptom: "Software vendor, implementer and internal team each explain why the delay belongs to someone else.", cost: "Nobody owns the outcome, and the client absorbs both the delay and the rework.", antidote: "A vendor-neutral governance layer: one accountability matrix, contractual milestones, and an advisor with no licence revenue at stake." },
+      { ...amber, title: "Unrealistic timelines", symptom: "A go-live date is chosen for a board meeting or a financial year, then work is compressed to fit it.", cost: "Compressed delivery multiplies every other risk — testing, training and data all get cut first.", antidote: "Plan backwards from a tested cut-over, not forwards from a wish, and protect UAT and training as non-negotiable." },
+      { ...red, title: "Insufficient change management", symptom: "Training happens the week before go-live; workarounds and parallel spreadsheets appear the week after.", cost: "The system goes live, but the people do not — adoption stalls and benefits never land.", antidote: "Role-based training, super-users per department, and adoption measured as a KPI for 90 days after go-live." },
+      { ...teal, title: "No post-go-live audit", symptom: "The project closes at go-live. Nobody revisits whether the promised benefits actually arrived.", cost: "Licences and support renew for years on a business case nobody ever validated.", antidote: "Audit benefits realisation at three and six months against the original case, and act on the gap." },
+    ].map((p, i) => {
+      const num = String(i + 1).padStart(2, "0");
+      return { ...p, num, id: "pitfall-" + num, anchor: "#pitfall-" + num };
+    });
+    return {
+      pitfalls,
+      lenses: [
+        { title: "Read it honestly", copy: "Score your own programme green, amber or red. Optimism is the most expensive input in ERP.", icon: "M12 5c-5 0-9 4.5-9 7s4 7 9 7 9-4.5 9-7-4-7-9-7M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6" },
+        { title: "Act while it's cheap", copy: "Every pitfall costs least before contracts are signed and data is migrated.", icon: "M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" },
+        { title: "Keep it vendor-neutral", copy: "We earn nothing from licences, so the recommendation follows the evidence.", icon: "M12 3l8 3v5c0 4.5-3 8-8 10-5-2-8-5.5-8-10V6l8-3zM9 12l2 2 4-4" },
+      ],
+      checks: [
+        "One named executive sponsor owns this programme, not a committee.",
+        "We can state the business case in numbers, not adjectives.",
+        "Our customer, supplier and stock masters have named owners.",
+        "We know which processes we will change and which we will keep.",
+        "Phase-one scope is written down and frozen.",
+        "The go-live date came from a plan, not from a board calendar.",
+        "Budget includes data cleansing, training and post-go-live support.",
+        "We have agreed how we will measure benefits after go-live.",
+      ].map((text, i) => {
+        const on = !!this.state.ticked[i];
+        return {
+          text, on,
+          onClick: () => this.toggle(i),
+          rowStyle: "background:" + (on ? "rgba(56,224,196,0.10)" : "rgba(255,255,255,0.04)") +
+            "; border:1px solid " + (on ? "rgba(56,224,196,0.55)" : "rgba(56,224,196,0.18)") +
+            "; border-radius:12px; padding:18px 20px; display:flex; gap:14px; align-items:flex-start; cursor:pointer; user-select:none; transition:background 0.2s ease, border-color 0.2s ease;",
+          boxStyle: "width:18px; height:18px; border-radius:5px; flex-shrink:0; margin-top:2px; display:flex; align-items:center; justify-content:center; border:1.5px solid " +
+            (on ? "#38e0c4" : "rgba(56,224,196,0.55)") + "; background:" + (on ? "#38e0c4" : "transparent") +
+            "; transition:background 0.2s ease, border-color 0.2s ease;",
+          tickStyle: "font:700 12px Inter, sans-serif; color:#06231e; line-height:1; opacity:" + (on ? "1" : "0") + "; transition:opacity 0.15s ease;",
+          textStyle: "font:400 14.5px/1.6 Inter, sans-serif; color:" + (on ? "#FFFFFF" : "#e6efec") + ";",
+        };
+      }),
+      score: Object.values(this.state.ticked).filter(Boolean).length,
+      verdict: (() => {
+        const n = Object.values(this.state.ticked).filter(Boolean).length;
+        if (n >= 6) return "Ready to talk to vendors.";
+        if (n >= 4) return "Scope before you shop.";
+        if (n >= 1) return "Choosing software now would be expensive.";
+        return "Tick what you can say honestly.";
+      })(),
+      stages: [
+        { num: "01", name: "Audit first", copy: "We audit current systems, processes, data and risks before discussing vendors.", closes: "dirty data" },
+        { num: "02", name: "Readiness assessment", copy: "We score people, process, data, sponsorship, budget and governance honestly.", closes: "weak sponsorship" },
+        { num: "03", name: "Gap analysis", copy: "We separate what the business truly needs from what is merely nice to have.", closes: "scope creep" },
+        { num: "04", name: "Vendor selection", copy: "Structured RFP, demo scoring, reference checks and contract review.", closes: "finger-pointing" },
+        { num: "05", name: "Implementation governance", copy: "Steering committee, risk register, implementer accountability and change control.", closes: "unrealistic timelines" },
+        { num: "06", name: "Post-go-live audit", copy: "Three and six months after go-live, we review benefits realisation against the business case.", closes: "no audit" },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

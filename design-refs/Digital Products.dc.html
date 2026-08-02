@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #0B1D33; -webkit-font-smoothing: antialiased; }
+  a { color: #FFFFFF; text-decoration: none; }
+  a:hover { color: #7cdc79; }
+  ::selection { background: #0f766e; color: #FFFFFF; }
+  @keyframes dpFlow { to { stroke-dashoffset: -24; } }
+  @keyframes dpRing { 0% { r: 30px; opacity: 0.5; } 100% { r: 58px; opacity: 0; } }
+  @keyframes dpBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+  *, *::before, *::after { box-sizing: border-box; }
+  img, svg, video, iframe { max-width: 100%; }
+  /*hardened*/
+</style>
+<script>
+(function(){
+  function fit(){
+    var basis = document.documentElement.clientWidth || window.innerWidth;
+    var r = basis / 1440;
+    if (r > 1.6) r = 1.6;
+    if (r < 0.15) r = 0.15;
+    document.documentElement.style.zoom = r;
+  }
+  window.addEventListener('resize', fit);
+  fit();
+})();
+</script>
+</helmet>
+
+<div style="width:1440px; margin:0 auto; background:#0B1D33; background-image:linear-gradient(rgba(59,130,246,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.04) 1px, transparent 1px); background-size:48px 48px; font-family:Inter, sans-serif; color:#FFFFFF;">
+
+  <!-- Nav -->
+  <header style="display:flex; align-items:center; justify-content:space-between; padding:0 64px; height:76px; background:rgba(237,241,242,0.94); backdrop-filter:blur(12px); border-bottom:1px solid #E0E5E6; position:sticky; top:0; z-index:50;">
+    <a href="Homepage.dc.html" style="display:flex; align-items:center;"><img src="assets/b1s-logo-light.png" alt="Binary One Solutions — Towards Digital Transformation" style="height:45px; width:auto; display:block;"></a>
+    <nav style="display:flex; align-items:center; gap:32px; font:500 14.5px Inter, sans-serif;">
+      <a href="Homepage.dc.html" style="color:#1c1b1b;">Home</a>
+      <a href="Managed IT.dc.html" style="color:#1c1b1b;">Managed IT</a>
+      <a href="ERP Consulting.dc.html" style="color:#1c1b1b;">ERP Consulting</a>
+      <details style="position:relative; display:inline-block;">
+          <summary style="list-style:none; cursor:pointer; display:inline-flex; align-items:center; gap:6px; color:#1c1b1b; font:500 14.5px Inter, sans-serif; border-bottom:2px solid #006e1b; padding-bottom:3px;">Digital Products <span style="font-size:10px; color:#3e4947;">▾</span></summary>
+          <div style="position:absolute; top:34px; left:50%; transform:translateX(-50%); width:360px; background:#FFFFFF; border:1px solid #E5E7EB; border-radius:12px; box-shadow:0 12px 32px rgba(0,0,0,0.08); padding:18px 0 8px; z-index:100;">
+            <span style="display:block; padding:2px 24px 14px; font:700 11px 'JetBrains Mono', monospace; color:#0f766e; letter-spacing:0.14em; border-bottom:1px solid #E5E7EB;">DIGITAL SOLUTIONS &amp; PLATFORMS</span>
+            <div style="padding-top:8px;">
+              <a href="NAWIRI.dc.html" style="display:flex; align-items:flex-start; gap:13px; padding:11px 24px; color:#1c1b1b;" style-hover="background:#f1f5f4; color:#1c1b1b;"><span style="flex-shrink:0; width:40px; height:40px; border-radius:10px; background:#eef4f3; display:inline-flex; align-items:center; justify-content:center; margin-top:1px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M12 3l1.9 4.6L18.5 9.5 13.9 11.4 12 16l-1.9-4.6L5.5 9.5 10.1 7.6z"></path><path d="M18.5 14.5l.8 1.9 1.9.8-1.9.8-.8 1.9-.8-1.9-1.9-.8 1.9-.8z"></path></svg></span><span style="display:block;"><span style="display:block; font:700 15px Inter, sans-serif; color:#0c1512; margin-bottom:2px;">NAWIRI Platform</span><span style="display:block; font:400 13px/1.4 Inter, sans-serif; color:#6e7977;">Digital Loyalty &amp; Last-mile intelligence</span></span></a>
+              <a href="Agentic AI.dc.html" style="display:flex; align-items:flex-start; gap:13px; padding:11px 24px; color:#1c1b1b;" style-hover="background:#f1f5f4; color:#1c1b1b;"><span style="flex-shrink:0; width:40px; height:40px; border-radius:10px; background:#eef4f3; display:inline-flex; align-items:center; justify-content:center; margin-top:1px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><rect x="6" y="6" width="12" height="12" rx="1.5"></rect><rect x="9.5" y="9.5" width="5" height="5" rx="0.6"></rect><path d="M9 3v2M15 3v2M9 19v2M15 19v2M3 9h2M3 14h2M19 9h2M19 14h2"></path></svg></span><span style="display:block;"><span style="display:block; font:700 15px Inter, sans-serif; color:#0c1512; margin-bottom:2px;">Agentic AI Workflows</span><span style="display:block; font:400 13px/1.4 Inter, sans-serif; color:#6e7977;">Autonomous reasoning agents interfacing ERPs</span></span></a>
+              <a href="Custom Software.dc.html" style="display:flex; align-items:flex-start; gap:13px; padding:11px 24px; color:#1c1b1b;" style-hover="background:#f1f5f4; color:#1c1b1b;"><span style="flex-shrink:0; width:40px; height:40px; border-radius:10px; background:#eef4f3; display:inline-flex; align-items:center; justify-content:center; margin-top:1px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="m9 8-4 4 4 4M15 8l4 4-4 4"></path></svg></span><span style="display:block;"><span style="display:block; font:700 15px Inter, sans-serif; color:#0c1512; margin-bottom:2px;">Custom Software</span><span style="display:block; font:400 13px/1.4 Inter, sans-serif; color:#6e7977;">Bespoke high-performance systems engineering</span></span></a>
+              <div style="height:1px; background:#E5E7EB; margin:10px 24px 8px;"></div>
+              <a href="Digital Products.dc.html" style="display:flex; align-items:flex-start; gap:13px; padding:11px 24px; color:#1c1b1b;" style-hover="background:#f1f5f4; color:#1c1b1b;"><span style="flex-shrink:0; width:40px; height:40px; border-radius:10px; background:#eef4f3; display:inline-flex; align-items:center; justify-content:center; margin-top:1px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg></span><span style="display:block;"><span style="display:block; font:700 15px Inter, sans-serif; color:#0c1512; margin-bottom:2px;">Digital Products Hub Overview</span><span style="display:block; font:400 13px/1.4 Inter, sans-serif; color:#6e7977;">Our Digital Solutions at a glance</span></span></a>
+            </div>
+          </div>
+        </details>
+      <a href="About.dc.html" style="color:#1c1b1b;">About</a>
+      <a href="Insights.dc.html" style="color:#1c1b1b;">Insights</a>
+      <a href="Contact.dc.html?tab=assessment" style="display:inline-flex; align-items:center; gap:10px; background:#d9f5ef; color:#06332e; border:1px solid rgba(56,224,196,0.75); border-radius:11px; padding:11px 20px; font:600 14.5px Inter, sans-serif; box-shadow:0 1px 2px rgba(6,35,30,0.10), 0 4px 14px rgba(6,35,30,0.08); transition:background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;" style-hover="background:#bfeee4; border-color:#38e0c4; box-shadow:0 0 0 1px rgba(56,224,196,0.6), 0 0 22px rgba(56,224,196,0.42), 0 8px 20px rgba(6,35,30,0.26); transform:translateY(-2px);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="3" y="5" width="18" height="16" rx="3"></rect><path d="M8 3v4"></path><path d="M16 3v4"></path><path d="M3 10h18"></path></svg>Book a Free IT Assessment</a>
+    </nav>
+  </header>
+
+  <!-- Hero (dark → fades into light) -->
+  <div style="position:relative; overflow:hidden; background:linear-gradient(180deg, #04140f 0%, #071e1b 28%, #0c2a24 52%, #b9cbc4 86%, #F8FAFB 100%); padding:92px 64px 96px;">
+    <div style="position:absolute; inset:0; pointer-events:none; background-image:linear-gradient(90deg, rgba(56,224,196,0.07) 1px, transparent 1px); background-size:58px 100%; mask-image:linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 60%, transparent 90%); -webkit-mask-image:linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 60%, transparent 90%);"></div>
+    <div style="position:relative; display:grid; grid-template-columns:1.15fr 0.85fr; gap:64px; align-items:start;">
+      <div>
+        <span style="display:inline-flex; align-items:center; gap:9px; border:1px solid rgba(45,212,191,0.4); border-radius:999px; padding:8px 18px; font:700 12px 'JetBrains Mono', monospace; color:#5eead4; letter-spacing:0.12em; margin-bottom:30px;"><span style="width:7px; height:7px; border-radius:50%; background:#38e0c4; box-shadow:0 0 6px rgba(56,224,196,0.9);"></span>DIGITAL PRODUCTS HUB</span>
+        <h1 style="margin:0 0 26px; font:700 64px/1.05 Sora, sans-serif; letter-spacing:-0.025em; color:#FFFFFF;">Three products.<br><span style="color:#38e0c4;">One discipline.</span></h1>
+        <p style="margin:0 0 30px; font:400 18px/1.65 Inter, sans-serif; color:#aebfba; max-width:600px; text-wrap:pretty;">NAWIRI, Agentic AI and Custom Software Builds are how we package fifteen years of bespoke development experience into things you can buy, measure and govern.</p>
+        <a href="#dp-products" style="display:inline-flex; align-items:center; gap:12px; background:#eef4f2; color:#06231e; border-radius:12px; padding:15px 26px; font:700 15px Inter, sans-serif; margin-bottom:34px; box-shadow:0 2px 8px rgba(0,0,0,0.25);" style-hover="background:#FFFFFF; color:#06231e;">Explore Our Solutions <svg viewBox="0 0 24 24" style="width:18px; height:18px;" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+        <div style="border-top:1px solid rgba(255,255,255,0.14); padding-top:26px; display:flex; flex-wrap:wrap; gap:12px; max-width:640px;">
+          <sc-for list="{{ heroChips }}" as="c" hint-placeholder-count="5">
+            <span style="background:rgba(6,24,20,0.72); border:1px solid rgba(255,255,255,0.10); border-radius:8px; padding:9px 15px; font:500 12.5px 'JetBrains Mono', monospace; color:#d5e2dd;">{{ c }}</span>
+          </sc-for>
+        </div>
+      </div>
+      <div style="position:relative; overflow:hidden; border-radius:18px; border:1px solid rgba(45,212,191,0.22); background-color:#05100e; background-image:radial-gradient(circle at 88% 6%, rgba(56,224,196,0.18), transparent 46%), radial-gradient(circle at 4% 96%, rgba(158,255,90,0.08), transparent 44%), linear-gradient(90deg, rgba(56,224,196,0.045) 1px, transparent 1px), linear-gradient(rgba(56,224,196,0.045) 1px, transparent 1px), linear-gradient(150deg, #0a1a16 0%, #06120f 60%, #050f0d 100%); background-size:auto, auto, 46px 46px, 46px 46px, auto; box-shadow:inset 0 1px 0 rgba(56,224,196,0.08), 0 30px 70px rgba(0,0,0,0.5); padding:26px 28px; display:flex; flex-direction:column; gap:20px; box-sizing:border-box;">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <span style="font:700 11px 'JetBrains Mono', monospace; color:#5eead4; letter-spacing:0.18em;">LAST-MILE DISTRIBUTION NETWORK</span>
+          <span style="display:inline-flex; align-items:center; gap:7px; font:700 10px 'JetBrains Mono', monospace; color:#9EFF5A; letter-spacing:0.14em;"><span style="width:7px; height:7px; border-radius:50%; background:#9EFF5A; box-shadow:0 0 7px rgba(158,255,90,0.9); animation:dpBlink 1.6s ease-in-out infinite;"></span>LIVE</span>
+        </div>
+
+        <svg viewBox="0 0 440 236" style="width:100%; height:auto; display:block;">
+          <g fill="none" stroke-linecap="round">
+            <path d="M74 118 C130 118 160 118 214 118" stroke="#38e0c4" stroke-width="2" stroke-dasharray="3 7" style="animation:dpFlow 1.1s linear infinite;"></path>
+            <path d="M226 118 C300 116 330 78 392 52" stroke="#9EFF5A" stroke-width="2" stroke-dasharray="3 7" style="animation:dpFlow 1.2s linear infinite;"></path>
+            <path d="M226 118 C300 118 336 118 398 118" stroke="#9EFF5A" stroke-width="2" stroke-dasharray="3 7" style="animation:dpFlow 1.0s linear infinite;"></path>
+            <path d="M226 118 C300 120 330 158 392 184" stroke="#9EFF5A" stroke-width="2" stroke-dasharray="3 7" style="animation:dpFlow 1.3s linear infinite;"></path>
+          </g>
+          <!-- manufacturer -->
+          <circle cx="54" cy="118" r="17" fill="#0b201b" stroke="#4a5f5a" stroke-width="1.5"></circle>
+          <path d="M46 124v-7l5 3.5v-3.5l5 3.5v-3.5l5 3.5v7Z" fill="none" stroke="#8fb0a7" stroke-width="1.4" stroke-linejoin="round"></path>
+          <text x="56" y="149" text-anchor="middle" fill="#8fb0a7" font-family="'JetBrains Mono', monospace" font-size="8.5" letter-spacing="0.4">MANUFACTURER'S</text>
+          <text x="56" y="162" text-anchor="middle" fill="#8fb0a7" font-family="'JetBrains Mono', monospace" font-size="10" letter-spacing="0.8">BRAND</text>
+          <!-- hub -->
+          <circle cx="220" cy="118" r="30" fill="none" stroke="#38e0c4" stroke-width="1.5" style="animation:dpRing 2.6s ease-out infinite;"></circle>
+          <circle cx="220" cy="118" r="30" fill="none" stroke="#38e0c4" stroke-width="1.5" style="animation:dpRing 2.6s ease-out infinite; animation-delay:1.3s;"></circle>
+          <circle cx="220" cy="118" r="26" fill="#06231e" stroke="#38e0c4" stroke-width="2"></circle>
+          <g stroke="#7cf5da" stroke-width="1.8" fill="none" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M220 106l11 5.5-11 5.5-11-5.5z"></path>
+            <path d="M209 117.5l11 5.5 11-5.5"></path>
+            <path d="M209 122.5l11 5.5 11-5.5"></path>
+          </g>
+          <text x="220" y="166" text-anchor="middle" fill="#5eead4" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" letter-spacing="1">NAWIRI PLATFORM</text>
+          <!-- members -->
+          <circle cx="392" cy="52" r="15" fill="#0b201b" stroke="#2f8f7f" stroke-width="1.5"></circle>
+          <path d="M385 56v-6h14v6M387.5 50l1-3h9l1 3" fill="none" stroke="#9EFF5A" stroke-width="1.4" stroke-linejoin="round"></path>
+          <text x="392" y="82" text-anchor="middle" fill="#93b3a9" font-family="'JetBrains Mono', monospace" font-size="8.5" letter-spacing="0.6">RETAIL</text>
+          <circle cx="398" cy="118" r="15" fill="#0b201b" stroke="#2f8f7f" stroke-width="1.5"></circle>
+          <path d="M394 113l3 3-3 3m8-6l3 3-3 3" fill="none" stroke="#9EFF5A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+          <text x="398" y="148" text-anchor="middle" fill="#93b3a9" font-family="'JetBrains Mono', monospace" font-size="8.5" letter-spacing="0.6">FUNDI</text>
+          <circle cx="392" cy="184" r="15" fill="#0b201b" stroke="#2f8f7f" stroke-width="1.5"></circle>
+          <path d="M392 190c-4-2-5-6-2-9 2 3 2 3 4 3-1-3 0-6 2-8 1 3 3 4 3 8 0 4-3 6-7 6z" fill="none" stroke="#9EFF5A" stroke-width="1.3" stroke-linejoin="round"></path>
+          <text x="392" y="214" text-anchor="middle" fill="#93b3a9" font-family="'JetBrains Mono', monospace" font-size="8.5" letter-spacing="0.6">FARMER</text>
+        </svg>
+
+        <div style="border-top:1px solid rgba(255,255,255,0.08); padding-top:18px;">
+          <span style="display:block; font:700 10.5px 'JetBrains Mono', monospace; color:#9EFF5A; letter-spacing:0.18em; margin-bottom:8px;">REWARDS DISBURSED</span>
+          <span style="display:block; font:800 40px/1 Sora, sans-serif; color:#FFFFFF; letter-spacing:-0.02em; margin-bottom:10px;">KES 250M+</span>
+          <p style="margin:0; font:400 13.5px/1.6 Inter, sans-serif; color:#9fb4ae; text-wrap:pretty;">Instant cashback to loyalty members via <a href="NAWIRI.dc.html" style="color:#38e0c4; border-bottom:1px solid rgba(56,224,196,0.4);" style-hover="color:#5eead4;">NAWIRI M-Pesa microservices</a>.</p>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; border-top:1px solid rgba(255,255,255,0.08); padding-top:18px;">
+          <div style="display:flex; flex-direction:column; gap:4px;">
+            <span style="font:800 20px/1 Sora, sans-serif; color:#5eead4;">480K</span>
+            <span style="font:500 9.5px 'JetBrains Mono', monospace; color:#7f938d; letter-spacing:0.06em;">ACTIVE MEMBERS</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px;">
+            <span style="font:800 20px/1 Sora, sans-serif; color:#5eead4;">1.2M</span>
+            <span style="font:500 9.5px 'JetBrains Mono', monospace; color:#7f938d; letter-spacing:0.06em;">REDEMPTIONS / DAY</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px;">
+            <span style="font:800 20px/1 Sora, sans-serif; color:#5eead4;">42ms</span>
+            <span style="font:500 9.5px 'JetBrains Mono', monospace; color:#7f938d; letter-spacing:0.06em;">AVG LATENCY</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product cards (light) -->
+  <div id="dp-products" style="background:#F8FAFB; padding:72px 64px 88px; scroll-margin-top:90px;">
+    <div style="text-align:center; margin-bottom:44px;">
+      <span style="display:block; font:700 12.5px 'JetBrains Mono', monospace; color:#0f766e; letter-spacing:0.16em; margin-bottom:14px;">OUR DIGITAL SOLUTIONS</span>
+      <h2 style="margin:0 0 14px; font:800 42px/1.1 Sora, sans-serif; letter-spacing:-0.025em; color:#0c1512;">Three products, built to buy and govern</h2>
+      <p style="margin:0 auto; max-width:600px; font:400 16.5px/1.6 Inter, sans-serif; color:#4a5a54; text-wrap:pretty;">From last-mile loyalty to autonomous workflows and bespoke systems &mdash; pick the engine that fits your operation.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:28px; align-items:stretch;">
+      <sc-for list="{{ products }}" as="p" hint-placeholder-count="3">
+        <div style="display:flex; flex-direction:column; background:{{ p.cardBg }}; background-image:{{ p.cardImage }}; background-size:{{ p.cardBgSize }}; border:1px solid {{ p.cardBorder }}; border-radius:20px; padding:32px 30px; box-shadow:0 1px 2px rgba(0,0,0,0.04), 0 10px 30px rgba(15,23,42,0.06);">
+          <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px; margin-bottom:26px;">
+            <span style="width:52px; height:52px; border-radius:13px; background:{{ p.iconBg }}; display:inline-flex; align-items:center; justify-content:center; color:{{ p.accent }};">{{ p.icon }}</span>
+            <span style="font:700 11px 'JetBrains Mono', monospace; color:{{ p.accent }}; letter-spacing:0.06em; background:{{ p.chipBg }}; border-radius:7px; padding:7px 12px;">{{ p.chip }}</span>
+          </div>
+          <h2 style="margin:0 0 12px; font:700 23px/1.2 Sora, sans-serif; color:{{ p.titleColor }}; letter-spacing:-0.01em;">{{ p.title }}</h2>
+          <p style="margin:0 0 22px; font:700 14.5px/1.45 'JetBrains Mono', monospace; color:{{ p.accent }}; text-wrap:pretty;">{{ p.tagline }}</p>
+          <p style="margin:0 0 24px; font:400 14.5px/1.7 Inter, sans-serif; color:{{ p.bodyColor }}; text-wrap:pretty;">{{ p.desc }}</p>
+          <div style="border-top:1px solid {{ p.divider }}; padding-top:22px; margin-top:auto; display:flex; flex-direction:column; gap:12px;">
+            <sc-for list="{{ p.bullets }}" as="b" hint-placeholder-count="3">
+              <span style="display:flex; align-items:flex-start; gap:11px; font:400 14px/1.5 Inter, sans-serif; color:{{ p.bodyColor }};"><span style="width:7px; height:7px; border-radius:50%; background:{{ p.accent }}; flex-shrink:0; margin-top:6px;"></span>{{ b }}</span>
+            </sc-for>
+          </div>
+          <a href="{{ p.href }}" style="margin-top:26px; display:flex; align-items:center; justify-content:center; gap:9px; background:{{ p.btnBg }}; color:{{ p.btnColor }}; border-radius:12px; padding:15px 22px; font:700 12.5px 'JetBrains Mono', monospace; letter-spacing:0.08em;" style-hover="{{ p.btnHover }}">{{ p.cta }} <span style="font-size:14px;">→</span></a>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- Diagnostic CTA -->
+  <div style="background:#F8FAFB; padding:24px 64px 112px; text-align:center;">
+    <h2 style="margin:0 auto 32px; max-width:760px; font:800 46px/1.14 Sora, sans-serif; letter-spacing:-0.025em; color:#0c1512; text-wrap:pretty;">Ready to turn proven expertise into your digital transformation?</h2>
+    <a href="Contact.dc.html?tab=enquiry" style="display:inline-flex; align-items:center; gap:10px; background:#38e0c4; color:#06231e; border-radius:12px; padding:16px 30px; font:700 16px Inter, sans-serif;" style-hover="background:#5ceace; color:#06231e;">Book a Free IT Assessment</a>
+  </div>
+
+  <!-- Footer strip -->
+  <footer style="border-top:1px solid rgba(255,255,255,0.10); padding:32px 64px; display:flex; justify-content:space-between; align-items:center; font:400 13.5px Inter, sans-serif; color:#94A3B8;">
+    <span><span style="font:700 15px Sora, sans-serif; color:#FFFFFF;">Binary One</span> Solutions Ltd · Digital Products</span>
+    <span>info@binaryone.co.ke · +254 787 990 220 · Nairobi · <a href="Data Protection.dc.html" style="color:inherit; border-bottom:1px solid rgba(255,255,255,0.3); padding-bottom:1px;" style-hover="color:#7cdc79;">Data Protection Policy</a></span>
+    <a href="Homepage.dc.html" style="color:#E2E8F0; border-bottom:1px solid rgba(255,255,255,0.3); padding-bottom:1px;" style-hover="color:#7cdc79;">← Back to binaryone.co.ke</a>
+  </footer>
+
+  <!-- ============ DIAGNOSTIC MODAL ============ -->
+  <sc-if value="{{ diagOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed; inset:0; z-index:9999; background:rgba(4,14,12,0.62); backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; padding:24px 20px; overflow-y:auto; font-family:Inter, sans-serif;">
+      <div style="width:100%; max-width:720px; transform:scale(0.75); transform-origin:center; background:#F8FAFB; border-radius:24px; overflow:hidden; box-shadow:0 30px 90px rgba(4,14,12,0.5); display:flex; flex-direction:column; max-height:calc(133vh - 64px);">
+
+        <!-- Header (dark) -->
+        <div style="position:relative; flex-shrink:0; overflow:hidden; background:#071e1b; padding:26px 30px;">
+          <div style="position:absolute; inset:0; pointer-events:none; background-image:linear-gradient(90deg, rgba(56,224,196,0.07) 1px, transparent 1px); background-size:44px 100%;"></div>
+          <div style="position:relative; display:flex; align-items:center; justify-content:space-between; gap:16px;">
+            <span style="font:700 11px 'JetBrains Mono', monospace; color:#38e0c4; letter-spacing:0.2em;">ENTERPRISE IT &amp; AI DIAGNOSTIC</span>
+            <button onClick="{{ closeDiag }}" aria-label="Close" style="display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:9px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); color:#cbd8d3; cursor:pointer;" style-hover="background:rgba(255,255,255,0.16); color:#FFFFFF;"><svg viewBox="0 0 24 24" style="width:18px; height:18px;"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg></button>
+          </div>
+          <sc-if value="{{ isQuestion }}" hint-placeholder-val="{{ true }}">
+            <div style="position:relative; margin-top:18px;">
+              <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:9px;">
+                <span style="font:500 12px Inter, sans-serif; color:#9fb4ae;">Question {{ qNum }} of {{ qTotal }}</span>
+                <span style="font:500 11px 'JetBrains Mono', monospace; color:#38e0c4; background:rgba(56,224,196,0.12); border-radius:100px; padding:4px 10px;">{{ progressLabel }}</span>
+              </div>
+              <div style="height:6px; border-radius:100px; background:rgba(255,255,255,0.1); overflow:hidden;"><div style="height:100%; width:{{ progressWidth }}; background:linear-gradient(90deg, #0f766e, #38e0c4); border-radius:100px; transition:width 0.35s ease;"></div></div>
+            </div>
+          </sc-if>
+        </div>
+
+        <!-- Body -->
+        <div style="padding:34px 30px 38px; overflow-y:auto; flex:1 1 auto;">
+          <!-- QUESTION VIEW -->
+          <sc-if value="{{ isQuestion }}" hint-placeholder-val="{{ true }}">
+            <div>
+              <span style="display:inline-block; font:600 11px 'JetBrains Mono', monospace; color:#0f766e; letter-spacing:0.12em; text-transform:uppercase; background:rgba(15,118,110,0.08); border-radius:100px; padding:6px 13px; margin-bottom:18px;">{{ qCategoryLabel }}</span>
+              <h3 style="margin:0 0 24px; font:700 24px/1.3 Sora, sans-serif; letter-spacing:-0.01em; color:#0c1512; text-wrap:pretty;">{{ qText }}</h3>
+              <div style="display:flex; flex-direction:column; gap:12px;">
+                <sc-for list="{{ qOptions }}" as="opt" hint-placeholder-count="3">
+                  <button onClick="{{ opt.choose }}" style="display:flex; align-items:flex-start; gap:15px; text-align:left; width:100%; background:#FFFFFF; border:1px solid #e4ded9; border-radius:14px; padding:18px 20px; cursor:pointer; transition:border-color 0.2s, box-shadow 0.2s, transform 0.1s;" style-hover="border-color:#0f766e; box-shadow:0 6px 20px rgba(15,118,110,0.12);">
+                    <span style="flex-shrink:0; width:30px; height:30px; border-radius:8px; background:rgba(15,118,110,0.10); color:#0f766e; font:700 13px 'JetBrains Mono', monospace; display:inline-flex; align-items:center; justify-content:center;">{{ opt.optLetter }}</span>
+                    <span style="display:flex; flex-direction:column; gap:5px;">
+                      <span style="font:600 15px/1.5 Inter, sans-serif; color:#1c1b1b;">{{ opt.optText }}</span>
+                      <span style="font:400 13px/1.5 Inter, sans-serif; color:#6e7977;">{{ opt.optDesc }}</span>
+                    </span>
+                  </button>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+
+          <!-- RESULTS VIEW -->
+          <sc-if value="{{ isResults }}" hint-placeholder-val="{{ false }}">
+            <div>
+              <div style="text-align:center; margin-bottom:30px;">
+                <span style="display:block; font:600 11px 'JetBrains Mono', monospace; color:#0f766e; letter-spacing:0.18em; margin-bottom:12px;">YOUR READINESS SCORECARD</span>
+                <div style="display:flex; align-items:baseline; justify-content:center; gap:6px;">
+                  <span style="font:800 72px/1 Sora, sans-serif; letter-spacing:-0.03em; color:#0c1512;">{{ scorePctLabel }}</span>
+                </div>
+                <span style="display:block; font:500 13px 'JetBrains Mono', monospace; color:#8a9691; margin-top:8px;">{{ scoreFraction }} points</span>
+                <span style="display:inline-block; margin-top:16px; font:700 12px 'JetBrains Mono', monospace; color:#071e1b; background:#38e0c4; border-radius:100px; padding:8px 18px; letter-spacing:0.12em;">{{ gradeStage }}</span>
+                <p style="margin:18px auto 0; max-width:480px; font:400 14.5px/1.65 Inter, sans-serif; color:#4a5a54; text-wrap:pretty;">{{ gradeDesc }}</p>
+              </div>
+
+              <div style="display:flex; flex-direction:column; gap:16px; margin-bottom:30px;">
+                <sc-for list="{{ meters }}" as="m" hint-placeholder-count="4">
+                  <div>
+                    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:7px;">
+                      <span style="font:600 13.5px Inter, sans-serif; color:#1c1b1b;">{{ m.name }}</span>
+                      <span style="font:500 12px 'JetBrains Mono', monospace; color:#6e7977;">{{ m.pctLabel }}</span>
+                    </div>
+                    <div style="height:8px; border-radius:100px; background:#ece7e4; overflow:hidden;"><div style="height:100%; width:{{ m.width }}; background:{{ m.color }}; border-radius:100px; transition:width 0.5s ease;"></div></div>
+                  </div>
+                </sc-for>
+              </div>
+
+              <div style="background:#f1f8f5; border:1px solid #cfe8df; border-radius:16px; padding:24px 26px; margin-bottom:28px;">
+                <span style="display:block; font:700 13px Sora, sans-serif; color:#0c1512; margin-bottom:16px;">Recommended Next Steps</span>
+                <div style="display:flex; flex-direction:column; gap:14px;">
+                  <sc-for list="{{ recs }}" as="rec" hint-placeholder-count="3">
+                    <div style="display:flex; gap:13px; align-items:flex-start;">
+                      <span style="flex-shrink:0; width:24px; height:24px; border-radius:50%; background:#0f766e; color:#FFFFFF; font:700 12px 'JetBrains Mono', monospace; display:inline-flex; align-items:center; justify-content:center;">{{ rec.n }}</span>
+                      <span style="font:400 14px/1.55 Inter, sans-serif; color:#3e4947;">{{ rec.text }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+
+              <!-- Booking form (dark) -->
+              <sc-if value="{{ bookingOpen }}" hint-placeholder-val="{{ true }}">
+                <div style="position:relative; overflow:hidden; background:#071e1b; border-radius:18px; padding:28px 28px 30px;">
+                  <div style="position:absolute; inset:0; pointer-events:none; background-image:linear-gradient(90deg, rgba(56,224,196,0.06) 1px, transparent 1px); background-size:40px 100%;"></div>
+                  <div style="position:relative;">
+                    <span style="display:block; font:700 10.5px 'JetBrains Mono', monospace; color:#38e0c4; letter-spacing:0.18em; margin-bottom:9px;">BOOK A FREE STRATEGIC ADVISORY SESSION</span>
+                    <h4 style="margin:0 0 18px; font:700 20px/1.25 Sora, sans-serif; color:#FFFFFF;">Turn this scorecard into a roadmap.</h4>
+                    <form onSubmit="{{ submitBooking }}" style="display:flex; flex-direction:column; gap:12px;">
+                      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+                        <input type="text" placeholder="Full name" required="true" style="width:100%; box-sizing:border-box; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.14); border-radius:10px; padding:12px 14px; font:400 14px Inter, sans-serif; color:#FFFFFF;">
+                        <input type="email" placeholder="Work email" required="true" style="width:100%; box-sizing:border-box; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.14); border-radius:10px; padding:12px 14px; font:400 14px Inter, sans-serif; color:#FFFFFF;">
+                      </div>
+                      <input type="text" placeholder="Organisation" style="width:100%; box-sizing:border-box; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.14); border-radius:10px; padding:12px 14px; font:400 14px Inter, sans-serif; color:#FFFFFF;">
+                      <textarea placeholder="What's the most pressing priority?" rows="3" style="width:100%; box-sizing:border-box; resize:vertical; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.14); border-radius:10px; padding:12px 14px; font:400 14px Inter, sans-serif; color:#FFFFFF;"></textarea>
+                      <button type="submit" style="margin-top:4px; display:inline-flex; align-items:center; justify-content:center; gap:10px; background:#38e0c4; color:#06231e; border:none; cursor:pointer; border-radius:11px; padding:14px 24px; font:700 12px 'JetBrains Mono', monospace; letter-spacing:0.1em;" style-hover="background:#5eead4;"><svg viewBox="0 0 24 24" style="width:16px; height:16px; flex-shrink:0;" fill="none" stroke="#06231e" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"></rect><path d="M3.5 10h17M8.5 3v4M15.5 3v4M9 14.5l2 2 4-4"></path></svg>BOOK MY SESSION</button>
+                    </form>
+                  </div>
+                </div>
+              </sc-if>
+              <sc-if value="{{ bookingSubmitted }}" hint-placeholder-val="{{ false }}">
+                <div style="text-align:center; background:#f1f8f5; border:1px solid #cfe8df; border-radius:18px; padding:34px 28px;">
+                  <span style="display:inline-flex; align-items:center; justify-content:center; width:52px; height:52px; border-radius:50%; background:#0f766e; margin-bottom:16px;"><svg viewBox="0 0 24 24" style="width:26px; height:26px;"><path d="M5 12.5l4.5 4.5L19 7" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                  <h4 style="margin:0 0 8px; font:700 20px Sora, sans-serif; color:#0c1512;">Request received.</h4>
+                  <p style="margin:0 auto 20px; max-width:400px; font:400 14.5px/1.6 Inter, sans-serif; color:#4a5a54;">Our team will reach out within one business day to schedule your free strategic advisory session.</p>
+                  <button onClick="{{ closeDiag }}" style="background:#071e1b; color:#FFFFFF; border:none; cursor:pointer; border-radius:11px; padding:13px 26px; font:700 12px 'JetBrains Mono', monospace; letter-spacing:0.1em;" style-hover="background:#0c3b33;">CLOSE</button>
+                </div>
+              </sc-if>
+
+              <div style="text-align:center; margin-top:20px;">
+                <button onClick="{{ restartDiag }}" style="background:none; border:none; cursor:pointer; font:500 13px Inter, sans-serif; color:#6e7977; text-decoration:underline;" style-hover="color:#0f766e;">Retake the diagnostic</button>
+              </div>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { diagOpen: false, diagStep: 0, diagAnswers: [], bookingSubmitted: false };
+  DIAG_QUESTIONS = [
+    { category: "infrastructure", catLabel: "Cloud Infrastructure", text: "How would you describe your current server and network infrastructure hosting your business systems?", options: [
+      { text: "On-premise servers with manual backups and no active automated monitoring.", score: 1, description: "High risk of downtime and data loss." },
+      { text: "Hybrid setup with basic cloud backups, but still dependent on local network reliability.", score: 2, description: "Moderate resilience, but lacks modern multi-zone failovers." },
+      { text: "Fully migrated to a cloud platform (AWS, GCP, Azure) with high availability and automated scaling.", score: 3, description: "Optimized cloud foundation ready for rapid software deployments." } ] },
+    { category: "security", catLabel: "Cybersecurity Defense", text: "What cybersecurity measures are currently active to protect your customer records and business endpoints?", options: [
+      { text: "Standard antivirus software on individual computers, with no centralized access policy or regular audits.", score: 1, description: "Vulnerable to phishing, ransomware, and unauthorized data extraction." },
+      { text: "Centralized firewall and password policies, but lack Multi-Factor Authentication (MFA) and incident logging.", score: 2, description: "Basic defense, but missing proactive breach detection capabilities." },
+      { text: "Full Endpoint Protection, mandatory MFA, continuous access auditing, and secure encrypted APIs.", score: 3, description: "Industry-standard cybersecurity posture protecting core assets." } ] },
+    { category: "erp", catLabel: "ERP Automation", text: "How integrated and automated are your core business operations (Finances, CRM, HR, Inventory)?", options: [
+      { text: "Independent spreadsheet files and separate local software. High manual reconciliation required.", score: 1, description: "Highly siloed data leading to human errors and slow reporting." },
+      { text: "Basic ERP or localized accounting software, but missing sync with supply chain, inventory, or mobile payments.", score: 2, description: "Partially automated, with persistent manual friction at payment and shipping gates." },
+      { text: "Fully integrated ERP (Odoo, SAP, or custom CRM) linked to live banking, mobile money, and inventory triggers.", score: 3, description: "Automated workflow where transactions seamlessly flow from trigger to ledger." } ] },
+    { category: "ai", catLabel: "Agentic AI Readiness", text: "To what extent does your organization utilize artificial intelligence or intelligent automations in daily operations?", options: [
+      { text: "No active AI or automation tools are used. Workflows are entirely manual.", score: 1, description: "Manual handling of high-volume repetitive tasks limits throughput." },
+      { text: "Individual team members use third-party AI tools separately, but there is no custom enterprise system.", score: 2, description: "Scattered productivity gains, but lacking corporate data privacy controls and integrated tools." },
+      { text: "Localized AI agents or automated pipelines (RAG systems) assist customer support and parse complex documents.", score: 3, description: "High-leverage operations powered by contextual, secure enterprise AI models." } ] },
+    { category: "infrastructure", catLabel: "Cloud Infrastructure", text: "How quickly can your IT systems recover from a critical hardware or software failure?", options: [
+      { text: "Recovery could take days and might result in significant loss of transaction history.", score: 1, description: "No validated disaster recovery blueprint." },
+      { text: "Recovery takes several hours with minimal data loss, depending on manual restoral of cloud snapshots.", score: 2, description: "Acceptable recovery speed, but still causes noticeable downtime." },
+      { text: "Instant, automated failovers across cloud regions, resulting in zero noticeable user downtime.", score: 3, description: "Highly resilient system designed for absolute continuous operations." } ] },
+    { category: "security", catLabel: "Cybersecurity Defense", text: "How often does your technical team run vulnerability scans, penetration testing, or staff cyber-hygiene training?", options: [
+      { text: "Rarely or never. We only react when a technical security incident occurs.", score: 1, description: "Dangerous reactive posture that invites easily preventable exploits." },
+      { text: "Annually or bi-annually, usually driven by external client audits or compliance mandates.", score: 2, description: "Consistent checks, but vulnerable to fast-evolving zero-day vectors." },
+      { text: "Continuous automated code scanning, quarterly penetrative tests, and regular simulated phishing drills.", score: 3, description: "Continuous proactive defense in depth, securing modern assets." } ] },
+    { category: "cx", catLabel: "Customer Experience", text: "How well do you know — and reward — the end customers who actually drive your sales?", options: [
+      { text: "We sell through distributors or retail, so we have no record of who the end buyer is.", score: 1, description: "The last mile is invisible, so demand shifts are only seen after the fact." },
+      { text: "We run occasional promotions or a manual loyalty scheme tracked on paper or spreadsheets.", score: 2, description: "Some engagement, but no member data to segment, score or measure." },
+      { text: "A digital loyalty platform captures every purchase and pays rewards to the customer instantly.", score: 3, description: "Named, scored customers and live last-mile demand data." } ] },
+    { category: "cx", catLabel: "Customer Experience", text: "How is your sales pipeline and field-team activity tracked today?", options: [
+      { text: "In each rep's own notebook, phone and WhatsApp threads. There is no shared pipeline.", score: 1, description: "Forecasts rely on memory, and customers walk out with the rep who leaves." },
+      { text: "A shared spreadsheet or basic CRM that reps update after the fact.", score: 2, description: "Visibility exists, but it is late, partial and hard to act on." },
+      { text: "A live CRM with mobile field-sales capture, route plans, targets and pipeline dashboards.", score: 3, description: "Every visit, quote and order is tied to a person and a number." } ] },
+    { category: "cx", catLabel: "Customer Experience", text: "When a customer calls, messages or emails you, what happens next?", options: [
+      { text: "Enquiries land on individual phones and inboxes, with no queue and no record.", score: 1, description: "Missed calls and dropped follow-ups go unnoticed." },
+      { text: "A shared line or inbox that staff monitor, but without call logging or response targets.", score: 2, description: "Reachable, yet service levels cannot be measured or improved." },
+      { text: "One queue for calls, WhatsApp, email and chat, with logging, SLAs and reporting.", score: 3, description: "Every conversation is captured, routed and answered against a target." } ] },
+  ];
+  openDiag = () => this.setState({ diagOpen: true, diagStep: 0, diagAnswers: [], bookingSubmitted: false });
+  closeDiag = () => this.setState({ diagOpen: false });
+  restartDiag = () => this.setState({ diagStep: 0, diagAnswers: [], bookingSubmitted: false });
+  chooseOption = (score, category) => this.setState(s => ({
+    diagAnswers: [...s.diagAnswers, { score, category }],
+    diagStep: s.diagStep + 1,
+  }));
+  submitBooking = (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ bookingSubmitted: true }); };
+  diagVals() {
+    const Q = this.DIAG_QUESTIONS, total = Q.length;
+    const step = this.state.diagStep, ans = this.state.diagAnswers;
+    const isResults = step >= total;
+    const answered = ans.length;
+    const progressWidth = Math.round((answered / total) * 100) + "%";
+    const progressLabel = Math.round((answered / total) * 100) + "% Done";
+    let question = null;
+    if (!isResults) {
+      const q = Q[step];
+      question = {
+        qNum: step + 1, qTotal: total, qCategoryLabel: q.catLabel, qText: q.text,
+        qOptions: q.options.map((o, i) => ({
+          optText: o.text, optDesc: o.description, optLetter: String.fromCharCode(65 + i),
+          choose: () => this.chooseOption(o.score, q.category),
+        })),
+      };
+    }
+    let results = null;
+    if (isResults) {
+      const catMax = { infrastructure: 0, security: 0, erp: 0, ai: 0, cx: 0 };
+      const catScore = { infrastructure: 0, security: 0, erp: 0, ai: 0, cx: 0 };
+      Q.forEach((q, i) => { catMax[q.category] += 3; catScore[q.category] += (ans[i] ? ans[i].score : 0); });
+      const score = ans.reduce((a, b) => a + b.score, 0);
+      const maxScore = total * 3;
+      const pct = Math.round((score / maxScore) * 100);
+      let grade, gradeDesc;
+      if (pct < 45) { grade = "Initiating"; gradeDesc = "Foundational gaps expose the business to downtime, data loss and manual friction. A structured roadmap will de-risk operations fast."; }
+      else if (pct < 70) { grade = "Developing"; gradeDesc = "Core systems are in place but automation, security depth and governance are uneven. Targeted upgrades will unlock real leverage."; }
+      else if (pct < 88) { grade = "Optimized"; gradeDesc = "A strong, resilient posture. Refinement of AI workflows and continuous assurance will push you to the frontier."; }
+      else { grade = "Transformational"; gradeDesc = "Best-in-class readiness. Your stack is a competitive weapon — the focus now is compounding the advantage."; }
+      const metaColor = { infrastructure: "#0f766e", security: "#17a892", erp: "#2f9e44", ai: "#38b6a2", cx: "#12b886" };
+      const metaName = { infrastructure: "Cloud Infrastructure", security: "Cybersecurity Defense", erp: "ERP Automation", ai: "Agentic AI Readiness", cx: "Customer Experience" };
+      const meters = ["infrastructure", "security", "erp", "ai", "cx"].map(k => {
+        const p = Math.round((catScore[k] / catMax[k]) * 100);
+        return { name: metaName[k], pctLabel: p + "%", width: p + "%", color: metaColor[k] };
+      });
+      const recBank = {
+        low: [
+          "Commission a Free IT Assessment to baseline infrastructure, security and continuity risk.",
+          "Stand up automated cloud backups and a documented disaster-recovery blueprint.",
+          "Deploy centralized endpoint protection and mandatory Multi-Factor Authentication.",
+          "Start capturing end-customer identity — a digital loyalty pilot on your fastest-moving lines.",
+        ],
+        mid: [
+          "Consolidate siloed tools into a governed ERP with live banking and mobile-money triggers.",
+          "Introduce continuous access auditing and quarterly penetration testing.",
+          "Pilot one Agentic AI workflow (support triage or document parsing) on your existing systems.",
+          "Put field sales on a live CRM and route every customer enquiry into one logged, SLA-tracked queue.",
+        ],
+        high: [
+          "Scale Agentic AI pipelines across support, finance and reporting with corporate data controls.",
+          "Formalise vCIO-led governance: board-ready reporting, budget discipline and vendor SLAs.",
+          "Run simulated phishing drills and automated code scanning to sustain a proactive posture.",
+          "Join loyalty, CRM and contact-centre data into a single customer view for predictive campaigns.",
+        ],
+      };
+      const recs = (pct < 45 ? recBank.low : pct < 70 ? recBank.mid : recBank.high).map((text, i) => ({ text, n: i + 1 }));
+      results = {
+        scoreBig: String(score), scoreFraction: score + " / " + maxScore, scorePctLabel: pct + "%",
+        grade, gradeStage: grade.toUpperCase(), gradeDesc, meters, recs,
+      };
+    }
+    return {
+      diagOpen: this.state.diagOpen, isQuestion: !isResults, isResults,
+      progressWidth, progressLabel,
+      bookingOpen: isResults && !this.state.bookingSubmitted, bookingSubmitted: this.state.bookingSubmitted,
+      openDiag: this.openDiag, closeDiag: this.closeDiag, restartDiag: this.restartDiag, submitBooking: this.submitBooking,
+      ...(question || {}), ...(results || {}),
+    };
+  }
+  renderVals() {
+    const mk = (tag, attrs, ...kids) => React.createElement(tag, attrs, ...kids);
+    const svg = (...kids) => mk("svg", { viewBox: "0 0 24 24", width: 24, height: 24, fill: "none", stroke: "currentColor", strokeWidth: 1.8, strokeLinecap: "round", strokeLinejoin: "round" }, ...kids);
+    const svg46 = (...kids) => mk("svg", { viewBox: "0 0 24 24", width: 46, height: 46, fill: "none", stroke: "currentColor", strokeWidth: 1.5, strokeLinecap: "round", strokeLinejoin: "round" }, ...kids);
+    const phoneIcon = svg(mk("rect", { x: 7, y: 2, width: 10, height: 20, rx: 2.5 }), mk("path", { d: "M11 18h2" }));
+    const nawiriMark = mk("img", { src: "assets/nawiri-logo.png", alt: "NAWIRI", style: { width: "46px", height: "46px", objectFit: "contain", display: "block", filter: "drop-shadow(0 0 10px rgba(158,255,90,0.4))" } });
+    const cpuIcon = svg46(mk("rect", { x: 6, y: 6, width: 12, height: 12, rx: 1.5 }), mk("rect", { x: 9.5, y: 9.5, width: 5, height: 5, rx: 0.6 }), mk("path", { d: "M9 3v2M15 3v2M9 19v2M15 19v2M3 9h2M3 14h2M19 9h2M19 14h2" }));
+    const codeIcon = svg46(mk("path", { d: "m9 8-4 4 4 4M15 8l4 4-4 4" }));
+    return {
+      ...this.diagVals(),
+      heroChips: ["15+ Years Proven", "Industry Experience", "Robust APIs", "Full Stack Development", "Homegrown + Global Quality"],
+      products: [
+        {
+          icon: nawiriMark, chip: "FMCG Loyalty Platform", title: "NAWIRI Digital Loyalty",
+          tagline: "Own the last mile of your distribution.",
+          desc: "A mobile-first loyalty platform connecting Kenyan and East African manufacturers directly to painters, mechanics, fundis and farmers who make the purchase decisions. Direct M-Pesa integration rewards instant sales influencers.",
+          bullets: ["Real-time airtime and M-Pesa rewards", "Encrypted scratch anti-counterfeit codes", "Daily consumption regional heat maps"],
+          href: "NAWIRI.dc.html", cta: "LEARN MORE ABOUT NAWIRI",
+          cardBg: "#0a2b23", cardImage: "radial-gradient(120% 90% at 85% -10%, rgba(158,255,90,0.15) 0%, transparent 52%), radial-gradient(100% 80% at -10% 110%, rgba(56,224,196,0.1) 0%, transparent 48%), linear-gradient(rgba(158,255,90,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(158,255,90,0.05) 1px, transparent 1px)", cardBgSize: "auto, auto, 30px 30px, 30px 30px", cardBorder: "rgba(158,255,90,0.3)", iconBg: "rgba(158,255,90,0.06)", accent: "#9EFF5A",
+          chipBg: "rgba(158,255,90,0.12)", titleColor: "#FFFFFF", bodyColor: "#aebfba", divider: "rgba(255,255,255,0.12)",
+          btnBg: "#9EFF5A", btnColor: "#06231e", btnHover: "background:#b6ff7d; color:#06231e;",
+        },
+        {
+          icon: cpuIcon, chip: "Workflow Automation", title: "Agentic AI Workflows",
+          tagline: "Practical automation that acts, not just chats.",
+          desc: "Integrate cognitive LLM agents to autonomously interface with your Odoo or SAP systems. Background workers parse invoices, verify supplier compliance rules and run daily multi-system reconciliation loops under supervision.",
+          bullets: ["RAG compliance & policy query engines", "Autonomous three-way invoice matching", "Structured human-in-the-loop safety rails"],
+          href: "Agentic AI.dc.html", cta: "DISCOVER OUR AGENTIC AI",
+          cardBg: "#FFFFFF", cardImage: "linear-gradient(rgba(15,118,110,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(15,118,110,0.07) 1px, transparent 1px)", cardBgSize: "30px 30px, 30px 30px", cardBorder: "#0f766e", iconBg: "#eef4f3", accent: "#0f766e",
+          chipBg: "rgba(15,118,110,0.09)", titleColor: "#3e4947", bodyColor: "#4a5a54", divider: "#cfe0dc",
+          btnBg: "#0f766e", btnColor: "#FFFFFF", btnHover: "background:#0d655e; color:#FFFFFF;",
+        },
+        {
+          icon: codeIcon, chip: "Bespoke Engineering", title: "Custom Enterprise Software",
+          tagline: "When off-the-shelf cannot.",
+          desc: "Bespoke high-performance web applications, custom API integrations, internal dashboards and native mobile apps engineered specifically for your distinct business process. Agile delivery gets code live in weeks.",
+          bullets: ["Line-of-business custom portals", "M-Pesa, bank and core gateway APIs", "Stack-agnostic, robust, scalable design"],
+          href: "Custom Software.dc.html", cta: "OUR CUSTOM SOFTWARE APPROACH",
+          cardBg: "#FFFFFF", cardImage: "linear-gradient(rgba(15,118,110,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(15,118,110,0.07) 1px, transparent 1px)", cardBgSize: "30px 30px, 30px 30px", cardBorder: "#0f766e", iconBg: "#eef4f3", accent: "#0f766e",
+          chipBg: "rgba(15,118,110,0.09)", titleColor: "#3e4947", bodyColor: "#4a5a54", divider: "#cfe0dc",
+          btnBg: "#0f766e", btnColor: "#FFFFFF", btnHover: "background:#0d655e; color:#FFFFFF;",
+        },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

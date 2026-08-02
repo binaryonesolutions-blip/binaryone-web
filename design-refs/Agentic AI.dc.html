@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #0B1D33; -webkit-font-smoothing: antialiased; }
+  a { color: #FFFFFF; text-decoration: none; }
+  a:hover { color: #7cdc79; }
+  ::selection { background: #0f766e; color: #FFFFFF; }
+  @keyframes b1-ping { 0% { transform: scale(1); opacity: 0.75; } 75%, 100% { transform: scale(2.4); opacity: 0; } }
+  @keyframes b1-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+  @keyframes b1-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+  @keyframes b1-rail { from { background-position: 0 0; } to { background-position: 26px 0; } }
+  *, *::before, *::after { box-sizing: border-box; }
+  img, svg, video, iframe { max-width: 100%; }
+  /*hardened*/
+</style>
+<script>
+(function(){
+  function fit(){
+    var basis = document.documentElement.clientWidth || window.innerWidth;
+    var r = basis / 1440;
+    if (r > 1.6) r = 1.6;
+    if (r < 0.15) r = 0.15;
+    document.documentElement.style.zoom = r;
+  }
+  window.addEventListener('resize', fit);
+  fit();
+})();
+</script>
+</helmet>
+
+<div style="width:1440px; margin:0 auto; background:#0B1D33; background-image:linear-gradient(rgba(45,212,191,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(45,212,191,0.04) 1px, transparent 1px); background-size:48px 48px; font-family:Inter, sans-serif; color:#FFFFFF;">
+
+  <!-- Nav -->
+  <header style="display:flex; align-items:center; justify-content:space-between; padding:0 64px; height:76px; background:rgba(237,241,242,0.94); backdrop-filter:blur(12px); border-bottom:1px solid #E0E5E6; position:sticky; top:0; z-index:50;">
+    <a href="Homepage.dc.html" style="display:flex; align-items:center;"><img src="assets/b1s-logo-light.png" alt="Binary One Solutions — Towards Digital Transformation" style="height:45px; width:auto; display:block;"></a>
+    <nav style="display:flex; align-items:center; gap:32px; font:500 14.5px Inter, sans-serif;">
+      <a href="Homepage.dc.html" style="color:#1c1b1b;">Home</a>
+      <a href="Managed IT.dc.html" style="color:#1c1b1b;">Managed IT</a>
+      <a href="ERP Consulting.dc.html" style="color:#1c1b1b;">ERP Consulting</a>
+      <details style="position:relative; display:inline-block;">
+          <summary style="list-style:none; cursor:pointer; display:inline-flex; align-items:center; gap:6px; color:#1c1b1b; font:500 14.5px Inter, sans-serif; border-bottom:2px solid #006e1b; padding-bottom:3px;">Digital Products <span style="font-size:10px; color:#3e4947;">▾</span></summary>
+          <div style="position:absolute; top:34px; left:50%; transform:translateX(-50%); width:360px; background:#FFFFFF; border:1px solid #E5E7EB; border-radius:12px; box-shadow:0 12px 32px rgba(0,0,0,0.08); padding:18px 0 8px; z-index:100;">
+            <span style="display:block; padding:2px 24px 14px; font:700 11px 'JetBrains Mono', monospace; color:#0f766e; letter-spacing:0.14em; border-bottom:1px solid #E5E7EB;">DIGITAL SOLUTIONS &amp; PLATFORMS</span>
+            <div style="padding-top:8px;">
+              <a href="NAWIRI.dc.html" style="display:flex; align-items:flex-start; gap:13px; padding:11px 24px; color:#1c1b1b;" style-hover="background:#f1f5f4; color:#1c1b1b;"><span style="flex-shrink:0; width:40px; height:40px; border-radius:10px; background:#eef4f3; display:inline-flex; align-items:center; justify-content:center; margin-top:1px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="M12 3l1.9 4.6L18.5 9.5 13.9 11.4 12 16l-1.9-4.6L5.5 9.5 10.1 7.6z"></path><path d="M18.5 14.5l.8 1.9 1.9.8-1.9.8-.8 1.9-.8-1.9-1.9-.8 1.9-.8z"></path></svg></span><span style="display:block;"><span style="display:block; font:700 15px Inter, sans-serif; color:#0c1512; margin-bottom:2px;">NAWIRI Platform</span><span style="display:block; font:400 13px/1.4 Inter, sans-serif; color:#6e7977;">Digital Loyalty &amp; Last-mile intelligence</span></span></a>
+              <a href="Agentic AI.dc.html" style="display:flex; align-items:flex-start; gap:13px; padding:11px 24px; color:#1c1b1b;" style-hover="background:#f1f5f4; color:#1c1b1b;"><span style="flex-shrink:0; width:40px; height:40px; border-radius:10px; background:#eef4f3; display:inline-flex; align-items:center; justify-content:center; margin-top:1px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><rect x="6" y="6" width="12" height="12" rx="1.5"></rect><rect x="9.5" y="9.5" width="5" height="5" rx="0.6"></rect><path d="M9 3v2M15 3v2M9 19v2M15 19v2M3 9h2M3 14h2M19 9h2M19 14h2"></path></svg></span><span style="display:block;"><span style="display:block; font:700 15px Inter, sans-serif; color:#0c1512; margin-bottom:2px;">Agentic AI Workflows</span><span style="display:block; font:400 13px/1.4 Inter, sans-serif; color:#6e7977;">Autonomous reasoning agents interfacing ERPs</span></span></a>
+              <a href="Custom Software.dc.html" style="display:flex; align-items:flex-start; gap:13px; padding:11px 24px; color:#1c1b1b;" style-hover="background:#f1f5f4; color:#1c1b1b;"><span style="flex-shrink:0; width:40px; height:40px; border-radius:10px; background:#eef4f3; display:inline-flex; align-items:center; justify-content:center; margin-top:1px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><path d="m9 8-4 4 4 4M15 8l4 4-4 4"></path></svg></span><span style="display:block;"><span style="display:block; font:700 15px Inter, sans-serif; color:#0c1512; margin-bottom:2px;">Custom Software</span><span style="display:block; font:400 13px/1.4 Inter, sans-serif; color:#6e7977;">Bespoke high-performance systems engineering</span></span></a>
+              <div style="height:1px; background:#E5E7EB; margin:10px 24px 8px;"></div>
+              <a href="Digital Products.dc.html" style="display:flex; align-items:flex-start; gap:13px; padding:11px 24px; color:#1c1b1b;" style-hover="background:#f1f5f4; color:#1c1b1b;"><span style="flex-shrink:0; width:40px; height:40px; border-radius:10px; background:#eef4f3; display:inline-flex; align-items:center; justify-content:center; margin-top:1px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg></span><span style="display:block;"><span style="display:block; font:700 15px Inter, sans-serif; color:#0c1512; margin-bottom:2px;">Digital Products Hub Overview</span><span style="display:block; font:400 13px/1.4 Inter, sans-serif; color:#6e7977;">Our Digital Solutions at a glance</span></span></a>
+            </div>
+          </div>
+        </details>
+      <a href="About.dc.html" style="color:#1c1b1b;">About</a>
+      <a href="Insights.dc.html" style="color:#1c1b1b;">Insights</a>
+      <a href="Contact.dc.html?tab=assessment" style="display:inline-flex; align-items:center; gap:10px; background:#d9f5ef; color:#06332e; border:1px solid rgba(56,224,196,0.75); border-radius:11px; padding:11px 20px; font:600 14.5px Inter, sans-serif; box-shadow:0 1px 2px rgba(6,35,30,0.10), 0 4px 14px rgba(6,35,30,0.08); transition:background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;" style-hover="background:#bfeee4; border-color:#38e0c4; box-shadow:0 0 0 1px rgba(56,224,196,0.6), 0 0 22px rgba(56,224,196,0.42), 0 8px 20px rgba(6,35,30,0.26); transform:translateY(-2px);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="3" y="5" width="18" height="16" rx="3"></rect><path d="M8 3v4"></path><path d="M16 3v4"></path><path d="M3 10h18"></path></svg>Book a Free IT Assessment</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <div style="display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; padding:96px 64px 64px; align-items:center;">
+    <div>
+      <span style="display:inline-flex; align-items:center; gap:9px; border:1px solid rgba(45,212,191,0.4); border-radius:999px; padding:8px 18px; font:700 12px 'JetBrains Mono', monospace; color:#5eead4; letter-spacing:0.08em; margin-bottom:26px;"><span style="width:7px; height:7px; border-radius:50%; background:#2dd4bf; box-shadow:0 0 6px rgba(45,212,191,0.9);"></span>AI OPERATIONS &amp; AUTOMATION</span>
+      <h1 style="margin:0 0 26px; font:700 56px/1.08 Sora, sans-serif; letter-spacing:-0.02em; color:#FFFFFF; text-wrap:pretty;">AI shouldn't just answer questions. <span style="color:#2dd4bf;">It should perform tasks.</span></h1>
+      <p style="margin:0 0 40px; font:400 17.5px/1.65 Inter, sans-serif; color:#94A3B8; text-wrap:pretty;">We deploy cognitive AI agents directly into Odoo and SAP database layers. They cross-check files, audit bills and reconcile records in the background — so your team can focus on growth.</p>
+      <div style="display:flex; flex-wrap:wrap; align-items:center; gap:16px;">
+        <a href="#agent-demo" style="display:inline-flex; align-items:center; gap:11px; background:#38e0c4; color:#06231e; border-radius:12px; padding:16px 30px; font:700 16px Inter, sans-serif;" style-hover="background:#5eead4; color:#06231e;"><svg viewBox="0 0 24 24" style="width:19px; height:19px;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M10 8.5l6 3.5-6 3.5z"></path></svg>Watch an AI Agent Operate</a>
+        <a href="Contact.dc.html?tab=enquiry" style="display:inline-flex; align-items:center; gap:11px; background:transparent; color:#5eead4; border:1px solid rgba(94,234,212,0.45); border-radius:12px; padding:15px 28px; font:600 16px Inter, sans-serif;" style-hover="background:rgba(56,224,196,0.10); border-color:#38e0c4; color:#8ff5e2;"><svg viewBox="0 0 24 24" style="width:19px; height:19px;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="9" y="9" width="6" height="6"></rect><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"></path></svg>Request an AI Scoping Session</a>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,0.10); margin-top:44px; padding-top:26px; display:flex; flex-wrap:wrap; gap:12px;">
+        <sc-for list="{{ heroTags }}" as="t" hint-placeholder-count="5">
+          <span style="background:linear-gradient(180deg, rgba(56,224,196,0.12), rgba(56,224,196,0.03)); border:1px solid rgba(56,224,196,0.3); border-radius:999px; padding:9px 18px; font:600 12.5px 'JetBrains Mono', monospace; color:#c7ede6;">{{ t }}</span>
+        </sc-for>
+      </div>
+    </div>
+    <div style="position:relative; height:440px; border-radius:16px; border:1px solid rgba(30,41,59,0.9); background:#020617; overflow:hidden; box-shadow:0 24px 60px rgba(0,0,0,0.45);">
+      <img src="assets/agentic-hero.png" alt="Agentic AI workflows and bot mesh network" referrerPolicy="no-referrer" style="width:100%; height:100%; object-fit:cover; opacity:0.5; mix-blend-mode:luminosity; transition:all 0.7s ease; display:block;" style-hover="mix-blend-mode:normal; transform:scale(1.05); opacity:0.7;">
+      <svg style="position:absolute; inset:0; width:100%; height:100%; pointer-events:none; opacity:0.4;" xmlns="http://www.w3.org/2000/svg">
+        <line x1="25%" y1="20%" x2="70%" y2="40%" stroke="#10b981" stroke-width="1.5" stroke-dasharray="4 4"></line>
+        <line x1="25%" y1="20%" x2="25%" y2="70%" stroke="#14b8a6" stroke-width="1" stroke-dasharray="3 3"></line>
+        <line x1="25%" y1="70%" x2="70%" y2="40%" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5 5"></line>
+      </svg>
+      <div style="position:absolute; top:15%; left:10%; background:rgba(15,23,42,0.9); backdrop-filter:blur(8px); padding:8px 12px; border-radius:12px; border:1px solid rgba(16,185,129,0.3); display:flex; align-items:center; gap:10px; box-shadow:0 10px 24px rgba(0,0,0,0.4); animation:b1-float 3s ease-in-out infinite;">
+        <span style="position:relative; display:flex; width:8px; height:8px;"><span style="position:absolute; inset:0; border-radius:50%; background:#34d399; animation:b1-ping 1.6s cubic-bezier(0,0,0.2,1) infinite;"></span><span style="position:relative; display:inline-flex; width:8px; height:8px; border-radius:50%; background:#10b981;"></span></span>
+        <span style="width:20px; height:20px; border-radius:5px; background:rgba(16,185,129,0.1); display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" style="width:14px; height:14px;" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg></span>
+        <span style="font:700 11px 'JetBrains Mono', monospace; color:#6ee7b7; letter-spacing:-0.01em;">Audit_Bot_01</span>
+      </div>
+      <div style="position:absolute; top:35%; right:8%; background:rgba(15,23,42,0.9); backdrop-filter:blur(8px); padding:8px 12px; border-radius:12px; border:1px solid rgba(245,158,11,0.3); display:flex; align-items:center; gap:10px; box-shadow:0 10px 24px rgba(0,0,0,0.4);" style-hover="border:1px solid rgba(251,191,36,0.5);">
+        <span style="position:relative; display:flex; width:8px; height:8px;"><span style="position:absolute; inset:0; border-radius:50%; background:#fbbf24; animation:b1-ping 1.6s cubic-bezier(0,0,0.2,1) infinite;"></span><span style="position:relative; display:inline-flex; width:8px; height:8px; border-radius:50%; background:#f59e0b;"></span></span>
+        <span style="width:20px; height:20px; border-radius:5px; background:rgba(245,158,11,0.1); display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" style="width:14px; height:14px;" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span>
+        <span style="font:700 11px 'JetBrains Mono', monospace; color:#fcd34d; letter-spacing:-0.01em;">NLP_Swahili_02</span>
+      </div>
+      <div style="position:absolute; bottom:28%; left:8%; background:rgba(15,23,42,0.9); backdrop-filter:blur(8px); padding:8px 12px; border-radius:12px; border:1px solid rgba(20,184,166,0.3); display:flex; align-items:center; gap:10px; box-shadow:0 10px 24px rgba(0,0,0,0.4); animation:b1-pulse 2.4s ease-in-out infinite;">
+        <span style="position:relative; display:flex; width:8px; height:8px;"><span style="position:absolute; inset:0; border-radius:50%; background:#2dd4bf; animation:b1-ping 1.6s cubic-bezier(0,0,0.2,1) infinite;"></span><span style="position:relative; display:inline-flex; width:8px; height:8px; border-radius:50%; background:#14b8a6;"></span></span>
+        <span style="width:20px; height:20px; border-radius:5px; background:rgba(20,184,166,0.1); display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" style="width:14px; height:14px;" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"></path><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"></path></svg></span>
+        <span style="font:700 11px 'JetBrains Mono', monospace; color:#5eead4; letter-spacing:-0.01em;">RAG_Compliance_03</span>
+      </div>
+      <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(2,6,23,0.9), transparent 50%); pointer-events:none;"></div>
+      <div style="position:absolute; bottom:16px; left:16px; right:16px; background:rgba(15,23,42,0.85); backdrop-filter:blur(8px); padding:14px 16px; border-radius:12px; border:1px solid rgba(30,41,59,0.9); z-index:10;">
+        <p style="margin:0; font:700 10px 'JetBrains Mono', monospace; color:#2dd4bf; letter-spacing:0.2em; line-height:1;">OPENCLAW &amp; N8N AGENTS</p>
+        <p style="margin:6px 0 0; font:500 12px Inter, sans-serif; color:#f1f5f9;">Autonomous cognitive workflow agents</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Core Agentic Modules -->
+  <div style="padding:88px 64px; border-top:1px solid rgba(255,255,255,0.10); text-align:center;">
+    <span style="display:block; font:700 12px 'JetBrains Mono', monospace; color:#2dd4bf; letter-spacing:0.18em; margin-bottom:16px;">OPERATIONAL CAPABILITIES</span>
+    <h2 style="margin:0 0 18px; font:700 38px/1.15 Sora, sans-serif; letter-spacing:-0.02em; color:#FFFFFF;">Our Core Agentic Modules</h2>
+    <span style="display:inline-block; width:56px; height:3px; background:#2dd4bf; border-radius:2px; margin-bottom:52px;"></span>
+    <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; text-align:left;">
+      <sc-for list="{{ modules }}" as="m" hint-placeholder-count="3">
+        <div style="position:relative; background:#10263F; border:1px solid rgba(148,163,184,0.16); border-radius:18px; padding:32px; overflow:hidden;" style-hover="border:1px solid rgba(45,212,191,0.5);">
+          <div style="position:absolute; inset:0; background-image:linear-gradient(rgba(45,212,191,0.22) 1px, transparent 1px), linear-gradient(90deg, rgba(45,212,191,0.22) 1px, transparent 1px); background-size:20px 20px; mask-image:linear-gradient(135deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.18) 55%, transparent 85%); -webkit-mask-image:linear-gradient(135deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.18) 55%, transparent 85%); filter:blur(0.4px); pointer-events:none;"></div>
+          <span style="position:relative; width:56px; height:56px; border-radius:14px; background:#071e1b; display:inline-flex; align-items:center; justify-content:center; margin-bottom:24px;"><span style="display:inline-flex; color:#2dd4bf;">{{ m.icon }}</span></span>
+          <h3 style="position:relative; margin:0 0 14px; font:700 21px/1.3 Sora, sans-serif; color:#FFFFFF; letter-spacing:-0.01em; text-wrap:pretty;">{{ m.title }}</h3>
+          <p style="position:relative; margin:0; font:400 15px/1.65 Inter, sans-serif; color:#94A3B8; text-wrap:pretty;">{{ m.copy }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- Interactive reasoning trace -->
+  <div id="agent-demo" style="padding:0 64px 96px; scroll-margin-top:96px;">
+    <div style="text-align:center; margin-bottom:36px;">
+      <h2 style="margin:0 0 10px; font:700 34px/1.2 Sora, sans-serif; letter-spacing:-0.02em; color:#FFFFFF;">Watch an AI agent execute a background task.</h2>
+      <p style="margin:0; font:400 16px Inter, sans-serif; color:#94A3B8;">Pick a scenario and run the cognitive reasoning engine trace.</p>
+    </div>
+    <div style="background:#040d0b; border:1px solid rgba(45,212,191,0.2); border-radius:20px; overflow:hidden; box-shadow:0 24px 60px rgba(0,0,0,0.45);">
+      <div style="display:flex; align-items:center; justify-content:space-between; padding:20px 28px; border-bottom:1px solid rgba(255,255,255,0.08);">
+        <span style="display:inline-flex; align-items:center; gap:12px; font:700 13px 'JetBrains Mono', monospace; color:#e2e8f0; letter-spacing:0.12em;"><span style="color:#2dd4bf;">&gt;_</span>COGNITIVE REASONING ENGINE TRACE</span>
+        <span style="font:600 12px 'JetBrains Mono', monospace; color:{{ statusColor }}; border:1px solid rgba(255,255,255,0.14); border-radius:8px; padding:8px 14px; background:rgba(255,255,255,0.03);">Agent Status: {{ statusText }}</span>
+      </div>
+      <div style="display:grid; grid-template-columns:0.85fr 1.15fr; min-height:460px;">
+        <div style="padding:28px; border-right:1px solid rgba(255,255,255,0.08); display:flex; flex-direction:column; gap:16px;">
+          <span style="font:700 12px 'JetBrains Mono', monospace; color:#94A3B8; letter-spacing:0.14em;">SELECT WORKFLOW TARGET</span>
+          <sc-for list="{{ scenarios }}" as="s" hint-placeholder-count="3">
+            <div onClick="{{ s.select }}" style="border:1px solid {{ s.borderColor }}; background:{{ s.bg }}; border-radius:12px; padding:18px 20px; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:14px; transition:all 0.2s ease;" style-hover="border:1px solid rgba(45,212,191,0.6);">
+              <span style="display:flex; flex-direction:column; gap:7px;">
+                <span style="font:700 11px 'JetBrains Mono', monospace; color:#5eead4; letter-spacing:0.12em;">SCENARIO: {{ s.tag }}</span>
+                <span style="font:500 14.5px/1.45 Inter, sans-serif; color:#E2E8F0;">{{ s.label }}</span>
+              </span>
+              <span style="width:30px; height:30px; border-radius:8px; border:1px solid rgba(45,212,191,0.4); display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; color:#2dd4bf;"><svg viewBox="0 0 24 24" style="width:14px; height:14px;" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="padding:28px 32px; display:flex; flex-direction:column; gap:20px; overflow-y:auto; max-height:520px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:16px;">
+            <span style="font:400 14px 'JetBrains Mono', monospace; color:#94A3B8;">Active Trigger Command:</span>
+            <span style="font:700 13px 'JetBrains Mono', monospace; color:#5eead4; letter-spacing:0.08em;">{{ active.command }}</span>
+          </div>
+          <div style="border:1px solid rgba(45,212,191,0.25); background:rgba(45,212,191,0.05); border-radius:10px; padding:16px 20px;">
+            <span style="font:700 italic 14px 'JetBrains Mono', monospace; color:#e2e8f0; letter-spacing:0.04em;">" {{ active.quote }} "</span>
+          </div>
+          <sc-for list="{{ visibleSteps }}" as="step" hint-placeholder-count="3">
+            <div style="border:1px solid rgba(255,255,255,0.10); background:rgba(255,255,255,0.02); border-radius:10px; padding:18px 20px; display:flex; flex-direction:column; gap:10px;">
+              <span style="font:700 11.5px 'JetBrains Mono', monospace; color:#94A3B8; letter-spacing:0.06em;">{{ step.head }}</span>
+              <span style="font:400 15px/1.5 Inter, sans-serif; color:#E2E8F0;">{{ step.line }}</span>
+              <span style="font:400 12.5px/1.55 'JetBrains Mono', monospace; color:#64748B;">{{ step.detail }}</span>
+            </div>
+          </sc-for>
+          <sc-if value="{{ showResult }}" hint-placeholder-val="{{ false }}">
+            <div style="border:1px solid rgba(52,211,153,0.4); background:rgba(52,211,153,0.08); border-radius:10px; padding:18px 20px; display:flex; align-items:center; gap:12px;">
+              <svg viewBox="0 0 24 24" style="width:20px; height:20px; flex-shrink:0;" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+              <span style="font:600 14.5px/1.5 Inter, sans-serif; color:#a7f3d0;">{{ active.result }}</span>
+            </div>
+          </sc-if>
+          <button onClick="{{ runAgent }}" style="align-self:flex-start; display:inline-flex; align-items:center; gap:10px; background:#0f766e; color:#FFFFFF; border:none; border-radius:10px; padding:13px 24px; font:600 14.5px Inter, sans-serif; cursor:pointer; margin-top:4px;" style-hover="background:#0d655e;"><svg viewBox="0 0 24 24" style="width:16px; height:16px;" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>{{ runLabel }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Five properties -->
+  <div style="padding:0 64px 96px;">
+    <span style="display:block; font:700 12px 'JetBrains Mono', monospace; color:#2dd4bf; letter-spacing:0.18em; margin-bottom:24px;">WHAT AN AGENTIC WORKFLOW IS</span>
+    <div style="display:grid; grid-template-columns:repeat(5, 1fr); gap:20px;">
+      <sc-for list="{{ properties }}" as="p" hint-placeholder-count="5">
+        <div style="position:relative; background:#10263F; background-image:radial-gradient(120% 90% at 15% 0%, rgba(45,212,191,0.16) 0%, rgba(45,212,191,0.05) 38%, transparent 68%); border:1px solid rgba(148,163,184,0.16); border-radius:16px; padding:24px; display:flex; flex-direction:column; gap:10px; overflow:hidden;" style-hover="border:1px solid rgba(45,212,191,0.5);">
+          <span style="position:relative; font:600 17px Inter, sans-serif; color:#2dd4bf;">{{ p.name }}</span>
+          <p style="position:relative; margin:0; font:400 14px/1.6 Inter, sans-serif; color:#94A3B8;">{{ p.copy }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- Use cases -->
+  <div style="padding:88px 64px; border-top:1px solid rgba(255,255,255,0.10);">
+    <span style="display:block; font:700 11.5px 'JetBrains Mono', monospace; color:#2dd4bf; letter-spacing:0.22em; margin-bottom:16px;">BUSINESS CASE</span>
+    <h2 style="margin:0 0 48px; font:700 38px/1.15 Sora, sans-serif; letter-spacing:-0.02em; color:#FFFFFF;">Use cases for Kenyan organisations.</h2>
+    <table style="width:100%; border-collapse:collapse;">
+      <thead>
+        <tr>
+          <th style="text-align:left; padding:16px 24px; font:600 13px Inter, sans-serif; color:#2dd4bf; letter-spacing:0.1em; border-bottom:1px solid rgba(45,212,191,0.35); width:22%;">FUNCTION</th>
+          <th style="text-align:left; padding:16px 24px; font:600 13px Inter, sans-serif; color:#2dd4bf; letter-spacing:0.1em; border-bottom:1px solid rgba(45,212,191,0.35);">AGENT DOES</th>
+        </tr>
+      </thead>
+      <tbody>
+        <sc-for list="{{ useCases }}" as="u" hint-placeholder-count="8">
+          <tr>
+            <td style="padding:18px 24px; font:600 16px Inter, sans-serif; color:#FFFFFF; border-bottom:1px solid rgba(255,255,255,0.08); vertical-align:top;">{{ u.fn }}</td>
+            <td style="padding:18px 24px; font:400 15.5px/1.6 Inter, sans-serif; color:#94A3B8; border-bottom:1px solid rgba(255,255,255,0.08);">{{ u.does }}</td>
+          </tr>
+        </sc-for>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Approach -->
+  <div style="padding:88px 64px; border-top:1px solid rgba(255,255,255,0.10);">
+    <div style="display:flex; flex-direction:column; align-items:flex-start; gap:16px; margin-bottom:44px;">
+      <span style="font:700 11.5px 'JetBrains Mono', monospace; color:#2dd4bf; letter-spacing:0.22em;">DELIVERY SEQUENCE</span>
+      <h2 style="margin:0; font:700 38px/1.15 Sora, sans-serif; letter-spacing:-0.02em; color:#FFFFFF;">The Binary One approach.</h2>
+      <span style="display:inline-flex; align-items:center; gap:11px; font:700 10.5px 'JetBrains Mono', monospace; letter-spacing:0.16em; color:#8ff5e2; border:1px solid rgba(45,212,191,0.28); background:rgba(45,212,191,0.06); border-radius:999px; padding:9px 16px;">SCOPE<span style="color:#2dd4bf;">&#8594;</span>PILOT<span style="color:#9EFF5A;">&#8594;</span>EVIDENCE</span>
+    </div>
+    <div style="position:relative;">
+      <div style="position:absolute; top:23px; left:22px; right:6px; height:2px; border-radius:2px; background:linear-gradient(90deg, rgba(45,212,191,0.18) 0%, rgba(45,212,191,0.55) 46%, rgba(158,255,90,0.85) 100%);"></div>
+      <div style="position:absolute; top:22px; left:22px; right:6px; height:4px; opacity:0.4; background-image:linear-gradient(90deg, rgba(255,255,255,0.6) 0 7px, rgba(255,255,255,0) 7px 26px); background-size:26px 100%; animation:b1-rail 1.5s linear infinite; mask-image:linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%); -webkit-mask-image:linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%);"></div>
+      <div style="display:grid; grid-template-columns:repeat(6, 1fr); gap:18px; position:relative;">
+        <sc-for list="{{ approach }}" as="s" hint-placeholder-count="6">
+          <div style="display:flex; flex-direction:column; gap:18px;">
+            <span style="position:relative; width:46px; height:46px; border-radius:50%; background:#0B1D33; border:1.5px solid {{ s.ring }}; box-shadow:{{ s.glow }}; display:flex; align-items:center; justify-content:center; font:700 13px 'JetBrains Mono', monospace; color:{{ s.tint }}; flex-shrink:0;">{{ s.num }}</span>
+            <div style="flex:1; border:1px solid rgba(255,255,255,0.07); border-top:2px solid {{ s.ring }}; border-radius:0 0 14px 14px; background:rgba(255,255,255,0.022); padding:18px 16px 20px; display:flex; flex-direction:column; gap:8px; transition:transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;" style-hover="transform:translateY(-4px); background:rgba(45,212,191,0.06); border-color:rgba(45,212,191,0.45); box-shadow:0 18px 40px -22px rgba(45,212,191,0.55);">
+              <span style="display:flex; align-items:center; gap:10px;">
+                <svg viewBox="0 0 24 24" style="width:19px; height:19px; flex-shrink:0; filter:{{ s.iconGlow }};" fill="none" stroke="{{ s.tint }}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="{{ s.icon }}"></path></svg>
+                <span style="font:600 16px/1.3 Inter, sans-serif; color:#FFFFFF; text-wrap:pretty;">{{ s.name }}</span>
+              </span>
+              <p style="margin:0; font:400 13.5px/1.6 Inter, sans-serif; color:#94A3B8; text-wrap:pretty;">{{ s.copy }}</p>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <!-- Readiness -->
+  <div style="padding:88px 64px; border-top:1px solid rgba(255,255,255,0.10); display:grid; grid-template-columns:0.8fr 1.2fr; gap:64px; align-items:start;">
+    <div>
+      <h2 style="margin:0 0 28px; font:700 38px/1.15 Sora, sans-serif; letter-spacing:-0.02em; color:#FFFFFF;">Readiness signals.</h2>
+      <div style="position:relative; border-radius:16px; overflow:hidden; border:1px solid rgba(45,212,191,0.22); background:#040d0b; box-shadow:0 20px 48px rgba(0,0,0,0.4);">
+        <img src="assets/agentic-neural.png" alt="Neural network intelligence" referrerPolicy="no-referrer" style="width:100%; height:300px; object-fit:cover; opacity:0.85; filter:brightness(1.25) saturate(1.1); display:block; transition:transform 0.5s ease;" style-hover="transform:scale(1.07);">
+        <div style="position:absolute; inset:0; background-image:linear-gradient(rgba(45,212,191,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(45,212,191,0.14) 1px, transparent 1px); background-size:26px 26px; mask-image:linear-gradient(160deg, rgba(0,0,0,0.7) 0%, transparent 70%); -webkit-mask-image:linear-gradient(160deg, rgba(0,0,0,0.7) 0%, transparent 70%); pointer-events:none;"></div>
+        <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(4,13,11,0.95) 0%, rgba(4,13,11,0.35) 45%, transparent 80%); pointer-events:none;"></div>
+        <div style="position:absolute; top:20px; left:20px; display:inline-flex; align-items:center; gap:9px; background:rgba(4,13,11,0.75); backdrop-filter:blur(6px); border:1px solid rgba(45,212,191,0.3); border-radius:999px; padding:8px 15px;">
+          <span style="position:relative; display:flex; width:8px; height:8px;"><span style="position:absolute; inset:0; border-radius:50%; background:#2dd4bf; animation:b1-ping 1.6s cubic-bezier(0,0,0.2,1) infinite;"></span><span style="position:relative; display:inline-flex; width:8px; height:8px; border-radius:50%; background:#14b8a6;"></span></span>
+          <span style="font:700 11px 'JetBrains Mono', monospace; color:#5eead4; letter-spacing:0.12em;">SIGNAL CHECK: ACTIVE</span>
+        </div>
+        <div style="position:absolute; bottom:22px; left:24px; right:24px;">
+          <p style="margin:0 0 6px; font:700 11px 'JetBrains Mono', monospace; color:#2dd4bf; letter-spacing:0.18em;">READINESS SCORE</p>
+          <p style="margin:0; font:600 18px/1.4 Inter, sans-serif; color:#f1f5f9; text-wrap:pretty;">We score fit before we scope — evidence over enthusiasm.</p>
+        </div>
+      </div>
+    </div>
+    <div style="background:#10263F; border:1px solid rgba(148,163,184,0.16); border-radius:16px; padding:36px;">
+      <p style="margin:0 0 24px; font:500 17px Inter, sans-serif; color:#FFFFFF;">You are ready for a scoped agentic AI pilot if you have:</p>
+      <div style="display:flex; flex-direction:column; gap:0; margin-bottom:28px;">
+        <sc-for list="{{ readiness }}" as="r" hint-placeholder-count="5">
+          <div style="display:flex; gap:14px; align-items:center; padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.08); font:400 15.5px Inter, sans-serif; color:#E2E8F0;">
+            <span style="width:18px; height:18px; border:1.5px solid #7cdc79; border-radius:5px; flex-shrink:0; display:flex; align-items:center; justify-content:center; font:600 11px Inter, sans-serif; color:#7cdc79;">✓</span>
+            <span>{{ r }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <p style="margin:0; font:400 15px/1.6 Inter, sans-serif; color:#94A3B8;"><strong style="color:#7cdc79; font-weight:600;">Honest note:</strong> if three or more of these are missing, we will tell you not to start yet.</p>
+    </div>
+  </div>
+
+  <!-- Safety callout -->
+  <div style="padding:0 64px 88px;">
+    <div style="background:rgba(124,220,121,0.06); border:1px solid rgba(124,220,121,0.35); border-radius:16px; padding:36px 40px; display:flex; align-items:flex-start; gap:26px;">
+      <span style="width:56px; height:56px; border-radius:50%; flex-shrink:0; border:1px solid rgba(124,220,121,0.45); background:rgba(124,220,121,0.08); box-shadow:0 0 22px rgba(124,220,121,0.16), inset 0 0 14px rgba(0,0,0,0.35); display:flex; align-items:center; justify-content:center;">
+        <svg viewBox="0 0 24 24" style="width:28px; height:28px; display:block;" fill="none" stroke="#7cdc79" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.1 2.6h5.8l4.5 4.5v5.8l-4.5 4.5H9.1l-4.5-4.5V7.1z" transform="translate(0 1.5)"></path><path d="M12 8.6v4.2" transform="translate(0 1.5)"></path><path d="M12 16.1h.01" transform="translate(0 1.5)"></path></svg>
+      </span>
+      <div style="display:flex; flex-direction:column;">
+      <span style="display:block; font:700 12px 'JetBrains Mono', monospace; color:#7cdc79; letter-spacing:0.18em; margin-bottom:14px;">SAFETY</span>
+      <p style="margin:0; font:500 19px/1.6 Inter, sans-serif; color:#FFFFFF; text-wrap:pretty;">Human-in-the-loop on every high-stakes step. No autonomous money movement, no autonomous external communication and no autonomous data deletion.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Enterprise integration CTA -->
+  <div style="padding:88px 64px 96px; border-top:1px solid rgba(255,255,255,0.10);">
+    <div style="position:relative; overflow:hidden; background-color:#0c1512; background-image:radial-gradient(circle at 90% 8%, rgba(56,224,196,0.16), transparent 44%), radial-gradient(circle at 2% 98%, rgba(56,224,196,0.12), transparent 42%), linear-gradient(90deg, rgba(56,224,196,0.05) 1px, transparent 1px), linear-gradient(rgba(56,224,196,0.05) 1px, transparent 1px), linear-gradient(140deg, #10201c 0%, #0c1512 52%, #0a1310 100%); background-size:auto, auto, 54px 54px, 54px 54px, auto; border:1px solid rgba(56,224,196,0.16); box-shadow:inset 0 1px 0 rgba(56,224,196,0.08), 0 24px 60px rgba(0,0,0,0.35); border-radius:22px; padding:56px 60px; display:grid; grid-template-columns:1.5fr auto; gap:48px; align-items:center;">
+      <div style="position:relative;">
+        <span style="display:block; font:700 12px 'JetBrains Mono', monospace; color:#2dd4bf; letter-spacing:0.18em; margin-bottom:16px;">ENTERPRISE INTEGRATION</span>
+        <h2 style="margin:0 0 18px; font:700 34px/1.2 Sora, sans-serif; letter-spacing:-0.02em; color:#FFFFFF; text-wrap:pretty;">Ready to deploy intelligent background workers?</h2>
+        <p style="margin:0; font:400 15.5px/1.7 Inter, sans-serif; color:#c2dbd7; max-width:600px; text-wrap:pretty;">Connect with our systems architects to map out custom language models, vector stores and agent tool-calling patterns built on top of your existing Odoo or SAP databases.</p>
+      </div>
+      <a href="Contact.dc.html?tab=enquiry" style="position:relative; display:inline-flex; align-items:center; gap:11px; background:#38e0c4; color:#0c1512; border-radius:12px; padding:17px 30px; font:700 15.5px Inter, sans-serif; white-space:nowrap;" style-hover="background:#5ceace; color:#0c1512;"><svg viewBox="0 0 24 24" style="width:19px; height:19px;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="9" y="9" width="6" height="6"></rect><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"></path></svg>Request Scoping Session</a>
+    </div>
+  </div>
+
+  <!-- Footer strip -->
+  <footer style="border-top:1px solid rgba(255,255,255,0.10); padding:32px 64px; display:flex; justify-content:space-between; align-items:center; font:400 13.5px Inter, sans-serif; color:#94A3B8;">
+    <span><span style="font:700 15px Sora, sans-serif; color:#FFFFFF;">Binary One</span> Solutions Ltd · Digital Products</span>
+    <span>info@binaryone.co.ke · +254 787 990 220 · Nairobi · <a href="Data Protection.dc.html" style="color:inherit; border-bottom:1px solid rgba(255,255,255,0.3); padding-bottom:1px;" style-hover="color:#7cdc79;">Data Protection Policy</a></span>
+    <a href="Digital Products.dc.html" style="color:#E2E8F0; border-bottom:1px solid rgba(255,255,255,0.3); padding-bottom:1px;" style-hover="color:#7cdc79;">← All Digital Products</a>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { scenario: 0, revealed: 0, running: false, done: false };
+  componentWillUnmount() { clearInterval(this._timer); }
+  scenarioData() {
+    return [
+      { tag: "INVOICE AUDIT", label: "Audit incoming PDF invoice against Odoo Purchase Order records",
+        command: "INVOICE_AUDIT",
+        quote: "Audit incoming PDF invoice against Odoo Purchase Order records",
+        result: "Match confirmed — invoice INV-9040 reconciled against PO-7742. Flagged for human sign-off.",
+        steps: [
+          { head: "[STEP 1] COGNITIVE INTENT ANALYSIS", line: "Scanning PDF Invoice INV-9040: \"Fertilizer Supplier Ltd, Total: KES 840,000.\"", detail: "> Extracted invoice metadata: Supplier=\"Fertilizer Supplier Ltd\", Amount=840,000, Item=\"NPK Fertilizer\"." },
+          { head: "[STEP 2] TOOL CALL: query_odoo_purchase_orders", line: "Querying Odoo ERP database for open purchase orders linked to Supplier.", detail: "> Found active PO-7742. Approved Amount: KES 840,000. Ordered Item: \"NPK Fertilizer\". Qty: 100 bags." },
+          { head: "[STEP 3] RECONCILIATION", line: "Cross-checking invoice line items and totals against PO and goods-received note.", detail: "> Amounts match. Quantity match. No price variance detected." },
+        ] },
+      { tag: "LOYALTY RULES RAG", label: "Query NAWIRI programme rules on mechanic reward ceilings for lubricant seal codes",
+        command: "COMPLIANCE_RAG",
+        quote: "Query NAWIRI programme rules on mechanic reward ceilings for lubricant seal codes",
+        result: "Answer grounded in 3 source clauses. Ceiling: KES 15,000 per mechanic per month across airtime, M-PESA and toolbox rewards.",
+        steps: [
+          { head: "[STEP 1] COGNITIVE INTENT ANALYSIS", line: "Interpreting query: \"maximum reward value per mechanic per month on induction-seal redemptions.\"", detail: "> Intent classified: policy-lookup. Domain: NAWIRI lubricants loyalty rules." },
+          { head: "[STEP 2] TOOL CALL: vector_search(policy_store)", line: "Retrieving top-ranked clauses from the embedded programme-rules knowledge base.", detail: "> Retrieved 3 chunks: Programme Rules §6.1 (seal-code validity), Reward Schedule Annex A (airtime / M-PESA / toolbox tiers), Anti-fraud Policy §3." },
+          { head: "[STEP 3] GROUNDED SYNTHESIS", line: "Composing answer strictly from retrieved sources with citations.", detail: "> Ceiling = KES 15,000 / mechanic / month. Toolbox redemption unlocks at 40 verified seals. Source confidence: high." },
+        ] },
+      { tag: "SWAHILI SUMMARIZER", label: "Process Swahili farmer SMS and log a pesticide supply exception",
+        command: "NLP_SWAHILI",
+        quote: "Process Swahili farmer SMS and log a pesticide supply exception",
+        result: "Exception logged to NAWIRI ledger. Agro-dealer and field officer notified for follow-up.",
+        steps: [
+          { head: "[STEP 1] LANGUAGE DETECTION & TRANSLATION", line: "Inbound SMS: \"Dawa ya kuua wadudu niliyonunua duka la pembejeo haijafanya kazi kwenye mahindi yangu.\"", detail: "> Detected: Swahili. Translated: \"The pesticide I bought at the agrovet has not worked on my maize.\"" },
+          { head: "[STEP 2] INTENT CLASSIFICATION", line: "Classifying farmer message against known exception types.", detail: "> Category: pesticide-efficacy-complaint. Counterfeit risk: possible. Sentiment: negative. Priority: high." },
+          { head: "[STEP 3] TOOL CALL: log_product_exception", line: "Writing structured exception record to the NAWIRI ledger with the redeemed pack code.", detail: "> Exception EX-3391 created. Batch traced to agrovet; agronomist dispatched to the farm." },
+        ] },
+    ];
+  }
+  selectScenario(i) { clearInterval(this._timer); this.setState({ scenario: i, revealed: 0, running: false, done: false }); }
+  runAgent() {
+    clearInterval(this._timer);
+    const total = this.scenarioData()[this.state.scenario].steps.length;
+    this.setState({ revealed: 0, running: true, done: false });
+    this._timer = setInterval(() => {
+      this.setState(s => {
+        const next = s.revealed + 1;
+        if (next >= total) { clearInterval(this._timer); return { revealed: next, running: false, done: true }; }
+        return { revealed: next };
+      });
+    }, 900);
+    setTimeout(() => this.setState(s => s.revealed === 0 ? { revealed: 1 } : {}), 100);
+  }
+  approachStages() {
+    const stages = [
+      { num: "01", name: "Discovery", copy: "Map two or three candidate workflows and choose one." },
+      { num: "02", name: "Scoped agent design", copy: "Narrow, specific and governed. No general-purpose \u201cdo everything\u201d agents." },
+      { num: "03", name: "vCIO governance", copy: "Your Virtual CIO chairs scope, permissions and exception-handling decisions." },
+      { num: "04", name: "Integration", copy: "Connect to Microsoft 365, Google Workspace, Odoo, Slack, email or ERP where approved." },
+      { num: "05", name: "60-day pilot", copy: "Measure against three KPIs agreed upfront." },
+      { num: "06", name: "Six-month review", copy: "Expand, contract or retire the agent based on evidence." },
+    ];
+    const tint = ["#2dd4bf", "#3edcc4", "#5ce3b4", "#7aeaa0", "#8cf47f", "#9EFF5A"];
+    const icons = ["M10.5 17a6.5 6.5 0 1 1 0-13 6.5 6.5 0 0 1 0 13zM15.2 15.2 20 20","M4.5 12h4l2.2-5 2.6 10 2.2-5h4.2","M12 3l7 3v6c0 4-3 6.6-7 8-4-1.4-7-4-7-8V6zM9.6 12.2 11.6 14.2 15 10.6","M9 7.5H6.5A2.5 2.5 0 0 0 4 10v4a2.5 2.5 0 0 0 2.5 2.5H9M15 7.5h2.5A2.5 2.5 0 0 1 20 10v4a2.5 2.5 0 0 1-2.5 2.5H15M8.5 12h7","M4 19V5M4 19h16M8 19v-5.5M12 19V9.5M16 19v-8M8.5 5.5 12 4l3.5 1.5","M20 12a8 8 0 0 1-13.7 5.6M4 12a8 8 0 0 1 13.7-5.6M4.2 17.4v-3.2h3.2M19.8 6.6v3.2h-3.2"];
+    return stages.map((st, i) => {
+      const t = i / (stages.length - 1);
+      const ringAt = (n) => {
+        const tt = n / (stages.length - 1);
+        return n < 5 ? "rgba(45,212,191," + (0.35 + 0.45 * tt).toFixed(2) + ")" : "rgba(158,255,90,0.85)";
+      };
+      return {
+        ...st,
+        tint: tint[i],
+        icon: icons[i],
+        iconGlow: "drop-shadow(0 0 6px " + (i < 5 ? "rgba(45,212,191,0.5)" : "rgba(158,255,90,0.55)") + ")",
+        ring: ringAt(i),
+        nextRing: ringAt(Math.min(i + 1, stages.length - 1)),
+        ringSoft: i < 5 ? "rgba(45,212,191,0.18)" : "rgba(158,255,90,0.25)",
+        offset: String(i * 48),
+        hasDrop: i < stages.length - 1,
+        glow: "0 0 " + Math.round(10 + 16 * t) + "px " + (i < 5 ? "rgba(45,212,191," : "rgba(158,255,90,") + (0.12 + 0.26 * t).toFixed(2) + "), inset 0 0 12px rgba(0,0,0,0.5)",
+      };
+    });
+  }
+  renderVals() {
+    const scn = this.scenarioData();
+    const active = scn[this.state.scenario];
+    const status = this.state.running ? "RUNNING — EXECUTING" : this.state.done ? "COMPLETE" : "IDLE - LISTENING";
+    const brainIcon = React.createElement("svg", { viewBox: "0 0 24 24", width: 24, height: 24, fill: "none", stroke: "currentColor", strokeWidth: 2, strokeLinecap: "round", strokeLinejoin: "round" }, React.createElement("path", { d: "M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z" }), React.createElement("path", { d: "M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z" }));
+    const dbIcon = React.createElement("svg", { viewBox: "0 0 24 24", width: 24, height: 24, fill: "none", stroke: "currentColor", strokeWidth: 2, strokeLinecap: "round", strokeLinejoin: "round" }, React.createElement("ellipse", { cx: 12, cy: 5, rx: 9, ry: 3 }), React.createElement("path", { d: "M3 5v14a9 3 0 0 0 18 0V5" }), React.createElement("path", { d: "M3 12a9 3 0 0 0 18 0" }));
+    const searchIcon = React.createElement("svg", { viewBox: "0 0 24 24", width: 24, height: 24, fill: "none", stroke: "currentColor", strokeWidth: 2, strokeLinecap: "round", strokeLinejoin: "round" }, React.createElement("circle", { cx: 11, cy: 11, r: 8 }), React.createElement("path", { d: "m21 21-4.3-4.3" }));
+    return {
+      modules: [
+        { icon: brainIcon, title: "Retrieval-Augmented Generation (RAG)", copy: "Build localized corporate brain models that securely read internal audits, HR guidelines, compliance standards and agricultural laws in natural language." },
+        { icon: dbIcon, title: "Autonomous Ledger Assistants", copy: "System agents that continuously scan Odoo ledgers to verify supplier receipts, flag missing KRA tax credentials and detect fraudulent invoices in real-time." },
+        { icon: searchIcon, title: "Document Intelligence Workflows", copy: "Automated extraction models that convert PDF purchase invoices, bill files and receipts into correct structured database records in seconds." },
+      ],
+      scenarios: scn.map((s, i) => ({
+        tag: s.tag, label: s.label,
+        select: () => this.selectScenario(i),
+        borderColor: i === this.state.scenario ? "rgba(45,212,191,0.6)" : "rgba(255,255,255,0.10)",
+        bg: i === this.state.scenario ? "rgba(45,212,191,0.06)" : "rgba(255,255,255,0.02)",
+      })),
+      active,
+      visibleSteps: active.steps.slice(0, this.state.revealed),
+      showResult: this.state.done,
+      statusText: status,
+      statusColor: this.state.running ? "#fcd34d" : this.state.done ? "#34d399" : "#94A3B8",
+      runLabel: this.state.running ? "Running…" : this.state.done ? "Run again" : "Run agent",
+      runAgent: () => this.runAgent(),
+      heroTags: ["Cognitive AI agents", "RAG architecture", "Odoo & SAP integrations", "Invoice verification", "Data anomaly detection"],
+      properties: [
+        { name: "Multi-step", copy: "It plans a sequence, not a single response." },
+        { name: "Tool-using", copy: "It reads and writes to approved systems." },
+        { name: "Goal-oriented", copy: "You give it an outcome, not just a script." },
+        { name: "Supervised", copy: "A named human approves high-stakes steps." },
+        { name: "Audit-trailed", copy: "Every read, write and decision is logged." },
+      ],
+      useCases: [
+        { fn: "Procurement", does: "Triages quotations, checks supplier compliance, flags exceptions and drafts purchase orders for approval." },
+        { fn: "Finance", does: "Processes invoices, matches against PO and GRN, and flags discrepancies." },
+        { fn: "Customer service", does: "Routes enquiries by intent, drafts first responses and escalates complex cases." },
+        { fn: "Sales", does: "Follows up quotations after 48 hours and logs activity to CRM." },
+        { fn: "IT helpdesk", does: "Performs first-line triage, opens tickets and assigns to a human for unresolved issues." },
+        { fn: "Executive support", does: "Summarises documents and drafts board-pack material from source data." },
+        { fn: "Audit & compliance", does: "Checks expenses, vendor onboarding documents and contract clauses against approved policy." },
+        { fn: "HR", does: "Handles leave workflows, onboarding checklists and policy Q&A." },
+      ],
+      readiness: [
+        "A repeatable process with documented steps",
+        "Reasonably clean data in accessible systems",
+        "A named pilot owner with authority",
+        "Executive sponsorship from the CFO, COO or MD",
+        "Tolerance for a 60-day pilot before scaling",
+      ],
+      approach: this.approachStages(),
+    };
+  }
+}
+</script>
+</body>
+</html>

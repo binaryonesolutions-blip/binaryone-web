@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #0A1628; -webkit-font-smoothing: antialiased; }
+  a { color: #FFFFFF; text-decoration: none; }
+  a:hover { color: #9EFF5A; }
+  ::selection { background: #9EFF5A; color: #0A1628; }
+  *, *::before, *::after { box-sizing: border-box; }
+  img, svg, video, iframe { max-width: 100%; }
+  /*hardened*/
+  @keyframes lsBeacon { 0%,100% { box-shadow:0 0 4px rgba(158,255,90,0.95), 0 0 10px rgba(158,255,90,0.5), 0 0 18px rgba(158,255,90,0.22); } 50% { box-shadow:0 0 7px rgba(158,255,90,1), 0 0 16px rgba(158,255,90,0.72), 0 0 30px rgba(158,255,90,0.34); } }
+</style>
+<script>
+(function(){
+  function fit(){
+    var basis = document.documentElement.clientWidth || window.innerWidth;
+    var r = basis / 1440;
+    if (r > 1.6) r = 1.6;
+    if (r < 0.15) r = 0.15;
+    document.documentElement.style.zoom = r;
+  }
+  window.addEventListener('resize', fit);
+  fit();
+})();
+</script>
+</helmet>
+
+<div style="width:1440px; margin:0 auto; min-height:100vh; background:#0A1628; background-image:linear-gradient(rgba(45,212,191,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(45,212,191,0.05) 1px, transparent 1px); background-size:48px 48px; font-family:Inter, sans-serif; color:#FFFFFF;">
+
+  <!-- Mini general nav -->
+  <div style="display:flex; align-items:center; justify-content:space-between; padding:0 64px; height:40px; background:#071120;">
+    <a href="Homepage.dc.html" style="font:600 12px Inter, sans-serif; color:#94A3B8;" style-hover="color:#9EFF5A;">← binaryone.co.ke</a>
+    <nav style="display:flex; align-items:center; gap:24px; font:500 12px Inter, sans-serif;">
+      <a href="Homepage.dc.html" style="color:#94A3B8;" style-hover="color:#9EFF5A;">Home</a>
+      <a href="Managed IT.dc.html" style="color:#94A3B8;" style-hover="color:#9EFF5A;">Managed IT</a>
+      <a href="ERP Consulting.dc.html" style="color:#94A3B8;" style-hover="color:#9EFF5A;">ERP Consulting</a>
+      <a href="Digital Products.dc.html" style="color:#94A3B8;" style-hover="color:#9EFF5A;">Digital Products</a>
+      <a href="About.dc.html" style="color:#94A3B8;" style-hover="color:#9EFF5A;">About</a>
+      <a href="Insights.dc.html" style="color:#94A3B8;" style-hover="color:#9EFF5A;">Insights</a>
+      <a href="Contact.dc.html" style="color:#94A3B8;" style-hover="color:#9EFF5A;">Contact</a>
+    </nav>
+  </div>
+  <div style="height:1px; background:linear-gradient(90deg, rgba(158,255,90,0), #9EFF5A 18%, #9EFF5A 82%, rgba(158,255,90,0)); box-shadow:0 0 12px rgba(158,255,90,0.45);"></div>
+
+  <!-- Nav -->
+  <header style="display:flex; align-items:center; justify-content:space-between; padding:0 64px; height:76px; border-bottom:1px solid rgba(45,212,191,0.25); position:sticky; top:0; background:rgba(10,22,40,0.92); backdrop-filter:blur(12px); z-index:50;">
+    <div style="display:flex; align-items:center; gap:16px;">
+      <a href="NAWIRI.dc.html" style="display:flex; align-items:baseline; gap:8px;">
+        <span style="font:800 20px Sora, sans-serif; color:#FFFFFF; letter-spacing:0.02em;">NAWIRI</span>
+        <span style="font:500 10px Inter, sans-serif; color:#94A3B8; letter-spacing:0.16em;">DIGITAL LOYALTY</span>
+      </a>
+      <span style="width:1px; height:22px; background:rgba(45,212,191,0.4);"></span>
+      <span style="font:500 12px Inter, sans-serif; color:#94A3B8;">Loyalty Programme Maturity Self-Score</span>
+    </div>
+    <nav style="display:flex; align-items:center; gap:32px; font:500 14.5px Inter, sans-serif;">
+      <a href="NAWIRI.dc.html" style="color:#E2E8F0;">← Back to NAWIRI</a>
+      <a href="Contact.dc.html" style="display:inline-flex; align-items:center; gap:10px; background:#071A2E; color:#FFFFFF; border:1px solid rgba(158,255,90,0.45); border-radius:11px; padding:11px 20px; font:600 14.5px Inter, sans-serif; transition:background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;" style-hover="background:#0d2942; border-color:#9EFF5A; box-shadow:0 0 0 1px rgba(158,255,90,0.6), 0 0 22px rgba(158,255,90,0.42), 0 8px 20px rgba(4,12,24,0.4); transform:translateY(-2px);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9EFF5A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="3" y="5" width="18" height="16" rx="3"></rect><path d="M8 3v4"></path><path d="M16 3v4"></path><path d="M3 10h18"></path></svg>Book a NAWIRI Demo</a>
+    </nav>
+  </header>
+
+  <!-- Intro -->
+  <div style="padding:80px 64px 48px; max-width:900px;">
+    <span style="display:block; font:500 12px 'JetBrains Mono', monospace; color:#2dd4bf; letter-spacing:0.18em; margin-bottom:16px;">FREE SELF-ASSESSMENT · 10 QUESTIONS · 3 MINUTES</span>
+    <h1 style="margin:0 0 20px; font:800 46px/1.1 Sora, sans-serif; color:#FFFFFF; text-wrap:pretty;">How mature is your loyalty programme, <span style="color:#9EFF5A;">honestly?</span></h1>
+    <p style="margin:0; font:400 17px/1.65 Inter, sans-serif; color:#94A3B8; text-wrap:pretty;">Score each statement from 1 (not true of us) to 4 (fully true of us). Your total places your programme in one of four maturity eras — and tells you what to fix first before investing further.</p>
+  </div>
+
+  <!-- Questions -->
+  <div style="padding:0 64px 48px; display:flex; flex-direction:column; gap:14px; max-width:1000px;">
+    <sc-for list="{{ questions }}" as="q" hint-placeholder-count="10">
+      <div style="background:#11203A; background-image:radial-gradient(130% 120% at 0% 0%, rgba(45,212,191,0.12) 0%, rgba(45,212,191,0.03) 38%, transparent 62%), radial-gradient(120% 130% at 100% 100%, rgba(158,255,90,0.08) 0%, transparent 55%); border:1px solid rgba(45,212,191,0.32); border-radius:14px; padding:22px 28px; display:grid; grid-template-columns:44px 1fr auto; gap:20px; align-items:center;" style-hover="border:1px solid rgba(45,212,191,0.55);">
+        <span style="font:500 13px 'JetBrains Mono', monospace; color:#2dd4bf;">{{ q.num }}</span>
+        <div>
+          <span style="display:block; font:600 16px/1.4 Inter, sans-serif; color:#FFFFFF; margin-bottom:3px;">{{ q.text }}</span>
+          <span style="display:block; font:400 13px/1.4 Inter, sans-serif; color:#64748B;">{{ q.dim }}</span>
+        </div>
+        <div style="display:flex; gap:8px;">
+          <sc-for list="{{ q.opts }}" as="o">
+            <button onClick="{{ o.pick }}" style="width:44px; height:44px; border-radius:10px; cursor:pointer; font:700 16px Sora, sans-serif; border:1.5px solid {{ o.border }}; background:{{ o.bg }}; color:{{ o.color }};">{{ o.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+
+  <!-- Score panel -->
+  <div style="padding:0 64px 96px; max-width:1000px;">
+    <div style="background:#0D1B31; border:1px solid rgba(158,255,90,0.35); border-radius:16px; padding:44px 48px;">
+      <div style="display:grid; grid-template-columns:auto 1fr; gap:56px; align-items:center;">
+        <div style="display:flex; flex-direction:column; gap:6px; min-width:220px;">
+          <span style="font:500 12px 'JetBrains Mono', monospace; color:#2dd4bf; letter-spacing:0.18em;">YOUR SCORE</span>
+          <span style="font:800 88px/1 Sora, sans-serif; color:#9EFF5A; text-shadow:0 0 40px rgba(158,255,90,0.3);">{{ scoreDisplay }}</span>
+          <span style="font:500 13px Inter, sans-serif; color:#94A3B8;">{{ answeredLabel }}</span>
+        </div>
+        <div>
+          <div style="height:10px; border-radius:100px; background:#1B2C47; overflow:hidden; margin-bottom:22px;">
+            <div style="height:100%; width:{{ barWidth }}; background:linear-gradient(90deg, #2dd4bf, #9EFF5A); border-radius:100px;"></div>
+          </div>
+          <h2 style="margin:0 0 10px; font:800 26px/1.2 Sora, sans-serif; color:#FFFFFF;">{{ bandName }}</h2>
+          <p style="margin:0; font:400 15.5px/1.65 Inter, sans-serif; color:#94A3B8; text-wrap:pretty;">{{ bandCopy }}</p>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(45,212,191,0.25); margin-top:36px; padding-top:32px;">
+        <sc-if value="{{ notDone }}" hint-placeholder-val="{{ true }}">
+          <p style="margin:0; font:500 15px Inter, sans-serif; color:#64748B;">Answer all 10 statements to unlock your maturity band and the written report.</p>
+        </sc-if>
+        <sc-if value="{{ doneNotSent }}" hint-placeholder-val="{{ false }}">
+          <div style="display:grid; grid-template-columns:1fr 1fr 1.2fr auto; gap:14px; align-items:center;">
+            <input placeholder="Name *" value="{{ fName }}" onChange="{{ setName }}" style="padding:14px 16px; border:1px solid rgba(45,212,191,0.35); border-radius:10px; font:400 15px Inter, sans-serif; background:#11203A; color:#FFFFFF; outline:none; box-sizing:border-box; width:100%;" style-focus="border:1px solid #9EFF5A;">
+            <input placeholder="Organisation *" value="{{ fOrg }}" onChange="{{ setOrg }}" style="padding:14px 16px; border:1px solid rgba(45,212,191,0.35); border-radius:10px; font:400 15px Inter, sans-serif; background:#11203A; color:#FFFFFF; outline:none; box-sizing:border-box; width:100%;" style-focus="border:1px solid #9EFF5A;">
+            <input placeholder="Work email *" type="email" value="{{ fEmail }}" onChange="{{ setEmail }}" style="padding:14px 16px; border:1px solid rgba(45,212,191,0.35); border-radius:10px; font:400 15px Inter, sans-serif; background:#11203A; color:#FFFFFF; outline:none; box-sizing:border-box; width:100%;" style-focus="border:1px solid #9EFF5A;">
+            <button onClick="{{ send }}" style="background:#9EFF5A; color:#0A1628; border:none; border-radius:12px; padding:15px 26px; font:700 15px Sora, sans-serif; cursor:pointer; white-space:nowrap;" style-hover="background:#B4FF7E;">{{ ctaLabel }}</button>
+          </div>
+          <p style="margin:14px 0 0; font:400 12.5px/1.5 Inter, sans-serif; color:#64748B;">Your details will only be used to send your maturity report and follow up once. Kenya Data Protection Act 2019 applies: See our <a href="Data Protection.dc.html" style="color:#9EFF5A; border-bottom:1px solid #9EFF5A; padding-bottom:1px;" style-hover="color:#B4FF7E; border-bottom:1px solid #B4FF7E;">Data Protection Policy</a></p>
+        </sc-if>
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex; gap:18px; align-items:center;">
+            <span style="width:44px; height:44px; border-radius:50%; background:#9EFF5A; color:#0A1628; display:flex; align-items:center; justify-content:center; font:700 20px Sora, sans-serif; flex-shrink:0;">✓</span>
+            <div>
+              <span style="display:block; font:700 18px Sora, sans-serif; color:#FFFFFF; margin-bottom:3px;">Report on its way.</span>
+              <span style="font:400 14.5px Inter, sans-serif; color:#94A3B8;">Your written maturity report and recommended next steps will arrive by email. Want to move faster? <a href="Contact.dc.html" style="color:#9EFF5A; border-bottom:1px solid rgba(158,255,90,0.5); padding-bottom:1px;">Book a NAWIRI demo</a>.</span>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer strip -->
+  <footer style="border-top:1px solid rgba(45,212,191,0.25); padding:28px 64px 32px; display:flex; flex-direction:column; align-items:center; gap:18px;">
+    <div style="display:flex; align-items:center; gap:26px; flex-wrap:wrap; justify-content:center;">
+      <a href="NAWIRI.dc.html" style="display:inline-flex; align-items:center; gap:9px; color:#9EFF5A; font:600 14.5px Inter, sans-serif;" style-hover="color:#c6ff9d;"><span style="font-size:16px;">←</span>Back to NAWIRI</a>
+      <a href="Digital Products.dc.html" style="color:#94A3B8; font:500 14.5px Inter, sans-serif;" style-hover="color:#2dd4bf;">Digital Products</a>
+      <a href="Contact.dc.html?tab=enquiry" style="color:#94A3B8; font:500 14.5px Inter, sans-serif;" style-hover="color:#2dd4bf;">Book a NAWIRI demo</a>
+    </div>
+    <span style="font:400 13.5px Inter, sans-serif; color:#64748B;"><a href="tel:+254787990220" style="color:#94A3B8;" style-hover="color:#2dd4bf;">+254 787 990 220</a> · <a href="mailto:info@binaryone.co.ke" style="color:#94A3B8;" style-hover="color:#2dd4bf;">info@binaryone.co.ke</a> · Nairobi, Kenya</span>
+    <span style="display:inline-flex; align-items:center; gap:10px; font:500 14px Inter, sans-serif; color:#94A3B8; letter-spacing:0.08em;">Possibilities<span style="width:7px; height:7px; border-radius:50%; background:#9EFF5A; animation:lsBeacon 1.9s ease-in-out infinite;"></span>Realised</span>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;ctaLabel&quot;: {
+    &quot;editor&quot;: &quot;text&quot;,
+    &quot;default&quot;: &quot;Compute my report&quot;,
+    &quot;tsType&quot;: &quot;string&quot;,
+    &quot;section&quot;: &quot;Score panel&quot;
+  }
+}">
+class Component extends DCLogic {
+  state = { answers: {}, sent: false, fName: "", fOrg: "", fEmail: "" };
+  QUESTIONS = [
+    { text: "We know, by name or ID, who buys or influences our product at the last mile.", dim: "Last-mile visibility" },
+    { text: "We can see redemption or engagement activity within 24 hours of it happening.", dim: "Data freshness" },
+    { text: "Rewards reach members instantly (airtime, M-PESA or points), not weeks later.", dim: "Reward mechanics" },
+    { text: "Our programme covers basic-phone users, not just smartphone owners.", dim: "Market reach" },
+    { text: "We can tell which regions, products or campaigns drive repeat purchase.", dim: "Insight" },
+    { text: "Counterfeit or diverted product would show up in our programme data.", dim: "Channel integrity" },
+    { text: "A named owner runs the programme with a budget and quarterly targets.", dim: "Governance" },
+    { text: "Sales and marketing actually use programme dashboards in their decisions.", dim: "Adoption" },
+    { text: "We own our member data outright — no agency or platform lock-in.", dim: "Data ownership" },
+    { text: "We can link the programme to a measurable sales or margin outcome.", dim: "Business value" },
+  ];
+  BANDS = [
+    { min: 10, name: "Punch-card era (10–17)", copy: "Your programme rewards repeat purchase but generates almost no insight. Before any platform investment, fix data capture: who is the member, and what did they just do? That single change unlocks everything above it." },
+    { min: 18, name: "Points & discounts era (18–25)", copy: "You reward transactions but the buyer is still largely anonymous. Priority: identity and instant value — registered members and mobile-money rewards. This is the gap NAWIRI closes fastest." },
+    { min: 26, name: "App-engagement era (26–33)", copy: "You have members and mechanics, but adoption and insight lag — dashboards exist, decisions don't use them. Priority: governance, a named owner and last-mile coverage beyond smartphone users." },
+    { min: 34, name: "Data-driven, last-mile era (34–40)", copy: "Your programme is a genuine data channel. The next gains are integration depth — connecting loyalty data to ERP, distribution and anti-counterfeit controls — and disciplined quarterly review." },
+  ];
+  renderVals() {
+    const a = this.state.answers;
+    const answered = Object.keys(a).length;
+    const total = Object.values(a).reduce((s, v) => s + v, 0);
+    const done = answered === 10;
+    const band = done ? [...this.BANDS].reverse().find(b => total >= b.min) : null;
+    return {
+      ctaLabel: this.props.ctaLabel ?? "Compute my report",
+      questions: this.QUESTIONS.map((q, i) => ({
+        num: String(i + 1).padStart(2, "0"), text: q.text, dim: q.dim,
+        opts: [1, 2, 3, 4].map(v => ({
+          label: String(v),
+          pick: () => this.setState(s => ({ answers: { ...s.answers, [i]: v } })),
+          bg: a[i] === v ? "#9EFF5A" : "transparent",
+          color: a[i] === v ? "#0A1628" : "#94A3B8",
+          border: a[i] === v ? "#9EFF5A" : "rgba(45,212,191,0.4)",
+        })),
+      })),
+      scoreDisplay: done ? String(total) : total + "…",
+      answeredLabel: done ? "out of 40 · complete" : answered + " of 10 answered",
+      barWidth: Math.round((total / 40) * 100) + "%",
+      bandName: band ? band.name : "Your maturity band appears here",
+      bandCopy: band ? band.copy : "Each statement maps to one of the four loyalty eras — punch-card, points & discounts, app engagement, and data-driven last-mile. Your total shows where your programme truly sits.",
+      notDone: !done,
+      doneNotSent: done && !this.state.sent,
+      sent: done && this.state.sent,
+      fName: this.state.fName, fOrg: this.state.fOrg, fEmail: this.state.fEmail,
+      setName: (e) => this.setState({ fName: e.target.value }),
+      setOrg: (e) => this.setState({ fOrg: e.target.value }),
+      setEmail: (e) => this.setState({ fEmail: e.target.value }),
+      send: () => this.setState({ sent: true }),
+    };
+  }
+}
+</script>
+</body>
+</html>
