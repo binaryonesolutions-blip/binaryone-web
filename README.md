@@ -58,33 +58,35 @@ Self-Score) · About · Insights · Contact · Data Protection.
 
 All routes currently prerender as **static** content.
 
-## Deployment — Cloudflare Pages
+## Deployment — Cloudflare (Workers via OpenNext)
 
-This repo connects to Cloudflare Pages for continuous deployment: every push to
-`main` triggers a build.
+The app deploys to Cloudflare as a full Next.js runtime using the
+[`@opennextjs/cloudflare`](https://opennext.js.org/cloudflare) adapter — **not** a
+static export — so server features (the upcoming contact / Boardroom Advisory
+server actions) work without re-architecting. Connect the repo under
+**Workers & Pages → Import a repository**; every push to `main` triggers a build.
 
-**Cloudflare Pages → Create project → Connect to Git**, then:
+Config lives in `wrangler.jsonc` (`nodejs_compat`, assets binding) and
+`open-next.config.ts`.
 
-| Setting             | Value |
-|---------------------|-------|
-| Framework preset    | Next.js |
-| Build command       | `pnpm build` |
-| Build output        | (set during forms milestone — see below) |
-| Node version        | `20` (or newer) |
+| Cloudflare build setting | Value |
+|--------------------------|-------|
+| Build command            | `npx opennextjs-cloudflare build` |
+| Deploy command           | `npx opennextjs-cloudflare deploy` |
+| Non-production branches   | `npx wrangler versions upload` |
 
-### Build-output / adapter — decided at the forms milestone
+Local scripts:
 
-The site is 100% static today, but the **contact and Boardroom Advisory forms**
-(Microsoft Graph calendar invite + email to `info@binaryone.co.ke`) are the next
-milestone and need server-side execution. The adapter choice depends on that:
+```bash
+pnpm preview    # build + run the Worker locally (workerd)
+pnpm deploy     # build + deploy to Cloudflare
+pnpm cf-typegen # regenerate Cloudflare env types
+```
 
-- **If forms use Next server actions** → deploy with `@opennextjs/cloudflare`
-  (full Next.js runtime; `next/image` optimisation works).
-- **If forms are a separate endpoint** (Cloudflare Pages Function or a form
-  service) → the app can ship as a static export (`output: 'export'`,
-  `images.unoptimized: true`) served directly by Pages.
-
-Until then the config is left runtime-agnostic so the decision isn't pre-empted.
+> **Windows note:** `pnpm preview` / `pnpm deploy` need symlink permission — enable
+> **Windows Developer Mode** (Settings → System → For developers) or run elevated.
+> Cloudflare's own build runs on Linux and is unaffected; Git-integration deploys
+> work regardless of local OS.
 
 ## Roadmap
 

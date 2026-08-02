@@ -9,3 +9,8 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
+// Deploys to Cloudflare Workers via OpenNext. This call lets `next dev` access
+// Cloudflare bindings (env vars, KV, R2…) locally; it is a no-op in production.
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
+initOpenNextCloudflareForDev();
