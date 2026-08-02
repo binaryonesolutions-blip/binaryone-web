@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Binary One Solutions — Website
 
-## Getting Started
+Production website for **Binary One Solutions Ltd** (binaryone.co.ke) — a Nairobi
+Managed IT, ERP consulting and Digital Products (NAWIRI loyalty, Agentic AI,
+Custom Software) consultancy.
 
-First, run the development server:
+A pixel-exact build of the approved design system: a **TEAL two-skin** palette
+(corporate / product / nawiri / policy) rendered on a fixed **1440px** canvas.
+
+## Stack
+
+| Concern    | Choice |
+|------------|--------|
+| Framework  | Next.js 16 (App Router) + React 19 |
+| Language   | TypeScript (strict) |
+| Styling    | Tailwind CSS v4 (arbitrary values; `@theme` for fonts only) |
+| Fonts      | `next/font` — Sora, Inter, JetBrains Mono, Caveat (self-hosted) |
+| Package mgr| pnpm |
+
+## Local development
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
+pnpm dev            # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Other scripts:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm build          # production build (also runs the type-check)
+pnpm start          # serve the production build locally
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+> **Dev note (Tailwind v4 + Turbopack):** after adding a *new* page file, its
+> unique arbitrary classes may not be emitted until the CSS entry is touched
+> (symptom: headings collapse to 16px). Save `app/globals.css` to force a
+> re-scan. `pnpm build` always scans fresh, so this never affects production.
 
-## Learn More
+## Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/                 Routes (App Router) + layout, globals.css, icon.svg
+components/
+  chrome/            SiteHeader, SiteFooter, ProductsDropdown, NawiriNav
+  forms/             Contact / assessment forms + Boardroom Advisory booking
+  overlays/          Diagnostic modal
+  tools/             Interactive engines (self-checks, reasoning trace, DSAR…)
+content/             All copy + data, one file per page (single source of truth)
+public/assets/       Images (logos, photography, marks)
+design-refs/         Original .dc.html design files + Developer Guide (reference)
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Routes (15 pages / 14 public routes)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Home · Managed IT (+ Readiness) · ERP Consulting (+ Pitfalls Guide) ·
+Digital Products hub · Agentic AI · Custom Software · NAWIRI (+ Loyalty
+Self-Score) · About · Insights · Contact · Data Protection.
 
-## Deploy on Vercel
+All routes currently prerender as **static** content.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment — Cloudflare Pages
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This repo connects to Cloudflare Pages for continuous deployment: every push to
+`main` triggers a build.
+
+**Cloudflare Pages → Create project → Connect to Git**, then:
+
+| Setting             | Value |
+|---------------------|-------|
+| Framework preset    | Next.js |
+| Build command       | `pnpm build` |
+| Build output        | (set during forms milestone — see below) |
+| Node version        | `20` (or newer) |
+
+### Build-output / adapter — decided at the forms milestone
+
+The site is 100% static today, but the **contact and Boardroom Advisory forms**
+(Microsoft Graph calendar invite + email to `info@binaryone.co.ke`) are the next
+milestone and need server-side execution. The adapter choice depends on that:
+
+- **If forms use Next server actions** → deploy with `@opennextjs/cloudflare`
+  (full Next.js runtime; `next/image` optimisation works).
+- **If forms are a separate endpoint** (Cloudflare Pages Function or a form
+  service) → the app can ship as a static export (`output: 'export'`,
+  `images.unoptimized: true`) served directly by Pages.
+
+Until then the config is left runtime-agnostic so the decision isn't pre-empted.
+
+## Roadmap
+
+- [ ] Contact + Boardroom Advisory server actions (Graph invite + form mail)
+- [ ] Responsive breakpoints (currently a fixed 1440px canvas + zoom shim)
+- [ ] GEO layer (robots, llms.txt, JSON-LD, redirects)
+- [ ] Apple-touch icon PNG (SVG favicon already shipped)
