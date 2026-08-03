@@ -10,6 +10,7 @@ import {
   gradeFor,
   type DiagCategory,
 } from "@/content/diagnostic";
+import { submitDiagnostic } from "@/app/actions/forms";
 
 const OPEN_EVENT = "b1-open-diagnostic";
 
@@ -55,6 +56,8 @@ export function DiagnosticModal() {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Answer[]>([]);
   const [bookingSubmitted, setBookingSubmitted] = useState(false);
+  const [bookingSending, setBookingSending] = useState(false);
+  const [bookingError, setBookingError] = useState("");
 
   useEffect(() => {
     const onOpen = () => {
@@ -157,19 +160,34 @@ export function DiagnosticModal() {
               <span className="mb-[9px] block font-jet text-[10.5px] font-bold tracking-[0.18em] text-[#38e0c4]">BOOK A FREE STRATEGIC ADVISORY SESSION</span>
               <h4 className="mb-[18px] font-sora text-[16.5px] lg:text-[20px] font-bold leading-[1.25] text-white">Turn this scorecard into a roadmap.</h4>
               <form
-                onSubmit={(e) => {
+                onSubmit={async (e) => {
                   e.preventDefault();
-                  setBookingSubmitted(true);
+                  const fd = new FormData(e.currentTarget);
+                  fd.set("score", `${pct}% (${score}/${maxScore})`);
+                  fd.set("grade", grade);
+                  setBookingError("");
+                  setBookingSending(true);
+                  try {
+                    const res = await submitDiagnostic(null, fd);
+                    if (res.ok) setBookingSubmitted(true);
+                    else setBookingError(res.error || "Something went wrong.");
+                  } catch {
+                    setBookingError("Something went wrong. Please email info@binaryone.co.ke.");
+                  } finally {
+                    setBookingSending(false);
+                  }
                 }}
                 className="flex flex-col gap-[12px]"
               >
+                <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-[12px]">
-                  <input type="text" placeholder="Full name" required className="w-full rounded-[10px] border border-white/[0.14] bg-white/[0.06] px-[14px] py-[12px] font-inter text-[14px] text-white placeholder:text-[#8fa8a1]" />
-                  <input type="email" placeholder="Work email" required className="w-full rounded-[10px] border border-white/[0.14] bg-white/[0.06] px-[14px] py-[12px] font-inter text-[14px] text-white placeholder:text-[#8fa8a1]" />
+                  <input name="name" type="text" placeholder="Full name" required className="w-full rounded-[10px] border border-white/[0.14] bg-white/[0.06] px-[14px] py-[12px] font-inter text-[14px] text-white placeholder:text-[#8fa8a1]" />
+                  <input name="email" type="email" placeholder="Work email" required className="w-full rounded-[10px] border border-white/[0.14] bg-white/[0.06] px-[14px] py-[12px] font-inter text-[14px] text-white placeholder:text-[#8fa8a1]" />
                 </div>
-                <input type="text" placeholder="Organisation" className="w-full rounded-[10px] border border-white/[0.14] bg-white/[0.06] px-[14px] py-[12px] font-inter text-[14px] text-white placeholder:text-[#8fa8a1]" />
-                <textarea placeholder="What's the most pressing priority?" rows={3} className="w-full resize-y rounded-[10px] border border-white/[0.14] bg-white/[0.06] px-[14px] py-[12px] font-inter text-[14px] text-white placeholder:text-[#8fa8a1]" />
-                <button type="submit" className="mt-[4px] inline-flex cursor-pointer items-center justify-center gap-[10px] rounded-[11px] bg-[#38e0c4] px-[24px] py-[14px] font-jet text-[12px] font-bold tracking-[0.1em] text-[#06231e] transition-colors hover:bg-[#5eead4]">
+                <input name="org" type="text" placeholder="Organisation" className="w-full rounded-[10px] border border-white/[0.14] bg-white/[0.06] px-[14px] py-[12px] font-inter text-[14px] text-white placeholder:text-[#8fa8a1]" />
+                <textarea name="message" placeholder="What's the most pressing priority?" rows={3} className="w-full resize-y rounded-[10px] border border-white/[0.14] bg-white/[0.06] px-[14px] py-[12px] font-inter text-[14px] text-white placeholder:text-[#8fa8a1]" />
+                {bookingError && <p className="font-inter text-[12.5px] text-[#ffb4a8]">{bookingError}</p>}
+                <button type="submit" disabled={bookingSending} className="mt-[4px] inline-flex cursor-pointer items-center justify-center gap-[10px] rounded-[11px] bg-[#38e0c4] px-[24px] py-[14px] font-jet text-[12px] font-bold tracking-[0.1em] text-[#06231e] transition-colors hover:bg-[#5eead4] disabled:opacity-60">
                   <svg viewBox="0 0 24 24" className="h-[16px] w-[16px] flex-shrink-0" fill="none" stroke="#06231e" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="3.5" y="5" width="17" height="15.5" rx="2.5" />
                     <path d="M3.5 10h17M8.5 3v4M15.5 3v4M9 14.5l2 2 4-4" />

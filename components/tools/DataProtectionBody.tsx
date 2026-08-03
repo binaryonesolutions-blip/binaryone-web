@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { submitDsar } from "@/app/actions/forms";
 import Link from "next/link";
 import { routes } from "@/content/nav";
 import { navDefs, pillars, sections, rights, type NavIcon, type PillarIcon } from "@/content/dataProtection";
@@ -35,17 +36,38 @@ export default function DataProtectionBody() {
   const [declaration, setDeclaration] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [ticket, setTicket] = useState("");
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
   const goto = (t: typeof tab) => {
     setTab(t);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (fullName && email && declaration) {
-      setTicket("DSAR-" + new Date().getFullYear() + "-" + Math.floor(1000 + Math.random() * 9000));
-      setSubmitted(true);
+    if (!(fullName && email && declaration)) return;
+    const t = "DSAR-" + new Date().getFullYear() + "-" + Math.floor(1000 + Math.random() * 9000);
+    setError("");
+    setSending(true);
+    const fd = new FormData();
+    fd.set("name", fullName);
+    fd.set("email", email);
+    fd.set("phone", phone);
+    fd.set("type", requestType);
+    fd.set("details", details);
+    fd.set("ticket", t);
+    try {
+      const res = await submitDsar(null, fd);
+      if (res.ok) {
+        setTicket(t);
+        setSubmitted(true);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else setError(res.error || "Something went wrong.");
+    } catch {
+      setError("Something went wrong. Please email info@binaryone.co.ke.");
+    } finally {
+      setSending(false);
     }
   };
   const reset = () => {
@@ -225,7 +247,8 @@ export default function DataProtectionBody() {
                   <span className="font-inter text-[11.5px] leading-[1.6] text-[#64748b]">I declare that I am the authorized data subject (or legal representative) and the information supplied in this request form is accurate under the penalty of perjury as specified in the Kenya DPA, 2019.</span>
                 </label>
                 <div className="flex justify-end">
-                  <button type="submit" className="inline-flex cursor-pointer items-center gap-[8px] rounded-[9px] border-none bg-[#0a8f28] px-[24px] py-[12px] font-inter text-[13px] font-bold text-white hover:bg-[#087a22]">Submit Request Form <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></button>
+                  <button type="submit" disabled={sending} className="inline-flex cursor-pointer items-center gap-[8px] rounded-[9px] border-none bg-[#0a8f28] px-[24px] py-[12px] font-inter text-[13px] font-bold text-white hover:bg-[#087a22] disabled:opacity-60">{sending ? "Submitting…" : "Submit Request Form"} <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></button>
+                  {error && <p className="mt-[8px] font-inter text-[13px] text-[#c0392b]">{error}</p>}
                 </div>
               </form>
             )}

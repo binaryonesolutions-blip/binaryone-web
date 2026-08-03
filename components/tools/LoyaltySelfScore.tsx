@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { routes } from "@/content/nav";
 import { QUESTIONS, BANDS } from "@/content/loyaltySelfScore";
+import { submitLoyaltyScore } from "@/app/actions/forms";
 
 // Loyalty Programme Maturity Self-Score (Guide §9). Score each of 10 statements
 // 1–4; total maps to one of four maturity eras, then a lead-capture unlock.
@@ -13,12 +14,34 @@ export default function LoyaltySelfScore() {
   const [fName, setFName] = useState("");
   const [fOrg, setFOrg] = useState("");
   const [fEmail, setFEmail] = useState("");
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
   const answered = Object.keys(answers).length;
   const total = Object.values(answers).reduce((s, v) => s + v, 0);
   const done = answered === 10;
   const band = done ? [...BANDS].reverse().find((b) => total >= b.min) : null;
   const barWidth = Math.round((total / 40) * 100) + "%";
+
+  async function unlock() {
+    setError("");
+    setSending(true);
+    const fd = new FormData();
+    fd.set("name", fName);
+    fd.set("org", fOrg);
+    fd.set("email", fEmail);
+    fd.set("score", `${total} / 40`);
+    fd.set("band", band?.name ?? "");
+    try {
+      const res = await submitLoyaltyScore(null, fd);
+      if (res.ok) setSent(true);
+      else setError(res.error || "Something went wrong.");
+    } catch {
+      setError("Something went wrong. Please email info@binaryone.co.ke.");
+    } finally {
+      setSending(false);
+    }
+  }
 
   return (
     <>
@@ -76,8 +99,9 @@ export default function LoyaltySelfScore() {
                   <input placeholder="Name *" value={fName} onChange={(e) => setFName(e.target.value)} className="box-border w-full rounded-[10px] border border-[rgba(45,212,191,0.35)] bg-[#11203A] px-[16px] py-[14px] font-inter text-[15px] text-white outline-none focus:border-[#9EFF5A]" />
                   <input placeholder="Organisation *" value={fOrg} onChange={(e) => setFOrg(e.target.value)} className="box-border w-full rounded-[10px] border border-[rgba(45,212,191,0.35)] bg-[#11203A] px-[16px] py-[14px] font-inter text-[15px] text-white outline-none focus:border-[#9EFF5A]" />
                   <input placeholder="Work email *" type="email" value={fEmail} onChange={(e) => setFEmail(e.target.value)} className="box-border w-full rounded-[10px] border border-[rgba(45,212,191,0.35)] bg-[#11203A] px-[16px] py-[14px] font-inter text-[15px] text-white outline-none focus:border-[#9EFF5A]" />
-                  <button onClick={() => setSent(true)} className="cursor-pointer whitespace-nowrap rounded-[12px] border-none bg-[#9EFF5A] px-[26px] py-[15px] font-sora text-[15px] font-bold text-[#0A1628] hover:bg-[#B4FF7E]">Compute my report</button>
+                  <button onClick={unlock} disabled={sending} className="cursor-pointer whitespace-nowrap rounded-[12px] border-none bg-[#9EFF5A] px-[26px] py-[15px] font-sora text-[15px] font-bold text-[#0A1628] hover:bg-[#B4FF7E] disabled:opacity-60">{sending ? "Computing…" : "Compute my report"}</button>
                 </div>
+                {error && <p className="mt-[10px] font-inter text-[13px] text-[#ffb4a8]">{error}</p>}
                 <p className="mt-[14px] font-inter text-[12.5px] leading-[1.5] text-[#64748B]">Your details will only be used to send your maturity report and follow up once. Kenya Data Protection Act 2019 applies: See our <Link href={routes.dataProtection} className="border-b border-[#9EFF5A] pb-[1px] text-[#9EFF5A] hover:border-[#B4FF7E] hover:text-[#B4FF7E]">Data Protection Policy</Link></p>
               </>
             ) : (

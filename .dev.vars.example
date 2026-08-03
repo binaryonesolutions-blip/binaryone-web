@@ -1,0 +1,13 @@
+# Copy to `.dev.vars` for local development, and set the same as Cloudflare
+# Worker secrets for production (see README → "Forms & delivery").
+# While these are empty/absent the forms run in PREVIEW mode: submissions are
+# validated and logged to the server console instead of being emailed/booked.
+
+# --- Microsoft Graph app registration (client-credentials) ---
+AZURE_TENANT_ID=
+AZURE_CLIENT_ID=
+AZURE_CLIENT_SECRET=
+
+# Mailbox that sends AND receives the form notifications (defaults shown).
+GRAPH_SENDER=info@binaryone.co.ke
+NOTIFY_TO=info@binaryone.co.ke

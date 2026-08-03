@@ -88,9 +88,49 @@ pnpm cf-typegen # regenerate Cloudflare env types
 > Cloudflare's own build runs on Linux and is unaffected; Git-integration deploys
 > work regardless of local OS.
 
+## Forms & delivery
+
+All site forms (Free IT Assessment, contact enquiry, Boardroom Advisory booking,
+DSAR portal, loyalty self-score, diagnostic follow-up) post to **Next.js server
+actions** in [`app/actions/forms.ts`](app/actions/forms.ts). Delivery goes through
+a pluggable layer in [`lib/forms/`](lib/forms):
+
+- **Email** — notifications to `info@binaryone.co.ke` via Microsoft Graph `sendMail`.
+- **Calendar** — the Boardroom Advisory booking creates a Graph calendar event and
+  invites the requester.
+
+**Preview mode:** until the Graph secrets are set, every form is validated and
+**logged to the server console** (`[forms:preview] …`) instead of sending — so the
+whole flow works locally with no credentials.
+
+### Going live (Microsoft Graph)
+
+1. In **Azure AD → App registrations**, create an app. Under **API permissions**
+   add **application** permissions `Mail.Send` and `Calendars.ReadWrite`, then
+   **Grant admin consent**.
+2. Create a **client secret**.
+3. Provide these to the app as secrets:
+
+   | Secret | Value |
+   |--------|-------|
+   | `AZURE_TENANT_ID` | Directory (tenant) ID |
+   | `AZURE_CLIENT_ID` | Application (client) ID |
+   | `AZURE_CLIENT_SECRET` | the client secret value |
+   | `GRAPH_SENDER` | `info@binaryone.co.ke` (optional; this is the default) |
+   | `NOTIFY_TO` | `info@binaryone.co.ke` (optional; this is the default) |
+
+   - **Local:** copy `.dev.vars.example` → `.dev.vars` and fill them in.
+   - **Cloudflare:** `npx wrangler secret put AZURE_TENANT_ID` (repeat for each),
+     or add them under the Worker's **Settings → Variables and Secrets**.
+
+> If `binaryone.co.ke` is on Google Workspace instead, only `lib/forms/graph.ts`
+> is swapped for a Gmail/Google-Calendar provider — the actions and form wiring
+> are unchanged.
+
 ## Roadmap
 
-- [ ] Contact + Boardroom Advisory server actions (Graph invite + form mail)
-- [ ] Responsive breakpoints (currently a fixed 1440px canvas + zoom shim)
+- [x] Responsive layout + proportional mobile typography
+- [x] Forms server actions (Graph email + Boardroom Advisory calendar invite) —
+      needs the Azure secrets to go live (see *Forms & delivery*)
 - [ ] GEO layer (robots, llms.txt, JSON-LD, redirects)
-- [ ] Apple-touch icon PNG (SVG favicon already shipped)
+- [x] Apple-touch icon PNG (SVG favicon already shipped)
