@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Sora, Inter, JetBrains_Mono, Caveat } from "next/font/google";
 import "./globals.css";
+import StructuredData from "@/components/seo/StructuredData";
 
 // Three families, one load, on every page (Developer Guide §4).
 // Self-hosted by next/font — resolves to the same families/weights the design
@@ -39,6 +40,30 @@ export const metadata: Metadata = {
   },
   description:
     "Nairobi-based Managed IT, Virtual CIO, ERP consulting and NAWIRI loyalty solutions for growing Kenyan organisations. Book a Free IT Assessment.",
+  applicationName: "Binary One Solutions",
+  keywords: [
+    "Managed IT Kenya", "Virtual CIO Nairobi", "ERP consulting Kenya",
+    "NAWIRI loyalty", "Agentic AI", "custom software Nairobi", "IT governance",
+  ],
+  openGraph: {
+    type: "website",
+    siteName: "Binary One Solutions",
+    locale: "en_GB",
+    url: "https://binaryone.co.ke",
+    title: "Binary One Solutions | Managed IT, ERP & NAWIRI Loyalty Kenya",
+    description:
+      "Managed IT, ERP governance and digital products for growing Kenyan and East African organisations. Book a Free IT Assessment.",
+    images: [{ url: "/assets/it-icons-banner.png", width: 1200, height: 630, alt: "Binary One Solutions" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@Binary_One_Sol",
+    title: "Binary One Solutions | Managed IT, ERP & NAWIRI Loyalty Kenya",
+    description:
+      "Managed IT, ERP governance and digital products for growing Kenyan and East African organisations.",
+    images: ["/assets/it-icons-banner.png"],
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
@@ -49,7 +74,10 @@ export default function RootLayout({
       lang="en-GB"
       className={`${sora.variable} ${inter.variable} ${jetbrains.variable} ${caveat.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <StructuredData />
+        {children}
+      </body>
     </html>
   );
 }

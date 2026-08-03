@@ -8,6 +8,7 @@ import { heroChips, products, type ProductIcon } from "@/content/digitalProducts
 import nawiriLogo from "@/public/assets/nawiri-logo.png";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/digital-products" },
   title: "Digital Products",
   description:
     "NAWIRI, Agentic AI and Custom Software Builds — how Binary One packages fifteen years of bespoke development into products you can buy, measure and govern.",

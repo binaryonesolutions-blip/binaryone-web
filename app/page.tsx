@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import SiteHeader from "@/components/chrome/SiteHeader";
@@ -18,6 +19,8 @@ const routeCards = [
   { kicker: "ERP CONSULTING", href: routes.erp, img: "/assets/home-erp-card.png", alt: "Grain milling facility with engineering controls", objPos: "center", title: "Avoid the ERP nightmare.", copy: "Vendor-neutral ERP readiness, selection support and implementation governance for organisations outgrowing QuickBooks, Sage, Tally or fragmented spreadsheets.", cta: "Commission an ERP Readiness Assessment →" },
   { kicker: "DIGITAL PRODUCTS", href: routes.digitalProducts, img: "/assets/nawiri-retail-hero.png", alt: "Kenyan retail loyalty moment", objPos: "center 45%", title: "Products built for real market moments.", copy: "NAWIRI Digital Loyalty, Agentic AI Workflows and Custom Enterprise Software Builds — packaged from years of practical development experience.", cta: "Explore Digital Products →" },
 ];
+
+export const metadata: Metadata = { alternates: { canonical: "/" } };
 
 export default function Home() {
   return (

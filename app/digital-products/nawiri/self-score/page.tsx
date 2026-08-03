@@ -4,6 +4,7 @@ import LoyaltySelfScore from "@/components/tools/LoyaltySelfScore";
 import { routes } from "@/content/nav";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/digital-products/nawiri/self-score" },
   title: "Loyalty Programme Maturity Self-Score",
   description:
     "Score your loyalty programme across 10 statements in 3 minutes. Your total places it in one of four maturity eras — and tells you what to fix first.",

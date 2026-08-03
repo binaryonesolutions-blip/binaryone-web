@@ -7,6 +7,7 @@ import { routes } from "@/content/nav";
 import { heroChips, risks, failTiles, failures, stages, vendors, whyOdoo, proofs } from "@/content/erp";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/erp-consulting" },
   title: "ERP Consulting Kenya | Vendor-Neutral: Odoo, SAP, Sage Audit",
   description:
     "Vendor-neutral ERP consulting for Kenyan businesses outgrowing QuickBooks, Tally or Sage. Assess readiness before you sign. Commission an ERP assessment.",

@@ -1,0 +1,34 @@
+# Binary One Solutions
+
+> Binary One Solutions Ltd is a Nairobi-based technology consultancy helping
+> medium-sized and larger Kenyan and East African organisations professionalise
+> IT, prepare for ERP, and build practical digital products. Primary services:
+> Managed IT with a Virtual CIO, vendor-neutral ERP consulting, and Digital
+> Products (NAWIRI digital loyalty, Agentic AI workflows, custom software).
+
+- Location: St Charles Lwanga House, Ngong Road, Nairobi, Kenya
+- Contact: info@binaryone.co.ke · +254 787 990 220
+- Primary call to action: Book a Free IT Assessment
+
+## Services
+
+- [Managed IT](https://binaryone.co.ke/managed-it): Virtual CIO strategy, a named IT Operations Lead, helpdesk, cybersecurity and technology governance (the AIM-IT methodology).
+- [ERP Consulting](https://binaryone.co.ke/erp-consulting): Independent, vendor-neutral ERP readiness, selection and implementation governance (Odoo, SAP, Microsoft Dynamics, Sage).
+- [Digital Products](https://binaryone.co.ke/digital-products): Overview of NAWIRI, Agentic AI and Custom Software.
+- [NAWIRI Digital Loyalty](https://binaryone.co.ke/digital-products/nawiri): Mobile-first loyalty and last-mile intelligence platform (used by Crown Paints and Isuzu East Africa).
+- [Agentic AI Workflows](https://binaryone.co.ke/digital-products/agentic-ai): Autonomous reasoning agents that act on existing ERP/business systems.
+- [Custom Software](https://binaryone.co.ke/digital-products/custom-software): Bespoke high-performance enterprise systems.
+
+## Tools
+
+- [Enterprise IT & AI Diagnostic](https://binaryone.co.ke): A short readiness self-assessment on the homepage.
+- [Managed IT Readiness Assessment](https://binaryone.co.ke/managed-it/readiness)
+- [ERP Pitfalls Guide](https://binaryone.co.ke/erp-consulting/pitfalls-guide)
+- [Loyalty Programme Maturity Self-Score](https://binaryone.co.ke/digital-products/nawiri/self-score)
+
+## Company
+
+- [About](https://binaryone.co.ke/about)
+- [Insights](https://binaryone.co.ke/insights)
+- [Contact](https://binaryone.co.ke/contact)
+- [Data Protection Policy](https://binaryone.co.ke/data-protection) (Kenya Data Protection Act 2019)

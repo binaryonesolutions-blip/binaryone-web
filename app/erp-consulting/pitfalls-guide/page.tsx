@@ -9,6 +9,7 @@ import logoLight from "@/public/assets/b1s-logo-light.png";
 import pitfallsSquare from "@/public/assets/erp-pitfalls-square.png";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/erp-consulting/pitfalls-guide" },
   title: "The ERP Pitfalls Guide",
   description:
     "Seven ways ERP programmes quietly go wrong in East Africa — what each looks like from the inside, what it costs, and the vendor-neutral antidote we apply before a licence is signed.",

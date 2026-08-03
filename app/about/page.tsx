@@ -16,6 +16,7 @@ import deliveryTeam from "@/public/assets/delivery-team.png";
 import edwin from "@/public/assets/edwin-kairu.png";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/about" },
   title: "About",
   description:
     "Binary One Solutions is a Nairobi-based digital transformation consulting firm helping organisations make better technology decisions, run IT reliably and build digital tools that create measurable value.",

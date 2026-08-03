@@ -7,6 +7,7 @@ import { heroChips, buildVsBuy, builds, stack, delivery } from "@/content/custom
 import customHero from "@/public/assets/custom-software-hero.png";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/digital-products/custom-software" },
   title: "Custom Software",
   description:
     "Bespoke high-performing custom applications, secure integrations and mobile platforms — engineered for organisations with unique operating models. Build the things worth building.",

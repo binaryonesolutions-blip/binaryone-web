@@ -132,5 +132,7 @@ whole flow works locally with no credentials.
 - [x] Responsive layout + proportional mobile typography
 - [x] Forms server actions (Graph email + Boardroom Advisory calendar invite) —
       needs the Azure secrets to go live (see *Forms & delivery*)
-- [ ] GEO layer (robots, llms.txt, JSON-LD, redirects)
+- [x] GEO/SEO layer (robots, sitemap, JSON-LD, llms.txt, OpenGraph, canonicals)
+- [ ] 301 redirects from the old site's URLs (needs the old URL map)
+- [ ] Dedicated 1200×630 OpenGraph share image (currently reuses the hero banner)
 - [x] Apple-touch icon PNG (SVG favicon already shipped)

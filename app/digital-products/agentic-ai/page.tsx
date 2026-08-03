@@ -17,6 +17,7 @@ import agenticHero from "@/public/assets/agentic-hero.png";
 import agenticNeural from "@/public/assets/agentic-neural.png";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/digital-products/agentic-ai" },
   title: "Agentic AI Workflows",
   description:
     "Cognitive AI agents deployed into Odoo and SAP layers — they cross-check files, audit bills and reconcile records in the background, under human-in-the-loop governance.",

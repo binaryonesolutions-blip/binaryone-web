@@ -9,6 +9,7 @@ import { routes } from "@/content/nav";
 import { trustChips, comparison, pillars, platforms, assessmentItems, packs } from "@/content/managedIt";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/managed-it" },
   title: "Managed IT Services Kenya | Virtual CIO & IT Operations",
   description:
     "Managed IT services for Kenyan organisations needing Virtual CIO strategy, IT Operations Lead accountability, helpdesk discipline and cyber resilience.",
