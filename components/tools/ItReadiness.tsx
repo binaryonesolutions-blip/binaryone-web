@@ -27,16 +27,16 @@ export default function ItReadiness() {
   const { packName, packWhy } = packFor(counts);
 
   return (
-    <div className="grid grid-cols-[1.3fr_0.7fr] items-start gap-[48px] px-[64px] pb-[104px]">
+    <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] items-start gap-[48px] px-5 sm:px-8 lg:px-[64px] pb-[104px]">
       <div className="rounded-[16px] border border-[#E5E7EB] bg-white p-[40px] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_rgba(0,0,0,0.05)]">
         {sent ? (
           <div className="flex flex-col items-start gap-[16px] py-[12px]">
             <span className="flex h-[48px] w-[48px] items-center justify-center rounded-full bg-[#006e1b] font-inter text-[22px] font-semibold text-white">✓</span>
             <h3 className="font-sora text-[26px] font-bold text-[#1c1b1b]">Assessment received.</h3>
-            <p className="font-inter text-[16px] leading-[1.65] text-[#3e4947]">Based on your environment size, we will recommend a service pack and confirm your Free IT Assessment slot within one business day.</p>
+            <p className="font-inter text-[14.5px] lg:text-[16px] leading-[1.65] text-[#3e4947]">Based on your environment size, we will recommend a service pack and confirm your Free IT Assessment slot within one business day.</p>
             <div className="flex flex-col gap-[6px] rounded-[12px] border border-[#E5E7EB] bg-[#f6f3f2] px-[24px] py-[20px]">
               <span className="font-inter text-[12px] font-semibold tracking-[0.12em] text-[#6e7977]">INDICATIVE FIT</span>
-              <span className="font-sora text-[20px] font-bold text-[#0f766e]">{packName}</span>
+              <span className="font-sora text-[16.5px] lg:text-[20px] font-bold text-[#0f766e]">{packName}</span>
               <span className="font-inter text-[14px] leading-[1.5] text-[#3e4947]">{packWhy}</span>
             </div>
             <button onClick={() => { setSent(false); setCounts({ ...ZERO }); }} className="cursor-pointer border-none bg-transparent p-0 font-inter text-[14.5px] font-semibold text-[#005c55] [border-bottom:1.5px_solid_#005c55] hover:text-[#006e1b]">Start over</button>
@@ -44,19 +44,19 @@ export default function ItReadiness() {
         ) : (
           <div className="flex flex-col gap-[26px]">
             {FIELDS.map((f) => (
-              <div key={f.key} className="grid grid-cols-[1fr_auto] items-center gap-[20px] border-b border-[#E5E7EB] pb-[22px]">
+              <div key={f.key} className="grid grid-cols-1 lg:grid-cols-[1fr_auto] items-center gap-[20px] border-b border-[#E5E7EB] pb-[22px]">
                 <div>
-                  <span className="mb-[3px] block font-inter text-[16.5px] font-semibold text-[#1c1b1b]">{f.label}</span>
+                  <span className="mb-[3px] block font-inter text-[14.5px] lg:text-[16.5px] font-semibold text-[#1c1b1b]">{f.label}</span>
                   <span className="block font-inter text-[13.5px] leading-[1.5] text-[#6e7977]">{f.hint}</span>
                 </div>
                 <div className="flex items-center gap-[10px]">
-                  <button onClick={() => step(f.key, -1)} className="h-[40px] w-[40px] cursor-pointer rounded-[10px] border-[1.5px] border-[#E5E7EB] bg-white font-inter text-[18px] font-semibold text-[#3e4947] hover:border-[#0f766e] hover:text-[#0f766e]">−</button>
-                  <input type="text" inputMode="numeric" value={String(counts[f.key])} onChange={(e) => put(f.key, e.target.value)} aria-label={f.label} title={"max " + f.max} className="h-[40px] w-[74px] rounded-[10px] border-[1.5px] border-[#E5E7EB] bg-white text-center font-sora text-[20px] font-bold text-[#0f766e] outline-none focus:border-[#0f766e]" />
-                  <button onClick={() => step(f.key, 1)} className="h-[40px] w-[40px] cursor-pointer rounded-[10px] border-[1.5px] border-[#E5E7EB] bg-white font-inter text-[18px] font-semibold text-[#3e4947] hover:border-[#0f766e] hover:text-[#0f766e]">+</button>
+                  <button onClick={() => step(f.key, -1)} className="h-[40px] w-[40px] cursor-pointer rounded-[10px] border-[1.5px] border-[#E5E7EB] bg-white font-inter text-[15.5px] lg:text-[18px] font-semibold text-[#3e4947] hover:border-[#0f766e] hover:text-[#0f766e]">−</button>
+                  <input type="text" inputMode="numeric" value={String(counts[f.key])} onChange={(e) => put(f.key, e.target.value)} aria-label={f.label} title={"max " + f.max} className="h-[40px] w-[74px] rounded-[10px] border-[1.5px] border-[#E5E7EB] bg-white text-center font-sora text-[16.5px] lg:text-[20px] font-bold text-[#0f766e] outline-none focus:border-[#0f766e]" />
+                  <button onClick={() => step(f.key, 1)} className="h-[40px] w-[40px] cursor-pointer rounded-[10px] border-[1.5px] border-[#E5E7EB] bg-white font-inter text-[15.5px] lg:text-[18px] font-semibold text-[#3e4947] hover:border-[#0f766e] hover:text-[#0f766e]">+</button>
                 </div>
               </div>
             ))}
-            <div className="grid grid-cols-2 gap-[14px]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-[14px]">
               <input placeholder="Name *" className={FIELD} />
               <input placeholder="Organisation *" className={FIELD} />
               <input placeholder="Work email *" type="email" className={FIELD} />
@@ -66,7 +66,7 @@ export default function ItReadiness() {
               <input type="checkbox" className="mt-[2px] [accent-color:#006e1b]" />
               <span>I consent to Binary One Solutions processing this information under their <Link href={routes.dataProtection} className="text-[#0f766e] [border-bottom:1px_solid_rgba(15,118,110,0.4)] hover:text-[#12897f]">Data Protection Policy</Link>.</span>
             </label>
-            <button onClick={() => setSent(true)} className="cursor-pointer self-start rounded-[12px] border-none bg-[#0f766e] px-[28px] py-[15px] font-inter text-[16px] font-semibold text-white shadow-[0_1px_2px_rgba(15,118,110,0.20),0_6px_16px_rgba(15,118,110,0.14)] hover:bg-[#0d655e]">Submit my readiness profile</button>
+            <button onClick={() => setSent(true)} className="cursor-pointer self-start rounded-[12px] border-none bg-[#0f766e] px-[28px] py-[15px] font-inter text-[14.5px] lg:text-[16px] font-semibold text-white shadow-[0_1px_2px_rgba(15,118,110,0.20),0_6px_16px_rgba(15,118,110,0.14)] hover:bg-[#0d655e]">Submit my readiness profile</button>
           </div>
         )}
       </div>
@@ -78,7 +78,7 @@ export default function ItReadiness() {
           {FIELDS.map((f) => (
             <div key={f.key} className="flex items-baseline justify-between border-b border-[rgba(248,250,251,0.12)] pb-[12px]">
               <span className="font-inter text-[14px] text-[#9fbcb7]">{f.label}</span>
-              <span className="font-sora text-[20px] font-bold text-white">{counts[f.key]}</span>
+              <span className="font-sora text-[16.5px] lg:text-[20px] font-bold text-white">{counts[f.key]}</span>
             </div>
           ))}
         </div>

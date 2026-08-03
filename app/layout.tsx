@@ -41,35 +41,15 @@ export const metadata: Metadata = {
     "Nairobi-based Managed IT, Virtual CIO, ERP consulting and NAWIRI loyalty solutions for growing Kenyan organisations. Book a Free IT Assessment.",
 };
 
-// Fixed 1440px canvas + zoom shim (Guide §2). Shipped as-is for a pixel-exact
-// clone; runs before paint to avoid a flash of unscaled layout.
-const canvasZoomShim = `
-(function(){
-  function fit(){
-    var w = document.documentElement.clientWidth || window.innerWidth;
-    var r = w / 1440;
-    if (r > 1.6) r = 1.6;
-    if (r < 0.15) r = 0.15;
-    document.documentElement.style.zoom = r;
-  }
-  fit();
-  window.addEventListener('resize', fit);
-})();
-`;
-
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="en-GB"
-      suppressHydrationWarning
       className={`${sora.variable} ${inter.variable} ${jetbrains.variable} ${caveat.variable}`}
     >
-      <body>
-        <script dangerouslySetInnerHTML={{ __html: canvasZoomShim }} />
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

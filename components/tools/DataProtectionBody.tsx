@@ -58,7 +58,7 @@ export default function DataProtectionBody() {
   };
 
   return (
-    <div className="grid grid-cols-[300px_1fr] items-start gap-[32px] px-[64px] pb-[96px] pt-[56px]">
+    <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] items-start gap-[32px] px-5 sm:px-8 lg:px-[64px] pb-[96px] pt-[56px]">
       {/* Left column */}
       <div className="sticky top-[100px] flex flex-col gap-[20px]">
         <div className="rounded-[16px] border border-[#E5E7EB] bg-white p-[16px] shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
@@ -102,7 +102,7 @@ export default function DataProtectionBody() {
           <div className="rounded-[18px] border border-[#E5E7EB] bg-white p-[36px] shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
             <h2 className="mb-[12px] font-sora text-[27px] font-bold leading-[1.2] tracking-[-0.01em] text-[#0f172a]">Executive Policy Summary</h2>
             <p className="mb-[32px] font-inter text-[15px] leading-[1.65] text-[#475569] [text-wrap:pretty]">This Data Protection Policy outlines how Binary One Solutions Ltd (referred to as &quot;Binary One&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) handles, processes, and protects the personal data of our clients, website visitors, partners, and personnel.</p>
-            <div className="grid grid-cols-2 gap-[18px]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-[18px]">
               {pillars.map((p) => (
                 <div key={p.title} className="rounded-[14px] border border-[#eef1f4] bg-[#fafbfc] p-[22px]">
                   <span className="mb-[14px] inline-flex h-[36px] w-[36px] items-center justify-center rounded-[10px] bg-[rgba(0,110,27,0.09)] text-[#0f766e]"><Icon name={p.icon} size={16} /></span>
@@ -155,7 +155,7 @@ export default function DataProtectionBody() {
           <div className="rounded-[18px] border border-[#E5E7EB] bg-white p-[36px] shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
             <h2 className="mb-[10px] font-sora text-[27px] font-bold leading-[1.2] tracking-[-0.01em] text-[#0f172a]">Statutory Data Subject Rights</h2>
             <p className="mb-[28px] font-inter text-[15px] leading-[1.65] text-[#475569] [text-wrap:pretty]">The Kenya Data Protection Act, 2019 guarantees you several fundamental rights regarding how your personal information is treated. You can invoke these rights at any time.</p>
-            <div className="grid grid-cols-2 gap-[18px]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-[18px]">
               {rights.map((r) => (
                 <div key={r.title} className="flex flex-col gap-[9px] rounded-[14px] border border-[#E5E7EB] p-[20px] hover:border-[rgba(0,110,27,0.35)]">
                   <div className="flex items-center justify-between">
@@ -184,14 +184,14 @@ export default function DataProtectionBody() {
             {submitted ? (
               <div className="rounded-[16px] border border-[rgba(0,110,27,0.2)] bg-[rgba(0,110,27,0.05)] p-[40px] text-center">
                 <span className="mb-[16px] inline-flex h-[52px] w-[52px] items-center justify-center rounded-full bg-[#0a8f28] text-white"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12 5 5 9-11" /></svg></span>
-                <h3 className="mb-[8px] font-sora text-[18px] font-bold text-[#054d18]">Data Access Request Submitted</h3>
+                <h3 className="mb-[8px] font-sora text-[15.5px] lg:text-[18px] font-bold text-[#054d18]">Data Access Request Submitted</h3>
                 <p className="mx-auto mb-[14px] max-w-[440px] font-inter text-[13px] leading-[1.65] text-[#475569]">Your request has been received by our Data Protection Officer. We are legally bound to review and respond to valid DSAR applications within <strong>30 calendar days</strong>.</p>
                 <p className="mb-[20px] font-jet text-[11px] font-medium text-[#94a3b8]">Reference Ticket ID: {ticket}</p>
                 <button onClick={reset} className="cursor-pointer rounded-[9px] border-none bg-[#0c1c2b] px-[20px] py-[11px] font-inter text-[13px] font-semibold text-white hover:bg-[#16283a]">Submit Another Request</button>
               </div>
             ) : (
               <form onSubmit={onSubmit} className="flex flex-col gap-[18px]">
-                <div className="grid grid-cols-2 gap-[16px]">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-[16px]">
                   <label className="flex flex-col gap-[7px]">
                     <span className={FLABEL}>REQUEST TYPE</span>
                     <select value={requestType} onChange={(e) => setRequestType(e.target.value)} className={`${FIELD} font-medium`}>
@@ -206,7 +206,7 @@ export default function DataProtectionBody() {
                     <input type="text" required value={fullName} onChange={(e) => setFullName(e.target.value)} placeholder="Jina Lako" className={FIELD} />
                   </label>
                 </div>
-                <div className="grid grid-cols-2 gap-[16px]">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-[16px]">
                   <label className="flex flex-col gap-[7px]">
                     <span className={FLABEL}>EMAIL ADDRESS *</span>
                     <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="name@company.co.ke" className={FIELD} />

@@ -45,25 +45,25 @@ export default function DigitalProductsPage() {
   return (
     <div
       data-skin="product"
-      className="mx-auto w-[1440px] bg-[#0B1D33] font-inter text-white [background-image:linear-gradient(rgba(59,130,246,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.04)_1px,transparent_1px)] [background-size:48px_48px]"
+      className="mx-auto w-full max-w-[1440px] overflow-x-hidden bg-[#0B1D33] font-inter text-white [background-image:linear-gradient(rgba(59,130,246,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.04)_1px,transparent_1px)] [background-size:48px_48px]"
     >
       <SiteHeader active={routes.digitalProducts} sticky />
 
       {/* Hero (dark → fades into light) */}
-      <section className="relative overflow-hidden px-[64px] pb-[96px] pt-[92px] [background:linear-gradient(180deg,#04140f_0%,#071e1b_28%,#0c2a24_52%,#b9cbc4_86%,#F8FAFB_100%)]">
+      <section className="relative overflow-hidden px-5 sm:px-8 lg:px-[64px] pb-[96px] pt-[92px] [background:linear-gradient(180deg,#04140f_0%,#071e1b_28%,#0c2a24_52%,#b9cbc4_86%,#F8FAFB_100%)]">
         <div className="pointer-events-none absolute inset-0 [background-image:linear-gradient(90deg,rgba(56,224,196,0.07)_1px,transparent_1px)] [background-size:58px_100%] [mask-image:linear-gradient(180deg,rgba(0,0,0,0.9)_0%,rgba(0,0,0,0.4)_60%,transparent_90%)] [-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,0.9)_0%,rgba(0,0,0,0.4)_60%,transparent_90%)]" />
-        <div className="relative grid grid-cols-[1.15fr_0.85fr] items-start gap-[64px]">
+        <div className="relative grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] items-start gap-[64px]">
           {/* Left */}
           <div>
             <span className="mb-[30px] inline-flex items-center gap-[9px] rounded-[999px] border border-[rgba(45,212,191,0.4)] px-[18px] py-[8px] font-jet text-[12px] font-bold tracking-[0.12em] text-[#5eead4]">
               <span className="h-[7px] w-[7px] rounded-full bg-[#38e0c4] shadow-[0_0_6px_rgba(56,224,196,0.9)]" />
               DIGITAL PRODUCTS HUB
             </span>
-            <h1 className="mb-[26px] font-sora text-[64px] font-bold leading-[1.05] tracking-[-0.025em] text-white">
+            <h1 className="mb-[26px] font-sora text-[32px] sm:text-[44px] lg:text-[64px] font-bold leading-[1.1] lg:leading-[1.05] tracking-[-0.025em] text-white">
               Three products.<br />
               <span className="text-[#38e0c4]">One discipline.</span>
             </h1>
-            <p className="mb-[30px] max-w-[600px] font-inter text-[18px] leading-[1.65] text-[#aebfba] [text-wrap:pretty]">
+            <p className="mb-[30px] max-w-[600px] font-inter text-[15.5px] lg:text-[18px] leading-[1.65] text-[#aebfba] [text-wrap:pretty]">
               NAWIRI, Agentic AI and Custom Software Builds are how we package fifteen years of bespoke development experience into things you can buy, measure and govern.
             </p>
             <a
@@ -85,7 +85,7 @@ export default function DigitalProductsPage() {
           </div>
 
           {/* Right — network panel */}
-          <div className="relative flex flex-col gap-[20px] overflow-hidden rounded-[18px] border border-[rgba(45,212,191,0.22)] bg-[#05100e] px-[28px] py-[26px] shadow-[inset_0_1px_0_rgba(56,224,196,0.08),0_30px_70px_rgba(0,0,0,0.5)] [background-image:radial-gradient(circle_at_88%_6%,rgba(56,224,196,0.18),transparent_46%),radial-gradient(circle_at_4%_96%,rgba(158,255,90,0.08),transparent_44%),linear-gradient(90deg,rgba(56,224,196,0.045)_1px,transparent_1px),linear-gradient(rgba(56,224,196,0.045)_1px,transparent_1px),linear-gradient(150deg,#0a1a16_0%,#06120f_60%,#050f0d_100%)] [background-size:auto,auto,46px_46px,46px_46px,auto]">
+          <div className="order-first lg:order-none relative flex flex-col gap-[20px] overflow-hidden rounded-[18px] border border-[rgba(45,212,191,0.22)] bg-[#05100e] px-[28px] py-[26px] shadow-[inset_0_1px_0_rgba(56,224,196,0.08),0_30px_70px_rgba(0,0,0,0.5)] [background-image:radial-gradient(circle_at_88%_6%,rgba(56,224,196,0.18),transparent_46%),radial-gradient(circle_at_4%_96%,rgba(158,255,90,0.08),transparent_44%),linear-gradient(90deg,rgba(56,224,196,0.045)_1px,transparent_1px),linear-gradient(rgba(56,224,196,0.045)_1px,transparent_1px),linear-gradient(150deg,#0a1a16_0%,#06120f_60%,#050f0d_100%)] [background-size:auto,auto,46px_46px,46px_46px,auto]">
             <div className="flex items-center justify-between">
               <span className="font-jet text-[11px] font-bold tracking-[0.18em] text-[#5eead4]">LAST-MILE DISTRIBUTION NETWORK</span>
               <span className="inline-flex items-center gap-[7px] font-jet text-[10px] font-bold tracking-[0.14em] text-[#9EFF5A]">
@@ -130,7 +130,7 @@ export default function DigitalProductsPage() {
 
             <div className="border-t border-white/[0.08] pt-[18px]">
               <span className="mb-[8px] block font-jet text-[10.5px] font-bold tracking-[0.18em] text-[#9EFF5A]">REWARDS DISBURSED</span>
-              <span className="mb-[10px] block font-sora text-[40px] font-extrabold leading-[1] tracking-[-0.02em] text-white">KES 250M+</span>
+              <span className="mb-[10px] block font-sora text-[26px] sm:text-[32px] lg:text-[40px] font-extrabold leading-[1] tracking-[-0.02em] text-white">KES 250M+</span>
               <p className="font-inter text-[13.5px] leading-[1.6] text-[#9fb4ae] [text-wrap:pretty]">
                 Instant cashback to loyalty members via{" "}
                 <Link href={routes.nawiri} className="border-b border-[rgba(56,224,196,0.4)] text-[#38e0c4] hover:text-[#5eead4]">
@@ -140,14 +140,14 @@ export default function DigitalProductsPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-3 gap-[12px] border-t border-white/[0.08] pt-[18px]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[12px] border-t border-white/[0.08] pt-[18px]">
               {[
                 { v: "480K", l: "ACTIVE MEMBERS" },
                 { v: "1.2M", l: "REDEMPTIONS / DAY" },
                 { v: "42ms", l: "AVG LATENCY" },
               ].map((s) => (
                 <div key={s.l} className="flex flex-col gap-[4px]">
-                  <span className="font-sora text-[20px] font-extrabold leading-[1] text-[#5eead4]">{s.v}</span>
+                  <span className="font-sora text-[16.5px] lg:text-[20px] font-extrabold leading-[1] text-[#5eead4]">{s.v}</span>
                   <span className="font-jet text-[9.5px] font-medium tracking-[0.06em] text-[#7f938d]">{s.l}</span>
                 </div>
               ))}
@@ -157,15 +157,15 @@ export default function DigitalProductsPage() {
       </section>
 
       {/* Product cards (light) */}
-      <section id="dp-products" className="bg-[#F8FAFB] px-[64px] pb-[88px] pt-[72px] [scroll-margin-top:90px]">
+      <section id="dp-products" className="bg-[#F8FAFB] px-5 sm:px-8 lg:px-[64px] pb-[88px] pt-[72px] [scroll-margin-top:90px]">
         <div className="mb-[44px] text-center">
           <span className="mb-[14px] block font-jet text-[12.5px] font-bold tracking-[0.16em] text-[#0f766e]">OUR DIGITAL SOLUTIONS</span>
-          <h2 className="mb-[14px] font-sora text-[42px] font-extrabold leading-[1.1] tracking-[-0.025em] text-[#0c1512]">Three products, built to buy and govern</h2>
-          <p className="mx-auto max-w-[600px] font-inter text-[16.5px] leading-[1.6] text-[#4a5a54] [text-wrap:pretty]">
+          <h2 className="mb-[14px] font-sora text-[27px] sm:text-[34px] lg:text-[42px] font-extrabold leading-[1.1] tracking-[-0.025em] text-[#0c1512]">Three products, built to buy and govern</h2>
+          <p className="mx-auto max-w-[600px] font-inter text-[14.5px] lg:text-[16.5px] leading-[1.6] text-[#4a5a54] [text-wrap:pretty]">
             From last-mile loyalty to autonomous workflows and bespoke systems &mdash; pick the engine that fits your operation.
           </p>
         </div>
-        <div className="grid grid-cols-3 items-stretch gap-[28px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-stretch gap-[28px]">
           {products.map((p) => (
             <div
               key={p.title}
@@ -204,20 +204,20 @@ export default function DigitalProductsPage() {
       </section>
 
       {/* Diagnostic CTA */}
-      <section className="bg-[#F8FAFB] px-[64px] pb-[112px] pt-[24px] text-center">
-        <h2 className="mx-auto mb-[32px] max-w-[760px] font-sora text-[46px] font-extrabold leading-[1.14] tracking-[-0.025em] text-[#0c1512] [text-wrap:pretty]">
+      <section className="bg-[#F8FAFB] px-5 sm:px-8 lg:px-[64px] pb-[112px] pt-[24px] text-center">
+        <h2 className="mx-auto mb-[32px] max-w-[760px] font-sora text-[28px] sm:text-[36px] lg:text-[46px] font-extrabold leading-[1.14] tracking-[-0.025em] text-[#0c1512] [text-wrap:pretty]">
           Ready to turn proven expertise into your digital transformation?
         </h2>
         <Link
           href={routes.enquiry}
-          className="inline-flex items-center gap-[10px] rounded-[12px] bg-[#38e0c4] px-[30px] py-[16px] font-inter text-[16px] font-bold text-[#06231e] transition-colors hover:bg-[#5ceace]"
+          className="inline-flex items-center gap-[10px] rounded-[12px] bg-[#38e0c4] px-[30px] py-[16px] font-inter text-[14.5px] lg:text-[16px] font-bold text-[#06231e] transition-colors hover:bg-[#5ceace]"
         >
           Book a Free IT Assessment
         </Link>
       </section>
 
       {/* Footer strip */}
-      <footer className="flex items-center justify-between border-t border-white/10 px-[64px] py-[32px] font-inter text-[13.5px] text-[#94A3B8]">
+      <footer className="flex items-center justify-between border-t border-white/10 px-5 sm:px-8 lg:px-[64px] py-[32px] font-inter text-[13.5px] text-[#94A3B8]">
         <span>
           <span className="font-sora text-[15px] font-bold text-white">Binary One</span> Solutions Ltd · Digital Products
         </span>

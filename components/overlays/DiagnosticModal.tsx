@@ -22,7 +22,7 @@ export function DiagnosticTrigger({ variant }: { variant: "hero" | "card" }) {
     return (
       <button
         onClick={open}
-        className="inline-flex cursor-pointer items-center gap-[11px] rounded-[12px] bg-[#00332f] px-[26px] py-[16px] font-inter text-[16px] font-semibold text-white shadow-[0_1px_2px_rgba(0,51,47,0.24),0_8px_20px_rgba(0,51,47,0.16)] transition-colors hover:bg-[#0a423c]"
+        className="inline-flex cursor-pointer items-center gap-[11px] rounded-[12px] bg-[#00332f] px-[26px] py-[16px] font-inter text-[14.5px] lg:text-[16px] font-semibold text-white shadow-[0_1px_2px_rgba(0,51,47,0.24),0_8px_20px_rgba(0,51,47,0.16)] transition-colors hover:bg-[#0a423c]"
       >
         <svg viewBox="0 0 24 24" className="h-[19px] w-[19px] flex-shrink-0">
           <path d="M14 3v4a1 1 0 0 0 1 1h4M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5ZM8.5 13h5M8.5 16.5h3" fill="none" stroke="#38e0c4" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
@@ -155,7 +155,7 @@ export function DiagnosticModal() {
             <div className="pointer-events-none absolute inset-0 [background-image:linear-gradient(90deg,rgba(56,224,196,0.06)_1px,transparent_1px)] [background-size:40px_100%]" />
             <div className="relative">
               <span className="mb-[9px] block font-jet text-[10.5px] font-bold tracking-[0.18em] text-[#38e0c4]">BOOK A FREE STRATEGIC ADVISORY SESSION</span>
-              <h4 className="mb-[18px] font-sora text-[20px] font-bold leading-[1.25] text-white">Turn this scorecard into a roadmap.</h4>
+              <h4 className="mb-[18px] font-sora text-[16.5px] lg:text-[20px] font-bold leading-[1.25] text-white">Turn this scorecard into a roadmap.</h4>
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
@@ -163,7 +163,7 @@ export function DiagnosticModal() {
                 }}
                 className="flex flex-col gap-[12px]"
               >
-                <div className="grid grid-cols-2 gap-[12px]">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-[12px]">
                   <input type="text" placeholder="Full name" required className="w-full rounded-[10px] border border-white/[0.14] bg-white/[0.06] px-[14px] py-[12px] font-inter text-[14px] text-white placeholder:text-[#8fa8a1]" />
                   <input type="email" placeholder="Work email" required className="w-full rounded-[10px] border border-white/[0.14] bg-white/[0.06] px-[14px] py-[12px] font-inter text-[14px] text-white placeholder:text-[#8fa8a1]" />
                 </div>
@@ -184,7 +184,7 @@ export function DiagnosticModal() {
             <span className="mb-[16px] inline-flex h-[52px] w-[52px] items-center justify-center rounded-full bg-[#0f766e]">
               <svg viewBox="0 0 24 24" className="h-[26px] w-[26px]"><path d="M5 12.5l4.5 4.5L19 7" fill="none" stroke="#FFFFFF" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
             </span>
-            <h4 className="mb-[8px] font-sora text-[20px] font-bold text-[#0c1512]">Request received.</h4>
+            <h4 className="mb-[8px] font-sora text-[16.5px] lg:text-[20px] font-bold text-[#0c1512]">Request received.</h4>
             <p className="mx-auto mb-[20px] max-w-[400px] font-inter text-[14.5px] leading-[1.6] text-[#4a5a54]">Our team will reach out within one business day to schedule your free strategic advisory session.</p>
             <button onClick={() => setOpen(false)} className="cursor-pointer rounded-[11px] bg-[#071e1b] px-[26px] py-[13px] font-jet text-[12px] font-bold tracking-[0.1em] text-white transition-colors hover:bg-[#0c3b33]">CLOSE</button>
           </div>

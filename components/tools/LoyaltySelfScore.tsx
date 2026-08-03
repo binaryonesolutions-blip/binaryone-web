@@ -23,12 +23,12 @@ export default function LoyaltySelfScore() {
   return (
     <>
       {/* Questions */}
-      <div className="flex max-w-[1000px] flex-col gap-[14px] px-[64px] pb-[48px]">
+      <div className="flex max-w-[1000px] flex-col gap-[14px] px-5 sm:px-8 lg:px-[64px] pb-[48px]">
         {QUESTIONS.map((q, i) => (
-          <div key={i} className="grid grid-cols-[44px_1fr_auto] items-center gap-[20px] rounded-[14px] border border-[rgba(45,212,191,0.32)] bg-[#11203A] px-[28px] py-[22px] hover:border-[rgba(45,212,191,0.55)] [background-image:radial-gradient(130%_120%_at_0%_0%,rgba(45,212,191,0.12)_0%,rgba(45,212,191,0.03)_38%,transparent_62%),radial-gradient(120%_130%_at_100%_100%,rgba(158,255,90,0.08)_0%,transparent_55%)]">
+          <div key={i} className="grid grid-cols-1 lg:grid-cols-[44px_1fr_auto] items-center gap-[20px] rounded-[14px] border border-[rgba(45,212,191,0.32)] bg-[#11203A] px-[28px] py-[22px] hover:border-[rgba(45,212,191,0.55)] [background-image:radial-gradient(130%_120%_at_0%_0%,rgba(45,212,191,0.12)_0%,rgba(45,212,191,0.03)_38%,transparent_62%),radial-gradient(120%_130%_at_100%_100%,rgba(158,255,90,0.08)_0%,transparent_55%)]">
             <span className="font-jet text-[13px] font-medium text-[#2dd4bf]">{String(i + 1).padStart(2, "0")}</span>
             <div>
-              <span className="mb-[3px] block font-inter text-[16px] font-semibold leading-[1.4] text-white">{q.text}</span>
+              <span className="mb-[3px] block font-inter text-[14.5px] lg:text-[16px] font-semibold leading-[1.4] text-white">{q.text}</span>
               <span className="block font-inter text-[13px] leading-[1.4] text-[#64748B]">{q.dim}</span>
             </div>
             <div className="flex gap-[8px]">
@@ -38,7 +38,7 @@ export default function LoyaltySelfScore() {
                   <button
                     key={v}
                     onClick={() => setAnswers((a) => ({ ...a, [i]: v }))}
-                    className="h-[44px] w-[44px] cursor-pointer rounded-[10px] border-[1.5px] font-sora text-[16px] font-bold"
+                    className="h-[44px] w-[44px] cursor-pointer rounded-[10px] border-[1.5px] font-sora text-[14.5px] lg:text-[16px] font-bold"
                     style={{ borderColor: on ? "#9EFF5A" : "rgba(45,212,191,0.4)", background: on ? "#9EFF5A" : "transparent", color: on ? "#0A1628" : "#94A3B8" }}
                   >
                     {v}
@@ -51,9 +51,9 @@ export default function LoyaltySelfScore() {
       </div>
 
       {/* Score panel */}
-      <div className="max-w-[1000px] px-[64px] pb-[96px]">
+      <div className="max-w-[1000px] px-5 sm:px-8 lg:px-[64px] pb-[96px]">
         <div className="rounded-[16px] border border-[rgba(158,255,90,0.35)] bg-[#0D1B31] px-[48px] py-[44px]">
-          <div className="grid grid-cols-[auto_1fr] items-center gap-[56px]">
+          <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] items-center gap-[56px]">
             <div className="flex min-w-[220px] flex-col gap-[6px]">
               <span className="font-jet text-[12px] font-medium tracking-[0.18em] text-[#2dd4bf]">YOUR SCORE</span>
               <span className="font-sora text-[88px] font-extrabold leading-[1] text-[#9EFF5A] [text-shadow:0_0_40px_rgba(158,255,90,0.3)]">{done ? String(total) : total + "…"}</span>
@@ -72,7 +72,7 @@ export default function LoyaltySelfScore() {
               <p className="font-inter text-[15px] font-medium text-[#64748B]">Answer all 10 statements to unlock your maturity band and the written report.</p>
             ) : !sent ? (
               <>
-                <div className="grid grid-cols-[1fr_1fr_1.2fr_auto] items-center gap-[14px]">
+                <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr_1.2fr_auto] items-center gap-[14px]">
                   <input placeholder="Name *" value={fName} onChange={(e) => setFName(e.target.value)} className="box-border w-full rounded-[10px] border border-[rgba(45,212,191,0.35)] bg-[#11203A] px-[16px] py-[14px] font-inter text-[15px] text-white outline-none focus:border-[#9EFF5A]" />
                   <input placeholder="Organisation *" value={fOrg} onChange={(e) => setFOrg(e.target.value)} className="box-border w-full rounded-[10px] border border-[rgba(45,212,191,0.35)] bg-[#11203A] px-[16px] py-[14px] font-inter text-[15px] text-white outline-none focus:border-[#9EFF5A]" />
                   <input placeholder="Work email *" type="email" value={fEmail} onChange={(e) => setFEmail(e.target.value)} className="box-border w-full rounded-[10px] border border-[rgba(45,212,191,0.35)] bg-[#11203A] px-[16px] py-[14px] font-inter text-[15px] text-white outline-none focus:border-[#9EFF5A]" />
@@ -82,9 +82,9 @@ export default function LoyaltySelfScore() {
               </>
             ) : (
               <div className="flex items-center gap-[18px]">
-                <span className="flex h-[44px] w-[44px] flex-shrink-0 items-center justify-center rounded-full bg-[#9EFF5A] font-sora text-[20px] font-bold text-[#0A1628]">✓</span>
+                <span className="flex h-[44px] w-[44px] flex-shrink-0 items-center justify-center rounded-full bg-[#9EFF5A] font-sora text-[16.5px] lg:text-[20px] font-bold text-[#0A1628]">✓</span>
                 <div>
-                  <span className="mb-[3px] block font-sora text-[18px] font-bold text-white">Report on its way.</span>
+                  <span className="mb-[3px] block font-sora text-[15.5px] lg:text-[18px] font-bold text-white">Report on its way.</span>
                   <span className="font-inter text-[14.5px] text-[#94A3B8]">Your written maturity report and recommended next steps will arrive by email. Want to move faster? <Link href={routes.contact} className="border-b border-[rgba(158,255,90,0.5)] pb-[1px] text-[#9EFF5A]">Book a NAWIRI demo</Link>.</span>
                 </div>
               </div>

@@ -15,7 +15,7 @@ export default function FaqAccordion() {
           <button
             onClick={() => setOpen((v) => (v === i ? -1 : i))}
             aria-expanded={open === i}
-            className="flex w-full cursor-pointer items-center justify-between gap-[20px] px-[28px] py-[24px] text-left font-sora text-[17px] font-bold text-[#0c1512]"
+            className="flex w-full cursor-pointer items-center justify-between gap-[20px] px-[28px] py-[24px] text-left font-sora text-[15px] lg:text-[17px] font-bold text-[#0c1512]"
           >
             <span>{f.q}</span>
             <span className="flex-shrink-0 font-inter text-[14px] text-[#8a9691]">{open === i ? "▲" : "▼"}</span>

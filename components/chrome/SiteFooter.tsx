@@ -22,8 +22,8 @@ const mapsHref =
 
 export default function SiteFooter() {
   return (
-    <footer className="bg-[#071e1b] px-[64px] pb-[32px] pt-[64px]">
-      <div className="grid grid-cols-[1.4fr_1fr_1fr_1fr] gap-[48px] pb-[56px]">
+    <footer className="bg-[#071e1b] px-5 pb-[32px] pt-[56px] sm:px-8 lg:px-[64px] lg:pt-[64px]">
+      <div className="grid grid-cols-1 gap-[40px] pb-[48px] sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:gap-[48px] lg:pb-[56px]">
         {/* Brand */}
         <div className="flex flex-col items-start gap-[16px]">
           <Link href={routes.home} className="inline-flex items-center">
@@ -74,7 +74,7 @@ export default function SiteFooter() {
         </div>
       </div>
 
-      <div className="flex items-center justify-between border-t border-white/10 pt-[28px] font-inter text-[14px] text-[#8fa0b5]">
+      <div className="flex flex-col gap-[14px] border-t border-white/10 pt-[28px] font-inter text-[14px] text-[#8fa0b5] sm:flex-row sm:items-center sm:justify-between sm:gap-0">
         <span>© 2026 Binary One Solutions Ltd · Nairobi, Kenya</span>
         <Link href={routes.enquiry} className="font-semibold text-white hover:text-[#c7d0dc]">Talk to a consultant →</Link>
       </div>

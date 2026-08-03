@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { primaryNav, routes } from "@/content/nav";
 import ProductsDropdown from "./ProductsDropdown";
+import MobileNav from "./MobileNav";
 import logoLight from "@/public/assets/b1s-logo-light.png";
 
 // Product routes that light up the Digital Products dropdown as active.
@@ -17,11 +18,13 @@ const PRODUCT_ROUTES: string[] = [
 // `sticky` uses the blurred translucent variant (e.g. Managed IT page).
 export default function SiteHeader({ active = "", sticky = false, solid = false }: { active?: string; sticky?: boolean; solid?: boolean }) {
   const productActive = PRODUCT_ROUTES.includes(active);
+  const gutters = "px-5 sm:px-8 lg:px-[64px]";
+  const base = `flex h-[76px] items-center justify-between border-b border-[#E0E5E6] ${gutters}`;
   const headerClass = solid
-    ? "sticky top-0 z-50 flex h-[76px] items-center justify-between border-b border-[#E0E5E6] bg-[#EDF1F2] px-[64px]"
+    ? `sticky top-0 z-50 ${base} bg-[#EDF1F2]`
     : sticky
-      ? "sticky top-0 z-50 flex h-[76px] items-center justify-between border-b border-[#E0E5E6] bg-[rgba(237,241,242,0.94)] px-[64px] [backdrop-filter:blur(12px)]"
-      : "flex h-[76px] items-center justify-between border-b border-[#E0E5E6] bg-[#EDF1F2] px-[64px]";
+      ? `sticky top-0 z-50 ${base} bg-[rgba(237,241,242,0.94)] [backdrop-filter:blur(12px)]`
+      : `${base} bg-[#EDF1F2]`;
   return (
     <header className={headerClass}>
       <Link href={routes.home} className="flex items-center">
@@ -30,11 +33,15 @@ export default function SiteHeader({ active = "", sticky = false, solid = false 
           alt="Binary One Solutions — Towards Digital Transformation"
           height={45}
           priority
-          className="block h-[45px] w-auto"
+          className="block h-[36px] w-auto sm:h-[45px]"
         />
       </Link>
 
-      <nav className="flex items-center gap-[32px] font-inter text-[14.5px] font-medium">
+      {/* Mobile drawer (< lg) */}
+      <MobileNav active={active} />
+
+      {/* Desktop nav (>= lg) */}
+      <nav className="hidden items-center gap-[32px] font-inter text-[14.5px] font-medium lg:flex">
         {primaryNav.slice(0, 3).map((item) => (
           <Link
             key={item.href}

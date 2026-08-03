@@ -16,7 +16,7 @@ export default function AssessmentForm() {
   if (submitted) {
     return (
       <div className="flex flex-col items-start gap-[16px] py-[24px]">
-        <span className="flex h-[44px] w-[44px] items-center justify-center rounded-full bg-[#006e1b] font-inter text-[20px] font-semibold text-white">✓</span>
+        <span className="flex h-[44px] w-[44px] items-center justify-center rounded-full bg-[#006e1b] font-inter text-[16.5px] lg:text-[20px] font-semibold text-white">✓</span>
         <h3 className="font-sora text-[24px] font-bold text-[#1c1b1b]">Thank you. Your request has been received.</h3>
         <p className="font-inter text-[15.5px] leading-[1.65] text-[#3e4947]">Binary One will review the details and respond with the recommended next step.</p>
       </div>
@@ -32,7 +32,7 @@ export default function AssessmentForm() {
       className="flex flex-col gap-[16px]"
     >
       <h3 className="mb-[4px] font-sora text-[22px] font-bold text-[#1c1b1b]">Book a Free IT Assessment</h3>
-      <div className="grid grid-cols-2 gap-[14px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-[14px]">
         <input required placeholder="Name *" className={inputCls} />
         <input required placeholder="Organisation *" className={inputCls} />
         <input required type="email" placeholder="Work email *" className={inputCls} />
@@ -58,7 +58,7 @@ export default function AssessmentForm() {
       </label>
       <button
         type="submit"
-        className="cursor-pointer rounded-[12px] bg-[#0f766e] px-[28px] py-[15px] font-inter text-[16px] font-semibold text-white shadow-[0_1px_2px_rgba(15,118,110,0.20),0_6px_16px_rgba(15,118,110,0.14)] hover:bg-[#0d655e]"
+        className="cursor-pointer rounded-[12px] bg-[#0f766e] px-[28px] py-[15px] font-inter text-[14.5px] lg:text-[16px] font-semibold text-white shadow-[0_1px_2px_rgba(15,118,110,0.20),0_6px_16px_rgba(15,118,110,0.14)] hover:bg-[#0d655e]"
       >
         Send &amp; confirm my slot
       </button>

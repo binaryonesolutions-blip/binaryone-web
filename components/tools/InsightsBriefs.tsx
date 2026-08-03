@@ -29,7 +29,7 @@ export default function InsightsBriefs() {
 
   return (
     <>
-      <div className="grid grid-cols-3 gap-[28px]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[28px]">
         {briefs.map((a, i) => (
           <div
             key={a.title}
@@ -45,7 +45,7 @@ export default function InsightsBriefs() {
               <span className="whitespace-nowrap font-jet text-[11.5px] font-semibold tracking-[0.10em] text-[#3e4947]">{a.date}</span>
             </div>
             <div className="flex flex-1 flex-col gap-[12px] px-[26px] pb-[22px] pt-[16px]">
-              <h3 className="font-sora text-[20px] font-bold leading-[1.35] tracking-[-0.01em] text-[#1c1b1b] [text-wrap:pretty]">{a.title}</h3>
+              <h3 className="font-sora text-[16.5px] lg:text-[20px] font-bold leading-[1.35] tracking-[-0.01em] text-[#1c1b1b] [text-wrap:pretty]">{a.title}</h3>
               <p className="flex-1 font-inter text-[14px] leading-[1.65] text-[#3e4947] [text-wrap:pretty]">{a.excerpt}</p>
             </div>
             <div className="mx-[26px] flex items-center justify-between border-t border-[#E5E7EB] pb-[20px] pt-[16px]">

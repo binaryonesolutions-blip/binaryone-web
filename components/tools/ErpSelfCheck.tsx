@@ -22,9 +22,9 @@ export default function ErpSelfCheck() {
           </div>
           <span className="mt-[8px] block font-jet text-[10.5px] font-bold tracking-[0.18em] text-[#7f9c96]">YOUR SCORE</span>
         </div>
-        <span className="text-right font-inter text-[17px] font-semibold text-[#38e0c4]">{verdict}</span>
+        <span className="text-right font-inter text-[15px] lg:text-[17px] font-semibold text-[#38e0c4]">{verdict}</span>
       </div>
-      <div className="grid grid-cols-2 gap-[14px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-[14px]">
         {checkStatements.map((text, i) => {
           const on = !!ticked[i];
           return (

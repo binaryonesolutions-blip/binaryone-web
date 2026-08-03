@@ -62,7 +62,7 @@ export default function ContactBody() {
     }`;
 
   return (
-    <div className="grid grid-cols-[1.35fr_0.65fr] items-start gap-[48px] px-[64px] pb-[104px] pt-[56px]">
+    <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] items-start gap-[48px] px-5 sm:px-8 lg:px-[64px] pb-[104px] pt-[56px]">
       {/* Left: tabs + form */}
       <div>
         <div className="mb-[32px] flex rounded-[12px] border border-[#E5E7EB] bg-[#f0eded] p-[4px]">
@@ -74,7 +74,7 @@ export default function ContactBody() {
           <div className="flex flex-col items-start gap-[16px] rounded-[16px] border border-[#E5E7EB] bg-white p-[48px] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_rgba(0,0,0,0.05)]">
             <span className="flex h-[48px] w-[48px] items-center justify-center rounded-full bg-[#006e1b] font-inter text-[22px] font-semibold text-white">✓</span>
             <h3 className="font-sora text-[28px] font-bold text-[#1c1b1b]">Thank you. Your request has been received.</h3>
-            <p className="font-inter text-[16px] leading-[1.65] text-[#3e4947]">Binary One will review the details and respond with the recommended next step.</p>
+            <p className="font-inter text-[14.5px] lg:text-[16px] leading-[1.65] text-[#3e4947]">Binary One will review the details and respond with the recommended next step.</p>
             <p className="font-inter text-[13.5px] leading-[1.6] text-[#6e7977]">Your details will only be used to respond to your enquiry or Free IT Assessment request.</p>
             <button onClick={() => setSubmitted(false)} className="cursor-pointer border-none bg-transparent p-0 font-inter text-[14.5px] font-semibold text-[#005c55] [border-bottom:1.5px_solid_#005c55] hover:text-[#006e1b]">Send another request</button>
           </div>
@@ -82,7 +82,7 @@ export default function ContactBody() {
           <div className="rounded-[16px] border border-[#E5E7EB] bg-white p-[40px] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_rgba(0,0,0,0.05)]">
             <p className="mb-[28px] font-inter text-[15.5px] leading-[1.65] text-[#3e4947] [text-wrap:pretty]">The Free IT Assessment is a structured 90-minute session with your Virtual CIO. We review your current IT setup, identify the three biggest risks, and leave you with a written one-page brief — no obligation, no sales pitch.</p>
             <div className="flex flex-col gap-[16px]">
-              <div className="grid grid-cols-2 gap-[16px]">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-[16px]">
                 <input placeholder="Name *" className={FIELD} />
                 <input placeholder="Organisation *" className={FIELD} />
                 <input placeholder="Role / Title *" className={FIELD} />
@@ -91,7 +91,7 @@ export default function ContactBody() {
                 <input placeholder="Number of users / workstations *" type="number" className={FIELD} />
               </div>
               <textarea placeholder="Current IT setup *" rows={3} className={`${FIELD} resize-y`} />
-              <div className="grid grid-cols-2 gap-[16px]">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-[16px]">
                 <select className={SELECT} defaultValue="">
                   <option value="">Main concern *</option>
                   <option>Cybersecurity</option><option>Cost control</option><option>Reliability &amp; uptime</option><option>Cloud migration</option><option>Compliance &amp; audit</option><option>ERP fit</option><option>Other</option>
@@ -103,14 +103,14 @@ export default function ContactBody() {
                 <input type="checkbox" className="mt-[2px] [accent-color:#006e1b]" />
                 <span>I consent to Binary One Solutions processing this information under their <Link href={routes.dataProtection} className="text-[#0f766e] [border-bottom:1px_solid_rgba(15,118,110,0.4)] hover:text-[#12897f]">Data Protection Policy</Link>. (Kenya Data Protection Act 2019)</span>
               </label>
-              <button onClick={() => setSubmitted(true)} className="cursor-pointer self-start rounded-[12px] border-none bg-[#0f766e] px-[28px] py-[15px] font-inter text-[16px] font-semibold text-white shadow-[0_1px_2px_rgba(15,118,110,0.20),0_6px_16px_rgba(15,118,110,0.14)] hover:bg-[#0d655e]">Send &amp; confirm my slot</button>
+              <button onClick={() => setSubmitted(true)} className="cursor-pointer self-start rounded-[12px] border-none bg-[#0f766e] px-[28px] py-[15px] font-inter text-[14.5px] lg:text-[16px] font-semibold text-white shadow-[0_1px_2px_rgba(15,118,110,0.20),0_6px_16px_rgba(15,118,110,0.14)] hover:bg-[#0d655e]">Send &amp; confirm my slot</button>
             </div>
           </div>
         ) : (
           <div className="rounded-[16px] border border-[#E5E7EB] bg-white p-[40px] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_rgba(0,0,0,0.05)]">
             <p className="mb-[28px] font-inter text-[15.5px] leading-[1.65] text-[#3e4947]">Question about NAWIRI? ERP audit? Custom build? Tell us briefly and we will route your enquiry to the right specialist.</p>
             <div className="flex flex-col gap-[16px]">
-              <div className="grid grid-cols-2 gap-[16px]">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-[16px]">
                 <input placeholder="Name *" className={FIELD} />
                 <input placeholder="Organisation *" className={FIELD} />
                 <input placeholder="Role / Title *" className={FIELD} />
@@ -126,7 +126,7 @@ export default function ContactBody() {
                 <input type="checkbox" className="mt-[2px] [accent-color:#006e1b]" />
                 <span>I consent to Binary One Solutions processing this information under their <Link href={routes.dataProtection} className="text-[#0f766e] [border-bottom:1px_solid_rgba(15,118,110,0.4)] hover:text-[#12897f]">Data Protection Policy</Link>.</span>
               </label>
-              <button onClick={() => setSubmitted(true)} className="cursor-pointer self-start rounded-[12px] border-none bg-[#0f766e] px-[28px] py-[15px] font-inter text-[16px] font-semibold text-white shadow-[0_1px_2px_rgba(15,118,110,0.20),0_6px_16px_rgba(15,118,110,0.14)] hover:bg-[#0d655e]">Send enquiry</button>
+              <button onClick={() => setSubmitted(true)} className="cursor-pointer self-start rounded-[12px] border-none bg-[#0f766e] px-[28px] py-[15px] font-inter text-[14.5px] lg:text-[16px] font-semibold text-white shadow-[0_1px_2px_rgba(15,118,110,0.20),0_6px_16px_rgba(15,118,110,0.14)] hover:bg-[#0d655e]">Send enquiry</button>
             </div>
           </div>
         )}
@@ -166,7 +166,7 @@ export default function ContactBody() {
 
         <div className="flex flex-col gap-[6px] rounded-[16px] border border-[#E5E7EB] bg-white px-[28px] py-[24px]">
           <span className="font-inter text-[12px] font-semibold tracking-[0.14em] text-[#3e4947]">OFFICE HOURS</span>
-          <span className="font-inter text-[16px] font-medium text-[#1c1b1b]">Monday – Friday, 08:30 – 17:30 EAT</span>
+          <span className="font-inter text-[14.5px] lg:text-[16px] font-medium text-[#1c1b1b]">Monday – Friday, 08:30 – 17:30 EAT</span>
         </div>
       </div>
 
@@ -176,14 +176,14 @@ export default function ContactBody() {
           <div onClick={() => { setAdvisoryOpen(false); setAdvDone(false); }} className="absolute inset-0" />
           <div data-adv-panel="1" className="relative flex max-h-[92vh] w-[760px] max-w-full flex-col gap-[13px] rounded-[20px] border border-[rgba(56,224,196,0.28)] bg-[#00332f] px-[28px] py-[22px] shadow-[0_40px_90px_rgba(0,0,0,0.55)]">
             <div className="flex items-start justify-between gap-[18px]">
-              <span className="inline-flex items-center gap-[12px] font-sora text-[16px] font-bold tracking-[0.005em] text-white"><svg viewBox="0 0 24 24" className="h-[21px] w-[21px] flex-shrink-0" fill="none" stroke="#38e0c4" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" /><path d="M3.5 10h17M8.5 3v4M15.5 3v4" /></svg>BOOK BOARDROOM ADVISORY</span>
+              <span className="inline-flex items-center gap-[12px] font-sora text-[14.5px] lg:text-[16px] font-bold tracking-[0.005em] text-white"><svg viewBox="0 0 24 24" className="h-[21px] w-[21px] flex-shrink-0" fill="none" stroke="#38e0c4" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" /><path d="M3.5 10h17M8.5 3v4M15.5 3v4" /></svg>BOOK BOARDROOM ADVISORY</span>
               <button onClick={() => { setAdvisoryOpen(false); setAdvDone(false); }} aria-label="Close" className="inline-flex h-[32px] w-[32px] flex-shrink-0 cursor-pointer items-center justify-center rounded-[9px] border border-white/[0.14] bg-white/[0.06] text-[#c2dbd7] hover:bg-white/[0.12] hover:text-white"><svg viewBox="0 0 24 24" className="h-[15px] w-[15px]" fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round"><path d="M6 6l12 12M18 6L6 18" /></svg></button>
             </div>
 
             {advDone ? (
               <div className="flex flex-col gap-[14px] pb-[8px] pt-[18px]">
                 <span className="inline-flex items-center gap-[10px] font-inter text-[11.5px] font-bold uppercase tracking-[0.12em] text-[#5df0d0]"><span className="h-[8px] w-[8px] rounded-full bg-[#7cdc79] shadow-[0_0_8px_rgba(124,220,121,0.9)]" />RESERVATION LOGGED</span>
-                <p className="font-inter text-[19px] font-semibold leading-[1.5] text-white [text-wrap:pretty]">Boardroom advisory held for {dates[advDate]} at {ADV_SLOTS[advSlot]} EAT.</p>
+                <p className="font-inter text-[16px] lg:text-[19px] font-semibold leading-[1.5] text-white [text-wrap:pretty]">Boardroom advisory held for {dates[advDate]} at {ADV_SLOTS[advSlot]} EAT.</p>
                 <p className="font-inter text-[14.5px] leading-[1.7] text-[#c2dbd7] [text-wrap:pretty]">Mary Kalama will confirm the slot by email within one business day, with a short agenda and the partner&apos;s brief.</p>
                 <button onClick={() => { setAdvisoryOpen(false); setAdvDone(false); }} className="mt-[6px] cursor-pointer self-start rounded-[10px] border border-[rgba(56,224,196,0.4)] bg-[rgba(56,224,196,0.1)] px-[20px] py-[12px] font-inter text-[13px] font-bold tracking-[0.06em] text-[#d8ece8] hover:bg-[rgba(56,224,196,0.18)] hover:text-white">CLOSE</button>
               </div>
@@ -222,7 +222,7 @@ export default function ContactBody() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-4 gap-[10px]">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-[10px]">
                   <label className="flex flex-col gap-[6px]"><span className={ADV_LABEL}>YOUR NAME</span><input type="text" placeholder="Full name" className={ADV_FIELD} /></label>
                   <label className="flex flex-col gap-[6px]"><span className={ADV_LABEL}>ORGANISATION</span><input type="text" placeholder="Company name" className={ADV_FIELD} /></label>
                   <label className="flex flex-col gap-[6px]"><span className={ADV_LABEL}>WORK EMAIL</span><input type="email" placeholder="you@company.co.ke" className={ADV_FIELD} /></label>

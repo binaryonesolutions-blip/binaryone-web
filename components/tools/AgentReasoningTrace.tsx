@@ -65,7 +65,7 @@ export default function AgentReasoningTrace() {
         </span>
       </div>
 
-      <div className="grid min-h-[460px] grid-cols-[0.85fr_1.15fr]">
+      <div className="grid min-h-[460px] grid-cols-1 lg:grid-cols-[0.85fr_1.15fr]">
         {/* Selector */}
         <div className="flex flex-col gap-[16px] border-r border-white/[0.08] p-[28px]">
           <span className="font-jet text-[12px] font-bold tracking-[0.14em] text-[#94A3B8]">SELECT WORKFLOW TARGET</span>
