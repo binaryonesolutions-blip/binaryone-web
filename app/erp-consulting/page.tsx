@@ -25,9 +25,13 @@ export default function ERPConsulting() {
       {/* ===== HERO ===== */}
       <div className="relative overflow-hidden [background:linear-gradient(180deg,#071e1b_0%,#0a2724_48%,#6f8f86_78%,#F8FAFB_100%)]">
         <div className="pointer-events-none absolute inset-0 [background-image:linear-gradient(90deg,rgba(56,224,196,0.05)_1px,transparent_1px)] [background-size:72px_100%] [mask-image:linear-gradient(180deg,#000_82%,transparent_99%)]" />
-        <div className="relative grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] items-center gap-[64px] px-5 sm:px-8 lg:px-[64px] pb-[80px] pt-[88px]">
-          <div>
-            <span className="mb-[30px] inline-flex items-center gap-[10px] rounded-[999px] border border-[rgba(56,224,196,0.35)] bg-[rgba(56,224,196,0.06)] px-[20px] py-[9px] font-jet text-[13px] font-bold tracking-[0.14em] text-[#38e0c4]">
+        <div className="relative grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] items-center gap-[28px] lg:gap-[64px] px-5 sm:px-8 lg:px-[64px] pb-[80px] pt-[88px]">
+          {/* Mobile-only eyebrow — sits above the hero image like a title */}
+          <span className="order-1 inline-flex w-fit items-center gap-[10px] rounded-[999px] border border-[rgba(56,224,196,0.35)] bg-[rgba(56,224,196,0.06)] px-[20px] py-[9px] font-jet text-[13px] font-bold tracking-[0.14em] text-[#38e0c4] lg:hidden">
+            <span className="h-[8px] w-[8px] rounded-full bg-[#38e0c4]" />INDEPENDENT ERP ADVISORY &amp; PROJECT MANAGEMENT
+          </span>
+          <div className="order-3 lg:order-none">
+            <span className="mb-[30px] hidden items-center gap-[10px] rounded-[999px] border border-[rgba(56,224,196,0.35)] bg-[rgba(56,224,196,0.06)] px-[20px] py-[9px] font-jet text-[13px] font-bold tracking-[0.14em] text-[#38e0c4] lg:inline-flex">
               <span className="h-[8px] w-[8px] rounded-full bg-[#38e0c4]" />INDEPENDENT ERP ADVISORY &amp; PROJECT MANAGEMENT
             </span>
             <h1 className="mb-[30px] font-sora text-[30px] sm:text-[40px] lg:text-[54px] font-bold leading-[1.16] tracking-[-0.02em] text-white [text-wrap:pretty]">
@@ -43,13 +47,16 @@ export default function ERPConsulting() {
               </Link>
               <Link href={routes.contact} className="inline-block rounded-[14px] border-[1.5px] border-[rgba(56,224,196,0.5)] bg-[rgba(255,255,255,0.06)] px-[28px] py-[15.5px] font-inter text-[14.5px] lg:text-[16px] font-semibold text-[#38e0c4] hover:bg-[rgba(56,224,196,0.12)] hover:text-[#5ceace]">Book a Free ERP Consultation</Link>
             </div>
-            <div className="flex flex-wrap gap-[12px] border-t border-[#1c1b1b] pt-[28px]">
+            <div className="border-t border-[#1c1b1b] pt-[28px]">
+              <span className="mb-[16px] block font-jet text-[13px] font-bold tracking-[0.14em] text-[#5eead4]">OUR ERP ADVISORY APPROACH</span>
+            </div>
+            <div className="flex flex-wrap gap-[12px]">
               {heroChips.map((c) => (
                 <span key={c} className="rounded-[999px] border border-[rgba(255,255,255,0.12)] bg-[rgba(12,21,18,0.75)] px-[16px] py-[9px] font-inter text-[13px] font-semibold text-white">{c}</span>
               ))}
             </div>
           </div>
-          <div className="order-first lg:order-none group relative h-[520px] overflow-hidden rounded-[20px] shadow-[0_24px_64px_rgba(0,0,0,0.45)]">
+          <div className="order-2 lg:order-none group relative h-[520px] overflow-hidden rounded-[20px] shadow-[0_24px_64px_rgba(0,0,0,0.45)]">
             <Image src="/assets/erp-advisory-hero.png" alt="ERP advisory working session" fill priority sizes="560px" className="object-cover [object-position:center_40%] [filter:grayscale(0.12)] transition-transform duration-500 ease-in-out group-hover:scale-[1.06]" />
             <div className="absolute bottom-[10px] left-[20px] right-[20px] rounded-[12px] border border-[rgba(56,224,196,0.2)] bg-[rgba(6,58,52,0.55)] px-[20px] py-[10px] [backdrop-filter:blur(8px)]">
               <span className="mb-[2px] block font-jet text-[11.5px] font-bold tracking-[0.18em] text-[#38e0c4]">ENTERPRISE RESOURCE PLANNING</span>

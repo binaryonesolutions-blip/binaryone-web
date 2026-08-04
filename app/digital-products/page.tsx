@@ -53,10 +53,15 @@ export default function DigitalProductsPage() {
       {/* Hero (dark → fades into light) */}
       <section className="relative overflow-hidden px-5 sm:px-8 lg:px-[64px] pb-[96px] pt-[92px] [background:linear-gradient(180deg,#04140f_0%,#071e1b_28%,#0c2a24_52%,#b9cbc4_86%,#F8FAFB_100%)]">
         <div className="pointer-events-none absolute inset-0 [background-image:linear-gradient(90deg,rgba(56,224,196,0.07)_1px,transparent_1px)] [background-size:58px_100%] [mask-image:linear-gradient(180deg,rgba(0,0,0,0.9)_0%,rgba(0,0,0,0.4)_60%,transparent_90%)] [-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,0.9)_0%,rgba(0,0,0,0.4)_60%,transparent_90%)]" />
-        <div className="relative grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] items-start gap-[64px]">
+        <div className="relative grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] items-start gap-[28px] lg:gap-[64px]">
+          {/* Mobile-only eyebrow — sits above the hero panel like a title */}
+          <span className="order-1 inline-flex w-fit items-center gap-[9px] rounded-[999px] border border-[rgba(45,212,191,0.4)] px-[18px] py-[8px] font-jet text-[12px] font-bold tracking-[0.12em] text-[#5eead4] lg:hidden">
+            <span className="h-[7px] w-[7px] rounded-full bg-[#38e0c4] shadow-[0_0_6px_rgba(56,224,196,0.9)]" />
+            DIGITAL PRODUCTS HUB
+          </span>
           {/* Left */}
-          <div>
-            <span className="mb-[30px] inline-flex items-center gap-[9px] rounded-[999px] border border-[rgba(45,212,191,0.4)] px-[18px] py-[8px] font-jet text-[12px] font-bold tracking-[0.12em] text-[#5eead4]">
+          <div className="order-3 lg:order-none">
+            <span className="mb-[30px] hidden items-center gap-[9px] rounded-[999px] border border-[rgba(45,212,191,0.4)] px-[18px] py-[8px] font-jet text-[12px] font-bold tracking-[0.12em] text-[#5eead4] lg:inline-flex">
               <span className="h-[7px] w-[7px] rounded-full bg-[#38e0c4] shadow-[0_0_6px_rgba(56,224,196,0.9)]" />
               DIGITAL PRODUCTS HUB
             </span>
@@ -76,7 +81,10 @@ export default function DigitalProductsPage() {
                 <path d="M5 12h14M13 6l6 6-6 6" />
               </svg>
             </a>
-            <div className="flex max-w-[640px] flex-wrap gap-[12px] border-t border-white/[0.14] pt-[26px]">
+            <div className="border-t border-white/[0.14] pt-[26px]">
+              <span className="mb-[16px] block font-jet text-[13px] font-bold tracking-[0.14em] text-[#38e0c4]">BUILT HERE. BUILT TO LAST.</span>
+            </div>
+            <div className="flex max-w-[640px] flex-wrap gap-[12px]">
               {heroChips.map((c) => (
                 <span key={c} className="rounded-[8px] border border-white/10 bg-[rgba(6,24,20,0.72)] px-[15px] py-[9px] font-jet text-[12.5px] font-medium text-[#d5e2dd]">
                   {c}
@@ -86,7 +94,7 @@ export default function DigitalProductsPage() {
           </div>
 
           {/* Right — network panel */}
-          <div className="order-first lg:order-none relative flex flex-col gap-[20px] overflow-hidden rounded-[18px] border border-[rgba(45,212,191,0.22)] bg-[#05100e] px-[28px] py-[26px] shadow-[inset_0_1px_0_rgba(56,224,196,0.08),0_30px_70px_rgba(0,0,0,0.5)] [background-image:radial-gradient(circle_at_88%_6%,rgba(56,224,196,0.18),transparent_46%),radial-gradient(circle_at_4%_96%,rgba(158,255,90,0.08),transparent_44%),linear-gradient(90deg,rgba(56,224,196,0.045)_1px,transparent_1px),linear-gradient(rgba(56,224,196,0.045)_1px,transparent_1px),linear-gradient(150deg,#0a1a16_0%,#06120f_60%,#050f0d_100%)] [background-size:auto,auto,46px_46px,46px_46px,auto]">
+          <div className="order-2 lg:order-none relative flex flex-col gap-[20px] overflow-hidden rounded-[18px] border border-[rgba(45,212,191,0.22)] bg-[#05100e] px-[28px] py-[26px] shadow-[inset_0_1px_0_rgba(56,224,196,0.08),0_30px_70px_rgba(0,0,0,0.5)] [background-image:radial-gradient(circle_at_88%_6%,rgba(56,224,196,0.18),transparent_46%),radial-gradient(circle_at_4%_96%,rgba(158,255,90,0.08),transparent_44%),linear-gradient(90deg,rgba(56,224,196,0.045)_1px,transparent_1px),linear-gradient(rgba(56,224,196,0.045)_1px,transparent_1px),linear-gradient(150deg,#0a1a16_0%,#06120f_60%,#050f0d_100%)] [background-size:auto,auto,46px_46px,46px_46px,auto]">
             <div className="flex items-center justify-between">
               <span className="font-jet text-[11px] font-bold tracking-[0.18em] text-[#5eead4]">LAST-MILE DISTRIBUTION NETWORK</span>
               <span className="inline-flex items-center gap-[7px] font-jet text-[10px] font-bold tracking-[0.14em] text-[#9EFF5A]">
@@ -131,9 +139,9 @@ export default function DigitalProductsPage() {
 
             <div className="border-t border-white/[0.08] pt-[18px]">
               <span className="mb-[8px] block font-jet text-[10.5px] font-bold tracking-[0.18em] text-[#9EFF5A]">REWARDS DISBURSED</span>
-              <span className="mb-[10px] block font-sora text-[26px] sm:text-[32px] lg:text-[40px] font-extrabold leading-[1] tracking-[-0.02em] text-white">KES 250M+</span>
+              <span className="mb-[10px] block font-sora text-[26px] sm:text-[32px] lg:text-[40px] font-extrabold leading-[1] tracking-[-0.02em] text-white">KES 1,000,000+</span>
               <p className="font-inter text-[13.5px] leading-[1.6] text-[#9fb4ae] [text-wrap:pretty]">
-                Instant cashback to loyalty members via{" "}
+                Instant airtime &amp; cashback to loyalty members via{" "}
                 <Link href={routes.nawiri} className="border-b border-[rgba(56,224,196,0.4)] text-[#38e0c4] hover:text-[#5eead4]">
                   NAWIRI M-Pesa microservices
                 </Link>

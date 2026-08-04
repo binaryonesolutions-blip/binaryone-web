@@ -59,9 +59,14 @@ export default function AgenticAiPage() {
       <SiteHeader active={routes.agenticAi} sticky />
 
       {/* Hero */}
-      <section className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] items-center gap-[56px] px-5 sm:px-8 lg:px-[64px] pb-[64px] pt-[96px]">
-        <div>
-          <span className="mb-[26px] inline-flex items-center gap-[9px] rounded-[999px] border border-[rgba(45,212,191,0.4)] px-[18px] py-[8px] font-jet text-[12px] font-bold tracking-[0.08em] text-[#5eead4]">
+      <section className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] items-center gap-[28px] lg:gap-[56px] px-5 sm:px-8 lg:px-[64px] pb-[64px] pt-[96px]">
+        {/* Mobile-only eyebrow — sits above the hero image like a title */}
+        <span className="order-1 inline-flex w-fit items-center gap-[9px] rounded-[999px] border border-[rgba(45,212,191,0.4)] px-[18px] py-[8px] font-jet text-[12px] font-bold tracking-[0.08em] text-[#5eead4] lg:hidden">
+          <span className="h-[7px] w-[7px] rounded-full bg-[#2dd4bf] shadow-[0_0_6px_rgba(45,212,191,0.9)]" />
+          AI OPERATIONS &amp; AUTOMATION
+        </span>
+        <div className="order-3 lg:order-none">
+          <span className="mb-[26px] hidden items-center gap-[9px] rounded-[999px] border border-[rgba(45,212,191,0.4)] px-[18px] py-[8px] font-jet text-[12px] font-bold tracking-[0.08em] text-[#5eead4] lg:inline-flex">
             <span className="h-[7px] w-[7px] rounded-full bg-[#2dd4bf] shadow-[0_0_6px_rgba(45,212,191,0.9)]" />
             AI OPERATIONS &amp; AUTOMATION
           </span>
@@ -91,7 +96,7 @@ export default function AgenticAiPage() {
         </div>
 
         {/* Bot mesh panel */}
-        <div className="order-first lg:order-none group relative h-[440px] overflow-hidden rounded-[16px] border border-[rgba(30,41,59,0.9)] bg-[#020617] shadow-[0_24px_60px_rgba(0,0,0,0.45)]">
+        <div className="order-2 lg:order-none group relative h-[440px] overflow-hidden rounded-[16px] border border-[rgba(30,41,59,0.9)] bg-[#020617] shadow-[0_24px_60px_rgba(0,0,0,0.45)]">
           <Image
             src={agenticHero}
             alt="Agentic AI workflows and bot mesh network"

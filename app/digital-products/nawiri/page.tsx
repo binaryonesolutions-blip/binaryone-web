@@ -26,8 +26,8 @@ export default function NawiriPage() {
       <NawiriNav />
 
       {/* Hero */}
-      <section className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] items-center gap-[56px] px-5 sm:px-8 lg:px-[64px] pb-[56px] pt-[96px]">
-        <div>
+      <section className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] items-center gap-[28px] lg:gap-[56px] px-5 sm:px-8 lg:px-[64px] pb-[56px] pt-[96px]">
+        <div className="order-2 lg:order-none">
           <div className="mb-[24px] flex items-center gap-[28px]">
             <Image src={nawiriLogo} alt="NAWIRI" priority className="block h-[150px] w-auto flex-shrink-0 [filter:drop-shadow(0_0_24px_rgba(158,255,90,0.35))]" />
             <h1 className="font-sora text-[52px] font-extrabold leading-[1.08] tracking-[-0.01em] text-white [text-wrap:pretty]">
@@ -44,13 +44,21 @@ export default function NawiriPage() {
             <a href="#features" className="border-b-[1.5px] border-[#2dd4bf] pb-[2px] font-inter text-[15.5px] font-semibold text-white hover:border-[#9EFF5A] hover:text-[#9EFF5A]">See the features →</a>
           </div>
         </div>
-        <div className="group relative flex h-[440px] items-center justify-center overflow-hidden rounded-[16px] border border-[rgba(45,212,191,0.35)] bg-[#11203A] shadow-[0_24px_64px_rgba(0,0,0,0.4)]">
+        <div className="order-1 lg:order-none group relative flex h-[440px] items-center justify-center overflow-hidden rounded-[16px] border border-[rgba(45,212,191,0.35)] bg-[#11203A] shadow-[0_24px_64px_rgba(0,0,0,0.4)]">
           <Image src={nawiriRetail} alt="Kenyan retail loyalty moment" fill sizes="620px" className="object-cover [object-position:center_45%] transition-transform duration-500 ease-in-out group-hover:scale-[1.06]" />
+          <div className="pointer-events-none absolute inset-0 [background:linear-gradient(180deg,rgba(10,22,40,0)_40%,rgba(10,22,40,0.65)_100%)]" />
+          <div className="pointer-events-none absolute bottom-[16px] left-[20px] right-[20px] rounded-[12px] border border-[rgba(158,255,90,0.22)] bg-[rgba(10,22,40,0.62)] px-[20px] py-[10px] [backdrop-filter:blur(8px)]">
+            <span className="mb-[2px] block font-jet text-[11.5px] font-bold tracking-[0.18em] text-[#9EFF5A]">LAST-MILE LOYALTY</span>
+            <span className="font-inter text-[14px] text-white">Rewarding right at the Point of Sale &amp; Consumption</span>
+          </div>
         </div>
       </section>
 
       {/* Trust strip */}
-      <section className="flex flex-wrap gap-[10px] px-5 sm:px-8 lg:px-[64px] pb-[88px]">
+      <div className="px-5 sm:px-8 lg:px-[64px]">
+        <span className="block font-jet text-[13px] font-bold tracking-[0.14em] text-[#2dd4bf] [text-wrap:balance]">NAWIRI — OUR HOMEGROWN SOLUTION LINKING MANUFACTURERS TO THE LAST MILE</span>
+      </div>
+      <section className="mt-[16px] flex flex-wrap gap-[10px] px-5 sm:px-8 lg:px-[64px] pb-[88px]">
         {trustChips.map((chip) => (
           <span key={chip} className="inline-block rounded-[100px] border border-[rgba(45,212,191,0.4)] px-[16px] py-[9px] font-inter text-[13.5px] font-medium text-[#E2E8F0] [background:linear-gradient(180deg,rgba(45,212,191,0.1),rgba(45,212,191,0.03))]">
             {chip}
@@ -201,7 +209,7 @@ export default function NawiriPage() {
       <section id="pricing" className="border-t border-[rgba(45,212,191,0.2)] px-5 sm:px-8 lg:px-[64px] py-[88px] [scroll-margin-top:78px]">
         <div className="grid grid-cols-1 lg:grid-cols-[auto_380px_1fr] items-center gap-[56px]">
           <div className="flex flex-col gap-[6px]">
-            <h2 className="whitespace-nowrap font-sora text-[34px] font-extrabold leading-[1.2] text-white">Pricing <span className="text-[#9EFF5A]">position.</span></h2>
+            <h2 className="whitespace-nowrap font-sora text-[34px] font-extrabold leading-[1.2] text-white">Pricing <span className="text-[#9EFF5A]">position</span></h2>
             <span className="whitespace-nowrap font-caveat text-[25px] sm:text-[31px] lg:text-[38px] font-bold leading-[1.1] text-[#2dd4bf]">
               meets <span className="relative inline-block">Sales<span className="absolute bottom-[1px] left-[-4px] right-[-6px] h-[2.5px] origin-[left_center] rotate-[-5deg] rounded-[2px] bg-[#9EFF5A]" /></span> Explosion!
             </span>

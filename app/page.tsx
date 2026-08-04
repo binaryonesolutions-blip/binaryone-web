@@ -20,6 +20,19 @@ const routeCards = [
   { kicker: "DIGITAL PRODUCTS", href: routes.digitalProducts, img: "/assets/nawiri-retail-hero.png", alt: "Kenyan retail loyalty moment", objPos: "center 45%", title: "Products built for real market moments.", copy: "NAWIRI Digital Loyalty, Agentic AI Workflows and Custom Enterprise Software Builds — packaged from years of practical development experience.", cta: "Explore Digital Products →" },
 ];
 
+// Proof-strip logo tile — natural width (hugs its own logo) so tiles pack into
+// organic, uneven rows on every screen size, like the "Platforms we govern" strip.
+const logoTile = (c: (typeof clients)[number]) => (
+  <div key={c.name} className="flex flex-col items-center gap-[12px]" style={{ transform: `translateY(${c.tileLift}px)` }}>
+    <span className="flex items-end justify-center" style={{ width: c.logoW, height: c.logoH }}>
+      <img src={c.logo} alt={c.name} style={{ maxWidth: c.logoW, maxHeight: c.logoH }} className="block h-auto w-auto object-contain" />
+    </span>
+    {c.showName && (
+      <span className="max-w-[98px] sm:max-w-[122px] text-center font-inter text-[10.5px] font-semibold uppercase leading-[1.4] tracking-[0.08em] text-[#6e7977]">{c.name}</span>
+    )}
+  </div>
+);
+
 export const metadata: Metadata = { alternates: { canonical: "/" } };
 
 export default function Home() {
@@ -30,9 +43,14 @@ export default function Home() {
       {/* ===== HERO ===== */}
       <div className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0 [background-image:radial-gradient(120%_95%_at_90%_8%,rgba(15,118,110,0.16)_0%,rgba(15,118,110,0.05)_34%,transparent_60%),linear-gradient(90deg,rgba(15,118,110,0.09)_1px,transparent_1px),linear-gradient(0deg,rgba(15,118,110,0.09)_1px,transparent_1px)] [background-size:100%_100%,60px_60px,60px_60px] [mask-image:linear-gradient(180deg,#000_0%,#000_58%,transparent_100%)]" />
-        <div className="relative grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] items-center gap-[40px] lg:gap-[56px] px-5 sm:px-8 lg:px-[64px] pb-[48px] lg:pb-[64px] pt-[48px] lg:pt-[88px]">
-          <div className="order-2 lg:order-1">
-            <span className="mb-[24px] inline-flex items-center gap-[10px] rounded-[999px] border border-[rgba(15,118,110,0.35)] bg-[rgba(15,118,110,0.06)] px-[18px] py-[8px] font-inter text-[12.5px] font-bold tracking-[0.09em] text-[#0f766e]">
+        <div className="relative grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] items-center gap-[28px] lg:gap-[56px] px-5 sm:px-8 lg:px-[64px] pb-[48px] lg:pb-[64px] pt-[48px] lg:pt-[88px]">
+          {/* Mobile-only eyebrow — sits above the hero image like a title */}
+          <span className="order-1 inline-flex w-fit items-center gap-[10px] rounded-[999px] border border-[rgba(15,118,110,0.35)] bg-[rgba(15,118,110,0.06)] px-[18px] py-[8px] font-inter text-[12.5px] font-bold tracking-[0.09em] text-[#0f766e] lg:hidden">
+            <span className="h-[8px] w-[8px] rounded-full bg-[#7cdc79] shadow-[0_0_6px_rgba(124,220,121,0.85)]" />
+            DIGITAL TRANSFORMATION SOLUTIONS
+          </span>
+          <div className="order-3 lg:order-1">
+            <span className="mb-[24px] hidden items-center gap-[10px] rounded-[999px] border border-[rgba(15,118,110,0.35)] bg-[rgba(15,118,110,0.06)] px-[18px] py-[8px] font-inter text-[12.5px] font-bold tracking-[0.09em] text-[#0f766e] lg:inline-flex">
               <span className="h-[8px] w-[8px] rounded-full bg-[#7cdc79] shadow-[0_0_6px_rgba(124,220,121,0.85)]" />
               DIGITAL TRANSFORMATION SOLUTIONS
             </span>
@@ -53,7 +71,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="order-1 lg:order-2">
+          <div className="order-2 lg:order-2">
             <div className="group relative flex h-[280px] sm:h-[380px] lg:h-[460px] items-center justify-center overflow-hidden rounded-t-[16px] border border-b-0 border-[#E5E7EB]">
               <Image src="/assets/it-icons-banner.png" alt="Managed IT icons over Nairobi skyline" fill priority sizes="640px" className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-[1.06]" />
               <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -131,7 +149,7 @@ export default function Home() {
           <span className="mb-[16px] block font-jet text-[12.5px] font-bold tracking-[0.22em] text-[#17a892]">HOW WE WORK</span>
           <h2 className="font-sora text-[28px] sm:text-[34px] lg:text-[40px] font-bold leading-[1.15] tracking-[-0.02em] text-[#1c1b1b]">Our AIM-IT Methodology.</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-[20px]">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-[20px]">
           {processSteps.map((s) => (
             <div key={s.num} className="relative flex flex-col gap-[14px] overflow-hidden rounded-[16px] border border-[#cfe8df] bg-[#f1f8f5] px-[24px] pb-[28px] pt-[26px]">
               <div className="pointer-events-none absolute inset-0 [background-image:linear-gradient(rgba(15,118,110,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(15,118,110,0.05)_1px,transparent_1px)] [background-size:22px_22px]" />
@@ -152,17 +170,9 @@ export default function Home() {
       {/* ===== PROOF STRIP ===== */}
       <div className="border-t border-[#E5E7EB] bg-[#EFF9F7] px-5 sm:px-8 lg:px-[64px] pb-[34px] pt-[64px] lg:pt-[96px]">
         <h2 className="mb-[36px] lg:mb-[48px] text-center font-sora text-[24px] sm:text-[28px] lg:text-[32px] font-bold leading-[1.2] tracking-[-0.02em] text-[#0b3d38]">Trusted by organisations that cannot afford technology confusion.</h2>
-        <div className="mx-auto grid max-w-[1152px] grid-cols-1 md:grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 justify-items-center gap-x-[20px] gap-y-[28px]">
-          {clients.map((c) => (
-            <div key={c.name} className="flex w-[132px] flex-col items-center gap-[12px]" style={{ transform: `translateY(${c.tileLift}px)` }}>
-              <span className="flex items-end justify-center" style={{ width: c.logoW, height: c.logoH }}>
-                <img src={c.logo} alt={c.name} style={{ maxWidth: c.logoW, maxHeight: c.logoH }} className="block h-auto w-auto object-contain" />
-              </span>
-              {c.showName && (
-                <span className="text-center font-inter text-[10.5px] font-semibold uppercase leading-[1.4] tracking-[0.08em] text-[#6e7977]">{c.name}</span>
-              )}
-            </div>
-          ))}
+        {/* Natural-width tiles wrap into organic, uneven rows (2/3/2…) on every device */}
+        <div className="mx-auto flex max-w-[820px] flex-wrap items-center justify-center gap-x-[22px] gap-y-[28px] sm:gap-x-[46px] sm:gap-y-[34px]">
+          {clients.map(logoTile)}
         </div>
       </div>
 

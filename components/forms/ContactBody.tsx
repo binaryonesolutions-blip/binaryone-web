@@ -116,10 +116,34 @@ export default function ContactBody() {
     }
   }
 
+  const contactCard = (
+    <div className="flex items-stretch gap-[22px] rounded-[16px] border border-[rgba(56,224,196,0.75)] bg-[#d9f5ef] p-[32px] shadow-[0_0_0_1px_rgba(56,224,196,0.18),0_0_28px_rgba(56,224,196,0.30),0_18px_40px_-30px_rgba(6,35,30,0.35)]">
+      <span className="flex w-[38px] flex-shrink-0 items-center justify-center">
+        <span className="flex h-[30px] w-[160px] rotate-90 items-stretch justify-center gap-[3px] [filter:drop-shadow(0_0_10px_rgba(63,174,73,0.35))]">
+          <span className="block h-full w-[3px] bg-[#3fae49]" /><span className="block h-full w-[3px] bg-[#3fae49]" /><span className="block h-full w-[5.5px] bg-[#3fae49]" /><span className="block h-full w-[3px] bg-[#3fae49]" />
+          <span className="mx-[3px] flex h-full items-center justify-center rounded-[3px] bg-[#3fae49] px-[8px]"><span className="font-sora text-[13px] font-extrabold tracking-[0.03em] text-white">B1S</span></span>
+          <span className="block h-full w-[3px] bg-[#3fae49]" /><span className="block h-full w-[4.5px] bg-[#3fae49]" />
+        </span>
+      </span>
+      <span className="w-[1px] flex-shrink-0 self-stretch [background:linear-gradient(180deg,rgba(15,118,110,0)_0%,rgba(15,118,110,0.30)_18%,rgba(15,118,110,0.30)_82%,rgba(15,118,110,0)_100%)]" />
+      <div className="flex flex-1 flex-col gap-[16px]">
+        <span className="font-inter text-[12px] font-semibold tracking-[0.14em] text-[#0f766e]">CONTACT CARD</span>
+        <p className="font-inter text-[15px] leading-[1.75] text-[#2c4b46]"><strong className="font-bold text-[#06332e]">Binary One Solutions Ltd</strong><br />St Charles Lwanga House, 1st Floor,<br />Ngong Road, Nairobi, Kenya<br />P.O. Box 52883 (00100)</p>
+        <p className="font-inter text-[15px] leading-[1.75] text-[#2c4b46]"><a href="tel:+254787990220" className="text-[#2c4b46] hover:text-[#06332e]">+254 787 990 220</a><br /><a href="mailto:info@binaryone.co.ke" className="text-[#2c4b46] hover:text-[#06332e]">info@binaryone.co.ke</a></p>
+        <button onClick={() => { setAdvisoryOpen(true); setAdvDone(false); setPartnersOpen(false); setError(""); }} className="inline-flex cursor-pointer items-center gap-[9px] self-start whitespace-nowrap rounded-[9px] border border-[#00332f] bg-[#00332f] px-[14px] py-[9px] font-jet text-[10.5px] font-bold tracking-[0.1em] text-[#eafaf6] transition-[background,border-color] hover:border-[#0f766e] hover:bg-[#0a4a42] hover:text-white">
+          <svg viewBox="0 0 24 24" className="h-[14px] w-[14px] flex-shrink-0" fill="none" stroke="#38e0c4" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" /><path d="M3.5 10h17M8.5 3v4M15.5 3v4" /></svg>
+          BOOK BOARDROOM ADVISORY
+        </button>
+      </div>
+    </div>
+  );
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] items-start gap-[48px] px-5 sm:px-8 lg:px-[64px] pb-[104px] pt-[56px]">
       {/* Left: tabs + form */}
       <div>
+        {/* Mobile: contact card surfaces right under the hero, before the form */}
+        <div className="mb-[28px] lg:hidden">{contactCard}</div>
         <div className="mb-[32px] flex rounded-[12px] border border-[#E5E7EB] bg-[#f0eded] p-[4px]">
           <button onClick={() => { setTab("assessment"); setSubmitted(false); setError(""); }} className={tabBtn(tab === "assessment")}>Book a Free IT Assessment</button>
           <button onClick={() => { setTab("enquiry"); setSubmitted(false); setError(""); }} className={tabBtn(tab === "enquiry")}>General Enquiry</button>
@@ -165,7 +189,7 @@ export default function ContactBody() {
           </div>
         ) : (
           <div className="rounded-[16px] border border-[#E5E7EB] bg-white p-[40px] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_rgba(0,0,0,0.05)]">
-            <p className="mb-[28px] font-inter text-[15.5px] leading-[1.65] text-[#3e4947]">Question about NAWIRI? ERP audit? Custom build? Tell us briefly and we will route your enquiry to the right specialist.</p>
+            <p className="mb-[28px] font-inter text-[15.5px] leading-[1.65] text-[#3e4947]">Question about NAWIRI? ERP audit? Agentic AI? Custom build? Tell us briefly and we will route your enquiry to the right specialist.</p>
             <form onSubmit={(e) => handleForm(e, submitEnquiry)} className="flex flex-col gap-[16px]">
               {HONEYPOT}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-[16px]">
@@ -193,25 +217,8 @@ export default function ContactBody() {
 
       {/* Right: side panel */}
       <div className="flex flex-col gap-[20px]">
-        <div className="flex items-stretch gap-[22px] rounded-[16px] border border-[rgba(56,224,196,0.75)] bg-[#d9f5ef] p-[32px] shadow-[0_0_0_1px_rgba(56,224,196,0.18),0_0_28px_rgba(56,224,196,0.30),0_18px_40px_-30px_rgba(6,35,30,0.35)]">
-          <span className="flex w-[38px] flex-shrink-0 items-center justify-center">
-            <span className="flex h-[30px] w-[160px] rotate-90 items-stretch justify-center gap-[3px] [filter:drop-shadow(0_0_10px_rgba(63,174,73,0.35))]">
-              <span className="block h-full w-[3px] bg-[#3fae49]" /><span className="block h-full w-[3px] bg-[#3fae49]" /><span className="block h-full w-[5.5px] bg-[#3fae49]" /><span className="block h-full w-[3px] bg-[#3fae49]" />
-              <span className="mx-[3px] flex h-full items-center justify-center rounded-[3px] bg-[#3fae49] px-[8px]"><span className="font-sora text-[13px] font-extrabold tracking-[0.03em] text-white">B1S</span></span>
-              <span className="block h-full w-[3px] bg-[#3fae49]" /><span className="block h-full w-[4.5px] bg-[#3fae49]" />
-            </span>
-          </span>
-          <span className="w-[1px] flex-shrink-0 self-stretch [background:linear-gradient(180deg,rgba(15,118,110,0)_0%,rgba(15,118,110,0.30)_18%,rgba(15,118,110,0.30)_82%,rgba(15,118,110,0)_100%)]" />
-          <div className="flex flex-1 flex-col gap-[16px]">
-            <span className="font-inter text-[12px] font-semibold tracking-[0.14em] text-[#0f766e]">CONTACT CARD</span>
-            <p className="font-inter text-[15px] leading-[1.75] text-[#2c4b46]"><strong className="font-bold text-[#06332e]">Binary One Solutions Ltd</strong><br />St Charles Lwanga House, 1st Floor,<br />Ngong Road, Nairobi, Kenya<br />P.O. Box 52883 (00100)</p>
-            <p className="font-inter text-[15px] leading-[1.75] text-[#2c4b46]"><a href="tel:+254787990220" className="text-[#2c4b46] hover:text-[#06332e]">+254 787 990 220</a><br /><a href="mailto:info@binaryone.co.ke" className="text-[#2c4b46] hover:text-[#06332e]">info@binaryone.co.ke</a></p>
-            <button onClick={() => { setAdvisoryOpen(true); setAdvDone(false); setPartnersOpen(false); setError(""); }} className="inline-flex cursor-pointer items-center gap-[9px] self-start whitespace-nowrap rounded-[9px] border border-[#00332f] bg-[#00332f] px-[14px] py-[9px] font-jet text-[10.5px] font-bold tracking-[0.1em] text-[#eafaf6] transition-[background,border-color] hover:border-[#0f766e] hover:bg-[#0a4a42] hover:text-white">
-              <svg viewBox="0 0 24 24" className="h-[14px] w-[14px] flex-shrink-0" fill="none" stroke="#38e0c4" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" /><path d="M3.5 10h17M8.5 3v4M15.5 3v4" /></svg>
-              BOOK BOARDROOM ADVISORY
-            </button>
-          </div>
-        </div>
+        {/* Desktop: contact card lives in the sidebar (mobile copy is rendered above the form) */}
+        <div className="hidden lg:block">{contactCard}</div>
 
         <div className="overflow-hidden rounded-[16px] border border-[#E5E7EB] bg-white shadow-[0_1px_2px_rgba(6,35,30,0.05),0_18px_40px_-30px_rgba(6,35,30,0.35)]">
           <div className="flex items-center justify-between gap-[12px] border-b border-[#E5E7EB] px-[16px] py-[12px]">

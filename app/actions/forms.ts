@@ -93,7 +93,7 @@ export async function submitDiagnostic(_prev: ActionResult | null, fd: FormData)
 }
 
 // ---- Boardroom Advisory booking (Contact advisory modal) ----
-// Times map to a fixed 45-minute slot in East Africa Time.
+// Times map to a fixed 90-minute slot in East Africa Time.
 const SLOT_TIMES: Record<string, string> = {
   "09:00 AM": "09:00", "10:30 AM": "10:30", "01:00 PM": "13:00",
   "02:30 PM": "14:30", "04:00 PM": "16:00",
@@ -127,7 +127,7 @@ export async function bookAdvisory(input: AdvisoryInput): Promise<ActionResult> 
   if (!start || !/^\d{4}-\d{2}-\d{2}$/.test(dateISO)) return FAIL("Please pick a valid date and time slot.");
 
   const startISO = `${dateISO}T${start}:00`;
-  const endISO = `${dateISO}T${addMinutes(start, 45)}:00`;
+  const endISO = `${dateISO}T${addMinutes(start, 90)}:00`;
   const subject = `Boardroom Advisory — Binary One × ${org}`;
   const bodyHtml = `<p>Boardroom advisory session with <b>${escapeHtml(partnerName)}</b> and ${escapeHtml(name)} (${escapeHtml(org)}).</p>${
     input.agenda ? `<p><b>Agenda:</b> ${escapeHtml(input.agenda)}</p>` : ""

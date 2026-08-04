@@ -24,9 +24,14 @@ export default function CustomSoftwarePage() {
       {/* Hero */}
       <section className="relative overflow-hidden px-5 sm:px-8 lg:px-[64px] pb-[84px] pt-[88px] [background:radial-gradient(120%_130%_at_8%_0%,#0a2a24_0%,#071e1b_42%,#06181f_72%,#071627_100%)]">
         <div className="pointer-events-none absolute inset-0 [background-image:linear-gradient(90deg,rgba(56,224,196,0.06)_1px,transparent_1px)] [background-size:58px_100%] [mask-image:linear-gradient(90deg,transparent_0%,rgba(0,0,0,0.9)_40%,rgba(0,0,0,0.9)_100%)] [-webkit-mask-image:linear-gradient(90deg,transparent_0%,rgba(0,0,0,0.9)_40%,rgba(0,0,0,0.9)_100%)]" />
-        <div className="relative grid grid-cols-1 lg:grid-cols-[1.08fr_0.92fr] items-center gap-[60px]">
-          <div>
-            <span className="mb-[30px] inline-flex items-center gap-[9px] rounded-[999px] border border-[rgba(45,212,191,0.4)] px-[18px] py-[8px] font-jet text-[12px] font-bold tracking-[0.12em] text-[#5eead4]">
+        <div className="relative grid grid-cols-1 lg:grid-cols-[1.08fr_0.92fr] items-center gap-[28px] lg:gap-[60px]">
+          {/* Mobile-only eyebrow — sits above the hero image like a title */}
+          <span className="order-1 inline-flex w-fit items-center gap-[9px] rounded-[999px] border border-[rgba(45,212,191,0.4)] px-[18px] py-[8px] font-jet text-[12px] font-bold tracking-[0.12em] text-[#5eead4] lg:hidden">
+            <span className="h-[7px] w-[7px] rounded-full bg-[#38e0c4] shadow-[0_0_6px_rgba(56,224,196,0.9)]" />
+            BESPOKE ENGINEERING SOLUTIONS
+          </span>
+          <div className="order-3 lg:order-none">
+            <span className="mb-[30px] hidden items-center gap-[9px] rounded-[999px] border border-[rgba(45,212,191,0.4)] px-[18px] py-[8px] font-jet text-[12px] font-bold tracking-[0.12em] text-[#5eead4] lg:inline-flex">
               <span className="h-[7px] w-[7px] rounded-full bg-[#38e0c4] shadow-[0_0_6px_rgba(56,224,196,0.9)]" />
               BESPOKE ENGINEERING SOLUTIONS
             </span>
@@ -48,7 +53,7 @@ export default function CustomSoftwarePage() {
               ))}
             </div>
           </div>
-          <div className="order-first lg:order-none group relative overflow-hidden rounded-[18px] border border-[rgba(45,212,191,0.22)] bg-[#05100e] shadow-[0_34px_80px_rgba(0,0,0,0.55)]">
+          <div className="order-2 lg:order-none group relative overflow-hidden rounded-[18px] border border-[rgba(45,212,191,0.22)] bg-[#05100e] shadow-[0_34px_80px_rgba(0,0,0,0.55)]">
             <Image src={customHero} alt="High-performance code stack" width={800} height={360} className="block h-[360px] w-full object-cover opacity-95 transition-transform duration-[600ms] ease-in-out group-hover:scale-[1.06]" />
             <div className="pointer-events-none absolute inset-0 [background:linear-gradient(180deg,rgba(5,16,14,0)_40%,rgba(5,16,14,0.6)_100%)]" />
             <div className="pointer-events-none absolute bottom-[10px] left-[20px] right-[20px] rounded-[12px] border border-[rgba(56,224,196,0.2)] bg-[rgba(6,58,52,0.55)] px-[20px] py-[10px] [backdrop-filter:blur(8px)]">
