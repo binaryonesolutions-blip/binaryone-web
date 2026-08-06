@@ -45,8 +45,8 @@ export default function Home() {
         <div className="pointer-events-none absolute inset-0 [background-image:radial-gradient(120%_95%_at_90%_8%,rgba(15,118,110,0.16)_0%,rgba(15,118,110,0.05)_34%,transparent_60%),linear-gradient(90deg,rgba(15,118,110,0.09)_1px,transparent_1px),linear-gradient(0deg,rgba(15,118,110,0.09)_1px,transparent_1px)] [background-size:100%_100%,60px_60px,60px_60px] [mask-image:linear-gradient(180deg,#000_0%,#000_58%,transparent_100%)]" />
         <div className="relative grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] items-center gap-[28px] lg:gap-[56px] px-5 sm:px-8 lg:px-[64px] pb-[48px] lg:pb-[64px] pt-[48px] lg:pt-[88px]">
           {/* Mobile-only eyebrow — sits above the hero image like a title */}
-          <span className="order-1 inline-flex w-fit items-center gap-[10px] rounded-[999px] border border-[rgba(15,118,110,0.35)] bg-[rgba(15,118,110,0.06)] px-[18px] py-[8px] font-inter text-[12.5px] font-bold tracking-[0.09em] text-[#0f766e] lg:hidden">
-            <span className="h-[8px] w-[8px] rounded-full bg-[#7cdc79] shadow-[0_0_6px_rgba(124,220,121,0.85)]" />
+          <span className="order-1 inline-flex w-fit items-center gap-[8px] whitespace-nowrap rounded-[999px] border border-[rgba(15,118,110,0.35)] bg-[rgba(15,118,110,0.06)] px-[14px] py-[8px] font-inter text-[11px] font-bold tracking-[0.05em] text-[#0f766e] lg:hidden">
+            <span className="h-[7px] w-[7px] flex-shrink-0 rounded-full bg-[#7cdc79] shadow-[0_0_6px_rgba(124,220,121,0.85)]" />
             DIGITAL TRANSFORMATION SOLUTIONS
           </span>
           <div className="order-3 lg:order-1">

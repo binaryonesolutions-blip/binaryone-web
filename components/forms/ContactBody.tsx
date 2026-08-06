@@ -273,7 +273,7 @@ export default function ContactBody() {
 
                 <div className="flex flex-col gap-[6px]">
                   <span className={ADV_LABEL}>SELECT DATE (UPCOMING SLOTS)</span>
-                  <div className="flex flex-nowrap gap-[8px]">
+                  <div className="flex flex-wrap gap-[8px] sm:flex-nowrap">
                     {dates.map((d, i) => (
                       <button type="button" key={d.iso} onClick={() => setAdvDate(i)} className="flex-1 cursor-pointer whitespace-nowrap rounded-[9px] border px-[10px] py-[9px] font-inter text-[13px] font-semibold hover:border-[#38e0c4]" style={chip(i === advDate)}>{d.label}</button>
                     ))}
@@ -282,7 +282,7 @@ export default function ContactBody() {
 
                 <div className="flex flex-col gap-[6px]">
                   <span className={ADV_LABEL}>AVAILABLE TIME SLOTS</span>
-                  <div className="flex flex-nowrap gap-[8px]">
+                  <div className="flex flex-wrap gap-[8px] sm:flex-nowrap">
                     {ADV_SLOTS.map((label, i) => (
                       <button type="button" key={label} onClick={() => setAdvSlot(i)} className="flex-1 cursor-pointer whitespace-nowrap rounded-[9px] border px-[10px] py-[8px] font-inter text-[13px] font-semibold tracking-[0.01em] hover:border-[#38e0c4]" style={chip(i === advSlot)}>{label}</button>
                     ))}

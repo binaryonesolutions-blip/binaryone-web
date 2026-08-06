@@ -25,7 +25,7 @@ export default function DataProtectionPage() {
               <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3 20 6.5v5c0 4.5-3.4 7.9-8 9.5-4.6-1.6-8-5-8-9.5v-5z" /></svg>
               Fiduciary IT Governance
             </span>
-            <h1 className="mb-[16px] font-sora text-[52px] font-bold leading-[1.05] tracking-[-0.02em] text-white">Data Protection Policy</h1>
+            <h1 className="mb-[16px] font-sora text-[30px] sm:text-[40px] lg:text-[52px] font-bold leading-[1.1] lg:leading-[1.05] tracking-[-0.02em] text-white">Data Protection Policy</h1>
             <p className="max-w-[620px] font-inter text-[14.5px] lg:text-[16.5px] leading-[1.6] text-[#93a4b3] [text-wrap:pretty]">Demonstrating our strict commitment to the Kenya Data Protection Act, 2019. We implement boardroom-grade security controls to safeguard client information assets.</p>
           </div>
           <div className="flex flex-shrink-0 items-center gap-[12px] rounded-[14px] border border-white/10 bg-white/[0.04] px-[20px] py-[16px]">

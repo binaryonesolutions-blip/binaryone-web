@@ -16,15 +16,15 @@ export default function ItReadinessPage() {
   return (
     <div data-skin="corporate" className="mx-auto min-h-screen w-full max-w-[1440px] overflow-x-hidden bg-[#F8FAFB] font-inter text-[#1c1b1b]">
       {/* Nav */}
-      <header className="sticky top-0 z-50 flex h-[76px] items-center justify-between border-b border-[#E0E5E6] bg-[rgba(237,241,242,0.94)] px-5 sm:px-8 lg:px-[64px] [backdrop-filter:blur(12px)]">
-        <Link href={routes.home} className="flex items-center">
-          <Image src={logoLight} alt="Binary One Solutions — Towards Digital Transformation" height={45} priority className="block h-[45px] w-auto" />
+      <header className="sticky top-0 z-50 flex h-[68px] sm:h-[76px] items-center justify-between gap-[12px] border-b border-[#E0E5E6] bg-[rgba(237,241,242,0.94)] px-5 sm:px-8 lg:px-[64px] [backdrop-filter:blur(12px)]">
+        <Link href={routes.home} className="flex flex-shrink-0 items-center">
+          <Image src={logoLight} alt="Binary One Solutions — Towards Digital Transformation" height={45} priority className="block h-[32px] sm:h-[45px] w-auto" />
         </Link>
-        <nav className="flex items-center gap-[32px] font-inter text-[14.5px] font-medium">
-          <Link href={routes.managedIt} className="text-[#1c1b1b]">← Back to Managed IT</Link>
-          <Link href={routes.assessment} className="inline-flex items-center gap-[10px] rounded-[11px] border border-[rgba(56,224,196,0.75)] bg-[#d9f5ef] px-[20px] py-[11px] font-inter text-[14.5px] font-semibold text-[#06332e] shadow-[0_1px_2px_rgba(6,35,30,0.10),0_4px_14px_rgba(6,35,30,0.08)] transition-[background,border-color,box-shadow,transform] duration-[250ms] hover:-translate-y-[2px] hover:border-[#38e0c4] hover:bg-[#bfeee4] hover:shadow-[0_0_0_1px_rgba(56,224,196,0.6),0_0_22px_rgba(56,224,196,0.42),0_8px_20px_rgba(6,35,30,0.26)]">
+        <nav className="flex items-center gap-[10px] sm:gap-[32px] font-inter text-[14.5px] font-medium">
+          <Link href={routes.managedIt} className="flex-shrink-0 whitespace-nowrap text-[#1c1b1b]">←<span className="hidden sm:inline"> Back to Managed IT</span></Link>
+          <Link href={routes.assessment} className="inline-flex flex-shrink-0 items-center gap-[8px] sm:gap-[10px] whitespace-nowrap rounded-[11px] border border-[rgba(56,224,196,0.75)] bg-[#d9f5ef] px-[13px] py-[9px] sm:px-[20px] sm:py-[11px] font-inter text-[12.5px] sm:text-[14.5px] font-semibold text-[#06332e] shadow-[0_1px_2px_rgba(6,35,30,0.10),0_4px_14px_rgba(6,35,30,0.08)] transition-[background,border-color,box-shadow,transform] duration-[250ms] hover:-translate-y-[2px] hover:border-[#38e0c4] hover:bg-[#bfeee4] hover:shadow-[0_0_0_1px_rgba(56,224,196,0.6),0_0_22px_rgba(56,224,196,0.42),0_8px_20px_rgba(6,35,30,0.26)]">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0f766e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0"><rect x="3" y="5" width="18" height="16" rx="3" /><path d="M8 3v4" /><path d="M16 3v4" /><path d="M3 10h18" /></svg>
-            Book a Free IT Assessment
+            <span className="sm:hidden">Free Assessment</span><span className="hidden sm:inline">Book a Free IT Assessment</span>
           </Link>
         </nav>
       </header>

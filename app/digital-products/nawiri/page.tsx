@@ -29,8 +29,8 @@ export default function NawiriPage() {
       <section className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] items-center gap-[28px] lg:gap-[56px] px-5 sm:px-8 lg:px-[64px] pb-[56px] pt-[96px]">
         <div className="order-2 lg:order-none">
           <div className="mb-[24px] flex items-center gap-[28px]">
-            <Image src={nawiriLogo} alt="NAWIRI" priority className="block h-[150px] w-auto flex-shrink-0 [filter:drop-shadow(0_0_24px_rgba(158,255,90,0.35))]" />
-            <h1 className="font-sora text-[52px] font-extrabold leading-[1.08] tracking-[-0.01em] text-white [text-wrap:pretty]">
+            <Image src={nawiriLogo} alt="NAWIRI" priority className="block h-[84px] sm:h-[116px] lg:h-[150px] w-auto flex-shrink-0 [filter:drop-shadow(0_0_24px_rgba(158,255,90,0.35))]" />
+            <h1 className="font-sora text-[26px] sm:text-[36px] lg:text-[52px] font-extrabold leading-[1.14] lg:leading-[1.08] tracking-[-0.01em] text-white [text-wrap:pretty]">
               NAWIRI Digital Loyalty — <span className="text-[#9EFF5A]">Own the Last Mile.</span>
             </h1>
           </div>

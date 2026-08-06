@@ -125,7 +125,7 @@ export default function ERPConsulting() {
             </div>
           ))}
         </div>
-        <p className="mx-auto max-w-[1100px] whitespace-nowrap text-center font-inter text-[15px] lg:text-[17px] italic leading-[1.6] text-[#6e7977]">The technology is rarely the cause of failure. The leadership around the technology almost always is.</p>
+        <p className="mx-auto max-w-[1100px] text-center font-inter text-[15px] lg:text-[17px] italic leading-[1.6] text-[#6e7977] lg:whitespace-nowrap">The technology is rarely the cause of failure. The leadership around the technology almost always is.</p>
       </div>
 
       {/* ===== WHY ERP PROJECTS FAIL ===== */}
@@ -242,7 +242,7 @@ export default function ERPConsulting() {
               <h2 className="font-sora text-[36px] font-bold leading-[1.2] tracking-[-0.02em] text-white [text-wrap:pretty]">Pacific Petroleum: One Odoo Backbone Across Dubai &amp; East Africa</h2>
             </div>
             <p className="mb-[44px] font-inter text-[14.5px] lg:text-[16px] leading-[1.7] text-[#c8d6d1] [text-wrap:pretty]">For Pacific Petroleum — headquartered in Dubai with subsidiaries across five East African countries — Binary One governed a full Odoo Enterprise implementation completed in March 2025. Rather than reselling a platform, we sat on the client&apos;s side of the table: consolidating multi-country, multi-currency operations onto one governed ledger, standardising intercompany controls and delivering a multi-lingual system the whole group actually uses — at a fraction of the cost of the Tier-1 alternatives on the shortlist.</p>
-            <div className="flex gap-[72px]">
+            <div className="flex flex-col gap-[24px] sm:flex-row sm:flex-wrap sm:gap-x-[48px] sm:gap-y-[24px] lg:gap-[72px]">
               {[
                 { big: "6 Countries", small: "Dubai HQ + Nairobi, South Sudan, Uganda, DRC & Tanzania" },
                 { big: "Multi", small: "Currency & Lingual Operations" },

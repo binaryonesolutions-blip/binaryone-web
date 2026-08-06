@@ -70,7 +70,7 @@ export default function AgenticAiPage() {
             <span className="h-[7px] w-[7px] rounded-full bg-[#2dd4bf] shadow-[0_0_6px_rgba(45,212,191,0.9)]" />
             AI OPERATIONS &amp; AUTOMATION
           </span>
-          <h1 className="mb-[26px] font-sora text-[56px] font-bold leading-[1.08] tracking-[-0.02em] text-white [text-wrap:pretty]">
+          <h1 className="mb-[26px] font-sora text-[30px] sm:text-[40px] lg:text-[56px] font-bold leading-[1.14] lg:leading-[1.08] tracking-[-0.02em] text-white [text-wrap:pretty]">
             AI shouldn&apos;t just answer questions. <span className="text-[#2dd4bf]">It should perform tasks.</span>
           </h1>
           <p className="mb-[40px] font-inter text-[15px] lg:text-[17.5px] leading-[1.65] text-[#94A3B8] [text-wrap:pretty]">
@@ -280,13 +280,13 @@ export default function AgenticAiPage() {
 
       {/* Enterprise integration CTA */}
       <section className="border-t border-white/10 px-5 sm:px-8 lg:px-[64px] pb-[96px] pt-[88px]">
-        <div className="relative grid grid-cols-1 lg:grid-cols-[1.5fr_auto] items-center gap-[48px] overflow-hidden rounded-[22px] border border-[rgba(56,224,196,0.16)] px-[60px] py-[56px] shadow-[inset_0_1px_0_rgba(56,224,196,0.08),0_24px_60px_rgba(0,0,0,0.35)] [background-color:#0c1512] [background-image:radial-gradient(circle_at_90%_8%,rgba(56,224,196,0.16),transparent_44%),radial-gradient(circle_at_2%_98%,rgba(56,224,196,0.12),transparent_42%),linear-gradient(90deg,rgba(56,224,196,0.05)_1px,transparent_1px),linear-gradient(rgba(56,224,196,0.05)_1px,transparent_1px),linear-gradient(140deg,#10201c_0%,#0c1512_52%,#0a1310_100%)] [background-size:auto,auto,54px_54px,54px_54px,auto]">
+        <div className="relative grid grid-cols-1 lg:grid-cols-[1.5fr_auto] items-center gap-[32px] lg:gap-[48px] overflow-hidden rounded-[22px] border border-[rgba(56,224,196,0.16)] px-[28px] py-[40px] sm:px-[44px] sm:py-[48px] lg:px-[60px] lg:py-[56px] shadow-[inset_0_1px_0_rgba(56,224,196,0.08),0_24px_60px_rgba(0,0,0,0.35)] [background-color:#0c1512] [background-image:radial-gradient(circle_at_90%_8%,rgba(56,224,196,0.16),transparent_44%),radial-gradient(circle_at_2%_98%,rgba(56,224,196,0.12),transparent_42%),linear-gradient(90deg,rgba(56,224,196,0.05)_1px,transparent_1px),linear-gradient(rgba(56,224,196,0.05)_1px,transparent_1px),linear-gradient(140deg,#10201c_0%,#0c1512_52%,#0a1310_100%)] [background-size:auto,auto,54px_54px,54px_54px,auto]">
           <div className="relative">
             <span className="mb-[16px] block font-jet text-[12px] font-bold tracking-[0.18em] text-[#2dd4bf]">ENTERPRISE INTEGRATION</span>
-            <h2 className="mb-[18px] font-sora text-[34px] font-bold leading-[1.2] tracking-[-0.02em] text-white [text-wrap:pretty]">Ready to deploy intelligent background workers?</h2>
+            <h2 className="mb-[18px] font-sora text-[26px] sm:text-[30px] lg:text-[34px] font-bold leading-[1.2] tracking-[-0.02em] text-white [text-wrap:pretty]">Ready to deploy intelligent background workers?</h2>
             <p className="max-w-[600px] font-inter text-[15.5px] leading-[1.7] text-[#c2dbd7] [text-wrap:pretty]">Connect with our systems architects to map out custom language models, vector stores and agent tool-calling patterns built on top of your existing Odoo or SAP databases.</p>
           </div>
-          <Link href={routes.enquiry} className="relative inline-flex items-center gap-[11px] whitespace-nowrap rounded-[12px] bg-[#38e0c4] px-[30px] py-[17px] font-inter text-[15.5px] font-bold text-[#0c1512] transition-colors hover:bg-[#5ceace] hover:text-[#0c1512]">
+          <Link href={routes.enquiry} className="relative inline-flex items-center gap-[11px] whitespace-nowrap rounded-[12px] bg-[#38e0c4] px-[22px] sm:px-[30px] py-[16px] sm:py-[17px] font-inter text-[15px] sm:text-[15.5px] font-bold text-[#0c1512] transition-colors hover:bg-[#5ceace] hover:text-[#0c1512]">
             <svg viewBox="0 0 24 24" className="h-[19px] w-[19px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" /><rect x="9" y="9" width="6" height="6" /><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2" /></svg>
             Request Scoping Session
           </Link>

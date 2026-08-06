@@ -19,7 +19,7 @@ export default function InsightsPage() {
       {/* Hero */}
       <section className="max-w-[900px] px-5 sm:px-8 lg:px-[64px] pb-[64px] pt-[88px]">
         <span className="mb-[22px] block font-jet text-[13px] font-medium tracking-[0.18em] text-[#0f766e]">KNOWLEDGE &amp; INSIGHTS</span>
-        <h1 className="mb-[24px] font-sora text-[52px] font-bold leading-[1.15] tracking-[-0.02em] text-[#1c1b1b] [text-wrap:pretty]">Technical briefs, advisory papers and practical IT strategies.</h1>
+        <h1 className="mb-[24px] font-sora text-[30px] sm:text-[40px] lg:text-[52px] font-bold leading-[1.15] tracking-[-0.02em] text-[#1c1b1b] [text-wrap:pretty]">Technical briefs, advisory papers and practical IT strategies.</h1>
         <p className="font-inter text-[15px] lg:text-[17.5px] leading-[1.65] text-[#3e4947] [text-wrap:pretty]">Written by our active partners and systems architects for business leaders in East Africa.</p>
       </section>
 
