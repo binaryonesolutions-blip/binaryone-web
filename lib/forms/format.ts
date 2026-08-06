@@ -1,5 +1,13 @@
 // Small helpers to turn a form submission into a tidy notification email.
 
+// Builds the notification subject from the form's own title, so every message
+// that lands in the inbox is labelled by the form it came from. An optional
+// ref (company / name / ticket) disambiguates multiple submissions.
+export function subjectLine(formTitle: string, ref?: string): string {
+  const r = (ref ?? "").trim();
+  return r ? `${formTitle} — ${r}` : formTitle;
+}
+
 export function escapeHtml(v: string): string {
   return v
     .replace(/&/g, "&amp;")

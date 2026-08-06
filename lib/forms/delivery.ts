@@ -27,6 +27,7 @@ export async function deliverNotification(
 
 export async function deliverAdvisoryInvite(opts: {
   subject: string;
+  notifySubject: string;
   bodyHtml: string;
   startISO: string;
   endISO: string;
@@ -39,7 +40,8 @@ export async function deliverAdvisoryInvite(opts: {
   notifyHtml: string;
 }): Promise<{ preview: boolean }> {
   if (!graphConfigured()) {
-    console.log("[forms:preview] advisory invite →", opts.requesterEmail, "|", {
+    console.log("[forms:preview] advisory invite →", opts.requesterEmail, "|", opts.subject, {
+      notifySubject: opts.notifySubject,
       partner: opts.partnerName,
       start: opts.startISO,
     });
@@ -66,7 +68,7 @@ export async function deliverAdvisoryInvite(opts: {
   await graphSendMail({
     from: senderAddress(),
     to: [notifyAddress()],
-    subject: `New advisory booking — ${opts.partnerName}`,
+    subject: opts.notifySubject,
     html: opts.notifyHtml,
     replyTo: opts.requesterEmail,
   });

@@ -1,7 +1,7 @@
 "use server";
 
 import { deliverNotification, deliverAdvisoryInvite } from "@/lib/forms/delivery";
-import { fieldsEmail, escapeHtml } from "@/lib/forms/format";
+import { fieldsEmail, escapeHtml, subjectLine } from "@/lib/forms/format";
 
 export type ActionResult = { ok: boolean; error?: string; preview?: boolean };
 const OK = (preview: boolean): ActionResult => ({ ok: true, preview });
@@ -29,13 +29,14 @@ export async function submitAssessment(_prev: ActionResult | null, fd: FormData)
   const name = s(fd, "name"), org = s(fd, "org"), email = s(fd, "email");
   if (!name || !org || !email) return FAIL("Please complete the required fields.");
   if (!isEmail(email)) return FAIL("Please enter a valid work email.");
-  const html = fieldsEmail("Free IT Assessment request", "A new assessment request came in from the website.", [
+  const title = "Free IT Assessment";
+  const html = fieldsEmail(title, "A new assessment request came in from the website.", [
     ["Name", name], ["Organisation", org], ["Role / title", s(fd, "role")],
     ["Work email", email], ["Phone", s(fd, "phone")], ["Users / workstations", s(fd, "users")],
     ["Current IT setup", s(fd, "setup")], ["Main concern", s(fd, "concern")],
     ["Preferred date", s(fd, "meetingDate")], ["Message", s(fd, "message")],
   ]);
-  return send(`Free IT Assessment — ${org}`, html, email);
+  return send(subjectLine(title, org), html, email);
 }
 
 // ---- General enquiry (Contact enquiry tab) ----
@@ -44,12 +45,13 @@ export async function submitEnquiry(_prev: ActionResult | null, fd: FormData): P
   const name = s(fd, "name"), email = s(fd, "email"), message = s(fd, "message");
   if (!name || !email || !message) return FAIL("Please complete the required fields.");
   if (!isEmail(email)) return FAIL("Please enter a valid email.");
-  const html = fieldsEmail("General enquiry", "A new enquiry came in from the website.", [
+  const title = "General Enquiry";
+  const html = fieldsEmail(title, "A new enquiry came in from the website.", [
     ["Name", name], ["Organisation", s(fd, "org")], ["Role / title", s(fd, "role")],
     ["Email", email], ["Phone", s(fd, "phone")], ["Product of interest", s(fd, "topic")],
     ["Message", message],
   ]);
-  return send(`Enquiry — ${name}`, html, email);
+  return send(subjectLine(title, s(fd, "org") || name), html, email);
 }
 
 // ---- Data Subject Access Request (Data Protection portal) ----
@@ -59,11 +61,12 @@ export async function submitDsar(_prev: ActionResult | null, fd: FormData): Prom
   if (!name || !email || !type) return FAIL("Please complete the required fields.");
   if (!isEmail(email)) return FAIL("Please enter a valid email.");
   const ticket = s(fd, "ticket");
-  const html = fieldsEmail("Data request (DPA 2019)", "A data subject request was lodged via the portal.", [
+  const title = "Data Subject Request";
+  const html = fieldsEmail(title, "A data subject request was lodged via the portal.", [
     ["Ticket", ticket], ["Request type", type], ["Name", name],
     ["Email", email], ["Phone", s(fd, "phone")], ["Details", s(fd, "details")],
   ]);
-  return send(`DSAR ${ticket || ""} — ${type}`.trim(), html, email);
+  return send(subjectLine(title, ticket ? `${type} (${ticket})` : type), html, email);
 }
 
 // ---- Loyalty maturity self-score lead capture ----
@@ -72,11 +75,12 @@ export async function submitLoyaltyScore(_prev: ActionResult | null, fd: FormDat
   const name = s(fd, "name"), org = s(fd, "org"), email = s(fd, "email");
   if (!name || !org || !email) return FAIL("Please complete the required fields.");
   if (!isEmail(email)) return FAIL("Please enter a valid work email.");
-  const html = fieldsEmail("Loyalty maturity self-score", "A lead completed the NAWIRI maturity self-score.", [
+  const title = "NAWIRI Loyalty Self-Score";
+  const html = fieldsEmail(title, "A lead completed the NAWIRI maturity self-score.", [
     ["Name", name], ["Organisation", org], ["Work email", email],
     ["Score", s(fd, "score")], ["Band", s(fd, "band")],
   ]);
-  return send(`Loyalty self-score — ${org}`, html, email);
+  return send(subjectLine(title, org), html, email);
 }
 
 // ---- Diagnostic booking (Enterprise IT & AI Diagnostic modal) ----
@@ -85,11 +89,12 @@ export async function submitDiagnostic(_prev: ActionResult | null, fd: FormData)
   const name = s(fd, "name"), org = s(fd, "org"), email = s(fd, "email");
   if (!name || !org || !email) return FAIL("Please complete the required fields.");
   if (!isEmail(email)) return FAIL("Please enter a valid work email.");
-  const html = fieldsEmail("Diagnostic follow-up request", "A visitor finished the diagnostic and asked for a follow-up.", [
+  const title = "Enterprise IT & AI Diagnostic";
+  const html = fieldsEmail(title, "A visitor finished the diagnostic and asked for a follow-up.", [
     ["Name", name], ["Organisation", org], ["Work email", email],
     ["Phone", s(fd, "phone")], ["Readiness score", s(fd, "score")], ["Grade", s(fd, "grade")],
   ]);
-  return send(`Diagnostic follow-up — ${org}`, html, email);
+  return send(subjectLine(title, org), html, email);
 }
 
 // ---- Boardroom Advisory booking (Contact advisory modal) ----
@@ -128,11 +133,12 @@ export async function bookAdvisory(input: AdvisoryInput): Promise<ActionResult> 
 
   const startISO = `${dateISO}T${start}:00`;
   const endISO = `${dateISO}T${addMinutes(start, 90)}:00`;
-  const subject = `Boardroom Advisory — Binary One × ${org}`;
+  const title = "Boardroom Advisory";
+  const subject = `${title} — Binary One × ${org}`; // calendar event / meeting title
   const bodyHtml = `<p>Boardroom advisory session with <b>${escapeHtml(partnerName)}</b> and ${escapeHtml(name)} (${escapeHtml(org)}).</p>${
     input.agenda ? `<p><b>Agenda:</b> ${escapeHtml(input.agenda)}</p>` : ""
   }`;
-  const notifyHtml = fieldsEmail("Boardroom Advisory booking", "A new advisory session was booked from the website.", [
+  const notifyHtml = fieldsEmail(title, "A new advisory session was booked from the website.", [
     ["Partner", partnerName], ["Date", input.dateLabel], ["Time (EAT)", slot],
     ["Name", name], ["Organisation", org], ["Email", email],
     ["Phone", input.phone], ["Agenda", input.agenda],
@@ -140,7 +146,8 @@ export async function bookAdvisory(input: AdvisoryInput): Promise<ActionResult> 
 
   try {
     const { preview } = await deliverAdvisoryInvite({
-      subject, bodyHtml, startISO, endISO, timeZone: "E. Africa Standard Time",
+      subject, notifySubject: subjectLine(title, org), bodyHtml, startISO, endISO,
+      timeZone: "E. Africa Standard Time",
       requesterName: name, requesterEmail: email, partnerName,
       location: "Binary One Solutions, Ngong Road, Nairobi (or Teams)", notifyHtml,
     });
