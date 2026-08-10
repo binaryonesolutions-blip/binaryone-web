@@ -89,6 +89,11 @@ export function DiagnosticModal() {
     setStep((s) => s + 1);
   };
 
+  const back = () => {
+    setAnswers((a) => a.slice(0, -1));
+    setStep((s) => Math.max(0, s - 1));
+  };
+
   const restart = () => {
     setStep(0);
     setAnswers([]);
@@ -221,7 +226,16 @@ export function DiagnosticModal() {
     const q = DIAG_QUESTIONS[step];
     questionView = (
       <div>
-        <span className="mb-[18px] inline-block rounded-[100px] bg-[rgba(15,118,110,0.08)] px-[13px] py-[6px] font-jet text-[11px] font-semibold uppercase tracking-[0.12em] text-[#0f766e]">{q.catLabel}</span>
+        {step > 0 && (
+          <button
+            onClick={back}
+            className="mb-[16px] inline-flex cursor-pointer items-center gap-[7px] rounded-[9px] border border-[#e4ded9] bg-white px-[13px] py-[8px] font-jet text-[11px] font-semibold tracking-[0.08em] text-[#4a5a54] transition-colors hover:border-[#0f766e] hover:text-[#0f766e]"
+          >
+            <svg viewBox="0 0 24 24" className="h-[14px] w-[14px]" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6" /></svg>
+            BACK
+          </button>
+        )}
+        <span className="mb-[18px] block w-fit rounded-[100px] bg-[rgba(15,118,110,0.08)] px-[13px] py-[6px] font-jet text-[11px] font-semibold uppercase tracking-[0.12em] text-[#0f766e]">{q.catLabel}</span>
         <h3 className="mb-[24px] font-sora text-[24px] font-bold leading-[1.3] tracking-[-0.01em] text-[#0c1512] [text-wrap:pretty]">{q.text}</h3>
         <div className="flex flex-col gap-[12px]">
           {q.options.map((opt, i) => (
