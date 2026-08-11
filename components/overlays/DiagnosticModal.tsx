@@ -103,8 +103,8 @@ export function DiagnosticModal() {
   // ---- results computation ----
   let resultsView = null;
   if (isResults) {
-    const catMax: Record<DiagCategory, number> = { infrastructure: 0, security: 0, erp: 0, ai: 0, cx: 0 };
-    const catScore: Record<DiagCategory, number> = { infrastructure: 0, security: 0, erp: 0, ai: 0, cx: 0 };
+    const catMax: Record<DiagCategory, number> = { infrastructure: 0, security: 0, erp: 0, ai: 0, software: 0, cx: 0 };
+    const catScore: Record<DiagCategory, number> = { infrastructure: 0, security: 0, erp: 0, ai: 0, software: 0, cx: 0 };
     DIAG_QUESTIONS.forEach((q, i) => {
       catMax[q.category] += 3;
       catScore[q.category] += answers[i] ? answers[i].score : 0;

@@ -1,8 +1,8 @@
-// Enterprise IT & AI Diagnostic — 8/10-question engine data, transcribed verbatim
-// from design-refs/Digital Products.dc.html (the diagnostic modal is shared across
-// the Homepage and the Digital Products hub). Guide §9.1.
+// Enterprise IT & AI Diagnostic — 8-question engine data, transcribed verbatim
+// from the updated Homepage.dc.html DIAG_QUESTIONS (the diagnostic modal is
+// shared across the Homepage and the Digital Products hub). Guide §9.1.
 
-export type DiagCategory = "infrastructure" | "security" | "erp" | "ai" | "cx";
+export type DiagCategory = "infrastructure" | "security" | "erp" | "ai" | "software" | "cx";
 
 export interface DiagOption {
   text: string;
@@ -20,22 +20,22 @@ export interface DiagQuestion {
 export const DIAG_QUESTIONS: DiagQuestion[] = [
   {
     category: "infrastructure",
-    catLabel: "Cloud Infrastructure",
-    text: "How would you describe your current server and network infrastructure hosting your business systems?",
+    catLabel: "Cloud & IT Management",
+    text: "When your systems go down at 2am, who decides what happens next — and does the ticket exist before you call?",
     options: [
-      { text: "On-premise servers with manual backups and no active automated monitoring.", score: 1, description: "High risk of downtime and data loss." },
-      { text: "Hybrid setup with basic cloud backups, but still dependent on local network reliability.", score: 2, description: "Moderate resilience, but lacks modern multi-zone failovers." },
-      { text: "Fully migrated to a cloud platform (AWS, GCP, Azure) with high availability and automated scaling.", score: 3, description: "Optimized cloud foundation ready for rapid software deployments." },
+      { text: "On-premise servers, manual backups, no monitoring — support summoned by phone or WhatsApp when something breaks.", score: 1, description: "No roadmap owner and no ticket trail; staff find the outage before systems do." },
+      { text: "Hybrid cloud backups tied to local network reliability, a helpdesk email inbox, and IT advice sought project by project.", score: 2, description: "Moderate resilience, but whoever reads the inbox first sets the priority." },
+      { text: "Cloud platform with automated scaling, an SLA-driven helpdesk, and a Virtual CIO steering roadmap and budget.", score: 3, description: "Every incident ticketed and measured; technology decisions governed at board level." },
     ],
   },
   {
     category: "security",
     catLabel: "Cybersecurity Defense",
-    text: "What cybersecurity measures are currently active to protect your customer records and business endpoints?",
+    text: "What protects your customer records and endpoints today — and how often is that protection actually tested?",
     options: [
-      { text: "Standard antivirus software on individual computers, with no centralized access policy or regular audits.", score: 1, description: "Vulnerable to phishing, ransomware, and unauthorized data extraction." },
-      { text: "Centralized firewall and password policies, but lack Multi-Factor Authentication (MFA) and incident logging.", score: 2, description: "Basic defense, but missing proactive breach detection capabilities." },
-      { text: "Full Endpoint Protection, mandatory MFA, continuous access auditing, and secure encrypted APIs.", score: 3, description: "Industry-standard cybersecurity posture protecting core assets." },
+      { text: "Standard antivirus on individual computers, no central access policy, and testing only after an incident occurs.", score: 1, description: "Reactive posture that invites phishing, ransomware and easily preventable exploits." },
+      { text: "Central firewall and password policies, but no MFA or incident logging, and reviews only when a client audit demands one.", score: 2, description: "Basic defence, checked too rarely to catch fast-evolving zero-day vectors." },
+      { text: "Full endpoint protection, mandatory MFA and encrypted APIs, with continuous scanning, quarterly penetration tests and phishing drills.", score: 3, description: "Proactive defence in depth, verified on a schedule rather than after the fact." },
     ],
   },
   {
@@ -59,23 +59,13 @@ export const DIAG_QUESTIONS: DiagQuestion[] = [
     ],
   },
   {
-    category: "infrastructure",
-    catLabel: "Cloud Infrastructure",
-    text: "How quickly can your IT systems recover from a critical hardware or software failure?",
+    category: "software",
+    catLabel: "Custom Software",
+    text: "Where do the workflows that make you different actually live — in off-the-shelf software, or in something built for how you operate?",
     options: [
-      { text: "Recovery could take days and might result in significant loss of transaction history.", score: 1, description: "No validated disaster recovery blueprint." },
-      { text: "Recovery takes several hours with minimal data loss, depending on manual restoral of cloud snapshots.", score: 2, description: "Acceptable recovery speed, but still causes noticeable downtime." },
-      { text: "Instant, automated failovers across cloud regions, resulting in zero noticeable user downtime.", score: 3, description: "Highly resilient system designed for absolute continuous operations." },
-    ],
-  },
-  {
-    category: "security",
-    catLabel: "Cybersecurity Defense",
-    text: "How often does your technical team run vulnerability scans, penetration testing, or staff cyber-hygiene training?",
-    options: [
-      { text: "Rarely or never. We only react when a technical security incident occurs.", score: 1, description: "Dangerous reactive posture that invites easily preventable exploits." },
-      { text: "Annually or bi-annually, usually driven by external client audits or compliance mandates.", score: 2, description: "Consistent checks, but vulnerable to fast-evolving zero-day vectors." },
-      { text: "Continuous automated code scanning, quarterly penetrative tests, and regular simulated phishing drills.", score: 3, description: "Continuous proactive defense in depth, securing modern assets." },
+      { text: "Our differentiating processes run on spreadsheets, WhatsApp and workarounds around software that was never built for them.", score: 1, description: "The business bends to the tool; the advantage stays undocumented and unscalable." },
+      { text: "We have customised or bolted onto packaged software, but the integrations are fragile and one vendor owns the code.", score: 2, description: "Buy was the right call once, but the build-vs-buy line has not been revisited." },
+      { text: "A purpose-built application, owned by us, with documented APIs, source code in our hands and a maintained delivery roadmap.", score: 3, description: "Clean, maintainable engineering where the software encodes the competitive advantage." },
     ],
   },
   {
@@ -115,18 +105,20 @@ export const META_COLOR: Record<DiagCategory, string> = {
   security: "#17a892",
   erp: "#2f9e44",
   ai: "#38b6a2",
+  software: "#1c8f7f",
   cx: "#12b886",
 };
 
 export const META_NAME: Record<DiagCategory, string> = {
-  infrastructure: "Cloud Infrastructure",
+  infrastructure: "Cloud & IT Management",
   security: "Cybersecurity Defense",
   erp: "ERP Automation",
   ai: "Agentic AI Readiness",
+  software: "Custom Software",
   cx: "Customer Experience",
 };
 
-export const META_ORDER: DiagCategory[] = ["infrastructure", "security", "erp", "ai", "cx"];
+export const META_ORDER: DiagCategory[] = ["infrastructure", "security", "erp", "ai", "software", "cx"];
 
 export const REC_BANK = {
   low: [
@@ -134,18 +126,21 @@ export const REC_BANK = {
     "Stand up automated cloud backups and a documented disaster-recovery blueprint.",
     "Deploy centralized endpoint protection and mandatory Multi-Factor Authentication.",
     "Start capturing end-customer identity — a digital loyalty pilot on your fastest-moving lines.",
+    "Document the one workflow you run differently from competitors, and scope whether to build or buy it.",
   ],
   mid: [
     "Consolidate siloed tools into a governed ERP with live banking and mobile-money triggers.",
     "Introduce continuous access auditing and quarterly penetration testing.",
     "Pilot one Agentic AI workflow (support triage or document parsing) on your existing systems.",
     "Put field sales on a live CRM and route every customer enquiry into one logged, SLA-tracked queue.",
+    "Run a Build vs Buy review on your most customised system before the next licence renewal.",
   ],
   high: [
     "Scale Agentic AI pipelines across support, finance and reporting with corporate data controls.",
     "Formalise vCIO-led governance: board-ready reporting, budget discipline and vendor SLAs.",
     "Run simulated phishing drills and automated code scanning to sustain a proactive posture.",
     "Join loyalty, CRM and contact-centre data into a single customer view for predictive campaigns.",
+    "Commission a custom build for the workflow no packaged product serves — owned code, documented APIs.",
   ],
 };
 
