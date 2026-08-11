@@ -149,7 +149,7 @@ export async function bookAdvisory(input: AdvisoryInput): Promise<ActionResult> 
       subject, notifySubject: subjectLine(title, org), bodyHtml, startISO, endISO,
       timeZone: "E. Africa Standard Time",
       requesterName: name, requesterEmail: email, partnerName,
-      location: "Binary One Solutions, Ngong Road, Nairobi (or Teams)", notifyHtml,
+      location: "St Charles Lwanga House, 1st Floor, Ngong Road, Nairobi (or Teams link if remote)", notifyHtml,
     });
     return OK(preview);
   } catch (err) {
