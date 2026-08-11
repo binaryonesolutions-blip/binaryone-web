@@ -259,9 +259,9 @@ export function DiagnosticModal() {
   return (
     <div
       onMouseDown={(e) => e.target === e.currentTarget && setOpen(false)}
-      className="fixed inset-0 z-[9999] flex items-center justify-center overflow-y-auto bg-[rgba(4,14,12,0.62)] px-[20px] py-[24px] font-inter [backdrop-filter:blur(6px)]"
+      className="fixed inset-0 z-[9999] flex items-center justify-center overflow-y-auto bg-[rgba(4,14,12,0.62)] px-[16px] py-[16px] font-inter [backdrop-filter:blur(6px)] sm:px-[20px] sm:py-[24px]"
     >
-      <div className="flex max-h-[calc(133vh-64px)] w-full max-w-[720px] origin-center scale-[0.75] flex-col overflow-hidden rounded-[24px] bg-[#F8FAFB] shadow-[0_30px_90px_rgba(4,14,12,0.5)]">
+      <div className="flex max-h-[calc(100dvh-32px)] w-full max-w-[720px] origin-center flex-col overflow-hidden rounded-[24px] bg-[#F8FAFB] shadow-[0_30px_90px_rgba(4,14,12,0.5)] lg:max-h-[calc(133vh-64px)] lg:scale-[0.75]">
         {/* Header (dark) */}
         <div className="relative flex-shrink-0 overflow-hidden bg-[#071e1b] px-[30px] py-[26px]">
           <div className="pointer-events-none absolute inset-0 [background-image:linear-gradient(90deg,rgba(56,224,196,0.07)_1px,transparent_1px)] [background-size:44px_100%]" />
