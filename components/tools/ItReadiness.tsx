@@ -27,7 +27,7 @@ export default function ItReadiness() {
   const { packName, packWhy } = packFor(counts);
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] items-start gap-[48px] px-5 sm:px-8 lg:px-[64px] pb-[104px]">
+    <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] items-start gap-[32px] lg:gap-[48px] px-5 sm:px-8 lg:px-[64px] pb-[56px] lg:pb-[104px]">
       <div className="rounded-[16px] border border-[#E5E7EB] bg-white p-[40px] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_rgba(0,0,0,0.05)]">
         {sent ? (
           <div className="flex flex-col items-start gap-[16px] py-[12px]">
@@ -72,7 +72,7 @@ export default function ItReadiness() {
       </div>
 
       {/* Live summary */}
-      <div className="sticky top-[100px] rounded-[16px] bg-[#00332f] p-[36px]">
+      <div className="lg:sticky lg:top-[100px] rounded-[16px] bg-[#00332f] p-[28px] sm:p-[36px]">
         <span className="mb-[20px] block font-jet text-[12px] font-medium tracking-[0.18em] text-[#7cdc79]">YOUR ENVIRONMENT</span>
         <div className="mb-[28px] flex flex-col gap-[14px]">
           {FIELDS.map((f) => (

@@ -117,7 +117,7 @@ export default function ContactBody() {
   }
 
   const contactCard = (
-    <div className="flex items-stretch gap-[22px] rounded-[16px] border border-[rgba(56,224,196,0.75)] bg-[#d9f5ef] p-[32px] shadow-[0_0_0_1px_rgba(56,224,196,0.18),0_0_28px_rgba(56,224,196,0.30),0_18px_40px_-30px_rgba(6,35,30,0.35)]">
+    <div className="flex items-stretch gap-[16px] sm:gap-[22px] rounded-[16px] border border-[rgba(56,224,196,0.75)] bg-[#d9f5ef] p-[22px] sm:p-[32px] shadow-[0_0_0_1px_rgba(56,224,196,0.18),0_0_28px_rgba(56,224,196,0.30),0_18px_40px_-30px_rgba(6,35,30,0.35)]">
       <span className="flex w-[38px] flex-shrink-0 items-center justify-center">
         <span className="flex h-[30px] w-[160px] rotate-90 items-stretch justify-center gap-[3px] [filter:drop-shadow(0_0_10px_rgba(63,174,73,0.35))]">
           <span className="block h-full w-[3px] bg-[#3fae49]" /><span className="block h-full w-[3px] bg-[#3fae49]" /><span className="block h-full w-[5.5px] bg-[#3fae49]" /><span className="block h-full w-[3px] bg-[#3fae49]" />
@@ -130,7 +130,7 @@ export default function ContactBody() {
         <span className="font-inter text-[12px] font-semibold tracking-[0.14em] text-[#0f766e]">CONTACT CARD</span>
         <p className="font-inter text-[15px] leading-[1.75] text-[#2c4b46]"><strong className="font-bold text-[#06332e]">Binary One Solutions Ltd</strong><br />St Charles Lwanga House, 1st Floor,<br />Ngong Road, Nairobi, Kenya<br />P.O. Box 52883 (00100)</p>
         <p className="font-inter text-[15px] leading-[1.75] text-[#2c4b46]"><a href="tel:+254787990220" className="text-[#2c4b46] hover:text-[#06332e]">+254 787 990 220</a><br /><a href="mailto:info@binaryone.co.ke" className="text-[#2c4b46] hover:text-[#06332e]">info@binaryone.co.ke</a></p>
-        <button onClick={() => { setAdvisoryOpen(true); setAdvDone(false); setPartnersOpen(false); setError(""); }} className="inline-flex cursor-pointer items-center gap-[9px] self-start whitespace-nowrap rounded-[9px] border border-[#00332f] bg-[#00332f] px-[14px] py-[9px] font-jet text-[10.5px] font-bold tracking-[0.1em] text-[#eafaf6] transition-[background,border-color] hover:border-[#0f766e] hover:bg-[#0a4a42] hover:text-white">
+        <button onClick={() => { setAdvisoryOpen(true); setAdvDone(false); setPartnersOpen(false); setError(""); }} className="inline-flex cursor-pointer items-center gap-[9px] self-start rounded-[9px] border border-[#00332f] bg-[#00332f] px-[13px] py-[9px] font-jet text-[10px] sm:text-[10.5px] font-bold tracking-[0.08em] sm:tracking-[0.1em] text-[#eafaf6] transition-[background,border-color] hover:border-[#0f766e] hover:bg-[#0a4a42] hover:text-white">
           <svg viewBox="0 0 24 24" className="h-[14px] w-[14px] flex-shrink-0" fill="none" stroke="#38e0c4" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" /><path d="M3.5 10h17M8.5 3v4M15.5 3v4" /></svg>
           BOOK BOARDROOM ADVISORY
         </button>

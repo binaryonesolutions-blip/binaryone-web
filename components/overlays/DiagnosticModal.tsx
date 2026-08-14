@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   DIAG_QUESTIONS,
   META_COLOR,
@@ -50,7 +50,8 @@ interface Answer {
   category: DiagCategory;
 }
 
-// Full 8/10-question Enterprise IT & AI Diagnostic engine (Guide §9.1).
+// Full 8-question Enterprise IT & AI Diagnostic engine (Guide §9.1). Markup matches
+// the updated Homepage.dc.html diagnostic modal.
 export function DiagnosticModal() {
   const [open, setOpen] = useState(false);
   const [step, setStep] = useState(0);
@@ -58,6 +59,7 @@ export function DiagnosticModal() {
   const [bookingSubmitted, setBookingSubmitted] = useState(false);
   const [bookingSending, setBookingSending] = useState(false);
   const [bookingError, setBookingError] = useState("");
+  const bodyRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onOpen = () => {
@@ -77,12 +79,18 @@ export function DiagnosticModal() {
     return () => document.removeEventListener("keydown", onKey);
   }, [open]);
 
+  // Each new question/results view starts scrolled to the top of the body.
+  useEffect(() => {
+    bodyRef.current?.scrollTo(0, 0);
+  }, [step]);
+
   if (!open) return null;
 
   const total = DIAG_QUESTIONS.length;
   const isResults = step >= total;
   const answered = answers.length;
   const progressPct = Math.round((answered / total) * 100);
+  const canGoBack = !isResults && step > 0;
 
   const choose = (score: number, category: DiagCategory) => {
     setAnswers((a) => [...a, { score, category }]);
@@ -121,15 +129,27 @@ export function DiagnosticModal() {
     const recs = recSet.map((text, i) => ({ text, n: i + 1 }));
 
     resultsView = (
-      <div>
+      <div className="relative">
+        {/* Scroll hint (indicates the scorecard scrolls) */}
+        <div className="pointer-events-none sticky top-0 z-[5] float-right ml-[12px] mr-[-8px] flex flex-col items-center gap-[6px]" aria-hidden="true">
+          <span className="h-[44px] w-px [background:linear-gradient(180deg,rgba(15,118,110,0)_0%,rgba(15,118,110,0.4)_100%)]" />
+          <span className="b1-decorative inline-flex h-[28px] w-[28px] items-center justify-center rounded-full border border-[rgba(15,118,110,0.32)] bg-[rgba(15,118,110,0.10)] [animation:b1sScrollHint_1.6s_ease-in-out_infinite]">
+            <svg viewBox="0 0 24 24" className="h-[14px] w-[14px]"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="#0f766e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+          </span>
+          <span className="font-jet text-[8.5px] font-semibold tracking-[0.14em] text-[#7f9c96] [writing-mode:vertical-rl]">SCROLL</span>
+        </div>
+
         <div className="mb-[30px] text-center">
-          <span className="mb-[12px] block font-jet text-[11px] font-semibold tracking-[0.18em] text-[#0f766e]">YOUR READINESS SCORECARD</span>
+          <span className="mb-[8px] block font-jet text-[11px] font-semibold tracking-[0.18em] text-[#0f766e]">YOUR READINESS SCORECARD</span>
+          <span className="mb-[12px] block font-inter text-[13px] font-bold text-[#0c1512]">for Digital Transformation</span>
           <div className="flex items-baseline justify-center gap-[6px]">
             <span className="font-sora text-[72px] font-extrabold leading-[1] tracking-[-0.03em] text-[#0c1512]">{pct}%</span>
           </div>
-          <span className="mt-[8px] block font-jet text-[13px] font-medium text-[#8a9691]">{score} / {maxScore} points</span>
-          <span className="mt-[16px] inline-block rounded-[100px] bg-[#38e0c4] px-[18px] py-[8px] font-jet text-[12px] font-bold tracking-[0.12em] text-[#071e1b]">{grade.toUpperCase()}</span>
-          <p className="mx-auto mt-[18px] max-w-[480px] font-inter text-[14.5px] leading-[1.65] text-[#4a5a54] [text-wrap:pretty]">{gradeDesc}</p>
+          <div className="mt-[8px] flex flex-col items-center">
+            <span className="font-jet text-[13px] font-medium text-[#8a9691]">{score} / {maxScore} points</span>
+            <span className="mt-[16px] inline-block rounded-[100px] bg-[#38e0c4] px-[18px] py-[8px] font-jet text-[12px] font-bold tracking-[0.12em] [text-indent:0.12em] text-[#071e1b]">{grade.toUpperCase()}</span>
+          </div>
+          <p className="mx-auto mt-[18px] max-w-[480px] text-center font-inter text-[14.5px] leading-[1.65] text-[#4a5a54] [text-wrap:pretty]">{gradeDesc}</p>
         </div>
 
         <div className="mb-[30px] flex flex-col gap-[16px]">
@@ -226,28 +246,19 @@ export function DiagnosticModal() {
     const q = DIAG_QUESTIONS[step];
     questionView = (
       <div>
-        {step > 0 && (
-          <button
-            onClick={back}
-            className="mb-[16px] inline-flex cursor-pointer items-center gap-[7px] rounded-[9px] border border-[#e4ded9] bg-white px-[13px] py-[8px] font-jet text-[11px] font-semibold tracking-[0.08em] text-[#4a5a54] transition-colors hover:border-[#0f766e] hover:text-[#0f766e]"
-          >
-            <svg viewBox="0 0 24 24" className="h-[14px] w-[14px]" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6" /></svg>
-            BACK
-          </button>
-        )}
-        <span className="mb-[18px] block w-fit rounded-[100px] bg-[rgba(15,118,110,0.08)] px-[13px] py-[6px] font-jet text-[11px] font-semibold uppercase tracking-[0.12em] text-[#0f766e]">{q.catLabel}</span>
-        <h3 className="mb-[24px] font-sora text-[24px] font-bold leading-[1.3] tracking-[-0.01em] text-[#0c1512] [text-wrap:pretty]">{q.text}</h3>
-        <div className="flex flex-col gap-[12px]">
+        <span className="mb-[12px] inline-block w-fit rounded-[100px] bg-[rgba(15,118,110,0.08)] px-[12px] py-[5px] font-jet text-[11px] font-semibold uppercase tracking-[0.12em] text-[#0f766e]">{q.catLabel}</span>
+        <h3 className="mb-[14px] font-sora text-[20px] font-bold leading-[1.25] tracking-[-0.01em] text-[#0c1512] [text-wrap:pretty]">{q.text}</h3>
+        <div className="flex flex-col gap-[8px]">
           {q.options.map((opt, i) => (
             <button
               key={i}
               onClick={() => choose(opt.score, q.category)}
-              className="flex w-full cursor-pointer items-start gap-[15px] rounded-[14px] border border-[#e4ded9] bg-white px-[20px] py-[18px] text-left transition-[border-color,box-shadow,transform] duration-200 hover:border-[#0f766e] hover:shadow-[0_6px_20px_rgba(15,118,110,0.12)]"
+              className="flex w-full cursor-pointer items-start gap-[13px] rounded-[13px] border border-[#e4ded9] bg-white px-[16px] py-[13px] text-left transition-[border-color,box-shadow,transform] duration-200 hover:border-[#0f766e] hover:shadow-[0_6px_20px_rgba(15,118,110,0.12)]"
             >
-              <span className="inline-flex h-[30px] w-[30px] flex-shrink-0 items-center justify-center rounded-[8px] bg-[rgba(15,118,110,0.10)] font-jet text-[13px] font-bold text-[#0f766e]">{String.fromCharCode(65 + i)}</span>
-              <span className="flex flex-col gap-[5px]">
-                <span className="font-inter text-[15px] font-semibold leading-[1.5] text-[#1c1b1b]">{opt.text}</span>
-                <span className="font-inter text-[13px] leading-[1.5] text-[#6e7977]">{opt.description}</span>
+              <span className="inline-flex h-[26px] w-[26px] flex-shrink-0 items-center justify-center rounded-[7px] bg-[rgba(15,118,110,0.10)] font-jet text-[12px] font-bold text-[#0f766e]">{String.fromCharCode(65 + i)}</span>
+              <span className="flex flex-col gap-[3px]">
+                <span className="font-inter text-[14.5px] font-semibold leading-[1.42] text-[#1c1b1b]">{opt.text}</span>
+                <span className="font-inter text-[12.5px] leading-[1.42] text-[#6e7977]">{opt.description}</span>
               </span>
             </button>
           ))}
@@ -259,29 +270,41 @@ export function DiagnosticModal() {
   return (
     <div
       onMouseDown={(e) => e.target === e.currentTarget && setOpen(false)}
-      className="fixed inset-0 z-[9999] flex items-center justify-center overflow-y-auto bg-[rgba(4,14,12,0.62)] px-[16px] py-[16px] font-inter [backdrop-filter:blur(6px)] sm:px-[20px] sm:py-[24px]"
+      className="fixed inset-0 z-[9999] flex items-start justify-center overflow-y-auto bg-[rgba(4,14,12,0.62)] px-[12px] py-0 font-inter [backdrop-filter:blur(6px)]"
     >
-      <div className="flex max-h-[calc(100dvh-32px)] w-full max-w-[720px] origin-center flex-col overflow-hidden rounded-[24px] bg-[#F8FAFB] shadow-[0_30px_90px_rgba(4,14,12,0.5)] lg:max-h-[calc(133vh-64px)] lg:scale-[0.75]">
+      <div className="flex max-h-[100dvh] w-full max-w-[760px] flex-col overflow-hidden rounded-[20px] bg-[#F8FAFB] shadow-[0_30px_90px_rgba(4,14,12,0.5)]">
         {/* Header (dark) */}
-        <div className="relative flex-shrink-0 overflow-hidden bg-[#071e1b] px-[30px] py-[26px]">
+        <div className="relative flex-shrink-0 overflow-hidden bg-[#071e1b] px-[20px] pb-[20px] pt-[18px] sm:px-[30px]">
           <div className="pointer-events-none absolute inset-0 [background-image:linear-gradient(90deg,rgba(56,224,196,0.07)_1px,transparent_1px)] [background-size:44px_100%]" />
           <div className="relative flex items-center justify-between gap-[16px]">
-            <span className="font-jet text-[11px] font-bold tracking-[0.2em] text-[#38e0c4]">ENTERPRISE IT &amp; AI DIAGNOSTIC</span>
+            <div className="flex min-w-0 items-center gap-[14px]">
+              {canGoBack && (
+                <button
+                  onClick={back}
+                  aria-label="Previous question"
+                  className="inline-flex flex-shrink-0 cursor-pointer items-center gap-[6px] whitespace-nowrap rounded-[100px] border border-[rgba(158,255,90,0.45)] bg-[rgba(158,255,90,0.12)] py-[6px] pl-[9px] pr-[12px] font-jet text-[10.5px] font-bold tracking-[0.14em] text-[#9EFF5A] transition-colors hover:border-[#9EFF5A] hover:bg-[rgba(158,255,90,0.22)]"
+                >
+                  <svg viewBox="0 0 24 24" className="h-[14px] w-[14px]"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                  BACK
+                </button>
+              )}
+              <span className="font-jet text-[11px] font-bold tracking-[0.2em] text-[#38e0c4]">ENTERPRISE IT &amp; AI DIAGNOSTIC</span>
+            </div>
             <button
               onClick={() => setOpen(false)}
               aria-label="Close"
-              className="inline-flex h-[34px] w-[34px] cursor-pointer items-center justify-center rounded-[9px] border border-white/15 bg-white/[0.08] text-[#cbd8d3] hover:bg-white/[0.16] hover:text-white"
+              className="inline-flex h-[34px] w-[34px] flex-shrink-0 cursor-pointer items-center justify-center rounded-[9px] border border-white/15 bg-white/[0.08] text-[#cbd8d3] hover:bg-white/[0.16] hover:text-white"
             >
               <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
             </button>
           </div>
           {!isResults && (
-            <div className="relative mt-[18px]">
-              <div className="mb-[9px] flex items-center justify-between">
-                <span className="font-inter text-[12px] font-medium text-[#9fb4ae]">Question {step + 1} of {total}</span>
-                <span className="rounded-[100px] bg-[rgba(56,224,196,0.12)] px-[10px] py-[4px] font-jet text-[11px] font-medium text-[#38e0c4]">{progressPct}% Done</span>
+            <div className="relative mt-[13px]">
+              <div className="mb-[9px] flex items-baseline justify-between gap-[16px]">
+                <span className="font-sora text-[16px] font-bold tracking-[-0.01em] text-white">Question {step + 1} of {total}</span>
+                <span className="flex-shrink-0 rounded-[100px] bg-[rgba(56,224,196,0.12)] px-[10px] py-[4px] font-jet text-[11px] font-medium text-[#38e0c4]">{progressPct}% Done</span>
               </div>
-              <div className="h-[6px] overflow-hidden rounded-[100px] bg-white/10">
+              <div className="h-[5px] overflow-hidden rounded-[100px] bg-white/10">
                 <div className="h-full rounded-[100px] bg-[linear-gradient(90deg,#0f766e,#38e0c4)] transition-[width] duration-[350ms] ease-in-out" style={{ width: progressPct + "%" }} />
               </div>
             </div>
@@ -289,7 +312,7 @@ export function DiagnosticModal() {
         </div>
 
         {/* Body */}
-        <div className="flex-1 overflow-y-auto px-[30px] pb-[38px] pt-[34px]">
+        <div ref={bodyRef} className="flex-1 overflow-y-auto px-[20px] pb-[8px] pt-[16px] sm:px-[28px]">
           {isResults ? resultsView : questionView}
         </div>
       </div>
