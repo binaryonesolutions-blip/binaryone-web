@@ -13,7 +13,7 @@ const solutions = [
 ];
 const company = [
   { label: "About", href: routes.about },
-  { label: "Leadership", href: routes.about },
+  { label: "Leadership", href: `${routes.about}#leadership` },
   { label: "Insights", href: routes.insights },
   { label: "Careers", href: routes.enquiry },
 ];

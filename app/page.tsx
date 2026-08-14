@@ -37,7 +37,7 @@ export const metadata: Metadata = { alternates: { canonical: "/" } };
 
 export default function Home() {
   return (
-    <div data-skin="corporate" className="mx-auto w-full max-w-[1440px] overflow-x-hidden bg-[#F8FAFB] text-[#1c1b1b] [font-family:var(--font-inter)]">
+    <div data-skin="corporate" className="mx-auto w-full max-w-[1440px] overflow-x-clip bg-[#F8FAFB] text-[#1c1b1b] [font-family:var(--font-inter)]">
       <SiteHeader active={routes.home} />
 
       {/* ===== HERO ===== */}
@@ -65,10 +65,10 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row sm:items-center gap-[12px] sm:gap-[16px]">
               <DiagnosticTrigger variant="hero" />
-              <Link href="#solutions-1a" className="inline-flex items-center gap-[11px] rounded-[12px] border border-[#E5E7EB] bg-white px-[26px] py-[15px] font-inter text-[14.5px] lg:text-[16px] font-semibold text-[#1c1b1b] shadow-[0_1px_2px_rgba(0,0,0,0.05),0_6px_16px_rgba(0,0,0,0.05)] hover:bg-[#f6f3f2]">
+              <a href="#solutions-1a" className="inline-flex items-center gap-[11px] rounded-[12px] border border-[#E5E7EB] bg-white px-[26px] py-[15px] font-inter text-[14.5px] lg:text-[16px] font-semibold text-[#1c1b1b] shadow-[0_1px_2px_rgba(0,0,0,0.05),0_6px_16px_rgba(0,0,0,0.05)] hover:bg-[#f6f3f2]">
                 Explore Our Solutions
                 <svg viewBox="0 0 24 24" className="h-[18px] w-[18px] flex-shrink-0"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="#1c1b1b" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </Link>
+              </a>
             </div>
           </div>
           <div className="order-2 lg:order-2">
@@ -149,7 +149,7 @@ export default function Home() {
           <span className="mb-[16px] block font-jet text-[12.5px] font-bold tracking-[0.22em] text-[#17a892]">HOW WE WORK</span>
           <h2 className="font-sora text-[28px] sm:text-[34px] lg:text-[40px] font-bold leading-[1.15] tracking-[-0.02em] text-[#1c1b1b]">Our AIM-IT Methodology.</h2>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-[20px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-[20px]">
           {processSteps.map((s) => (
             <div key={s.num} className="relative flex flex-col gap-[14px] overflow-hidden rounded-[16px] border border-[#cfe8df] bg-[#f1f8f5] px-[24px] pb-[28px] pt-[26px]">
               <div className="pointer-events-none absolute inset-0 [background-image:linear-gradient(rgba(15,118,110,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(15,118,110,0.05)_1px,transparent_1px)] [background-size:22px_22px]" />
@@ -170,8 +170,8 @@ export default function Home() {
       {/* ===== PROOF STRIP ===== */}
       <div className="border-t border-[#E5E7EB] bg-[#EFF9F7] px-5 sm:px-8 lg:px-[64px] pb-[34px] pt-[64px] lg:pt-[96px]">
         <h2 className="mb-[36px] lg:mb-[48px] text-center font-sora text-[24px] sm:text-[28px] lg:text-[32px] font-bold leading-[1.2] tracking-[-0.02em] text-[#0b3d38]">Trusted by organisations that cannot afford technology confusion.</h2>
-        {/* Natural-width tiles wrap into organic, uneven rows (2/3/2…) on every device */}
-        <div className="mx-auto flex max-w-[820px] flex-wrap items-center justify-center gap-x-[22px] gap-y-[28px] sm:gap-x-[46px] sm:gap-y-[34px]">
+        {/* 7-column grid (design): even rows, subtle per-tile lift; scales down on smaller screens */}
+        <div className="mx-auto grid max-w-[1152px] grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7 justify-items-center gap-x-[20px] gap-y-[28px]">
           {clients.map(logoTile)}
         </div>
       </div>

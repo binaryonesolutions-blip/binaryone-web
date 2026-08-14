@@ -26,7 +26,7 @@ const leaderPhotos: Record<string, StaticImageData> = { humphrey, mike, eugene, 
 
 export default function AboutPage() {
   return (
-    <div data-skin="corporate" className="mx-auto w-full max-w-[1440px] overflow-x-hidden bg-[#F8FAFB] font-inter text-[#1c1b1b]">
+    <div data-skin="corporate" className="mx-auto w-full max-w-[1440px] overflow-x-clip bg-[#F8FAFB] font-inter text-[#1c1b1b]">
       <SiteHeader active={routes.about} sticky />
 
       {/* Hero */}
@@ -74,7 +74,7 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership */}
-      <section className="border-y border-[#E5E7EB] bg-white px-5 sm:px-8 lg:px-[64px] py-[96px]">
+      <section id="leadership" className="border-y border-[#E5E7EB] bg-white px-5 sm:px-8 lg:px-[64px] py-[96px]">
         <h2 className="mb-[48px] font-sora text-[36px] font-bold leading-[1.2] tracking-[-0.02em] text-[#1c1b1b]">Leadership and delivery.</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-[24px]">
           {leaders.map((l) => (

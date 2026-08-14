@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Sora, Inter, JetBrains_Mono, Caveat } from "next/font/google";
 import "./globals.css";
 import StructuredData from "@/components/seo/StructuredData";
+import HashScroll from "@/components/util/HashScroll";
 
 // Three families, one load, on every page (Developer Guide §4).
 // Self-hosted by next/font — resolves to the same families/weights the design
@@ -76,6 +77,7 @@ export default function RootLayout({
     >
       <body>
         <StructuredData />
+        <HashScroll />
         {children}
       </body>
     </html>

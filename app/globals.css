@@ -131,4 +131,14 @@
   }
 }
 
+/* In-page anchor scrolling: offset for the sticky header; smooth unless reduced. */
+html {
+  scroll-padding-top: 90px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 
