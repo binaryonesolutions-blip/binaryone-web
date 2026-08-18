@@ -15,9 +15,9 @@ const flashDots = [
 ];
 
 const routeCards = [
-  { kicker: "MANAGED IT SERVICES", href: routes.managedIt, img: "/assets/managed-it-hero.png", alt: "Managed IT operations in Nairobi", objPos: "center 62%", title: "IT leadership plus daily support.", copy: "A structured Managed IT service led by a Virtual CIO and delivered through an IT Operations Lead, service desk discipline, on-site support and practical technology governance.", cta: "Engage our Managed IT + vCIO Services →" },
-  { kicker: "ERP CONSULTING", href: routes.erp, img: "/assets/home-erp-card.png", alt: "Grain milling facility with engineering controls", objPos: "center", title: "Avoid the ERP nightmare.", copy: "Vendor-neutral ERP readiness, selection support and implementation governance for organisations outgrowing QuickBooks, Sage, Tally or fragmented spreadsheets.", cta: "Commission an ERP Readiness Assessment →" },
-  { kicker: "DIGITAL PRODUCTS", href: routes.digitalProducts, img: "/assets/nawiri-retail-hero.png", alt: "Kenyan retail loyalty moment", objPos: "center 45%", title: "Products built for real market moments.", copy: "NAWIRI Digital Loyalty, Agentic AI Workflows and Custom Enterprise Software Builds — packaged from years of practical development experience.", cta: "Explore Digital Products →" },
+  { kicker: "MANAGED IT SERVICES", href: routes.managedIt, img: "/assets/managed-it-hero.webp", alt: "Managed IT operations in Nairobi", objPos: "center 62%", title: "IT leadership plus daily support.", copy: "A structured Managed IT service led by a Virtual CIO and delivered through an IT Operations Lead, service desk discipline, on-site support and practical technology governance.", cta: "Engage our Managed IT + vCIO Services →" },
+  { kicker: "ERP CONSULTING", href: routes.erp, img: "/assets/home-erp-card.webp", alt: "Grain milling facility with engineering controls", objPos: "center", title: "Avoid the ERP nightmare.", copy: "Vendor-neutral ERP readiness, selection support and implementation governance for organisations outgrowing QuickBooks, Sage, Tally or fragmented spreadsheets.", cta: "Commission an ERP Readiness Assessment →" },
+  { kicker: "DIGITAL PRODUCTS", href: routes.digitalProducts, img: "/assets/nawiri-retail-hero.webp", alt: "Kenyan retail loyalty moment", objPos: "center 45%", title: "Products built for real market moments.", copy: "NAWIRI Digital Loyalty, Agentic AI Workflows and Custom Enterprise Software Builds — packaged from years of practical development experience.", cta: "Explore Digital Products →" },
 ];
 
 // Proof-strip logo tile — natural width (hugs its own logo) so tiles pack into
@@ -25,7 +25,7 @@ const routeCards = [
 const logoTile = (c: (typeof clients)[number]) => (
   <div key={c.name} className="flex flex-col items-center gap-[12px]" style={{ transform: `translateY(${c.tileLift}px)` }}>
     <span className="flex items-end justify-center" style={{ width: c.logoW, height: c.logoH }}>
-      <img src={c.logo} alt={c.name} style={{ maxWidth: c.logoW, maxHeight: c.logoH }} className="block h-auto w-auto object-contain" />
+      <img loading="lazy" decoding="async" src={c.logo} alt={c.name} style={{ maxWidth: c.logoW, maxHeight: c.logoH }} className="block h-auto w-auto object-contain" />
     </span>
     {c.showName && (
       <span className="max-w-[98px] sm:max-w-[122px] text-center font-inter text-[10.5px] font-semibold uppercase leading-[1.4] tracking-[0.08em] text-[#6e7977]">{c.name}</span>
@@ -73,7 +73,7 @@ export default function Home() {
           </div>
           <div className="order-2 lg:order-2">
             <div className="group relative flex h-[280px] sm:h-[380px] lg:h-[460px] items-center justify-center overflow-hidden rounded-t-[16px] border border-b-0 border-[#E5E7EB]">
-              <Image src="/assets/it-icons-banner.png" alt="Managed IT icons over Nairobi skyline" fill priority sizes="640px" className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-[1.06]" />
+              <Image src="/assets/it-icons-banner.webp" alt="Managed IT icons over Nairobi skyline" fill priority sizes="640px" className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-[1.06]" />
               <div className="pointer-events-none absolute inset-0 overflow-hidden">
                 <div className="b1-decorative absolute -top-[20%] -bottom-[20%] left-0 w-[34%] [background:linear-gradient(90deg,transparent,rgba(180,255,236,0.16)_45%,rgba(210,255,244,0.28)_50%,rgba(180,255,236,0.16)_55%,transparent)] [mix-blend-mode:screen] [filter:blur(2px)] [animation:hpSheen_7s_linear_infinite]" />
                 <div className="b1-decorative absolute bottom-[11%] left-1/2 h-[3px] w-[44%] -translate-x-1/2 rounded-[50%] [background:radial-gradient(closest-side,rgba(120,245,218,0.75),transparent)] [filter:blur(2px)] [mix-blend-mode:screen] [animation:hpDepth_6.5s_ease-out_infinite] [animation-delay:1s]" />
@@ -192,7 +192,7 @@ export default function Home() {
                   <span className="h-px [background:linear-gradient(90deg,rgba(56,224,196,0.75)_0%,rgba(56,224,196,0)_100%)]" />
                   <div className="flex items-center gap-[14px]">
                     <span className="flex h-[46px] w-[46px] flex-shrink-0 items-center justify-center rounded-[11px] border border-[#E5E7EB] bg-[#F8FAFB]">
-                      <img src={t.logo} alt={t.org} className="block h-[30px] w-[30px] object-contain" />
+                      <img loading="lazy" decoding="async" src={t.logo} alt={t.org} className="block h-[30px] w-[30px] object-contain" />
                     </span>
                     <span className="flex flex-col gap-[3px]">
                       <span className="font-sora text-[14px] font-bold text-[#1c1b1b]">{t.person}</span>

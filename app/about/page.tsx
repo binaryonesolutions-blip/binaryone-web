@@ -5,15 +5,15 @@ import SiteHeader from "@/components/chrome/SiteHeader";
 import SiteFooter from "@/components/chrome/SiteFooter";
 import { routes } from "@/content/nav";
 import { beliefs, leaders } from "@/content/about";
-import aboutHero from "@/public/assets/about-hero.png";
-import believeIcon from "@/public/assets/about-believe-icon.png";
-import aboutBelief from "@/public/assets/about-belief.png";
-import humphrey from "@/public/assets/humphrey-kirui-v2.png";
-import mike from "@/public/assets/mike-kiai.png";
-import eugene from "@/public/assets/eugene-hillary.png";
-import mary from "@/public/assets/about-leader-4.png";
-import deliveryTeam from "@/public/assets/delivery-team.png";
-import edwin from "@/public/assets/edwin-kairu.png";
+import aboutHero from "@/public/assets/about-hero.webp";
+import believeIcon from "@/public/assets/about-believe-icon.webp";
+import aboutBelief from "@/public/assets/about-belief.webp";
+import humphrey from "@/public/assets/humphrey-kirui-v2.webp";
+import mike from "@/public/assets/mike-kiai.webp";
+import eugene from "@/public/assets/eugene-hillary.webp";
+import mary from "@/public/assets/about-leader-4.webp";
+import deliveryTeam from "@/public/assets/delivery-team.webp";
+import edwin from "@/public/assets/edwin-kairu.webp";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/about" },

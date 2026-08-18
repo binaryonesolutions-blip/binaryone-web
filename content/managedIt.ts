@@ -27,15 +27,15 @@ export const pillars = [
 ];
 
 export const platforms = [
-  { src: "/assets/logo-microsoft365.png", alt: "Microsoft 365", h: 36 },
-  { src: "/assets/logo-gworkspace.png", alt: "Google Workspace", h: 44 },
-  { src: "/assets/vendor-odoo.png", alt: "Odoo", h: 34 },
-  { src: "/assets/logo-claude.png", alt: "Claude", h: 36 },
-  { src: "/assets/logo-n8n.png", alt: "n8n", h: 38 },
-  { src: "/assets/logo-openclaw.png", alt: "OpenClaw", h: 58 },
-  { src: "/assets/logo-sophos.png", alt: "Sophos", h: 44 },
-  { src: "/assets/logo-hp.png", alt: "HP", h: 44, label: "HP" },
-  { src: "/assets/logo-yeastar.png", alt: "Yeastar", h: 44 },
+  { src: "/assets/logo-microsoft365.webp", alt: "Microsoft 365", h: 36 },
+  { src: "/assets/logo-gworkspace.webp", alt: "Google Workspace", h: 44 },
+  { src: "/assets/vendor-odoo.webp", alt: "Odoo", h: 34 },
+  { src: "/assets/logo-claude.webp", alt: "Claude", h: 36 },
+  { src: "/assets/logo-n8n.webp", alt: "n8n", h: 38 },
+  { src: "/assets/logo-openclaw.webp", alt: "OpenClaw", h: 58 },
+  { src: "/assets/logo-sophos.webp", alt: "Sophos", h: 44 },
+  { src: "/assets/logo-hp.webp", alt: "HP", h: 44, label: "HP" },
+  { src: "/assets/logo-yeastar.webp", alt: "Yeastar", h: 44 },
 ];
 
 export const assessmentItems = [

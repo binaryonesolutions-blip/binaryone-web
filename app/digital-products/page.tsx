@@ -5,7 +5,7 @@ import SiteHeader from "@/components/chrome/SiteHeader";
 import { DiagnosticModal } from "@/components/overlays/DiagnosticModal";
 import { routes } from "@/content/nav";
 import { heroChips, products, type ProductIcon } from "@/content/digitalProducts";
-import nawiriLogo from "@/public/assets/nawiri-logo.png";
+import nawiriLogo from "@/public/assets/nawiri-logo.webp";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/digital-products" },

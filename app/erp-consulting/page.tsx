@@ -57,7 +57,7 @@ export default function ERPConsulting() {
             </div>
           </div>
           <div className="order-2 lg:order-none group relative h-[520px] overflow-hidden rounded-[20px] shadow-[0_24px_64px_rgba(0,0,0,0.45)]">
-            <Image src="/assets/erp-advisory-hero.png" alt="ERP advisory working session" fill priority sizes="560px" className="object-cover [object-position:center_40%] [filter:grayscale(0.12)] transition-transform duration-500 ease-in-out group-hover:scale-[1.06]" />
+            <Image src="/assets/erp-advisory-hero.webp" alt="ERP advisory working session" fill priority sizes="560px" className="object-cover [object-position:center_40%] [filter:grayscale(0.12)] transition-transform duration-500 ease-in-out group-hover:scale-[1.06]" />
             <div className="absolute bottom-[10px] left-[20px] right-[20px] rounded-[12px] border border-[rgba(56,224,196,0.2)] bg-[rgba(6,58,52,0.55)] px-[20px] py-[10px] [backdrop-filter:blur(8px)]">
               <span className="mb-[2px] block font-jet text-[11.5px] font-bold tracking-[0.18em] text-[#38e0c4]">ENTERPRISE RESOURCE PLANNING</span>
               <span className="font-inter text-[14px] text-white">Operational Flow Optimization</span>
@@ -132,7 +132,7 @@ export default function ERPConsulting() {
       <div className="grid grid-cols-1 lg:grid-cols-[0.7fr_1.3fr] items-center gap-[40px] px-5 sm:px-8 lg:px-[64px] pb-[96px]">
         <div>
           <h2 className="mb-[18px] font-sora text-[36px] font-bold leading-[1.2] tracking-[-0.02em] text-[#1c1b1b]">Why ERP projects fail.</h2>
-          <Image src="/assets/erp-fail-abstract.png" alt="ERP project trajectory fracturing" width={420} height={170} className="mb-[64px] block h-[170px] w-[420px] rounded-[14px] object-cover" />
+          <Image src="/assets/erp-fail-abstract.webp" alt="ERP project trajectory fracturing" width={420} height={170} className="mb-[64px] block h-[170px] w-[420px] rounded-[14px] object-cover" />
           <div className="grid max-w-[420px] grid-cols-1 md:grid-cols-2 gap-[28px]">
             {failTiles.map((ft) => (
               <div key={ft.label} className="flex flex-col items-center gap-[12px] rounded-[14px] border border-[rgba(15,118,110,0.18)] px-[18px] py-[24px] text-center shadow-[0_1px_2px_rgba(15,118,110,0.06)] transition-[box-shadow,transform] duration-[250ms] hover:-translate-y-[2px] hover:shadow-[0_10px_26px_rgba(15,118,110,0.14)] [background:linear-gradient(160deg,#ffffff_0%,#f2fbf9_55%,#e3f5f1_100%)]">
@@ -181,7 +181,7 @@ export default function ERPConsulting() {
         <div className="mb-[44px] flex flex-wrap items-center justify-center gap-x-[72px] gap-y-[36px]">
           {vendors.map((v) => (
             <span key={v.name} className="inline-flex flex-col items-start gap-[5px]">
-              <img src={v.logo} alt={v.name} style={{ height: v.h }} className="block w-auto max-w-[220px] object-contain" />
+              <img loading="lazy" decoding="async" src={v.logo} alt={v.name} style={{ height: v.h }} className="block w-auto max-w-[220px] object-contain" />
               {v.caption && <span className="pl-[44px] font-inter text-[14px] font-bold tracking-[0.01em] text-[#1c1b1b]">{v.caption}</span>}
             </span>
           ))}
@@ -196,7 +196,7 @@ export default function ERPConsulting() {
       <div className="bg-white px-5 sm:px-8 lg:px-[64px] pb-[96px] pt-[80px]">
         <span className="mb-[20px] block font-jet text-[13px] font-bold tracking-[0.22em] text-[#0f766e]">PLATFORM SPECIALTY</span>
         <div className="mb-[22px] flex items-center gap-[24px]">
-          <img src="/assets/vendor-odoo.png" alt="Odoo" className="block h-[52px] w-auto flex-shrink-0 object-contain" />
+          <img loading="lazy" decoding="async" src="/assets/vendor-odoo.webp" alt="Odoo" className="block h-[52px] w-auto flex-shrink-0 object-contain" />
           <h2 className="max-w-[820px] font-sora text-[26px] sm:text-[32px] lg:text-[40px] font-bold leading-[1.15] tracking-[-0.02em] text-[#1c1b1b] [text-wrap:pretty]">Leveraging Odoo ERP for Mid-Market Operational Efficiency</h2>
         </div>
         <p className="mb-[48px] max-w-[760px] font-inter text-[14.5px] lg:text-[16.5px] leading-[1.65] text-[#3e4947] [text-wrap:pretty]">Struggling with ERP selection or optimisation? Odoo — a comprehensive, cloud-ready suite of integrated, customisable modules covering Accounting, CRM, Manufacturing and HR — is often the ideal fit for growing mid-market organisations. Starting with an ERP GAP Analysis, we deploy customised Odoo platforms with local integrations and expert advisory via monthly vCIO roundtables:</p>
@@ -222,7 +222,7 @@ export default function ERPConsulting() {
               <span className="font-inter text-[12px] font-semibold tracking-[0.12em] text-[#006e1b]">CLIENT STORY {p.num}</span>
               <div className="flex items-center gap-[14px]">
                 <span className="flex h-[48px] w-[48px] flex-shrink-0 items-center justify-center rounded-[12px] border border-[#E5E7EB] bg-[#F8FAFB]">
-                  <img src={p.logo} alt={p.client} className="block h-[34px] w-[34px] object-contain" />
+                  <img loading="lazy" decoding="async" src={p.logo} alt={p.client} className="block h-[34px] w-[34px] object-contain" />
                 </span>
                 <h3 className="font-sora text-[22px] font-bold text-[#1c1b1b]">{p.client}</h3>
               </div>
@@ -238,7 +238,7 @@ export default function ERPConsulting() {
           <div>
             <span className="mb-[18px] block font-jet text-[13px] font-bold tracking-[0.22em] text-[#38e0c4]">FEATURED CASE STUDY</span>
             <div className="mb-[26px] flex items-start gap-[20px]">
-              <img src="/assets/pacific-petroleum-mark.png" alt="Pacific Petroleum" className="mt-[2px] block h-[72px] w-[72px] flex-shrink-0 object-contain" />
+              <img loading="lazy" decoding="async" src="/assets/pacific-petroleum-mark.webp" alt="Pacific Petroleum" className="mt-[2px] block h-[72px] w-[72px] flex-shrink-0 object-contain" />
               <h2 className="font-sora text-[36px] font-bold leading-[1.2] tracking-[-0.02em] text-white [text-wrap:pretty]">Pacific Petroleum: One Odoo Backbone Across Dubai &amp; East Africa</h2>
             </div>
             <p className="mb-[44px] font-inter text-[14.5px] lg:text-[16px] leading-[1.7] text-[#c8d6d1] [text-wrap:pretty]">For Pacific Petroleum — headquartered in Dubai with subsidiaries across five East African countries — Binary One governed a full Odoo Enterprise implementation completed in March 2025. Rather than reselling a platform, we sat on the client&apos;s side of the table: consolidating multi-country, multi-currency operations onto one governed ledger, standardising intercompany controls and delivering a multi-lingual system the whole group actually uses — at a fraction of the cost of the Tier-1 alternatives on the shortlist.</p>

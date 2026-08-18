@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import ItReadiness from "@/components/tools/ItReadiness";
 import { routes } from "@/content/nav";
-import logoLight from "@/public/assets/b1s-logo-light.png";
+import logoLight from "@/public/assets/b1s-logo-light.webp";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/managed-it/readiness" },

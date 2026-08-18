@@ -35,11 +35,11 @@ export const stages = [
 ];
 
 export const vendors = [
-  { name: "Odoo", logo: "/assets/vendor-odoo.png", h: 32 },
-  { name: "SAP Business One", logo: "/assets/vendor-sap.png", h: 36 },
-  { name: "Sage", logo: "/assets/vendor-sage.png", h: 40 },
-  { name: "Microsoft Dynamics 365 Business Central", logo: "/assets/vendor-dynamics.png", h: 40 },
-  { name: "Clio LegalTech", logo: "/assets/vendor-clio.png", h: 38, caption: "LegalTech" },
+  { name: "Odoo", logo: "/assets/vendor-odoo.webp", h: 32 },
+  { name: "SAP Business One", logo: "/assets/vendor-sap.webp", h: 36 },
+  { name: "Sage", logo: "/assets/vendor-sage.webp", h: 40 },
+  { name: "Microsoft Dynamics 365 Business Central", logo: "/assets/vendor-dynamics.webp", h: 40 },
+  { name: "Clio LegalTech", logo: "/assets/vendor-clio.webp", h: 38, caption: "LegalTech" },
 ];
 
 export const whyOdoo = [
@@ -52,7 +52,7 @@ export const whyOdoo = [
 ];
 
 export const proofs = [
-  { num: 1, client: "Royal Oven Tanzania", logo: "/assets/royal-oven-logo.png", copy: "Binary One helped Royal Oven settle on Odoo ERP and reduce implementation cost while integrating accounting, production, Point-of-Sale and HR functionality." },
-  { num: 2, client: "Pembe Flour Mills Kenya", logo: "/assets/pembe-logo.png", copy: "Binary One supported SAP Business One audit and executive training so the ERP became a management instrument, not just an accounting database." },
-  { num: 3, client: "Pacific Petroleum", logo: "/assets/pacific-petroleum-mark.png", copy: "Binary One supported Odoo Enterprise governance across multiple subsidiaries and countries, proving the value of disciplined ERP project oversight." },
+  { num: 1, client: "Royal Oven Tanzania", logo: "/assets/royal-oven-logo.webp", copy: "Binary One helped Royal Oven settle on Odoo ERP and reduce implementation cost while integrating accounting, production, Point-of-Sale and HR functionality." },
+  { num: 2, client: "Pembe Flour Mills Kenya", logo: "/assets/pembe-logo.webp", copy: "Binary One supported SAP Business One audit and executive training so the ERP became a management instrument, not just an accounting database." },
+  { num: 3, client: "Pacific Petroleum", logo: "/assets/pacific-petroleum-mark.webp", copy: "Binary One supported Odoo Enterprise governance across multiple subsidiaries and countries, proving the value of disciplined ERP project oversight." },
 ];

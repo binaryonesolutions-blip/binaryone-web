@@ -4,11 +4,11 @@ import Image from "next/image";
 import NawiriNav from "@/components/chrome/NawiriNav";
 import { routes } from "@/content/nav";
 import { trustChips, eras, failIcons, failures, features } from "@/content/nawiri";
-import nawiriLogo from "@/public/assets/nawiri-logo.png";
-import nawiriRetail from "@/public/assets/nawiri-retail-hero.png";
-import nawiriGrowth from "@/public/assets/nawiri-growth.png";
-import crownLogo from "@/public/assets/logo-crown-paints.png";
-import isuzuLogo from "@/public/assets/isuzu-logo.png";
+import nawiriLogo from "@/public/assets/nawiri-logo.webp";
+import nawiriRetail from "@/public/assets/nawiri-retail-hero.webp";
+import nawiriGrowth from "@/public/assets/nawiri-growth.webp";
+import crownLogo from "@/public/assets/logo-crown-paints.webp";
+import isuzuLogo from "@/public/assets/isuzu-logo.webp";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/digital-products/nawiri" },

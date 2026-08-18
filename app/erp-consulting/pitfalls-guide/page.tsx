@@ -5,8 +5,8 @@ import SiteFooter from "@/components/chrome/SiteFooter";
 import ErpSelfCheck from "@/components/tools/ErpSelfCheck";
 import { routes } from "@/content/nav";
 import { pitfalls, lenses, stages } from "@/content/erpPitfalls";
-import logoLight from "@/public/assets/b1s-logo-light.png";
-import pitfallsSquare from "@/public/assets/erp-pitfalls-square.png";
+import logoLight from "@/public/assets/b1s-logo-light.webp";
+import pitfallsSquare from "@/public/assets/erp-pitfalls-square.webp";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/erp-consulting/pitfalls-guide" },

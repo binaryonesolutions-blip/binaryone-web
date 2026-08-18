@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { routes } from "@/content/nav";
-import logoDark from "@/public/assets/b1s-logo-dark.png";
+import logoDark from "@/public/assets/b1s-logo-dark.webp";
 
 // Corporate footer (Developer Guide §6.4).
 const solutions = [

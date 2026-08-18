@@ -16,8 +16,8 @@ export const metadata: Metadata = {
 };
 
 const leaders = [
-  { img: "/assets/humphrey-kirui-v2.png", alt: "Humphrey Kirui, Virtual CIO", role: "Virtual CIO", copy: "Sets strategy, owns the roadmap, leads management reviews, governs vendors, recommends budgets and aligns IT decisions to business priorities." },
-  { img: "/assets/eugene-hillary.png", alt: "Eugene Hillary, IT Operations Lead", role: "IT Operations Lead", copy: "Runs service delivery, engineers, tickets, escalation, site visits and service standards so the strategy becomes daily operational discipline." },
+  { img: "/assets/humphrey-kirui-v2.webp", alt: "Humphrey Kirui, Virtual CIO", role: "Virtual CIO", copy: "Sets strategy, owns the roadmap, leads management reviews, governs vendors, recommends budgets and aligns IT decisions to business priorities." },
+  { img: "/assets/eugene-hillary.webp", alt: "Eugene Hillary, IT Operations Lead", role: "IT Operations Lead", copy: "Runs service delivery, engineers, tickets, escalation, site visits and service standards so the strategy becomes daily operational discipline." },
 ];
 
 export default function ManagedIT() {
@@ -60,7 +60,7 @@ export default function ManagedIT() {
             </div>
           </div>
           <div className="order-2 lg:order-none group relative h-[420px] overflow-hidden rounded-[20px] shadow-[0_24px_64px_rgba(0,0,0,0.45)]">
-            <Image src="/assets/managed-it-hero-v4.png" alt="Managed IT operations environment" fill priority sizes="560px" className="object-cover [object-position:center_55%] transition-transform duration-500 ease-in-out group-hover:scale-[1.06]" />
+            <Image src="/assets/managed-it-hero-v4.webp" alt="Managed IT operations environment" fill priority sizes="560px" className="object-cover [object-position:center_55%] transition-transform duration-500 ease-in-out group-hover:scale-[1.06]" />
             <div className="absolute bottom-[10px] left-[20px] right-[20px] rounded-[12px] border border-[rgba(56,224,196,0.2)] bg-[rgba(6,58,52,0.55)] px-[20px] py-[10px] [backdrop-filter:blur(8px)]">
               <span className="mb-[2px] block font-jet text-[11.5px] font-bold tracking-[0.18em] text-[#38e0c4]">MANAGED IT SERVICES</span>
               <span className="font-inter text-[14px] text-white">AIM-IT: Assess · Implement · Manage</span>
@@ -189,7 +189,7 @@ export default function ManagedIT() {
         <div className="mb-[52px] flex flex-wrap items-center justify-center gap-[44px]">
           {platforms.map((pl) => (
             <span key={pl.alt} className={pl.label ? "inline-flex flex-col items-center gap-[10px]" : "inline-flex items-center"}>
-              <img src={pl.src} alt={pl.alt} style={{ height: pl.h }} className="block w-auto object-contain" />
+              <img loading="lazy" decoding="async" src={pl.src} alt={pl.alt} style={{ height: pl.h }} className="block w-auto object-contain" />
               {pl.label && <span className="font-inter text-[13px] font-semibold text-[#3e4947]">{pl.label}</span>}
             </span>
           ))}

@@ -3,9 +3,9 @@
 import { useEffect, useState } from "react";
 import Image, { type StaticImageData } from "next/image";
 import { briefs } from "@/content/insights";
-import erpThumb from "@/public/assets/insight-erp-thumb.png";
-import nawiriThumb from "@/public/assets/insight-nawiri-v3.png";
-import managedThumb from "@/public/assets/insight-managed-it-v2.png";
+import erpThumb from "@/public/assets/insight-erp-thumb.webp";
+import nawiriThumb from "@/public/assets/insight-nawiri-v3.webp";
+import managedThumb from "@/public/assets/insight-managed-it-v2.webp";
 
 const thumbs: Record<string, StaticImageData> = {
   erp: erpThumb,

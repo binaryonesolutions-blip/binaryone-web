@@ -3,7 +3,7 @@ import Image from "next/image";
 import { primaryNav, routes } from "@/content/nav";
 import ProductsDropdown from "./ProductsDropdown";
 import MobileNav from "./MobileNav";
-import logoLight from "@/public/assets/b1s-logo-light.png";
+import logoLight from "@/public/assets/b1s-logo-light.webp";
 
 // Product routes that light up the Digital Products dropdown as active.
 const PRODUCT_ROUTES: string[] = [

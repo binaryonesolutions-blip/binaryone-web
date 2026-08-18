@@ -13,8 +13,8 @@ import {
   approach,
   type ModuleIcon,
 } from "@/content/agenticAi";
-import agenticHero from "@/public/assets/agentic-hero.png";
-import agenticNeural from "@/public/assets/agentic-neural.png";
+import agenticHero from "@/public/assets/agentic-hero.webp";
+import agenticNeural from "@/public/assets/agentic-neural.webp";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/digital-products/agentic-ai" },

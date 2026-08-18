@@ -4,7 +4,7 @@ import Image from "next/image";
 import SiteHeader from "@/components/chrome/SiteHeader";
 import { routes } from "@/content/nav";
 import { heroChips, buildVsBuy, builds, stack, delivery } from "@/content/customSoftware";
-import customHero from "@/public/assets/custom-software-hero.png";
+import customHero from "@/public/assets/custom-software-hero.webp";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/digital-products/custom-software" },
