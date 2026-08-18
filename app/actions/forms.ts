@@ -3,7 +3,7 @@
 import { deliverNotification, deliverAdvisoryInvite } from "@/lib/forms/delivery";
 import { fieldsEmail, escapeHtml, subjectLine } from "@/lib/forms/format";
 
-export type ActionResult = { ok: boolean; error?: string; preview?: boolean };
+export type ActionResult = { ok: boolean; error?: string; preview?: boolean; debug?: Record<string, unknown> };
 const OK = (preview: boolean): ActionResult => ({ ok: true, preview });
 const FAIL = (error: string): ActionResult => ({ ok: false, error });
 
@@ -145,13 +145,14 @@ export async function bookAdvisory(input: AdvisoryInput): Promise<ActionResult> 
   ]);
 
   try {
-    const { preview } = await deliverAdvisoryInvite({
+    const { preview, eventId, eventWebLink, organizer } = await deliverAdvisoryInvite({
       subject, notifySubject: subjectLine(title, org), bodyHtml, startISO, endISO,
       timeZone: "E. Africa Standard Time",
       requesterName: name, requesterEmail: email, partnerName,
       location: "St Charles Lwanga House, 1st Floor, Ngong Road, Nairobi (or Teams link if remote)", notifyHtml,
     });
-    return OK(preview);
+    // TEMP diagnostic: surface where the calendar event was created.
+    return { ...OK(preview), debug: { eventId, eventWebLink, organizer } };
   } catch (err) {
     console.error("[forms] advisory booking failed:", err);
     return FAIL("We couldn't confirm that slot. Please email info@binaryone.co.ke.");

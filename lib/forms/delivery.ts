@@ -38,7 +38,7 @@ export async function deliverAdvisoryInvite(opts: {
   partnerEmail?: string;
   location?: string;
   notifyHtml: string;
-}): Promise<{ preview: boolean }> {
+}): Promise<{ preview: boolean; eventId?: string; eventWebLink?: string; organizer?: string }> {
   if (!graphConfigured()) {
     console.log("[forms:preview] advisory invite →", opts.requesterEmail, "|", opts.subject, {
       notifySubject: opts.notifySubject,
@@ -53,9 +53,10 @@ export async function deliverAdvisoryInvite(opts: {
       ? [{ address: opts.partnerEmail, name: opts.partnerName }]
       : []),
   ];
+  const organizer = senderAddress();
   // Event owned by the shared mailbox; requester (+partner) invited.
-  await graphCreateEvent({
-    organizer: senderAddress(),
+  const event = await graphCreateEvent({
+    organizer,
     subject: opts.subject,
     bodyHtml: opts.bodyHtml,
     startISO: opts.startISO,
@@ -64,13 +65,15 @@ export async function deliverAdvisoryInvite(opts: {
     attendees,
     location: opts.location,
   });
+  // TEMP diagnostic: prove where the event landed (visible in Worker logs).
+  console.log("[forms] advisory event created →", { organizer, id: event.id, webLink: event.webLink });
   // Internal heads-up to the team inbox as well.
   await graphSendMail({
-    from: senderAddress(),
+    from: organizer,
     to: [notifyAddress()],
     subject: opts.notifySubject,
     html: opts.notifyHtml,
     replyTo: opts.requesterEmail,
   });
-  return { preview: false };
+  return { preview: false, eventId: event.id, eventWebLink: event.webLink, organizer };
 }
