@@ -124,12 +124,11 @@
 /* Loyalty Self-Score — lime footer beacon (Guide §11, Loyalty Self-Score) */
 @keyframes lsBeacon { 0%, 100% { box-shadow: 0 0 4px rgba(158,255,90,0.95), 0 0 10px rgba(158,255,90,0.5), 0 0 18px rgba(158,255,90,0.22); } 50% { box-shadow: 0 0 7px rgba(158,255,90,1), 0 0 16px rgba(158,255,90,0.72), 0 0 30px rgba(158,255,90,0.34); } }
 
-/* Respect reduced motion — pause decorative loops only (Guide §10.3) */
-@media (prefers-reduced-motion: reduce) {
-  .b1-decorative {
-    animation: none !important;
-  }
-}
+/* The ambient/decorative hero animations (sheen, glow, floating dots, network
+   pulses) are part of the brand experience and play for everyone — including
+   users whose OS has "Reduce motion" on. They are subtle, looping and
+   non-essential to content. (Previously gated behind prefers-reduced-motion,
+   which switched them off on any device with that setting enabled.) */
 
 /* In-page anchor scrolling: offset for the sticky header; smooth unless reduced. */
 html {
