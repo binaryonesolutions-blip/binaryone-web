@@ -230,7 +230,7 @@ export function DiagnosticModal() {
             <h4 className="mb-[8px] font-sora text-[16.5px] lg:text-[20px] font-bold text-[#0c1512]">Request received.</h4>
             <p className="mx-auto mb-[20px] max-w-[400px] font-inter text-[14.5px] leading-[1.6] text-[#4a5a54]">Our team will reach out within one business day to schedule your free strategic advisory session.</p>
             <button onClick={() => setOpen(false)} className="cursor-pointer rounded-[11px] bg-[#071e1b] px-[26px] py-[13px] font-jet text-[12px] font-bold tracking-[0.1em] text-white transition-colors hover:bg-[#0c3b33]">CLOSE</button>
-            <a href="/binaryone-company-profile.pdf" download target="_blank" rel="noopener" aria-label="View and download the company profile" className="mx-auto mt-[18px] flex w-fit items-center gap-[8px] font-inter text-[13.5px] font-medium text-[#0b3d38] underline underline-offset-[3px] [text-decoration-thickness:1px] hover:text-[#17a892]">
+            <a href="/company-profile" target="_blank" rel="noopener" aria-label="View and download the company profile" className="mx-auto mt-[18px] flex w-fit items-center gap-[8px] font-inter text-[13.5px] font-medium text-[#0b3d38] underline underline-offset-[3px] [text-decoration-thickness:1px] hover:text-[#17a892]">
               <svg viewBox="0 0 24 24" className="h-[21px] w-[21px] flex-shrink-0" fill="none" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" stroke="#3e4947" /><path d="M14 3v5h5" stroke="#3e4947" /><path d="M12 11.5v5.5" stroke="#EC1C24" strokeWidth="2" /><path d="M9.4 14.6 12 17.2l2.6-2.6" stroke="#EC1C24" strokeWidth="2" /></svg>
               Download Company Profile
             </a>

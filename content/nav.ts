@@ -17,6 +17,7 @@ export const routes = {
   assessment: "/contact?tab=assessment",
   enquiry: "/contact?tab=enquiry",
   dataProtection: "/data-protection",
+  companyProfile: "/company-profile",
 } as const;
 
 export const primaryNav = [

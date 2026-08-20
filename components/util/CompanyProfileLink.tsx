@@ -1,5 +1,5 @@
 // "Download Company Profile" link shown on form success screens (19AUG design).
-// Serves the PDF at /binaryone-company-profile.pdf as a direct download.
+// Opens the /company-profile viewer (branded header + Download PDF button).
 export default function CompanyProfileLink({
   tone = "light",
   className = "",
@@ -12,8 +12,7 @@ export default function CompanyProfileLink({
   const stroke = isDark ? "#c7d0dc" : "#3e4947";
   return (
     <a
-      href="/binaryone-company-profile.pdf"
-      download
+      href="/company-profile"
       target="_blank"
       rel="noopener"
       aria-label="View and download the company profile"
