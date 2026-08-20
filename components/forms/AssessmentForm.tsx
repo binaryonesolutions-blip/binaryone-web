@@ -4,6 +4,7 @@ import { useActionState, useState } from "react";
 import Link from "next/link";
 import { routes } from "@/content/nav";
 import { submitAssessment } from "@/app/actions/forms";
+import CompanyProfileLink from "@/components/util/CompanyProfileLink";
 
 // Inline Free IT Assessment form on the Managed IT page (design §Free IT Assessment).
 // Submits to the submitAssessment server action; success replaces the form in place.
@@ -33,6 +34,7 @@ export default function AssessmentForm() {
         <span className="flex h-[44px] w-[44px] items-center justify-center rounded-full bg-[#006e1b] font-inter text-[16.5px] lg:text-[20px] font-semibold text-white">✓</span>
         <h3 className="font-sora text-[24px] font-bold text-[#1c1b1b]">Thank you. Your request has been received.</h3>
         <p className="font-inter text-[15.5px] leading-[1.65] text-[#3e4947]">Binary One will review the details and respond with the recommended next step.</p>
+        <CompanyProfileLink tone="light" />
       </div>
     );
   }

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { routes } from "@/content/nav";
 import { QUESTIONS, BANDS } from "@/content/loyaltySelfScore";
 import { submitLoyaltyScore } from "@/app/actions/forms";
+import CompanyProfileLink from "@/components/util/CompanyProfileLink";
 
 // Loyalty Programme Maturity Self-Score (Guide §9). Score each of 10 statements
 // 1–4; total maps to one of four maturity eras, then a lead-capture unlock.
@@ -116,12 +117,15 @@ export default function LoyaltySelfScore() {
                 </label>
               </>
             ) : (
-              <div className="flex items-center gap-[18px]">
-                <span className="flex h-[44px] w-[44px] flex-shrink-0 items-center justify-center rounded-full bg-[#9EFF5A] font-sora text-[16.5px] lg:text-[20px] font-bold text-[#0A1628]">✓</span>
-                <div>
-                  <span className="mb-[3px] block font-sora text-[15.5px] lg:text-[18px] font-bold text-white">Report on its way.</span>
-                  <span className="font-inter text-[14.5px] text-[#94A3B8]">Your written maturity report and recommended next steps will arrive by email. Want to move faster? <Link href={routes.contact} className="border-b border-[rgba(158,255,90,0.5)] pb-[1px] text-[#9EFF5A]">Book a NAWIRI demo</Link>.</span>
+              <div className="flex flex-col items-start justify-between gap-[18px] sm:flex-row sm:items-end">
+                <div className="flex items-center gap-[18px]">
+                  <span className="flex h-[44px] w-[44px] flex-shrink-0 items-center justify-center rounded-full bg-[#9EFF5A] font-sora text-[16.5px] lg:text-[20px] font-bold text-[#0A1628]">✓</span>
+                  <div>
+                    <span className="mb-[3px] block font-sora text-[15.5px] lg:text-[18px] font-bold text-white">Report on its way.</span>
+                    <span className="font-inter text-[14.5px] text-[#94A3B8]">Your written maturity report and recommended next steps will arrive by email. Want to move faster? <Link href={routes.contact} className="border-b border-[rgba(158,255,90,0.5)] pb-[1px] text-[#9EFF5A]">Book a NAWIRI demo</Link>.</span>
+                  </div>
                 </div>
+                <CompanyProfileLink tone="dark" className="flex-shrink-0" />
               </div>
             )}
           </div>

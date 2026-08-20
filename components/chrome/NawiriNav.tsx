@@ -35,13 +35,13 @@ export default function NawiriNav({
 
       {/* NAWIRI header */}
       <header className="sticky top-0 z-50 flex h-[76px] items-center justify-between border-b border-[rgba(45,212,191,0.25)] bg-[rgba(10,22,40,0.92)] px-5 sm:px-8 lg:px-[64px] [backdrop-filter:blur(12px)]">
-        <div className="flex items-center gap-[16px]">
+        <div className="flex min-w-0 flex-wrap items-center gap-x-[10px] gap-y-0 sm:gap-[16px]">
           <div className="flex items-baseline gap-[8px]">
             <span className="font-sora text-[16.5px] lg:text-[20px] font-extrabold tracking-[0.02em] text-white">NAWIRI</span>
-            <span className="hidden font-inter text-[10px] font-medium tracking-[0.16em] text-[#94A3B8] sm:inline">DIGITAL LOYALTY</span>
+            <span className="font-inter text-[10px] font-medium tracking-[0.16em] text-[#94A3B8]">DIGITAL LOYALTY</span>
           </div>
           <span className="hidden h-[22px] w-[1px] bg-[rgba(45,212,191,0.4)] sm:block" />
-          <span className="hidden font-inter text-[12px] font-medium text-[#94A3B8] sm:inline">by Binary One Solutions</span>
+          <span className="font-inter text-[12px] font-medium text-[#94A3B8]">by Binary One Solutions</span>
         </div>
         <nav className="flex items-center gap-[16px] font-inter text-[14.5px] font-medium sm:gap-[32px]">
           <span className="hidden items-center gap-[32px] md:flex">

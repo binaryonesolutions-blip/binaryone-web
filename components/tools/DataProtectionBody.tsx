@@ -5,6 +5,7 @@ import { submitDsar } from "@/app/actions/forms";
 import Link from "next/link";
 import { routes } from "@/content/nav";
 import { navDefs, pillars, sections, rights, type NavIcon, type PillarIcon } from "@/content/dataProtection";
+import CompanyProfileLink from "@/components/util/CompanyProfileLink";
 
 function Icon({ name, size = 17 }: { name: NavIcon | PillarIcon; size?: number }) {
   const paths: Record<string, string[]> = {
@@ -214,6 +215,7 @@ export default function DataProtectionBody() {
                 <p className="mx-auto mb-[14px] max-w-[440px] font-inter text-[13px] leading-[1.65] text-[#475569]">Your request has been received by our Data Protection Officer. We are legally bound to review and respond to valid DSAR applications within <strong>30 calendar days</strong>.</p>
                 <p className="mb-[20px] font-jet text-[11px] font-medium text-[#94a3b8]">Reference Ticket ID: {ticket}</p>
                 <button onClick={reset} className="cursor-pointer rounded-[9px] border-none bg-[#0c1c2b] px-[20px] py-[11px] font-inter text-[13px] font-semibold text-white hover:bg-[#16283a]">Submit Another Request</button>
+                <div className="mt-[28px] flex justify-center"><CompanyProfileLink tone="light" /></div>
               </div>
             ) : (
               <form noValidate onSubmit={onSubmit} className="flex flex-col gap-[18px]">

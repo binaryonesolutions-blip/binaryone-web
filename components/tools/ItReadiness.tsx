@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { routes } from "@/content/nav";
 import { FIELDS, packFor, type CounterKey } from "@/content/itReadiness";
+import CompanyProfileLink from "@/components/util/CompanyProfileLink";
 
 const FIELD =
   "w-full box-border rounded-[10px] border border-[#E5E7EB] bg-white px-[16px] py-[13px] font-inter text-[15px] text-[#1c1b1b] outline-none focus:border-[#0f766e]";
@@ -56,6 +57,7 @@ export default function ItReadiness() {
               <span className="font-inter text-[14px] leading-[1.5] text-[#3e4947]">{packWhy}</span>
             </div>
             <button onClick={() => { setSent(false); setCounts({ ...ZERO }); }} className="cursor-pointer border-none bg-transparent p-0 font-inter text-[14.5px] font-semibold text-[#005c55] [border-bottom:1.5px_solid_#005c55] hover:text-[#006e1b]">Start over</button>
+            <CompanyProfileLink tone="light" />
           </div>
         ) : (
           <div className="flex flex-col gap-[26px]">

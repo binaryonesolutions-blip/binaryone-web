@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { routes } from "@/content/nav";
 import { submitAssessment, submitEnquiry, bookAdvisory } from "@/app/actions/forms";
+import CompanyProfileLink from "@/components/util/CompanyProfileLink";
 
 const FIELD =
   "w-full box-border rounded-[10px] border border-[#E5E7EB] bg-white px-[16px] py-[13px] font-inter text-[15px] text-[#1c1b1b] outline-none focus:border-[#0f766e]";
@@ -174,6 +175,7 @@ export default function ContactBody() {
             <p className="font-inter text-[14.5px] lg:text-[16px] leading-[1.65] text-[#3e4947]">Binary One will review the details and respond with the recommended next step.</p>
             <p className="font-inter text-[13.5px] leading-[1.6] text-[#6e7977]">Your details will only be used to respond to your enquiry or Free IT Assessment request.</p>
             <button onClick={() => setSubmitted(false)} className="cursor-pointer border-none bg-transparent p-0 font-inter text-[14.5px] font-semibold text-[#005c55] [border-bottom:1.5px_solid_#005c55] hover:text-[#006e1b]">Send another request</button>
+            <CompanyProfileLink tone="light" className="self-end" />
           </div>
         ) : tab === "assessment" ? (
           <div className="rounded-[16px] border border-[#E5E7EB] bg-white p-[40px] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_rgba(0,0,0,0.05)]">
@@ -275,6 +277,7 @@ export default function ContactBody() {
                 <p className="font-inter text-[16px] lg:text-[19px] font-semibold leading-[1.5] text-white [text-wrap:pretty]">Boardroom advisory held for {dates[advDate].label} at {ADV_SLOTS[advSlot]} EAT.</p>
                 <p className="font-inter text-[14.5px] leading-[1.7] text-[#c2dbd7] [text-wrap:pretty]">Mary Kalama will confirm the slot by email within one business day, with a short agenda and the partner&apos;s brief.</p>
                 <button onClick={() => { setAdvisoryOpen(false); setAdvDone(false); }} className="mt-[6px] cursor-pointer self-start rounded-[10px] border border-[rgba(56,224,196,0.4)] bg-[rgba(56,224,196,0.1)] px-[20px] py-[12px] font-inter text-[13px] font-bold tracking-[0.06em] text-[#d8ece8] hover:bg-[rgba(56,224,196,0.18)] hover:text-white">CLOSE</button>
+                <CompanyProfileLink tone="dark" className="self-end" />
               </div>
             ) : (
               <form onSubmit={handleAdvisory} className="flex flex-col gap-[12px]">
