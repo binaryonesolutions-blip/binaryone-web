@@ -23,7 +23,7 @@ const routeCards = [
 // Proof-strip logo tile — natural width (hugs its own logo) so tiles pack into
 // organic, uneven rows on every screen size, like the "Platforms we govern" strip.
 const logoTile = (c: (typeof clients)[number]) => (
-  <div key={c.name} className="flex w-[138px] flex-col items-center gap-[11px]" style={{ transform: `translateY(${c.tileLift}px)` }}>
+  <div key={c.name} className="flex w-[108px] flex-col items-center gap-[11px] sm:w-[128px]" style={{ transform: `translateY(${c.tileLift}px)` }}>
     <span className="flex items-end justify-center" style={{ width: c.logoW, height: c.logoH }}>
       <img loading="lazy" decoding="async" src={c.logo} alt={c.name} style={{ maxWidth: c.logoW, maxHeight: c.logoH }} className="block h-auto w-auto object-contain" />
     </span>
@@ -170,9 +170,14 @@ export default function Home() {
       {/* ===== PROOF STRIP ===== */}
       <div className="border-t border-[#E5E7EB] bg-[#EFF9F7] px-5 sm:px-8 lg:px-[64px] pb-[34px] pt-[64px] lg:pt-[96px]">
         <h2 className="mb-[36px] lg:mb-[48px] text-center font-sora text-[24px] sm:text-[28px] lg:text-[32px] font-bold leading-[1.2] tracking-[-0.02em] text-[#0b3d38]">Trusted by organisations that cannot afford technology confusion.</h2>
-        {/* 7-column grid (design): even rows, subtle per-tile lift; scales down on smaller screens */}
-        <div className="mx-auto flex max-w-[1200px] flex-wrap items-start justify-center gap-x-[12px] gap-y-[26px]">
-          {clients.map(logoTile)}
+        {/* Two centered rows (design): 8 then 7, each wraps on smaller screens */}
+        <div className="mx-auto flex max-w-[1200px] flex-col gap-y-[26px]">
+          <div className="flex flex-wrap items-start justify-center gap-x-[12px] gap-y-[26px]">
+            {clients.slice(0, 8).map(logoTile)}
+          </div>
+          <div className="flex flex-wrap items-start justify-center gap-x-[12px] gap-y-[26px]">
+            {clients.slice(8).map(logoTile)}
+          </div>
         </div>
       </div>
 
