@@ -13,27 +13,27 @@
   body {
     background: #0b1b19;
     -webkit-font-smoothing: antialiased;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 22px;
-    padding: 22px 16px 40px;
+    padding: 22px 0 40px;
+    overflow-x: hidden;
+    --page-scale: 1;
   }
   a { color: #005c55; text-decoration: none; }
   a:hover { color: #006e1b; }
   img, svg { max-width: 100%; }
+  /* Fixed A4 canvas (794x1123 = A4 at 96dpi); the design lays out to this size. */
   .page {
-    width: 210mm;
-    height: 297mm;
-    flex-shrink: 0;
+    width: 794px;
+    height: 1123px;
+    margin: 0 auto 22px;
     border-radius: 3px;
     box-shadow: 0 24px 70px -18px rgba(0,0,0,0.65);
   }
-  /* Scale the fixed A4 pages down on narrow viewports so they never overflow. */
-  @media (max-width: 840px) {
-    body { padding: 16px 0 32px; }
-    .page { transform: scale(calc((100vw - 24px) / 794)); transform-origin: top center; margin-bottom: calc(297mm * ((100vw - 24px) / 794 - 1)); }
-  }
+  .page:last-child { margin-bottom: 0; }
+  /* When the viewport is narrower than a page, zoom each page down to fit.
+     zoom (unlike transform) shrinks the layout box too, so the whole
+     document reflows to the viewport with no horizontal scroll.
+     --page-scale is a unitless ratio set by the script below. */
+  body.scaled .page { zoom: var(--page-scale); }
 </style>
 </head>
 <body>
@@ -402,5 +402,19 @@
     <span style="font:500 10.6px/1.65 Inter, sans-serif; color:#c7d0dc; text-align:right;"><span style="color:#7ee0d3;">www.binaryone.co.ke</span><br>+254 787 990 220 <span style="color:#38e0c4; font-size:19px; line-height:0; vertical-align:-2px;">·</span> info@binaryone.co.ke<br><svg viewBox="0 0 24 24" style="width:11px; height:11px; vertical-align:-1px; margin-right:4px;"><path d="M12 22s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path><circle cx="12" cy="10" r="2.4" fill="none" stroke="currentColor" stroke-width="1.8"></circle></svg>St Charles Lwanga House, Ngong Road, Nairobi, Kenya</span>
   </div>
 </section>
+<script>
+(function () {
+  var PAGE_W = 794, GUTTER = 20;
+  function fit() {
+    var vw = document.documentElement.clientWidth || window.innerWidth;
+    var s = Math.min(1, (vw - GUTTER) / PAGE_W);
+    document.body.style.setProperty('--page-scale', s);
+    document.body.classList.toggle('scaled', s < 1);
+  }
+  window.addEventListener('resize', fit);
+  window.addEventListener('orientationchange', fit);
+  fit();
+})();
+</script>
 </body>
 </html>
