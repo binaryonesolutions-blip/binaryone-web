@@ -48,3 +48,9 @@ next-env.d.ts
 
 # Local email preview artifact
 email-preview.html
+testsprite_tests/tmp/
+testsprite_tests/tmp/config.json
+
+# TestSprite (local test tooling)
+product-spec.md
+testsprite_tests/

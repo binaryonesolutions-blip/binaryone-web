@@ -45,7 +45,7 @@ export default function ERPConsulting() {
                 <svg viewBox="0 0 24 24" className="h-[20px] w-[20px]"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5V5.5M19 18v3H6.5M8.5 7.5h7M8.5 11h5" fill="none" stroke="#0c1512" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 Open the ERP Pitfalls Guide
               </Link>
-              <Link href={routes.contact} className="inline-block rounded-[14px] border-[1.5px] border-[rgba(56,224,196,0.5)] bg-[rgba(255,255,255,0.06)] px-[28px] py-[15.5px] font-inter text-[14.5px] lg:text-[16px] font-semibold text-[#38e0c4] hover:bg-[rgba(56,224,196,0.12)] hover:text-[#5ceace]">Book a Free ERP Consultation</Link>
+              <Link href={routes.enquiry} className="inline-block rounded-[14px] border-[1.5px] border-[rgba(56,224,196,0.5)] bg-[rgba(255,255,255,0.06)] px-[28px] py-[15.5px] font-inter text-[14.5px] lg:text-[16px] font-semibold text-[#38e0c4] hover:bg-[rgba(56,224,196,0.12)] hover:text-[#5ceace]">Book a Free ERP Consultation</Link>
             </div>
             <div className="border-t border-[#1c1b1b] pt-[28px]">
               <span className="mb-[16px] block font-jet text-[13px] font-bold tracking-[0.14em] text-[#5eead4]">OUR ERP ADVISORY APPROACH</span>

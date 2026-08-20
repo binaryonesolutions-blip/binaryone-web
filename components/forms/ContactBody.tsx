@@ -52,11 +52,26 @@ export default function ContactBody() {
   const [advDate, setAdvDate] = useState(0);
   const [advSlot, setAdvSlot] = useState(0);
   const [partnersOpen, setPartnersOpen] = useState(false);
+  // Client-side validation state (Developer Guide / 19AUG design): inline email + consent errors.
+  const [email, setEmail] = useState("");
+  const [consent, setConsent] = useState(false);
+  const [errEmail, setErrEmail] = useState(false);
+  const [errConsent, setErrConsent] = useState(false);
 
   useEffect(() => {
     const t = new URLSearchParams(window.location.search).get("tab");
     if (t === "enquiry" || t === "assessment") setTab(t);
   }, []);
+
+  function resetValidation() {
+    setEmail(""); setConsent(false); setErrEmail(false); setErrConsent(false);
+  }
+  // Keep phone inputs to digits, spaces and a leading +.
+  const phoneNumeric = (e: React.FormEvent<HTMLInputElement>) => {
+    const el = e.currentTarget;
+    const v = el.value.replace(/[^0-9+ ]/g, "");
+    if (v !== el.value) el.value = v;
+  };
 
   const dates = advisoryDates();
   const chip = (active: boolean) => ({
@@ -75,6 +90,9 @@ export default function ContactBody() {
     action: (prev: null, fd: FormData) => Promise<{ ok: boolean; error?: string }>,
   ) {
     e.preventDefault();
+    const okE = email.indexOf("@") > 0;
+    const okC = consent;
+    if (!okE || !okC) { setErrEmail(!okE); setErrConsent(!okC); return; }
     const fd = new FormData(e.currentTarget);
     setError("");
     setSending(true);
@@ -128,7 +146,7 @@ export default function ContactBody() {
       <span className="w-[1px] flex-shrink-0 self-stretch [background:linear-gradient(180deg,rgba(15,118,110,0)_0%,rgba(15,118,110,0.30)_18%,rgba(15,118,110,0.30)_82%,rgba(15,118,110,0)_100%)]" />
       <div className="flex flex-1 flex-col gap-[16px]">
         <span className="font-inter text-[12px] font-semibold tracking-[0.14em] text-[#0f766e]">CONTACT CARD</span>
-        <p className="font-inter text-[15px] leading-[1.75] text-[#2c4b46]"><strong className="font-bold text-[#06332e]">Binary One Solutions Ltd</strong><br />St Charles Lwanga House, 1st Floor,<br />Ngong Road, Nairobi, Kenya<br />P.O. Box 52883 (00100)</p>
+        <p className="font-inter text-[15px] leading-[1.75] text-[#2c4b46]"><strong className="font-bold text-[#06332e]">Binary One Solutions Ltd</strong><br /><svg viewBox="0 0 24 24" className="mr-[6px] inline-block h-[13px] w-[13px] flex-shrink-0 align-[-2px] opacity-75" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round"><path d="M12 22s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z" /><circle cx="12" cy="10" r="2.4" /></svg>St Charles Lwanga House, 1st Floor,<br />Ngong Road, Nairobi, Kenya<br />P.O. Box 52883 (00100)</p>
         <p className="font-inter text-[15px] leading-[1.75] text-[#2c4b46]"><a href="tel:+254787990220" className="text-[#2c4b46] hover:text-[#06332e]">+254 787 990 220</a><br /><a href="mailto:info@binaryone.co.ke" className="text-[#2c4b46] hover:text-[#06332e]">info@binaryone.co.ke</a></p>
         <button onClick={() => { setAdvisoryOpen(true); setAdvDone(false); setPartnersOpen(false); setError(""); }} className="inline-flex cursor-pointer items-center gap-[9px] self-start rounded-[9px] border border-[#00332f] bg-[#00332f] px-[13px] py-[9px] font-jet text-[10px] sm:text-[10.5px] font-bold tracking-[0.08em] sm:tracking-[0.1em] text-[#eafaf6] transition-[background,border-color] hover:border-[#0f766e] hover:bg-[#0a4a42] hover:text-white">
           <svg viewBox="0 0 24 24" className="h-[14px] w-[14px] flex-shrink-0" fill="none" stroke="#38e0c4" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" /><path d="M3.5 10h17M8.5 3v4M15.5 3v4" /></svg>
@@ -145,8 +163,8 @@ export default function ContactBody() {
         {/* Mobile: contact card surfaces right under the hero, before the form */}
         <div className="mb-[28px] lg:hidden">{contactCard}</div>
         <div className="mb-[32px] flex rounded-[12px] border border-[#E5E7EB] bg-[#f0eded] p-[4px]">
-          <button onClick={() => { setTab("assessment"); setSubmitted(false); setError(""); }} className={tabBtn(tab === "assessment")}>Book a Free IT Assessment</button>
-          <button onClick={() => { setTab("enquiry"); setSubmitted(false); setError(""); }} className={tabBtn(tab === "enquiry")}>General Enquiry</button>
+          <button onClick={() => { setTab("assessment"); setSubmitted(false); setError(""); resetValidation(); }} className={tabBtn(tab === "assessment")}>Book a Free IT Assessment</button>
+          <button onClick={() => { setTab("enquiry"); setSubmitted(false); setError(""); resetValidation(); }} className={tabBtn(tab === "enquiry")}>General Enquiry</button>
         </div>
 
         {submitted ? (
@@ -160,14 +178,14 @@ export default function ContactBody() {
         ) : tab === "assessment" ? (
           <div className="rounded-[16px] border border-[#E5E7EB] bg-white p-[40px] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_rgba(0,0,0,0.05)]">
             <p className="mb-[28px] font-inter text-[15.5px] leading-[1.65] text-[#3e4947] [text-wrap:pretty]">The Free IT Assessment is a structured 90-minute session with your Virtual CIO. We review your current IT setup, identify the three biggest risks, and leave you with a written one-page brief — no obligation, no sales pitch.</p>
-            <form onSubmit={(e) => handleForm(e, submitAssessment)} className="flex flex-col gap-[16px]">
+            <form noValidate onSubmit={(e) => handleForm(e, submitAssessment)} className="flex flex-col gap-[16px]">
               {HONEYPOT}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-[16px]">
                 <input required name="name" placeholder="Name *" className={FIELD} />
                 <input required name="org" placeholder="Organisation *" className={FIELD} />
                 <input required name="role" placeholder="Role / Title *" className={FIELD} />
-                <input required name="email" placeholder="Work email *" type="email" className={FIELD} />
-                <input required name="phone" placeholder="Phone *" type="tel" className={FIELD} />
+                <input required name="email" placeholder="Work email *" type="email" value={email} onChange={(e) => { setEmail(e.target.value); setErrEmail(false); }} className={FIELD} />
+                <input required name="phone" placeholder="Phone *" type="tel" inputMode="numeric" onInput={phoneNumeric} className={FIELD} />
                 <input required name="users" placeholder="Number of users / workstations *" type="number" className={FIELD} />
               </div>
               <textarea required name="setup" placeholder="Current IT setup *" rows={3} className={`${FIELD} resize-y`} />
@@ -176,13 +194,17 @@ export default function ContactBody() {
                   <option value="">Main concern *</option>
                   <option>Cybersecurity</option><option>Cost control</option><option>Reliability &amp; uptime</option><option>Cloud migration</option><option>Compliance &amp; audit</option><option>ERP fit</option><option>Other</option>
                 </select>
-                <input required name="meetingDate" placeholder="Preferred meeting date *" type="date" className={`${FIELD} py-[12px]`} />
+                <label className="flex flex-col gap-[5px]">
+                  <span className="font-inter text-[11.5px] font-semibold uppercase tracking-[0.06em] text-[#6e7977]">Preferred contact date and time *</span>
+                  <input required name="meetingDate" type="datetime-local" className={`${FIELD} py-[12px]`} />
+                </label>
               </div>
               <textarea name="message" placeholder="Anything we should know? (optional)" rows={2} className={`${FIELD} resize-y`} />
-              <label className="flex cursor-pointer items-start gap-[10px] font-inter text-[13px] leading-[1.5] text-[#3e4947]">
-                <input required type="checkbox" className="mt-[2px] [accent-color:#006e1b]" />
+              <label className="flex cursor-pointer items-start gap-[10px] font-inter text-[13px] leading-[1.5]" style={{ color: errConsent ? "#c1121f" : "#3e4947" }}>
+                <input type="checkbox" checked={consent} onChange={(e) => { setConsent(e.target.checked); setErrConsent(false); }} className="mt-[2px] [accent-color:#006e1b]" />
                 <span>I consent to Binary One Solutions processing this information under their <Link href={routes.dataProtection} className="text-[#0f766e] [border-bottom:1px_solid_rgba(15,118,110,0.4)] hover:text-[#12897f]">Data Protection Policy</Link>. (Kenya Data Protection Act 2019)</span>
               </label>
+              {errEmail && <span className="font-inter text-[12.5px] font-medium leading-[1.5] text-[#c1121f]">Enter a valid email address, including @.</span>}
               {error && <p className="font-inter text-[13.5px] text-[#c0392b]">{error}</p>}
               <button type="submit" disabled={sending} className="cursor-pointer self-start rounded-[12px] border-none bg-[#0f766e] px-[28px] py-[15px] font-inter text-[14.5px] lg:text-[16px] font-semibold text-white shadow-[0_1px_2px_rgba(15,118,110,0.20),0_6px_16px_rgba(15,118,110,0.14)] hover:bg-[#0d655e] disabled:opacity-60">{sending ? "Sending…" : "Send & confirm my slot"}</button>
             </form>
@@ -190,24 +212,25 @@ export default function ContactBody() {
         ) : (
           <div className="rounded-[16px] border border-[#E5E7EB] bg-white p-[40px] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_rgba(0,0,0,0.05)]">
             <p className="mb-[28px] font-inter text-[15.5px] leading-[1.65] text-[#3e4947]">Question about NAWIRI? ERP audit? Agentic AI? Custom build? Tell us briefly and we will route your enquiry to the right specialist.</p>
-            <form onSubmit={(e) => handleForm(e, submitEnquiry)} className="flex flex-col gap-[16px]">
+            <form noValidate onSubmit={(e) => handleForm(e, submitEnquiry)} className="flex flex-col gap-[16px]">
               {HONEYPOT}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-[16px]">
                 <input required name="name" placeholder="Name *" className={FIELD} />
                 <input required name="org" placeholder="Organisation *" className={FIELD} />
                 <input name="role" placeholder="Role / Title *" className={FIELD} />
-                <input required name="email" placeholder="Work email *" type="email" className={FIELD} />
-                <input name="phone" placeholder="Phone (optional)" type="tel" className={FIELD} />
+                <input required name="email" placeholder="Work email *" type="email" value={email} onChange={(e) => { setEmail(e.target.value); setErrEmail(false); }} className={FIELD} />
+                <input name="phone" placeholder="Phone (optional)" type="tel" inputMode="numeric" onInput={phoneNumeric} className={FIELD} />
                 <select required name="topic" className={SELECT} defaultValue="">
                   <option value="">Product of interest *</option>
                   <option>Managed IT</option><option>ERP Consulting</option><option>NAWIRI Digital Loyalty</option><option>Agentic AI Workflows</option><option>Custom Enterprise Software Builds</option><option>Other</option>
                 </select>
               </div>
               <textarea required name="message" placeholder="Message *" rows={5} className={`${FIELD} resize-y`} />
-              <label className="flex cursor-pointer items-start gap-[10px] font-inter text-[13px] leading-[1.5] text-[#3e4947]">
-                <input required type="checkbox" className="mt-[2px] [accent-color:#006e1b]" />
+              <label className="flex cursor-pointer items-start gap-[10px] font-inter text-[13px] leading-[1.5]" style={{ color: errConsent ? "#c1121f" : "#3e4947" }}>
+                <input type="checkbox" checked={consent} onChange={(e) => { setConsent(e.target.checked); setErrConsent(false); }} className="mt-[2px] [accent-color:#006e1b]" />
                 <span>I consent to Binary One Solutions processing this information under their <Link href={routes.dataProtection} className="text-[#0f766e] [border-bottom:1px_solid_rgba(15,118,110,0.4)] hover:text-[#12897f]">Data Protection Policy</Link>.</span>
               </label>
+              {errEmail && <span className="font-inter text-[12.5px] font-medium leading-[1.5] text-[#c1121f]">Enter a valid email address, including @.</span>}
               {error && <p className="font-inter text-[13.5px] text-[#c0392b]">{error}</p>}
               <button type="submit" disabled={sending} className="cursor-pointer self-start rounded-[12px] border-none bg-[#0f766e] px-[28px] py-[15px] font-inter text-[14.5px] lg:text-[16px] font-semibold text-white shadow-[0_1px_2px_rgba(15,118,110,0.20),0_6px_16px_rgba(15,118,110,0.14)] hover:bg-[#0d655e] disabled:opacity-60">{sending ? "Sending…" : "Send enquiry"}</button>
             </form>
@@ -293,7 +316,7 @@ export default function ContactBody() {
                   <label className="flex flex-col gap-[6px]"><span className={ADV_LABEL}>YOUR NAME</span><input required name="name" type="text" placeholder="Full name" className={ADV_FIELD} /></label>
                   <label className="flex flex-col gap-[6px]"><span className={ADV_LABEL}>ORGANISATION</span><input required name="org" type="text" placeholder="Company name" className={ADV_FIELD} /></label>
                   <label className="flex flex-col gap-[6px]"><span className={ADV_LABEL}>WORK EMAIL</span><input required name="email" type="email" placeholder="you@company.co.ke" className={ADV_FIELD} /></label>
-                  <label className="flex flex-col gap-[6px]"><span className={ADV_LABEL}>MOBILE NUMBER</span><input name="phone" type="tel" placeholder="+254 700 000 000" className={ADV_FIELD} /></label>
+                  <label className="flex flex-col gap-[6px]"><span className={ADV_LABEL}>MOBILE NUMBER</span><input name="phone" type="tel" inputMode="numeric" onInput={phoneNumeric} placeholder="+254 700 000 000" className={ADV_FIELD} /></label>
                 </div>
 
                 <label className="flex flex-col gap-[6px]">

@@ -16,8 +16,8 @@ export const metadata: Metadata = {
 };
 
 const leaders = [
-  { img: "/assets/humphrey-kirui-v2.webp", alt: "Humphrey Kirui, Virtual CIO", role: "Virtual CIO", copy: "Sets strategy, owns the roadmap, leads management reviews, governs vendors, recommends budgets and aligns IT decisions to business priorities." },
-  { img: "/assets/eugene-hillary.webp", alt: "Eugene Hillary, IT Operations Lead", role: "IT Operations Lead", copy: "Runs service delivery, engineers, tickets, escalation, site visits and service standards so the strategy becomes daily operational discipline." },
+  { img: "/assets/humphrey-kirui-v2.webp", alt: "Humphrey Kirui, Virtual CIO", role: "Virtual CIO", copy: "Formulates the IT Strategy and owns the roadmap. Turns IT Audit gaps into strategic management reviews, governs the IT team and vendors, recommends budgets and aligns every IT decision to business priorities." },
+  { img: "/assets/eugene-hillary.webp", alt: "Eugene Hillary, IT Operations Lead", role: "IT Operations Lead", copy: "Runs service delivery and manages the on-site engineers. Owns helpdesk, tickets, site visits, SLAs and escalation, Agentic AI deployment, audit remediation, CyberSec and Level 1 ERP support, so the strategy becomes daily operational discipline." },
 ];
 
 export default function ManagedIT() {
@@ -214,17 +214,22 @@ export default function ManagedIT() {
               </div>
               <p className="flex-1 font-inter text-[15px] leading-[1.65] text-[#3e4947]">{pack.positioning}</p>
               <div className="flex flex-col gap-[10px] border-t border-[#E5E7EB] pt-[16px]">
-                {pack.inclusions.map((inc) => (
-                  <div key={inc} className="flex items-start gap-[12px] font-inter text-[14px] leading-[1.5] text-[#1c1b1b]">
-                    <span className="mt-[7px] h-[6px] w-[6px] flex-shrink-0 rounded-full bg-[#006e1b]" />
-                    <span>{inc}</span>
-                  </div>
-                ))}
+                {pack.inclusions.map((inc, i) => {
+                  const isLead = i === 0;
+                  const isNote = inc.startsWith("Includes everything");
+                  const isItal = inc.startsWith("IT Audit &");
+                  return (
+                    <div key={inc} className="flex items-start gap-[12px] font-inter text-[14px] leading-[1.5] text-[#1c1b1b]">
+                      <span className="mt-[7px] h-[6px] w-[6px] flex-shrink-0 rounded-full bg-[#006e1b]" />
+                      {isLead ? <span className="font-bold">{inc}</span> : isNote ? <span className="italic">+ {inc}</span> : isItal ? <span className="italic">{inc}</span> : <span>{inc}</span>}
+                    </div>
+                  );
+                })}
               </div>
             </div>
           ))}
         </div>
-        <p className="max-w-[880px] font-inter text-[13.5px] leading-[1.65] text-[#3e4947]">Service pack recommended after the Free IT Assessment.<br />Formal audit, major development and larger implementation projects are scoped and approved separately.</p>
+        <p className="max-w-[880px] font-inter text-[13.5px] leading-[1.65] text-[#3e4947]">Service pack recommended after the <Link href={routes.managedItReadiness} className="text-[#0f766e] underline underline-offset-[2px]">Free IT Assessment</Link>.<br />Standalone IT Audits and larger implementation projects are scoped and approved separately.</p>
       </div>
 
       {/* ===== FREE IT ASSESSMENT + FORM ===== */}

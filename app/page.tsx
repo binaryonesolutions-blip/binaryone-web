@@ -23,7 +23,7 @@ const routeCards = [
 // Proof-strip logo tile — natural width (hugs its own logo) so tiles pack into
 // organic, uneven rows on every screen size, like the "Platforms we govern" strip.
 const logoTile = (c: (typeof clients)[number]) => (
-  <div key={c.name} className="flex flex-col items-center gap-[12px]" style={{ transform: `translateY(${c.tileLift}px)` }}>
+  <div key={c.name} className="flex w-[138px] flex-col items-center gap-[11px]" style={{ transform: `translateY(${c.tileLift}px)` }}>
     <span className="flex items-end justify-center" style={{ width: c.logoW, height: c.logoH }}>
       <img loading="lazy" decoding="async" src={c.logo} alt={c.name} style={{ maxWidth: c.logoW, maxHeight: c.logoH }} className="block h-auto w-auto object-contain" />
     </span>
@@ -118,7 +118,7 @@ export default function Home() {
                 <Image src={c.img} alt={c.alt} fill sizes="440px" className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-[1.06]" style={{ objectPosition: c.objPos }} />
               </Link>
               <div className="flex flex-1 flex-col gap-[16px] p-[32px]">
-                <Link href={c.href} className="text-center font-inter text-[13.5px] font-semibold tracking-[0.14em] text-[#17a892] hover:text-[#0d655e]">{c.kicker}</Link>
+                <Link href={c.href} className="self-center whitespace-nowrap rounded-[8px] border-[2.5px] border-[#17a892] bg-[#EEF7F6] px-[18px] py-[9px] text-center font-sora text-[13px] font-bold tracking-[0.11em] text-[#0b3d38] transition-[transform,box-shadow,border-color] duration-[180ms] hover:scale-[1.06] hover:border-[#0d655e] hover:text-[#0d655e] hover:shadow-[0_0_14px_rgba(23,168,146,0.45)]">{c.kicker}</Link>
                 <h3 className="font-sora text-[26px] font-bold leading-[1.2] tracking-[-0.01em] text-[#1c1b1b]">{c.title}</h3>
                 <p className="flex-1 font-inter text-[15.5px] leading-[1.65] text-[#3e4947]">{c.copy}</p>
                 <Link href={c.href} className="self-start border-b-[1.5px] border-[#005c55] pb-[2px] font-inter text-[15px] font-semibold text-[#005c55] hover:border-[#006e1b] hover:text-[#006e1b]">{c.cta}</Link>
@@ -171,7 +171,7 @@ export default function Home() {
       <div className="border-t border-[#E5E7EB] bg-[#EFF9F7] px-5 sm:px-8 lg:px-[64px] pb-[34px] pt-[64px] lg:pt-[96px]">
         <h2 className="mb-[36px] lg:mb-[48px] text-center font-sora text-[24px] sm:text-[28px] lg:text-[32px] font-bold leading-[1.2] tracking-[-0.02em] text-[#0b3d38]">Trusted by organisations that cannot afford technology confusion.</h2>
         {/* 7-column grid (design): even rows, subtle per-tile lift; scales down on smaller screens */}
-        <div className="mx-auto grid max-w-[1152px] grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7 justify-items-center gap-x-[20px] gap-y-[28px]">
+        <div className="mx-auto flex max-w-[1200px] flex-wrap items-start justify-center gap-x-[12px] gap-y-[26px]">
           {clients.map(logoTile)}
         </div>
       </div>

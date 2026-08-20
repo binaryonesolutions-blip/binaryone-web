@@ -14,6 +14,8 @@ export default function LoyaltySelfScore() {
   const [fName, setFName] = useState("");
   const [fOrg, setFOrg] = useState("");
   const [fEmail, setFEmail] = useState("");
+  const [consent, setConsent] = useState(false);
+  const [emailTouched, setEmailTouched] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
 
@@ -23,7 +25,12 @@ export default function LoyaltySelfScore() {
   const band = done ? [...BANDS].reverse().find((b) => total >= b.min) : null;
   const barWidth = Math.round((total / 40) * 100) + "%";
 
+  const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fEmail);
+  const canSend = !!(fName.trim() && fOrg.trim() && emailValid && consent);
+  const showEmailError = emailTouched && !emailValid && fEmail.length > 0;
+
   async function unlock() {
+    if (!canSend) return;
     setError("");
     setSending(true);
     const fd = new FormData();
@@ -98,11 +105,15 @@ export default function LoyaltySelfScore() {
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr_1.2fr_auto] items-center gap-[14px]">
                   <input placeholder="Name *" value={fName} onChange={(e) => setFName(e.target.value)} className="box-border w-full rounded-[10px] border border-[rgba(45,212,191,0.35)] bg-[#11203A] px-[16px] py-[14px] font-inter text-[15px] text-white outline-none focus:border-[#9EFF5A]" />
                   <input placeholder="Organisation *" value={fOrg} onChange={(e) => setFOrg(e.target.value)} className="box-border w-full rounded-[10px] border border-[rgba(45,212,191,0.35)] bg-[#11203A] px-[16px] py-[14px] font-inter text-[15px] text-white outline-none focus:border-[#9EFF5A]" />
-                  <input placeholder="Work email *" type="email" value={fEmail} onChange={(e) => setFEmail(e.target.value)} className="box-border w-full rounded-[10px] border border-[rgba(45,212,191,0.35)] bg-[#11203A] px-[16px] py-[14px] font-inter text-[15px] text-white outline-none focus:border-[#9EFF5A]" />
-                  <button onClick={unlock} disabled={sending} className="cursor-pointer whitespace-nowrap rounded-[12px] border-none bg-[#9EFF5A] px-[26px] py-[15px] font-sora text-[15px] font-bold text-[#0A1628] hover:bg-[#B4FF7E] disabled:opacity-60">{sending ? "Computing…" : "Compute my report"}</button>
+                  <input placeholder="Work email *" type="email" value={fEmail} onChange={(e) => { setFEmail(e.target.value); setEmailTouched(true); }} style={{ borderColor: showEmailError ? "#FF8A8A" : "rgba(45,212,191,0.35)" }} className="box-border w-full rounded-[10px] border bg-[#11203A] px-[16px] py-[14px] font-inter text-[15px] text-white outline-none focus:border-[#9EFF5A]" />
+                  <button onClick={unlock} disabled={!canSend || sending} style={{ background: canSend ? "#9EFF5A" : "#5C6B57", opacity: canSend ? 1 : 0.5, cursor: canSend ? "pointer" : "not-allowed" }} className="whitespace-nowrap rounded-[12px] border-none px-[26px] py-[15px] font-sora text-[15px] font-bold text-[#0A1628] hover:bg-[#B4FF7E]">{sending ? "Computing…" : "Compute my report"}</button>
                 </div>
                 {error && <p className="mt-[10px] font-inter text-[13px] text-[#ffb4a8]">{error}</p>}
-                <p className="mt-[14px] font-inter text-[12.5px] leading-[1.5] text-[#64748B]">Your details will only be used to send your maturity report and follow up once. Kenya Data Protection Act 2019 applies: See our <Link href={routes.dataProtection} className="border-b border-[#9EFF5A] pb-[1px] text-[#9EFF5A] hover:border-[#B4FF7E] hover:text-[#B4FF7E]">Data Protection Policy</Link></p>
+                {showEmailError && <p className="mt-[8px] font-inter text-[12.5px] leading-[1.5] text-[#FF8A8A]">Enter a valid email address.</p>}
+                <label className="mt-[16px] flex cursor-pointer items-start gap-[10px]">
+                  <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} className="mt-[3px] h-[16px] w-[16px] flex-shrink-0 cursor-pointer [accent-color:#9EFF5A]" />
+                  <span className="font-inter text-[12.5px] leading-[1.5] text-[#64748B]">I agree to my details being used to send my maturity report and follow up once, per the Kenya Data Protection Act 2019. See our <Link href={routes.dataProtection} className="border-b border-[#9EFF5A] pb-[1px] text-[#9EFF5A] hover:border-[#B4FF7E] hover:text-[#B4FF7E]">Data Protection Policy</Link>.</span>
+                </label>
               </>
             ) : (
               <div className="flex items-center gap-[18px]">

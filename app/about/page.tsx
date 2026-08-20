@@ -106,8 +106,9 @@ export default function AboutPage() {
             </div>
             <div>
               <span className="mb-[8px] block font-inter text-[12px] font-semibold tracking-[0.12em] text-[#006e1b]">ADVISOR &amp; SHAREHOLDER</span>
-              <p className="mb-[12px] font-inter text-[15.5px] leading-[1.65] text-[#3e4947]"><strong className="font-semibold text-[#1c1b1b]">Edwin Kairu</strong> — Distinguished Service Professor at Carnegie Mellon University; AI research and cybersecurity expert.</p>
-              <p className="font-inter text-[14.5px] leading-[1.7] text-[#3e4947] [text-wrap:pretty]">15+ years strengthening the security posture of organisations across security reviews, incident response, vulnerability management and network forensics. MS Information Security Policy &amp; Management, Carnegie Mellon University.</p>
+              <p className="mb-[12px] font-inter text-[15.5px] leading-[1.65] text-[#3e4947]"><strong className="font-semibold text-[#1c1b1b]">Prof. Edwin Kairu</strong> — Distinguished Service Professor at Carnegie Mellon University – consistently ranked the #1 computer science institution globally; AI research and cybersecurity expert, with 15+ years strengthening the information security posture of leading multinationals.</p>
+              <p className="font-inter text-[14.5px] leading-[1.7] text-[#3e4947] [text-wrap:pretty]">He advises Binary One on emerging technology direction, including applied AI, agentic systems and blockchain, alongside security architecture and governance.</p>
+              <p className="mt-[8px] font-inter text-[12.5px] italic leading-[1.5] text-[#6e7977]">MS Information Security Policy &amp; Management, Carnegie Mellon University.</p>
             </div>
           </div>
         </div>

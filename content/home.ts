@@ -31,7 +31,7 @@ export const processSteps = [
 export const testimonials = [
   { quote: "We handed our whole IT operation to Binary One. Running costs down, standards world-class.", person: "Mumbi Kariuki", role: "Director", org: "International Safety & Training Centre", logo: "/assets/istc-mark.webp" },
   { quote: "Odoo done right — ERP costs cut by half, with accounts, production and POS finally in step.", person: "Patrick Meme", role: "General Manager", org: "Royal Oven Tanzania", logo: "/assets/royal-oven-logo.webp" },
-  { quote: "NAWIRI is not a tool, it is revenue. It puts us straight in front of the mechanics who move our parts.", person: "Peris Temba", role: "Sales Manager, Parts & Accessories", org: "Isuzu East Africa", logo: "/assets/isuzu-logo.webp" },
+  { quote: "NAWIRI is not a tool, it is revenue. It puts us straight in front of the mechanics who move our parts.", person: "Peris Temba", role: "Parts Marketing Executive", org: "Isuzu East Africa", logo: "/assets/isuzu-logo.webp" },
 ];
 
 // Client wall (14 logos, 7×2). Resolved per the design's domain→logo/size mapping.
@@ -44,16 +44,17 @@ export type Client = {
   showName: boolean;
 };
 export const clients: Client[] = [
-  { name: "Isuzu East Africa", logo: "/assets/isuzu-logo.webp", logoW: 108, logoH: 108, tileLift: 0, showName: false },
-  { name: "Vivo Fashion Group", logo: "/assets/vivo-logo.webp", logoW: 116, logoH: 52, tileLift: 0, showName: true },
+  { name: "Isuzu East Africa", logo: "/assets/isuzu-logo.webp", logoW: 98, logoH: 98, tileLift: 0, showName: false },
+  { name: "Vivo Fashion Group", logo: "/assets/vivo-logo.webp", logoW: 78, logoH: 52, tileLift: 0, showName: true },
   { name: "Rhombus Concrete", logo: "/assets/rhombus-logo.webp", logoW: 52, logoH: 52, tileLift: 0, showName: true },
   { name: "International Safety & Training Centre", logo: "/assets/istc-mark.webp", logoW: 52, logoH: 52, tileLift: 0, showName: true },
   { name: "Pacific Petroleum 'Dubai & East Africa'", logo: "/assets/pacific-petroleum-mark.webp", logoW: 52, logoH: 52, tileLift: 0, showName: true },
-  { name: "Royal Oven Tanzania", logo: "/assets/royal-oven-logo.webp", logoW: 52, logoH: 52, tileLift: 0, showName: true },
+  { name: "Tosha Energy", logo: "/assets/tosha-energy-logo.webp", logoW: 52, logoH: 52, tileLift: 0, showName: true },
+  { name: "Royal Oven Tanzania", logo: "/assets/royal-oven-logo.webp", logoW: 58, logoH: 72, tileLift: -6, showName: true },
   { name: "Kenya Meat Commission", logo: "/assets/kmc-logo.webp", logoW: 52, logoH: 52, tileLift: 0, showName: true },
-  { name: "KN Law LLP", logo: "/assets/kn-law-logo.webp", logoW: 76, logoH: 76, tileLift: -8, showName: true },
-  { name: "Ahmednasir Abdullahi Advocates LLP", logo: "/assets/logo-ahmednasir.webp", logoW: 52, logoH: 52, tileLift: 0, showName: true },
-  { name: "KELIN Kenya NGO", logo: "/assets/kelin-logo.webp", logoW: 116, logoH: 52, tileLift: 0, showName: true },
+  { name: "KN Law LLP", logo: "/assets/kn-law-logo.webp", logoW: 62, logoH: 62, tileLift: -8, showName: true },
+  { name: "Ahmednasir Abdullahi Advocates LLP", logo: "/assets/logo-ahmednasir.webp", logoW: 44, logoH: 44, tileLift: 0, showName: true },
+  { name: "KELIN Kenya NGO", logo: "/assets/kelin-logo.webp", logoW: 94, logoH: 52, tileLift: 0, showName: true },
   { name: "MOGO Kenya", logo: "/assets/mogo-logo.webp", logoW: 76, logoH: 76, tileLift: -8, showName: true },
   { name: "Nairobi City County", logo: "/assets/nairobi-county-logo.webp", logoW: 52, logoH: 52, tileLift: 0, showName: true },
   { name: "Maakiou Coffee Estate", logo: "/assets/maakiou-logo.webp", logoW: 52, logoH: 52, tileLift: 0, showName: true },

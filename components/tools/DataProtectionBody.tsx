@@ -38,6 +38,8 @@ export default function DataProtectionBody() {
   const [ticket, setTicket] = useState("");
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
+  const [errEmail, setErrEmail] = useState(false);
+  const [errDecl, setErrDecl] = useState(false);
 
   const goto = (t: typeof tab) => {
     setTab(t);
@@ -46,7 +48,9 @@ export default function DataProtectionBody() {
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!(fullName && email && declaration)) return;
+    const okE = email.indexOf("@") > 0;
+    const okD = declaration;
+    if (!fullName || !okE || !okD) { setErrEmail(!okE); setErrDecl(!okD); return; }
     const t = "DSAR-" + new Date().getFullYear() + "-" + Math.floor(1000 + Math.random() * 9000);
     setError("");
     setSending(true);
@@ -165,7 +169,7 @@ export default function DataProtectionBody() {
               <div className="rounded-[12px] border border-[#E5E7EB] bg-[#f8fafc] px-[20px] py-[18px] font-jet text-[13px] font-medium leading-[1.7]">
                 <p className="font-bold text-[#0f172a]">Binary One Solutions Limited</p>
                 <p className="mt-[2px] text-[#64748b]">Attn: Data Protection concerns</p>
-                <p className="mt-[2px] text-[#64748b]">St Charles Lwanga House, 1st Floor, Ngong Road</p>
+                <p className="mt-[2px] text-[#64748b]"><svg viewBox="0 0 24 24" className="mr-[6px] inline-block h-[13px] w-[13px] flex-shrink-0 align-[-2px] opacity-75" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round"><path d="M12 22s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z" /><circle cx="12" cy="10" r="2.4" /></svg>St Charles Lwanga House, 1st Flr, Ngong Road</p>
                 <p className="mt-[2px] text-[#64748b]">P.O. Box 52883 (00100), Nairobi, Kenya</p>
                 <p className="mt-[8px] font-bold text-[#0a8f28]">Email: info@binaryone.co.ke</p>
               </div>
@@ -212,7 +216,7 @@ export default function DataProtectionBody() {
                 <button onClick={reset} className="cursor-pointer rounded-[9px] border-none bg-[#0c1c2b] px-[20px] py-[11px] font-inter text-[13px] font-semibold text-white hover:bg-[#16283a]">Submit Another Request</button>
               </div>
             ) : (
-              <form onSubmit={onSubmit} className="flex flex-col gap-[18px]">
+              <form noValidate onSubmit={onSubmit} className="flex flex-col gap-[18px]">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-[16px]">
                   <label className="flex flex-col gap-[7px]">
                     <span className={FLABEL}>REQUEST TYPE</span>
@@ -231,11 +235,12 @@ export default function DataProtectionBody() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-[16px]">
                   <label className="flex flex-col gap-[7px]">
                     <span className={FLABEL}>EMAIL ADDRESS *</span>
-                    <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="name@company.co.ke" className={FIELD} />
+                    <input type="email" inputMode="email" required value={email} onChange={(e) => { setEmail(e.target.value); setErrEmail(false); }} placeholder="name@company.co.ke" className={FIELD} />
+                    {errEmail && <span className="font-inter text-[12px] font-medium leading-[1.5] text-[#c1121f]">Enter a valid email address, including @.</span>}
                   </label>
                   <label className="flex flex-col gap-[7px]">
                     <span className={FLABEL}>TELEPHONE NUMBER</span>
-                    <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="+254 700 000 000" className={FIELD} />
+                    <input type="tel" inputMode="numeric" value={phone} onChange={(e) => setPhone(e.target.value.replace(/[^0-9+ ]/g, ""))} placeholder="+254 700 000 000" className={FIELD} />
                   </label>
                 </div>
                 <label className="flex flex-col gap-[7px]">
@@ -243,8 +248,8 @@ export default function DataProtectionBody() {
                   <textarea rows={4} value={details} onChange={(e) => setDetails(e.target.value)} placeholder="Please specify details of data you would like to access, correct, or erase to assist our DPO team in processing..." className={`${FIELD} resize-none`} />
                 </label>
                 <label className="flex cursor-pointer items-start gap-[10px]">
-                  <input type="checkbox" required checked={declaration} onChange={(e) => setDeclaration(e.target.checked)} className="mt-[2px] h-[15px] w-[15px] flex-shrink-0 [accent-color:#0a8f28]" />
-                  <span className="font-inter text-[11.5px] leading-[1.6] text-[#64748b]">I declare that I am the authorized data subject (or legal representative) and the information supplied in this request form is accurate under the penalty of perjury as specified in the Kenya DPA, 2019.</span>
+                  <input type="checkbox" checked={declaration} onChange={(e) => { setDeclaration(e.target.checked); setErrDecl(false); }} className="mt-[2px] h-[15px] w-[15px] flex-shrink-0 [accent-color:#0a8f28]" />
+                  <span className="font-inter text-[11.5px] leading-[1.6]" style={{ color: errDecl ? "#c1121f" : "#64748b" }}>I declare that I am the authorized data subject (or legal representative) and the information supplied in this request form is accurate under the penalty of perjury as specified in the Kenya DPA, 2019.</span>
                 </label>
                 <div className="flex justify-end">
                   <button type="submit" disabled={sending} className="inline-flex cursor-pointer items-center gap-[8px] rounded-[9px] border-none bg-[#0a8f28] px-[24px] py-[12px] font-inter text-[13px] font-bold text-white hover:bg-[#087a22] disabled:opacity-60">{sending ? "Submitting…" : "Submit Request Form"} <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></button>

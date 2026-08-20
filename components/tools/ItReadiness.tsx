@@ -15,6 +15,21 @@ const ZERO: Record<CounterKey, number> = { computers: 0, laptops: 0, servers: 0,
 export default function ItReadiness() {
   const [counts, setCounts] = useState<Record<CounterKey, number>>({ ...ZERO });
   const [sent, setSent] = useState(false);
+  const [email, setEmail] = useState("");
+  const [consent, setConsent] = useState(false);
+  const [errEmail, setErrEmail] = useState(false);
+  const [errConsent, setErrConsent] = useState(false);
+  const phoneNumeric = (e: React.FormEvent<HTMLInputElement>) => {
+    const el = e.currentTarget;
+    const v = el.value.replace(/[^0-9+ ]/g, "");
+    if (v !== el.value) el.value = v;
+  };
+  function submit() {
+    const okE = email.indexOf("@") > 0;
+    const okC = consent;
+    if (!okE || !okC) { setErrEmail(!okE); setErrConsent(!okC); return; }
+    setSent(true);
+  }
 
   const cap = (k: CounterKey) => FIELDS.find((f) => f.key === k)!.max;
   const step = (k: CounterKey, d: number) => setCounts((c) => ({ ...c, [k]: Math.min(cap(k), Math.max(0, c[k] + d)) }));
@@ -24,7 +39,7 @@ export default function ItReadiness() {
     setCounts((c) => ({ ...c, [k]: n }));
   };
 
-  const { packName, packWhy } = packFor(counts);
+  const { packName, packFit, packWhy } = packFor(counts);
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] items-start gap-[32px] lg:gap-[48px] px-5 sm:px-8 lg:px-[64px] pb-[56px] lg:pb-[104px]">
@@ -37,6 +52,7 @@ export default function ItReadiness() {
             <div className="flex flex-col gap-[6px] rounded-[12px] border border-[#E5E7EB] bg-[#f6f3f2] px-[24px] py-[20px]">
               <span className="font-inter text-[12px] font-semibold tracking-[0.12em] text-[#6e7977]">INDICATIVE FIT</span>
               <span className="font-sora text-[16.5px] lg:text-[20px] font-bold text-[#0f766e]">{packName}</span>
+              {packFit && <span className="font-inter text-[13px] font-semibold text-[#0f766e]">{packFit}</span>}
               <span className="font-inter text-[14px] leading-[1.5] text-[#3e4947]">{packWhy}</span>
             </div>
             <button onClick={() => { setSent(false); setCounts({ ...ZERO }); }} className="cursor-pointer border-none bg-transparent p-0 font-inter text-[14.5px] font-semibold text-[#005c55] [border-bottom:1.5px_solid_#005c55] hover:text-[#006e1b]">Start over</button>
@@ -59,14 +75,15 @@ export default function ItReadiness() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-[14px]">
               <input placeholder="Name *" className={FIELD} />
               <input placeholder="Organisation *" className={FIELD} />
-              <input placeholder="Work email *" type="email" className={FIELD} />
-              <input placeholder="Phone *" type="tel" className={FIELD} />
+              <input placeholder="Work email *" type="email" value={email} onChange={(e) => { setEmail(e.target.value); setErrEmail(false); }} className={FIELD} />
+              <input placeholder="Phone *" type="tel" inputMode="numeric" onInput={phoneNumeric} className={FIELD} />
             </div>
-            <label className="flex cursor-pointer items-start gap-[10px] font-inter text-[13px] leading-[1.5] text-[#3e4947]">
-              <input type="checkbox" className="mt-[2px] [accent-color:#006e1b]" />
+            <label className="flex cursor-pointer items-start gap-[10px] font-inter text-[13px] leading-[1.5]" style={{ color: errConsent ? "#c1121f" : "#3e4947" }}>
+              <input type="checkbox" checked={consent} onChange={(e) => { setConsent(e.target.checked); setErrConsent(false); }} className="mt-[2px] [accent-color:#006e1b]" />
               <span>I consent to Binary One Solutions processing this information under their <Link href={routes.dataProtection} className="text-[#0f766e] [border-bottom:1px_solid_rgba(15,118,110,0.4)] hover:text-[#12897f]">Data Protection Policy</Link>.</span>
             </label>
-            <button onClick={() => setSent(true)} className="cursor-pointer self-start rounded-[12px] border-none bg-[#0f766e] px-[28px] py-[15px] font-inter text-[14.5px] lg:text-[16px] font-semibold text-white shadow-[0_1px_2px_rgba(15,118,110,0.20),0_6px_16px_rgba(15,118,110,0.14)] hover:bg-[#0d655e]">Submit my readiness profile</button>
+            {errEmail && <span className="font-inter text-[12.5px] font-medium leading-[1.5] text-[#c1121f]">Enter a valid email address, including @.</span>}
+            <button onClick={submit} className="cursor-pointer self-start rounded-[12px] border-none bg-[#0f766e] px-[28px] py-[15px] font-inter text-[14.5px] lg:text-[16px] font-semibold text-white shadow-[0_1px_2px_rgba(15,118,110,0.20),0_6px_16px_rgba(15,118,110,0.14)] hover:bg-[#0d655e]">Submit my readiness profile</button>
           </div>
         )}
       </div>
@@ -85,6 +102,7 @@ export default function ItReadiness() {
         <div className="flex flex-col gap-[4px]">
           <span className="font-inter text-[12px] font-medium tracking-[0.08em] text-[#9fbcb7]">INDICATIVE SERVICE PACK</span>
           <span className="font-sora text-[26px] font-extrabold text-[#7cdc79]">{packName}</span>
+          {packFit && <span className="font-inter text-[14px] font-semibold text-[#7cdc79]">{packFit}</span>}
           <span className="font-inter text-[13.5px] leading-[1.55] text-[#9fbcb7]">{packWhy}</span>
         </div>
       </div>
