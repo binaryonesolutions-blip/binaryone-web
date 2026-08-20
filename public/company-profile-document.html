@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Binary One Solutions — Company Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: #0b1b19;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    padding: 22px 16px 40px;
+  }
+  a { color: #005c55; text-decoration: none; }
+  a:hover { color: #006e1b; }
+  img, svg { max-width: 100%; }
+  .page {
+    width: 210mm;
+    height: 297mm;
+    flex-shrink: 0;
+    border-radius: 3px;
+    box-shadow: 0 24px 70px -18px rgba(0,0,0,0.65);
+  }
+  /* Scale the fixed A4 pages down on narrow viewports so they never overflow. */
+  @media (max-width: 840px) {
+    body { padding: 16px 0 32px; }
+    .page { transform: scale(calc((100vw - 24px) / 794)); transform-origin: top center; margin-bottom: calc(297mm * ((100vw - 24px) / 794 - 1)); }
+  }
+</style>
+</head>
+<body>
+<section class="page" data-screen-label="01 Cover" style="position:relative; overflow:hidden; background:#04211e; display:flex; flex-direction:column; font-family:Inter, sans-serif;">
+  <img decoding="sync" fetchpriority="high" src="/assets/about-hero.webp" alt="Binary One Solutions consultants in a Nairobi boardroom" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:70% 40%;">
+  <div style="position:absolute; inset:0; background:radial-gradient(ellipse 78% 40% at 66% 30%, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.04) 44%, rgba(4,33,30,0) 74%);"></div>
+  <div style="position:absolute; inset:0; background:radial-gradient(ellipse 62% 58% at 104% 66%, rgba(56,224,196,0.07) 0%, rgba(56,224,196,0.02) 44%, rgba(4,33,30,0) 70%), radial-gradient(ellipse 58% 46% at -8% 28%, rgba(255,255,255,0.06) 0%, rgba(4,33,30,0) 68%);"></div>
+  <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,20,19,0.20) 0%, rgba(10,20,19,0.08) 13%, rgba(10,20,19,0.12) 34%, rgba(4,33,30,0.27) 52%, rgba(4,33,30,0.72) 68%, rgba(4,33,30,0.92) 82%, rgba(4,33,30,0.97) 100%);"></div>
+
+  <div style="position:absolute; inset:0; background:linear-gradient(138deg, #04211e 0%, rgba(4,33,30,0.97) 11%, rgba(4,33,30,0.78) 20%, rgba(4,33,30,0.34) 30%, rgba(4,33,30,0.10) 37%, rgba(4,33,30,0) 44%);"></div>
+
+  <div style="position:relative; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:44px 42px 0;">
+    <img decoding="sync" fetchpriority="high" src="/assets/b1s-logo-dark-crisp.webp" alt="Binary One Solutions" style="height:48px; width:auto; display:block; image-rendering:-webkit-optimize-contrast;">
+    <span style="font:700 12.5px 'JetBrains Mono', monospace; letter-spacing:0.24em; color:#38e0c4;">NAIROBI · EAST AFRICA</span>
+  </div>
+
+  <div style="position:relative; flex:1; display:flex; flex-direction:column; justify-content:flex-end; padding:0 42px 46px;">
+    <span style="display:inline-flex; align-items:center; gap:11px; margin-bottom:18px;"><span style="width:9px; height:9px; border-radius:50%; background:#9EFF5A; box-shadow:0 0 8px rgba(158,255,90,0.95), 0 0 18px rgba(158,255,90,0.55); flex-shrink:0;"></span><span style="font:700 14.5px 'JetBrains Mono', monospace; letter-spacing:0.24em; color:#38e0c4;">DIGITAL TRANSFORMATION SOLUTIONS</span></span>
+    <h1 style="margin:0 0 22px; font:700 44px/1.12 Sora, sans-serif; letter-spacing:-0.025em; color:#FFFFFF; text-wrap:pretty;">Your IT should drive the business — <span style="color:#9EFF5A;">not just keep the lights on.</span></h1>
+    <p style="margin:0 0 30px; font:400 16.5px/1.6 Inter, sans-serif; color:#c7d0dc; max-width:620px; text-wrap:pretty;">Managed IT, ERP governance and digital products for organisations that need structure, continuity and measurable business value from technology.</p>
+    <div style="display:flex; flex-wrap:wrap; gap:9px;">
+      <span style="font:600 12px Inter, sans-serif; color:#d9f5ef; border:2px solid rgba(56,224,196,0.45); border-radius:999px; padding:7px 15px;">Managed IT &amp; Virtual CIO</span>
+      <span style="font:600 12px Inter, sans-serif; color:#d9f5ef; border:2px solid rgba(56,224,196,0.45); border-radius:999px; padding:7px 15px;">Vendor-neutral ERP Advisory</span>
+      <span style="font:600 12px Inter, sans-serif; color:#d9f5ef; border:2px solid rgba(56,224,196,0.45); border-radius:999px; padding:7px 15px;">NAWIRI Digital Loyalty</span>
+      <span style="font:600 12px Inter, sans-serif; color:#d9f5ef; border:2px solid rgba(56,224,196,0.45); border-radius:999px; padding:7px 15px;">Agentic AI Workflows</span>
+      <span style="font:600 12px Inter, sans-serif; color:#d9f5ef; border:2px solid rgba(56,224,196,0.45); border-radius:999px; padding:7px 15px;">Custom Software</span>
+    </div>
+  </div>
+
+  <div style="position:relative; display:flex; flex-direction:column; align-items:flex-end; text-align:right; gap:14px; padding:0 42px 44px;">
+    <span style="font:600 13px Inter, sans-serif; color:#7cdc79; letter-spacing:0.01em;">Digitally Transforming leading brands since 2014</span>
+    <span style="display:block; width:74px; height:2px; background:linear-gradient(90deg, #9EFF5A 0%, #38e0c4 100%); border-radius:2px;"></span>
+    <span style="font:500 12.5px/1.7 Inter, sans-serif; color:#c7d0dc;">Binary One Solutions Ltd <span style="color:#9EFF5A; font-size:19px; line-height:0; vertical-align:-2px;">·</span> +254 787 990 220 <span style="color:#38e0c4; font-size:19px; line-height:0; vertical-align:-2px;">·</span> info@binaryone.co.ke<br><svg viewBox="0 0 24 24" style="width:12px; height:12px; margin-right:5px; vertical-align:-1px; opacity:0.85;" fill="none" stroke="#38e0c4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>St Charles Lwanga House, Ngong Road, Nairobi <span style="color:#9EFF5A; font-size:19px; line-height:0; vertical-align:-2px;">·</span> www.binaryone.co.ke</span>
+  </div>
+</section>
+
+<section class="page" data-screen-label="02 Capability" style="position:relative; overflow:hidden; background:#F8FAFB; display:flex; flex-direction:column; padding:38px 42px 34px; font-family:Inter, sans-serif; box-sizing:border-box;">
+  <div style="margin-bottom:16px;">
+    <span style="display:block; font:700 12.5px 'JetBrains Mono', monospace; letter-spacing:0.22em; color:#17a892; margin-bottom:11px;">CORE CONSULTING SERVICES</span>
+    <h2 style="margin:0 0 9px; font:700 27px/1.16 Sora, sans-serif; letter-spacing:-0.022em; color:#1c1b1b; text-wrap:pretty;">Governance-grade IT, without the weight of a full internal department.</h2>
+    <span style="display:block; font:400 12.5px/1.55 Inter, sans-serif; color:#6e7977; max-width:660px; text-wrap:pretty;">Two named people on every engagement. No faceless ticket queue, no commission-driven advice.</span>
+  </div>
+
+  <div style="display:flex; flex-direction:column; gap:32px; flex:1; min-height:0;">
+    <div style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:16px; overflow:hidden; display:flex; flex-direction:column; flex-shrink:0; box-shadow:0 1px 2px rgba(6,35,30,0.04), 0 14px 34px -26px rgba(6,35,30,0.4);">
+      <div style="position:relative; height:58px; flex-shrink:0; overflow:hidden; background:#0b3d38;">
+        <img decoding="sync" fetchpriority="high" src="/assets/managed-it-hero-v4.webp" alt="Managed IT operations" style="width:100%; height:100%; object-fit:cover; display:block;">
+        <span style="position:absolute; left:20px; bottom:14px; font:700 12px 'JetBrains Mono', monospace; letter-spacing:0.2em; color:#FFFFFF; border:2px solid transparent; border-radius:7px; padding:6px 9px; background:linear-gradient(rgba(2,20,18,0.62), rgba(2,20,18,0.62)) padding-box, linear-gradient(90deg, #0ea5a0 0%, #38e0c4 45%, #9EFF5A 100%) border-box;">MANAGED IT SERVICES</span>
+      </div>
+      <div style="padding:6px 18px 6px; display:flex; flex-direction:column; gap:6px; flex:1; min-height:0;">
+        <div style="display:grid; grid-template-columns:1.3fr 1fr; gap:20px; align-items:start;">
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <h3 style="margin:0; font:700 19.5px/1.25 Sora, sans-serif; letter-spacing:-0.015em; color:#1c1b1b;">One brain. One pair of hands. Both accountable.</h3>
+            <p style="margin:0; font:400 12.8px/1.6 Inter, sans-serif; color:#3e4947; text-align:justify; hyphens:auto;">A structured Managed IT service led by a Virtual CIO and delivered through a named IT Operations Lead — service desk discipline, on-site support and practical technology governance for medium-sized and larger organisations. Service packs scale to your budget and user count.</p>
+            <p style="margin:0; font:400 10.8px/1.45 Inter, sans-serif; color:#3e4947; text-align:justify;">Strategic IT Audit · IT help desk · on-site support · cybersecurity, firewall &amp; endpoint · Microsoft 365 &amp; cloud · network &amp; connectivity · backup &amp; disaster recovery · asset &amp; licence management · specialist engineers on call · Level 1 ERP · Agentic AI · 99.99% uptime</p>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <div style="background:#EFF9F7; border:1px solid #cfe8df; border-radius:11px; padding:11px 13px; display:flex; gap:11px; align-items:flex-start;">
+              <div style="width:52px; height:52px; border-radius:50%; flex-shrink:0; border:1px solid #0f766e; overflow:hidden;"><img decoding="sync" fetchpriority="high" src="/assets/humphrey-kirui-v2.webp" alt="Humphrey Kirui, Virtual CIO" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
+              <div>
+                <span style="display:block; font:700 12.5px Sora, sans-serif; color:#0b3d38; margin-bottom:4px;">Virtual CIO</span>
+                <span style="display:block; font:400 11.4px/1.5 Inter, sans-serif; color:#3e4947;">Owns the roadmap, leads IT Audit gaps into strategic management reviews, governs IT Team, vendors, recommends budgets.</span>
+              </div>
+            </div>
+            <div style="background:#EFF9F7; border:1px solid #cfe8df; border-radius:11px; padding:11px 13px; display:flex; gap:11px; align-items:flex-start;">
+              <div style="width:52px; height:52px; border-radius:50%; flex-shrink:0; border:1px solid #0f766e; overflow:hidden;"><img decoding="sync" fetchpriority="high" src="/assets/eugene-hillary.webp" alt="Eugene Hillary, IT Operations Lead" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
+              <div>
+                <span style="display:block; font:700 12.5px Sora, sans-serif; color:#0b3d38; margin-bottom:4px;">IT Operations Lead</span>
+                <span style="display:block; font:400 11.4px/1.5 Inter, sans-serif; color:#3e4947;">Runs helpdesk, tickets, site visits, SLAs and escalation, Agentic AI deployment, audit remediation, CyberSec &amp; Level 1 ERP support</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p style="margin:0; flex-shrink:0; margin-top:16px; font:600 11.6px/1.4 Sora, sans-serif; color:#0f766e; text-wrap:pretty;">Break-fix is not a strategy. We replace firefighting with a Virtual CIO who owns the roadmap, a named Operations Lead who owns every ticket, and AI-forward tooling that sees failure coming before you do.</p>
+        <span style="flex-shrink:0; align-self:flex-start; margin-top:6px; font:600 11px Inter, sans-serif; color:#0b3d38; background:#d9f5ef; border:1px solid rgba(15,118,110,0.35); border-radius:999px; padding:5px 12px;"><span style="font-weight:700;">First things First:</span> COBIT-driven IT Audit to formulate your Strategic IT Roadmap</span>
+        <div style="flex-shrink:0; display:flex; flex-wrap:nowrap; gap:6px;">
+          <span style="font:500 10.2px Inter, sans-serif; color:#0f766e; background:#EFF9F7; border-radius:999px; padding:5px 10px; white-space:nowrap;">Service desk &amp; ticketing</span>
+          <span style="font:500 10.2px Inter, sans-serif; color:#0f766e; background:#EFF9F7; border-radius:999px; padding:5px 10px; white-space:nowrap;">Cybersec Assessments</span>
+          <span style="font:500 10.2px Inter, sans-serif; color:#0f766e; background:#EFF9F7; border-radius:999px; padding:5px 10px; white-space:nowrap;">Microsoft 365 &amp; cloud</span>
+          <span style="font:500 10.2px Inter, sans-serif; color:#0f766e; background:#EFF9F7; border-radius:999px; padding:5px 10px; white-space:nowrap;">Networks &amp; data centre</span>
+          <span style="font:500 10.2px Inter, sans-serif; color:#0f766e; background:#EFF9F7; border-radius:999px; padding:5px 11px; white-space:nowrap;">Agentic AI</span>
+        </div>
+        <div style="flex-shrink:0; display:flex; align-items:center; justify-content:space-between; gap:14px; border-top:1px solid #E5E7EB; padding-top:11px;">
+            <img decoding="sync" fetchpriority="high" src="/assets/logo-microsoft365.webp" alt="Microsoft 365" style="height:22px; max-width:100%; width:auto; object-fit:contain;">
+            <img decoding="sync" fetchpriority="high" src="/assets/logo-gworkspace.webp" alt="Google Workspace" style="height:22px; max-width:100%; width:auto; object-fit:contain;">
+            <img decoding="sync" fetchpriority="high" src="/assets/vendor-odoo.webp" alt="Odoo" style="height:18px; max-width:100%; width:auto; object-fit:contain;">
+            <img decoding="sync" fetchpriority="high" src="/assets/logo-claude.webp" alt="Claude" style="height:22px; max-width:100%; width:auto; object-fit:contain;">
+            <img decoding="sync" fetchpriority="high" src="/assets/logo-n8n.webp" alt="n8n" style="height:22px; max-width:100%; width:auto; object-fit:contain;">
+            <img decoding="sync" fetchpriority="high" src="/assets/logo-openclaw.webp" alt="OpenClaw" style="height:30px; max-width:100%; width:auto; object-fit:contain;">
+            <img decoding="sync" fetchpriority="high" src="/assets/logo-sophos.webp" alt="Sophos" style="height:27px; max-width:100%; width:auto; object-fit:contain;">
+            <img decoding="sync" fetchpriority="high" src="/assets/logo-hp.webp" alt="HP" style="height:22px; max-width:100%; width:auto; object-fit:contain;">
+            <img decoding="sync" fetchpriority="high" src="/assets/logo-yeastar.webp" alt="Yeastar" style="height:18px; max-width:100%; width:auto; object-fit:contain;">
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:16px; overflow:hidden; display:flex; flex-direction:column; flex-shrink:0; box-shadow:0 1px 2px rgba(6,35,30,0.04), 0 14px 34px -26px rgba(6,35,30,0.4);">
+      <div style="display:flex; flex:1; min-height:0;">
+      <div style="position:relative; width:172px; flex-shrink:0; overflow:hidden; background:#0b3d38;">
+        <img decoding="sync" fetchpriority="high" src="/assets/erp-advisory-hero.webp" alt="ERP advisers reviewing process maps and dashboards with a client team" style="width:100%; height:100%; object-fit:cover; object-position:52% 46%; display:block;">
+        <span style="position:absolute; left:12px; top:12px; font:700 12.5px 'JetBrains Mono', monospace; letter-spacing:0.14em; color:#FFFFFF; border:2px solid transparent; border-radius:7px; padding:6px 10px; background:linear-gradient(rgba(2,20,18,0.62), rgba(2,20,18,0.62)) padding-box, linear-gradient(90deg, #0ea5a0 0%, #38e0c4 45%, #9EFF5A 100%) border-box;">ERP CONSULTING</span>
+      </div>
+      <div style="padding:6px 18px 6px; display:flex; flex-direction:column; gap:6px; flex:1; min-height:0;">
+        <div style="display:grid; grid-template-columns:1.3fr 1fr; gap:20px; align-items:start;">
+          <div style="display:flex; flex-direction:column; gap:11px;">
+            <h3 style="margin:0; font:700 19.5px/1.25 Sora, sans-serif; letter-spacing:-0.015em; color:#1c1b1b;">We are independent advisors, not software sales representatives.</h3>
+            <p style="margin:0; font:400 12.8px/1.6 Inter, sans-serif; color:#3e4947; text-align:justify; hyphens:auto;">Most ERP failures are decided before go-live, in the scoping and vendor selection. We help you choose the right platform, document your actual business processes, structure your RFP, evaluate vendor proposals and govern the implementation team — with process continuity, data integrity and cost control as the measure.</p>
+          </div>
+          <div style="background:#f6f3f2; border:1px solid #E5E7EB; border-radius:13px; padding:11px 12px;">
+            <div style="display:flex; align-items:flex-start; gap:10px; margin-bottom:11px;">
+              <svg viewBox="0 0 24 24" style="width:30px; height:30px; flex-shrink:0;"><path d="M12 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10M9.5 12.5 8 21l4-2.5L16 21l-1.5-8.5" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              <div>
+                <span style="display:block; font:700 13px Sora, sans-serif; color:#1c1b1b; margin-bottom:2px;">Integrity Guarantee</span>
+                <span style="display:block; font:400 11px Inter, sans-serif; color:#6e7977;">Our advice is never incentivised</span>
+              </div>
+            </div>
+            <p style="margin:0 0 11px; font:400 11px/1.55 Inter, sans-serif; color:#3e4947; text-align:justify; hyphens:auto; padding-left:10px;">Many implementation agencies recommend software based on licensing sales overrides. Binary One represents you, the buyer, to keep vendors honest, verify project scope milestones, and control ERP total cost of ownership (TCO).</p>
+            <div style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:10px; padding:10px 12px; display:flex; align-items:center; gap:9px;">
+              <svg viewBox="0 0 24 24" style="width:17px; height:17px; flex-shrink:0;"><path d="M12 3a9 9 0 1 0 9 9 9 9 0 0 0-9-9M8.5 12l2.5 2.5 4.5-5" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              <span style="font:700 11.5px/1.35 Sora, sans-serif; color:#1c1b1b;">100% Vendor-Neutral Advisory</span>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:auto; flex-shrink:0;">
+          <span style="display:block; font:700 9.5px 'JetBrains Mono', monospace; letter-spacing:0.2em; color:#6e7977; margin-bottom:13px;">PLATFORMS WE GOVERN — NOT RESELL</span>
+          <div style="display:flex; align-items:center; justify-content:flex-start; gap:30px; flex-wrap:nowrap; padding-top:4px;">
+            <img decoding="sync" fetchpriority="high" src="/assets/vendor-odoo.webp" alt="Odoo" style="height:20px; width:auto; object-fit:contain;">
+            <img decoding="sync" fetchpriority="high" src="/assets/vendor-sap.webp" alt="SAP" style="height:20px; width:auto; object-fit:contain;">
+            <img decoding="sync" fetchpriority="high" src="/assets/vendor-dynamics.webp" alt="Microsoft Dynamics" style="height:30px; width:auto; object-fit:contain; image-rendering:auto;">
+            <img decoding="sync" fetchpriority="high" src="/assets/vendor-sage.webp" alt="Sage" style="height:20px; width:auto; object-fit:contain;">
+            <span style="display:inline-flex; flex-direction:column; align-items:center; gap:3px;">
+              <img decoding="sync" fetchpriority="high" src="/assets/vendor-clio.webp" alt="Clio LegalTech" style="height:20px; width:auto; object-fit:contain;">
+              <span style="font:700 9px Inter, sans-serif; color:#1c1b1b; letter-spacing:0.02em;">LegalTech</span>
+            </span>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div style="margin-top:48px; background:#f1f8f5; border:1px solid #cfe8df; border-radius:14px; padding:12px 16px; flex-shrink:0;">
+    <div style="display:flex; align-items:center; justify-content:center; gap:18px;">
+      <span style="font:700 10px 'JetBrains Mono', monospace; letter-spacing:0.22em; color:#0c3b33;">OUR AIM-IT METHODOLOGY</span>
+      <span style="font:700 10px 'JetBrains Mono', monospace; letter-spacing:0.18em; color:#0f766e;">ASSESS · IMPLEMENT · MANAGE · IMPROVE — IT</span>
+    </div>
+    </div>
+  
+</section>
+
+<section class="page" data-screen-label="03 Digital Products" style="position:relative; overflow:hidden; background:#071e1b; display:flex; flex-direction:column; padding:38px 42px 34px; font-family:Inter, sans-serif; box-sizing:border-box;">
+  <div style="position:absolute; inset:0; background-image:linear-gradient(rgba(56,224,196,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(56,224,196,0.045) 1px, transparent 1px); background-size:34px 34px;"></div>
+
+  <div style="position:relative; margin-bottom:20px;">
+    <span style="display:inline-block; font:700 12px 'JetBrains Mono', monospace; letter-spacing:0.2em; color:#FFFFFF; border:2px solid transparent; border-radius:7px; padding:6px 9px; margin-bottom:11px; background:linear-gradient(rgba(2,20,18,0.62), rgba(2,20,18,0.62)) padding-box, linear-gradient(90deg, #0ea5a0 0%, #38e0c4 45%, #9EFF5A 100%) border-box;">DIGITAL PRODUCTS &amp; PLATFORMS</span>
+    <h2 style="margin:0 0 10px; font:700 30px/1.16 Sora, sans-serif; letter-spacing:-0.022em; color:#FFFFFF; text-wrap:pretty;">Products built for real market moments.</h2>
+    <span style="display:block; font:400 12.5px/1.55 Inter, sans-serif; color:#c7d0dc; max-width:none; white-space:nowrap;">Scoped, governed, measurable and practical — packaged from years of delivery experience.</span>
+  </div>
+
+  <div style="position:relative; display:flex; flex-direction:column; gap:24px; flex:1; min-height:0;">
+    <div style="background:rgba(255,255,255,0.045); border:1px solid rgba(56,224,196,0.28); border-radius:16px; overflow:hidden; display:flex; flex:1; min-height:0;">
+      <div style="width:240px; flex-shrink:0; overflow:hidden; background:#0b3d38;">
+        <img decoding="sync" fetchpriority="high" src="/assets/nawiri-lastmile-v3.webp" alt="A shopper and a shop attendant scanning NAWIRI loyalty points on their phones" style="width:100%; height:100%; object-fit:cover; object-position:50% 44%; display:block;">
+      </div>
+      <div style="padding:12px 20px 11px; display:flex; flex-direction:column; gap:6px; flex:1; min-width:0;">
+        <div style="display:flex; align-items:flex-start; gap:13px;">
+          <img decoding="sync" fetchpriority="high" src="/assets/nawiri-logo.webp" alt="NAWIRI" style="height:46px; width:auto; flex-shrink:0; object-fit:contain; margin-top:1px;">
+          <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:0;">
+            <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:14px;">
+              <h3 style="margin:0; font:700 15.5px/1.2 Sora, sans-serif; letter-spacing:-0.015em; color:#FFFFFF; text-wrap:pretty;">NAWIRI Digital Loyalty — <span style="color:#9EFF5A;">Own the Last Mile.</span></h3>
+              <span style="display:flex; flex-direction:column; align-items:flex-end; gap:2px; flex-shrink:0;">
+                <span style="font:700 17px Sora, sans-serif; color:#9EFF5A; line-height:1;">30%+</span>
+                <span style="font:600 8.4px/1.25 'JetBrains Mono', monospace; letter-spacing:0.11em; color:#9EFF5A; text-transform:uppercase; text-align:right;">Sales revenue<br>in 6 months</span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <p style="margin:0; font:400 12.2px/1.6 Inter, sans-serif; color:#c7d0dc; text-wrap:pretty;">A mobile-first loyalty platform connecting manufacturers directly to the painters, mechanics, fundis, farmers, shopkeepers and households who actually influence what gets bought.</p>
+        <div style="display:flex; flex-direction:column; gap:6px; margin-top:2px;">
+          <span style="font:500 11.4px/1.45 Inter, sans-serif; color:#d9f5ef;">Phone-based points at the point of consumption</span>
+          <span style="font:500 11.4px/1.45 Inter, sans-serif; color:#d9f5ef;">Instant M-PESA, airtime and voucher rewards</span>
+          <span style="font:500 11.4px/1.45 Inter, sans-serif; color:#d9f5ef;">Anti-counterfeit verification and heat-map analytics</span>
+        </div>
+        <span style="margin-top:auto; padding-top:8px; font:400 10.5px/1.45 Inter, sans-serif; color:#94A3B8; border-top:1px solid rgba(255,255,255,0.1);">Behind Crown Paints Team Kubwa and Isuzu MAXIT. White-labelled SaaS — we take no cut of your rewards budget, and you own your data.</span>
+      </div>
+    </div>
+
+    <div style="background:rgba(255,255,255,0.045); border:1px solid rgba(56,224,196,0.28); border-radius:16px; overflow:hidden; display:flex; flex:1; min-height:0;">
+      <div style="width:206px; flex-shrink:0; overflow:hidden; background:#0b3d38;">
+        <img decoding="sync" fetchpriority="high" src="/assets/agentic-neural.webp" alt="Agentic AI workflows" style="width:100%; height:100%; object-fit:cover; display:block;">
+      </div>
+      <div style="padding:12px 20px 11px; display:flex; flex-direction:column; gap:6px; flex:1; min-width:0;">
+        <div style="display:flex; align-items:baseline; justify-content:space-between; gap:10px;">
+          <span style="font:700 11.5px 'JetBrains Mono', monospace; letter-spacing:0.2em; color:#38e0c4;">AGENTIC AI WORKFLOWS</span>
+          <span style="font:700 17px Sora, sans-serif; color:#38e0c4;">3–6 wks</span>
+        </div>
+        <h3 style="margin:0; font:700 17.5px/1.25 Sora, sans-serif; letter-spacing:-0.015em; color:#FFFFFF;">AI that performs tasks, not just answers questions.</h3>
+        <p style="margin:0; font:400 12.2px/1.6 Inter, sans-serif; color:#c7d0dc; text-wrap:pretty;">Cognitive agents deployed into your Odoo or SAP database layers. They cross-check files, audit bills and reconcile records in the background, so your team can focus on growth.</p>
+        <div style="display:flex; flex-direction:column; gap:6px; margin-top:2px;">
+          <span style="font:500 11.4px/1.45 Inter, sans-serif; color:#d9f5ef;">Invoice capture and reconciliation</span>
+          <span style="font:500 11.4px/1.45 Inter, sans-serif; color:#d9f5ef;">Support triage and report generation</span>
+          <span style="font:500 11.4px/1.45 Inter, sans-serif; color:#d9f5ef;">Scoped and governed on your existing systems</span>
+        </div>
+        <span style="margin-top:auto; padding-top:10px; font:400 10.6px/1.5 Inter, sans-serif; color:#94A3B8; border-top:1px solid rgba(255,255,255,0.1);">Human-in-the-loop on every high-stakes step. No autonomous money movement, external communication or data deletion.</span>
+      </div>
+    </div>
+
+    <div style="background:rgba(255,255,255,0.045); border:1px solid rgba(56,224,196,0.28); border-radius:16px; overflow:hidden; display:flex; flex:1; min-height:0;">
+      <div style="width:206px; flex-shrink:0; overflow:hidden; background:#0b3d38;">
+        <img decoding="sync" fetchpriority="high" src="/assets/custom-software-hero.webp" alt="Custom software engineering" style="width:100%; height:100%; object-fit:cover; display:block;">
+      </div>
+      <div style="padding:12px 20px 11px; display:flex; flex-direction:column; gap:6px; flex:1; min-width:0;">
+        <div style="display:flex; align-items:baseline; justify-content:space-between; gap:10px;">
+          <span style="font:700 11.5px 'JetBrains Mono', monospace; letter-spacing:0.2em; color:#38e0c4;">CUSTOM SOFTWARE</span>
+          <span style="font:700 17px Sora, sans-serif; color:#38e0c4;">Build</span>
+        </div>
+        <h3 style="margin:0; font:700 17.5px/1.25 Sora, sans-serif; letter-spacing:-0.015em; color:#FFFFFF;">Custom software creates unfair advantages.</h3>
+        <p style="margin:0; font:400 12.2px/1.6 Inter, sans-serif; color:#c7d0dc; text-wrap:pretty;">We design, compile and support high-performing custom applications, secure integrations and mobile platforms tailored for organisations with unique operating models.</p>
+        <div style="display:flex; flex-direction:column; gap:6px; margin-top:2px;">
+          <span style="font:500 11.4px/1.45 Inter, sans-serif; color:#d9f5ef;">Enterprise web platforms and mobile apps</span>
+          <span style="font:500 11.4px/1.45 Inter, sans-serif; color:#d9f5ef;">Secure API and system integrations</span>
+          <span style="font:500 11.4px/1.45 Inter, sans-serif; color:#d9f5ef;">Open standards — no legacy bloat, no vendor lock-in</span>
+        </div>
+        <span style="margin-top:auto; padding-top:10px; font:400 10.6px/1.5 Inter, sans-serif; color:#94A3B8; border-top:1px solid rgba(255,255,255,0.1);">We start with a Build vs Buy framework. If the honest answer is "buy, don't build", we will tell you so.</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="position:relative; margin-top:30px; display:flex; flex-direction:column; align-items:center; gap:5px; background:rgba(56,224,196,0.09); border:1px solid rgba(56,224,196,0.3); border-radius:13px; padding:9px 18px; flex-shrink:0;">
+    <span style="font:600 12.4px/1.4 Sora, sans-serif; color:#FFFFFF; white-space:nowrap;">24 Hour Prototyping <span style="color:#9EFF5A; padding:0 9px;">·</span> Digital Readiness Diagnostic <span style="color:#9EFF5A; padding:0 9px;">·</span> Loyalty Programme Maturity Self-Score</span>
+    <a href="https://www.binaryone.co.ke" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; font:600 13.5px Inter, sans-serif; color:#38e0c4; white-space:nowrap; text-decoration:none;"><svg viewBox="0 0 24 24" style="width:16px; height:16px; flex-shrink:0;"><circle cx="12" cy="12" r="9" fill="none" stroke="#38e0c4" stroke-width="1.4"></circle><ellipse cx="12" cy="12" rx="4" ry="9" fill="none" stroke="#38e0c4" stroke-width="1.1"></ellipse><path d="M3 12h18M4.6 7h14.8M4.6 17h14.8M12 3v18" fill="none" stroke="#38e0c4" stroke-width="1.1" stroke-linecap="round"></path></svg><span>binaryone.co.ke</span></a>
+  </div>
+</section>
+
+<section class="page" data-screen-label="04 Back cover" style="position:relative; overflow:hidden; background:#F8FAFB; display:flex; flex-direction:column; padding:38px 42px 0; font-family:Inter, sans-serif; box-sizing:border-box;">
+  <div style="margin-bottom:18px;">
+    <span style="display:block; font:700 12.5px 'JetBrains Mono', monospace; letter-spacing:0.22em; color:#17a892; margin-bottom:11px;">IN THEIR WORDS</span>
+    <h2 style="margin:0; font:700 28px/1.16 Sora, sans-serif; letter-spacing:-0.022em; color:#1c1b1b; text-wrap:pretty;">Trusted by organisations that cannot afford technology confusion.</h2>
+  </div>
+
+  <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:20px;">
+    <figure style="margin:0; background:#FFFFFF; border:1px solid rgba(15,118,110,0.16); border-radius:15px; padding:12px 19px; display:flex; align-items:center; gap:20px;">
+      <blockquote style="margin:0; flex:1; min-width:0; font:600 14px/1.5 Sora, sans-serif; letter-spacing:-0.01em; color:#12302b; text-wrap:pretty;">We handed our whole IT operation to Binary One. Running costs down, standards world-class.</blockquote>
+      <div style="display:flex; align-items:center; gap:11px; width:238px; flex-shrink:0; border-left:1px solid #E5E7EB; padding-left:18px;">
+        <img decoding="sync" fetchpriority="high" src="/assets/istc-mark.webp" alt="International Safety &amp; Training Centre" style="height:34px; width:auto; max-width:38px; object-fit:contain; flex-shrink:0;">
+        <span style="display:flex; flex-direction:column; gap:1px;"><span style="font:700 11.5px Sora, sans-serif; color:#1c1b1b;">Mumbi Kariuki</span><span style="font:400 10.4px Inter, sans-serif; color:#6e7977;">Director, International Safety &amp; Training Centre</span></span>
+      </div>
+    </figure>
+    <figure style="margin:0; background:#FFFFFF; border:1px solid rgba(15,118,110,0.16); border-radius:15px; padding:12px 19px; display:flex; align-items:center; gap:20px;">
+      <blockquote style="margin:0; flex:1; min-width:0; font:600 14px/1.5 Sora, sans-serif; letter-spacing:-0.01em; color:#12302b; text-wrap:pretty;">Odoo done right — ERP costs cut by half, with accounts, production and POS finally in step.</blockquote>
+      <div style="display:flex; align-items:center; gap:11px; width:238px; flex-shrink:0; border-left:1px solid #E5E7EB; padding-left:18px;">
+        <img decoding="sync" fetchpriority="high" src="/assets/royal-oven-logo.webp" alt="Royal Oven Tanzania" style="height:34px; width:auto; max-width:32px; object-fit:contain; flex-shrink:0;">
+        <span style="display:flex; flex-direction:column; gap:1px;"><span style="font:700 11.5px Sora, sans-serif; color:#1c1b1b;">Patrick Meme</span><span style="font:400 10.4px Inter, sans-serif; color:#6e7977;">General Manager, Royal Oven Tanzania</span></span>
+      </div>
+    </figure>
+    <figure style="margin:0; background:#FFFFFF; border:1px solid rgba(15,118,110,0.16); border-radius:15px; padding:12px 19px; display:flex; align-items:center; gap:20px;">
+      <blockquote style="margin:0; flex:1; min-width:0; font:600 14px/1.5 Sora, sans-serif; letter-spacing:-0.01em; color:#12302b; text-wrap:pretty;">NAWIRI is not a tool, it is revenue. It puts us straight in front of the mechanics who move our parts.</blockquote>
+      <div style="display:flex; align-items:center; gap:11px; width:238px; flex-shrink:0; border-left:1px solid #E5E7EB; padding-left:18px;">
+        <img decoding="sync" fetchpriority="high" src="/assets/isuzu-logo-trim.webp" alt="Isuzu East Africa" style="height:20px; width:auto; max-width:60px; object-fit:contain; flex-shrink:0;">
+        <span style="display:flex; flex-direction:column; gap:1px;"><span style="font:700 11.5px Sora, sans-serif; color:#1c1b1b;">Peris Temba</span><span style="font:400 10.4px Inter, sans-serif; color:#6e7977;">Parts Marketing Executive, Isuzu East Africa</span></span>
+      </div>
+    </figure>
+  </div>
+
+  
+  <div style="border-top:1px solid #E5E7EB; border-bottom:1px solid #E5E7EB; padding:16px 0; margin-bottom:20px;">
+    <span style="display:block; font:700 12.5px 'JetBrains Mono', monospace; letter-spacing:0.22em; color:#0b3d38; margin-bottom:14px;">SELECT CLIENTS</span>
+    <div style="display:flex; flex-direction:column; gap:16px; max-width:690px; margin:0 auto;">
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:14px 34px;">
+      <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+        <img decoding="sync" fetchpriority="high" src="/assets/isuzu-logo-trim.webp" alt="Isuzu East Africa" style="height:26px; max-width:100%; width:auto; object-fit:contain;">
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+        <img decoding="sync" fetchpriority="high" src="/assets/vivo-logo.webp" alt="Vivo Fashion Group" style="height:28px; max-width:100%; width:auto; object-fit:contain;">
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+        <img decoding="sync" fetchpriority="high" src="/assets/logo-ahmednasir.webp" alt="Ahmednasir Abdullahi Advocates" style="height:40px; max-width:100%; width:auto; object-fit:contain;">
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+        <img decoding="sync" fetchpriority="high" src="/assets/kn-law-logo.webp" alt="KN Law LLP" style="height:34px; max-width:100%; width:auto; object-fit:contain;">
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+        <img decoding="sync" fetchpriority="high" src="/assets/kelin-logo.webp" alt="KELIN Kenya" style="height:30px; max-width:100%; width:auto; object-fit:contain;">
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+        <img decoding="sync" fetchpriority="high" src="/assets/pembe-logo.webp" alt="PEMBE Millers" style="height:34px; max-width:100%; width:auto; object-fit:contain;">
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+        <img decoding="sync" fetchpriority="high" src="/assets/mogo-logo.webp" alt="MOGO Kenya" style="height:30px; max-width:100%; width:auto; object-fit:contain;">
+      </div>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(8, 1fr); gap:10px; align-items:start; justify-items:center;">
+      <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+        <img decoding="sync" fetchpriority="high" src="/assets/maakiou-logo.webp" alt="Maakiou Coffee Estate" style="height:34px; max-width:100%; width:auto; object-fit:contain;">
+        <span style="font:600 8.2px/1.35 Inter, sans-serif; color:#6e7977; letter-spacing:0.07em; text-transform:uppercase; text-align:center;">Maakiou Coffee Estate</span>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+        <img decoding="sync" fetchpriority="high" src="/assets/rhombus-logo.webp" alt="Rhombus Concrete" style="height:34px; max-width:100%; width:auto; object-fit:contain;">
+        <span style="font:600 8.2px/1.35 Inter, sans-serif; color:#6e7977; letter-spacing:0.07em; text-transform:uppercase; text-align:center;">Rhombus Concrete</span>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+        <img decoding="sync" fetchpriority="high" src="/assets/kmc-logo.webp" alt="Kenya Meat Commission" style="height:34px; max-width:100%; width:auto; object-fit:contain;">
+        <span style="font:600 8.2px/1.35 Inter, sans-serif; color:#6e7977; letter-spacing:0.07em; text-transform:uppercase; text-align:center;">Kenya Meat Commission</span>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+        <img decoding="sync" fetchpriority="high" src="/assets/pacific-petroleum-mark.webp" alt="Pacific Petroleum" style="height:37px; max-width:100%; width:auto; object-fit:contain;">
+        <span style="font:600 8.2px/1.35 Inter, sans-serif; color:#6e7977; letter-spacing:0.07em; text-transform:uppercase; text-align:center;">Pacific Petroleum</span>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+        <img decoding="sync" fetchpriority="high" src="/assets/tosha-energy-logo.webp" alt="Tosha Energy" style="height:37px; max-width:100%; width:auto; object-fit:contain;">
+        <span style="font:600 8.2px/1.35 Inter, sans-serif; color:#6e7977; letter-spacing:0.07em; text-transform:uppercase; text-align:center;">Tosha Energy</span>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+        <img decoding="sync" fetchpriority="high" src="/assets/royal-oven-logo.webp" alt="Royal Oven Tanzania" style="height:38px; max-width:100%; width:auto; object-fit:contain;">
+        <span style="font:600 8.2px/1.35 Inter, sans-serif; color:#6e7977; letter-spacing:0.07em; text-transform:uppercase; text-align:center;">Royal Oven Tanzania</span>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+        <img decoding="sync" fetchpriority="high" src="/assets/nairobi-county-logo.webp" alt="Nairobi City County" style="height:34px; max-width:100%; width:auto; object-fit:contain;">
+        <span style="font:600 8.2px/1.35 Inter, sans-serif; color:#6e7977; letter-spacing:0.07em; text-transform:uppercase; text-align:center;">Nairobi City County</span>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+        <img decoding="sync" fetchpriority="high" src="/assets/istc-mark.webp" alt="International Safety &amp; Training Centre" style="height:34px; max-width:100%; width:auto; object-fit:contain;">
+        <span style="font:600 8.2px/1.35 Inter, sans-serif; color:#6e7977; letter-spacing:0.07em; text-transform:uppercase; text-align:center;">Intl. Safety &amp; Training Centre</span>
+      </div>
+    </div>
+    </div>
+  </div>
+  
+
+  <div style="display:flex; flex-direction:column; gap:20px; flex:1; min-height:0; padding-bottom:24px;">
+    <div>
+      <span style="display:block; font:700 12.5px 'JetBrains Mono', monospace; letter-spacing:0.22em; color:#17a892; margin-bottom:9px;">THE PEOPLE BEHIND THE WORK</span>
+      <div style="display:flex; gap:14px; align-items:flex-start; margin-bottom:10px;">
+        <div style="width:56px; height:56px; border-radius:50%; flex-shrink:0; border:1px solid #0f766e; overflow:hidden; margin-top:2px;"><img decoding="sync" fetchpriority="high" src="/assets/delivery-team.webp" alt="Binary One delivery team" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
+      <p style="margin:0; font:400 12.4px/1.6 Inter, sans-serif; color:#3e4947; text-wrap:pretty;"><span style="font-weight:700; color:#1c1b1b;">An experienced Team</span> with over 20 years of cross-industry experience, including work with Fortune 500 companies. Behind every engagement sits a Virtual CIO directing a bench of managed IT engineers, software developers and certified OEM vendor partners, so escalation paths and specialist skills never depend on a single individual.</p>
+      </div>
+      <div style="display:flex; gap:14px; align-items:flex-start; margin-top:14px;">
+        <div style="width:56px; height:56px; border-radius:50%; flex-shrink:0; border:1px solid #0f766e; overflow:hidden; margin-top:2px; order:3;"><img decoding="sync" fetchpriority="high" src="/assets/edwin-kairu.webp" alt="Edwin Kairu, advisor and shareholder" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
+        <p style="margin:0; font:400 12.4px/1.6 Inter, sans-serif; color:#3e4947; text-wrap:pretty;"><span style="font-weight:600; color:#1c1b1b;">Advisor and shareholder: Prof. Edwin Kairu</span> — Distinguished Service Professor at Carnegie Mellon University – consistently ranked the #1 computer science institution globally; AI research and cybersecurity expert, with 15+ years strengthening the information security posture of leading multinationals.</p>
+      </div>
+    </div>
+    <div style="background:#0b3d38; border-radius:15px; padding:15px 20px; margin-top:-10px; display:grid; grid-template-columns:1.05fr 1fr; gap:22px; align-items:start;">
+      <div style="display:flex; flex-direction:column; gap:11px;">
+        <span style="font:700 12px 'JetBrains Mono', monospace; letter-spacing:0.22em; color:#38e0c4;">JOIN THE CONVERSATION</span>
+        <span style="font:700 18px/1.25 Sora, sans-serif; letter-spacing:-0.015em; color:#FFFFFF; text-wrap:pretty;">Talk to a senior consultant about where your organisation is trying to go:&nbsp;&nbsp;<span style="font:700 18px/1.25 Sora, sans-serif; letter-spacing:-0.015em; color:#9EFF5A;">We will get you there faster!</span></span>
+        <span style="font:400 12.8px/1.65 Inter, sans-serif; color:#c7d0dc;">Book a free IT assessment, an ERP consultation or a NAWIRI demo — or visit us to see an AI agent at work in a live business environment!</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:8px; padding-left:22px; padding-top:0; border-left:1px solid rgba(255,255,255,0.12);">
+        <span style="font:700 12px 'JetBrains Mono', monospace; letter-spacing:0.22em; color:#38e0c4; margin-bottom:4px; text-transform:none;">Where we can start:</span>
+        <span style="display:flex; align-items:flex-start; gap:9px; font:500 12px/1.4 Inter, sans-serif; color:#d9f5ef;"><svg viewBox="0 0 24 24" style="width:13px; height:13px; flex-shrink:0; margin-top:2px;"><path d="M5 12.5 10 17.5 19 7" fill="none" stroke="#9EFF5A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Managed IT readiness assessment</span></span>
+        <span style="display:flex; align-items:flex-start; gap:9px; font:500 12px/1.4 Inter, sans-serif; color:#d9f5ef;"><svg viewBox="0 0 24 24" style="width:13px; height:13px; flex-shrink:0; margin-top:2px;"><path d="M5 12.5 10 17.5 19 7" fill="none" stroke="#9EFF5A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>ERP pitfalls and vendor selection review</span></span>
+        <span style="display:flex; align-items:flex-start; gap:9px; font:500 12px/1.4 Inter, sans-serif; color:#d9f5ef;"><svg viewBox="0 0 24 24" style="width:13px; height:13px; flex-shrink:0; margin-top:2px;"><path d="M5 12.5 10 17.5 19 7" fill="none" stroke="#9EFF5A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>NAWIRI last mile Loyalty (Manufacturers)</span></span>
+        <span style="display:flex; align-items:flex-start; gap:9px; font:500 12px/1.4 Inter, sans-serif; color:#d9f5ef;"><svg viewBox="0 0 24 24" style="width:13px; height:13px; flex-shrink:0; margin-top:2px;"><path d="M5 12.5 10 17.5 19 7" fill="none" stroke="#9EFF5A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Agentic AI scoping session</span></span>
+        <span style="display:flex; align-items:flex-start; gap:9px; font:500 12px/1.4 Inter, sans-serif; color:#d9f5ef;"><svg viewBox="0 0 24 24" style="width:13px; height:13px; flex-shrink:0; margin-top:2px;"><path d="M5 12.5 10 17.5 19 7" fill="none" stroke="#9EFF5A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Custom software builds</span></span>
+        <span style="display:inline-flex; align-items:center; gap:9px; align-self:center; margin-top:4px; white-space:nowrap; background:#00332f; border:1px solid rgba(56,224,196,0.45); border-radius:9px; padding:7px 16px; font:700 10.5px 'JetBrains Mono', monospace; letter-spacing:0.1em; color:#eafaf6;"><svg viewBox="0 0 24 24" style="width:14px; height:14px; flex-shrink:0;" fill="none" stroke="#38e0c4" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"></rect><path d="M3.5 10h17M8.5 3v4M15.5 3v4"></path></svg>BOOK A BOARDROOM ADVISORY</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="position:relative; display:flex; align-items:center; justify-content:space-between; gap:24px; background:#04211e; margin:82px -42px 0; padding:22px 30px 20px; flex-shrink:0;">
+    <span style="position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg, #04211e 0%, #6ee7b7 8%, #9EFF5A 26%, #38e0c4 58%, #0ea5a0 82%, #04211e 100%); box-shadow:0 0 14px rgba(56,224,196,0.55), 0 0 34px rgba(158,255,90,0.22);"></span>
+    <span style="position:absolute; top:3px; left:0; right:0; height:16px; background:linear-gradient(180deg, rgba(56,224,196,0.16) 0%, rgba(56,224,196,0) 100%);"></span>
+    <img decoding="sync" fetchpriority="high" src="/assets/b1s-logo-dark-crisp.webp" alt="Binary One Solutions" style="height:42px; width:auto; display:block; image-rendering:-webkit-optimize-contrast;">
+    <span style="display:inline-flex; align-items:center; gap:8px; font:600 11px Inter, sans-serif; letter-spacing:0.07em; color:#9fb6b1; white-space:nowrap;">Possibilities<span style="width:5px; height:5px; border-radius:50%; background:#9EFF5A; box-shadow:0 0 6px rgba(158,255,90,0.8); flex-shrink:0;"></span>Realised</span>
+    <span style="font:500 10.6px/1.65 Inter, sans-serif; color:#c7d0dc; text-align:right;"><span style="color:#7ee0d3;">www.binaryone.co.ke</span><br>+254 787 990 220 <span style="color:#38e0c4; font-size:19px; line-height:0; vertical-align:-2px;">·</span> info@binaryone.co.ke<br><svg viewBox="0 0 24 24" style="width:11px; height:11px; vertical-align:-1px; margin-right:4px;"><path d="M12 22s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path><circle cx="12" cy="10" r="2.4" fill="none" stroke="currentColor" stroke-width="1.8"></circle></svg>St Charles Lwanga House, Ngong Road, Nairobi, Kenya</span>
+  </div>
+</section>
+</body>
+</html>

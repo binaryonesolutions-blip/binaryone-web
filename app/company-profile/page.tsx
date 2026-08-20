@@ -28,7 +28,7 @@ export default function CompanyProfile() {
           <span className="hidden h-[26px] w-[1px] flex-shrink-0 bg-white/[0.16] sm:block" />
           <span className="hidden min-w-0 flex-col gap-[2px] sm:flex">
             <span className="whitespace-nowrap font-sora text-[14.5px] font-bold text-white">Company Profile</span>
-            <span className="whitespace-nowrap font-jet text-[9.5px] font-semibold tracking-[0.18em] text-[#38e0c4]">PDF · 2026</span>
+            <span className="whitespace-nowrap font-jet text-[9.5px] font-semibold tracking-[0.18em] text-[#38e0c4]">A4 · 4 PAGES · 2026</span>
           </span>
         </div>
         <a href={PDF} download className="inline-flex flex-shrink-0 items-center gap-[10px] rounded-[999px] bg-[#9EFF5A] px-[18px] py-[10px] font-inter text-[13px] font-bold text-[#04211e] shadow-[0_2px_14px_rgba(158,255,90,0.24)] transition-[background,box-shadow] hover:bg-[#b6ff7d] hover:shadow-[0_3px_20px_rgba(158,255,90,0.36)] sm:px-[20px] sm:py-[11px]">
@@ -37,9 +37,9 @@ export default function CompanyProfile() {
         </a>
       </div>
 
-      {/* Profile document */}
+      {/* Profile document (the designed A4 profile, matching the zip's viewer) */}
       <div className="flex min-h-0 flex-1 justify-center">
-        <iframe src={`${PDF}#view=FitH`} title="Binary One Solutions company profile" className="block h-full w-full border-0 bg-[#0b1b19]" />
+        <iframe src="/company-profile-document.html" title="Binary One Solutions company profile" className="block h-full w-full border-0 bg-[#0b1b19]" />
       </div>
 
       {/* Back */}
