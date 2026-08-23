@@ -15,7 +15,7 @@ const flashDots = [
 ];
 
 const routeCards = [
-  { kicker: "MANAGED IT SERVICES", href: routes.managedIt, img: "/assets/managed-it-hero.webp", alt: "Managed IT operations in Nairobi", objPos: "center 62%", title: "IT leadership plus daily support.", copy: "A structured Managed IT service led by a Virtual CIO and delivered through an IT Operations Lead, service desk discipline, on-site support and practical technology governance.", cta: "Engage our Managed IT + vCIO Services →" },
+  { kicker: "MANAGED IT SERVICES", href: routes.managedIt, img: "/assets/about-midsection.webp", alt: "Managed IT operations in Nairobi", objPos: "center 62%", title: "IT leadership plus daily support.", copy: "A structured Managed IT service led by a Virtual CIO and delivered through an IT Operations Lead, service desk discipline, on-site support and practical technology governance.", cta: "Engage our Managed IT + vCIO Services →" },
   { kicker: "ERP CONSULTING", href: routes.erp, img: "/assets/home-erp-card.webp", alt: "Grain milling facility with engineering controls", objPos: "center", title: "Avoid the ERP nightmare.", copy: "Vendor-neutral ERP readiness, selection support and implementation governance for organisations outgrowing QuickBooks, Sage, Tally or fragmented spreadsheets.", cta: "Commission an ERP Readiness Assessment →" },
   { kicker: "DIGITAL PRODUCTS", href: routes.digitalProducts, img: "/assets/nawiri-retail-hero.webp", alt: "Kenyan retail loyalty moment", objPos: "center 45%", title: "Products built for real market moments.", copy: "NAWIRI Digital Loyalty, Agentic AI Workflows and Custom Enterprise Software Builds — packaged from years of practical development experience.", cta: "Explore Digital Products →" },
 ];

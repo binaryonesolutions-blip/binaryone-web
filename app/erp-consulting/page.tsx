@@ -70,8 +70,8 @@ export default function ERPConsulting() {
       <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] items-start gap-[64px] px-5 sm:px-8 lg:px-[64px] pb-[96px]">
         <div>
           <span className="mb-[20px] block font-jet text-[13px] font-bold tracking-[0.22em] text-[#0f766e]">CORE PHILOSOPHY</span>
-          <h2 className="mb-[26px] font-sora text-[26px] sm:text-[32px] lg:text-[40px] font-bold leading-[1.2] tracking-[-0.02em] text-[#1c1b1b] [text-wrap:pretty]">We are independent advisors, not software sales representatives.</h2>
-          <p className="mb-[44px] font-inter text-[15px] lg:text-[17px] leading-[1.7] text-[#3e4947] [text-wrap:pretty]">Binary One does not earn commissions from software vendors. We help you choose the right platform (whether Odoo, SAP, Microsoft Dynamics or a bespoke build), document your actual business processes, structure your RFP, evaluate vendor proposals, and govern the implementation team. Our focus is process continuity, data integrity and cost control.</p>
+          <h2 className="mb-[26px] font-sora text-[26px] sm:text-[32px] lg:text-[40px] font-bold leading-[1.2] tracking-[-0.02em] text-[#1c1b1b] [text-wrap:pretty]">Our role is advisory, not sales.</h2>
+          <p className="mb-[44px] font-inter text-[15px] lg:text-[17px] leading-[1.7] text-[#3e4947] [text-wrap:pretty]">Our advice is not tied to any vendor&apos;s licence sale. We help you choose the right platform (whether Odoo, SAP, Microsoft Dynamics or a bespoke build), document your actual business processes, structure your RFP, evaluate vendor proposals, and govern the implementation team. Our focus is process continuity, data integrity and cost control.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-[32px]">
             <div>
               <div className="mb-[10px] flex items-start gap-[10px]">
@@ -94,10 +94,10 @@ export default function ERPConsulting() {
             <svg viewBox="0 0 24 24" className="h-[46px] w-[46px] flex-shrink-0"><path d="M12 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10M9.5 12.5 8 21l4-2.5L16 21l-1.5-8.5" fill="none" stroke="#0f766e" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" /></svg>
             <div>
               <span className="mb-[3px] block font-sora text-[15.5px] lg:text-[18px] font-bold text-[#1c1b1b]">Integrity Guarantee</span>
-              <span className="font-inter text-[13.5px] text-[#6e7977]">Our advice is never incentivised</span>
+              <span className="font-inter text-[13.5px] text-[#6e7977]">Our advice is independent of licence sales</span>
             </div>
           </div>
-          <p className="mb-[28px] font-inter text-[15px] leading-[1.7] text-[#3e4947] [text-wrap:pretty]">Many implementation agencies recommend software based on licensing sales overrides. Binary One represents you, the buyer, to keep vendors honest, verify project scope milestones, and control ERP total cost of ownership (TCO).</p>
+          <p className="mb-[28px] font-inter text-[15px] leading-[1.7] text-[#3e4947] [text-wrap:pretty]">Choosing an ERP is hard when most of the advice comes from people selling one. Binary One represents you, the buyer, to keep vendors honest, verify project scope milestones, and control ERP total cost of ownership (TCO).</p>
           <div className="flex items-center gap-[12px] rounded-[12px] border border-[#E5E7EB] bg-white px-[24px] py-[20px]">
             <svg viewBox="0 0 24 24" className="h-[22px] w-[22px] flex-shrink-0"><path d="M12 3a9 9 0 1 0 9 9 9 9 0 0 0-9-9M8.5 12l2.5 2.5 4.5-5" fill="none" stroke="#0f766e" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" /></svg>
             <span className="font-sora text-[15px] font-bold text-[#1c1b1b]">100% Vendor-Neutral Advisory</span>

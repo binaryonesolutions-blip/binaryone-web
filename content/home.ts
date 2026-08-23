@@ -14,7 +14,7 @@ export const trustChips = [
 export const whyPoints = [
   { lead: "A Virtual CIO", rest: "gives leadership a technology roadmap, budget discipline and board-ready reporting." },
   { lead: "An IT Operations Lead", rest: "ensures the work actually happens: tickets, site visits, escalations, vendors and SLAs." },
-  { lead: "ERP advisory is kept vendor-neutral,", rest: "so the business case drives the software decision — not reseller commission." },
+  { lead: "ERP advisory is kept vendor-neutral,", rest: "so the business case drives the software decision, independent of any licence sale." },
   { lead: "Digital products are approached with the same discipline:", rest: "scoped, governed, measurable and practical." },
 ];
 
@@ -51,11 +51,11 @@ export const clients: Client[] = [
   { name: "Pacific Petroleum 'Dubai & East Africa'", logo: "/assets/pacific-petroleum-mark.webp", logoW: 52, logoH: 52, tileLift: 0, showName: true },
   { name: "Tosha Energy", logo: "/assets/tosha-energy-logo.webp", logoW: 52, logoH: 52, tileLift: 0, showName: true },
   { name: "Royal Oven Tanzania", logo: "/assets/royal-oven-logo.webp", logoW: 58, logoH: 72, tileLift: -6, showName: true },
-  { name: "Kenya Meat Commission", logo: "/assets/kmc-logo.webp", logoW: 52, logoH: 52, tileLift: 0, showName: true },
+  { name: "African Eagle", logo: "/assets/african-eagle-logo.webp", logoW: 118, logoH: 52, tileLift: 0, showName: false },
   { name: "KN Law LLP", logo: "/assets/kn-law-logo.webp", logoW: 62, logoH: 62, tileLift: -8, showName: true },
   { name: "Ahmednasir Abdullahi Advocates LLP", logo: "/assets/logo-ahmednasir.webp", logoW: 44, logoH: 44, tileLift: 0, showName: true },
   { name: "KELIN Kenya NGO", logo: "/assets/kelin-logo.webp", logoW: 94, logoH: 52, tileLift: 0, showName: true },
-  { name: "MOGO Kenya", logo: "/assets/mogo-logo.webp", logoW: 76, logoH: 76, tileLift: -8, showName: true },
+  { name: "Kenya Meat Commission", logo: "/assets/kmc-logo.webp", logoW: 52, logoH: 52, tileLift: 0, showName: true },
   { name: "Nairobi City County", logo: "/assets/nairobi-county-logo.webp", logoW: 52, logoH: 52, tileLift: 0, showName: true },
   { name: "Maakiou Coffee Estate", logo: "/assets/maakiou-logo.webp", logoW: 52, logoH: 52, tileLift: 0, showName: true },
   { name: "PEMBE Millers", logo: "/assets/pembe-logo.webp", logoW: 52, logoH: 52, tileLift: 0, showName: true },

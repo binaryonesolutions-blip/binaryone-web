@@ -26,7 +26,7 @@ export const pitfalls: Pitfall[] = [
 export const lenses = [
   { title: "Read it honestly", copy: "Score your own programme green, amber or red. Optimism is the most expensive input in ERP.", icon: "M12 5c-5 0-9 4.5-9 7s4 7 9 7 9-4.5 9-7-4-7-9-7M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6" },
   { title: "Act while it's cheap", copy: "Every pitfall costs least before contracts are signed and data is migrated.", icon: "M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" },
-  { title: "Keep it vendor-neutral", copy: "We earn nothing from licences, so the recommendation follows the evidence.", icon: "M12 3l8 3v5c0 4.5-3 8-8 10-5-2-8-5.5-8-10V6l8-3zM9 12l2 2 4-4" },
+  { title: "Keep it vendor-neutral", copy: "Our advice is not tied to any vendor's licence sale, so the recommendation follows the evidence.", icon: "M12 3l8 3v5c0 4.5-3 8-8 10-5-2-8-5.5-8-10V6l8-3zM9 12l2 2 4-4" },
 ];
 
 export const checkStatements = [
