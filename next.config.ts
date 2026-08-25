@@ -9,6 +9,15 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   async headers() {
+    // Security headers applied to every page response (production hardening).
+    const security = [
+      { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
+      { key: "X-Content-Type-Options", value: "nosniff" },
+      { key: "X-Frame-Options", value: "SAMEORIGIN" },
+      { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+      { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), browsing-topics=()" },
+      { key: "X-DNS-Prefetch-Control", value: "on" },
+    ];
     return [
       {
         // Images/fonts in /public: cache a day, revalidate in the background.
@@ -18,11 +27,21 @@ const nextConfig: NextConfig = {
         headers: [{ key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" }],
       },
       {
-        // HTML + RSC payloads (everything else): always revalidate. This is
-        // what stops a deploy from serving stale pages that point at JS chunks
-        // which no longer exist (the "old content / can't navigate" bug).
+        // HTML + RSC payloads (everything else): always revalidate (stops a
+        // deploy serving stale pages that point at gone JS chunks) + security.
         source: "/:path((?!_next/static|_next/image|assets/).*)",
-        headers: [{ key: "Cache-Control", value: "public, max-age=0, must-revalidate" }],
+        headers: [{ key: "Cache-Control", value: "public, max-age=0, must-revalidate" }, ...security],
+      },
+    ];
+  },
+  async redirects() {
+    // Canonicalise on the apex: www.binaryone.co.ke -> binaryone.co.ke.
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.binaryone.co.ke" }],
+        destination: "https://binaryone.co.ke/:path*",
+        permanent: true,
       },
     ];
   },
