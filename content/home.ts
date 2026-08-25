@@ -59,4 +59,5 @@ export const clients: Client[] = [
   { name: "Nairobi City County", logo: "/assets/nairobi-county-logo.webp", logoW: 52, logoH: 52, tileLift: 0, showName: true },
   { name: "Maakiou Coffee Estate", logo: "/assets/maakiou-logo.webp", logoW: 52, logoH: 52, tileLift: 0, showName: true },
   { name: "PEMBE Millers", logo: "/assets/pembe-logo.webp", logoW: 52, logoH: 52, tileLift: 0, showName: true },
+  { name: "Mogo Finance", logo: "/assets/mogo-logo.webp", logoW: 124, logoH: 44, tileLift: 0, showName: false },
 ];
