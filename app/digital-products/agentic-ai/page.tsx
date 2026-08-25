@@ -101,6 +101,7 @@ export default function AgenticAiPage() {
             src={agenticHero}
             alt="Agentic AI workflows and bot mesh network"
             fill
+            priority
             sizes="560px"
             className="object-cover opacity-50 [mix-blend-mode:luminosity] transition-all duration-700 ease-in-out group-hover:scale-105 group-hover:opacity-70 group-hover:[mix-blend-mode:normal]"
           />

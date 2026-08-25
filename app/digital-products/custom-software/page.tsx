@@ -54,7 +54,7 @@ export default function CustomSoftwarePage() {
             </div>
           </div>
           <div className="order-2 lg:order-none group relative overflow-hidden rounded-[18px] border border-[rgba(45,212,191,0.22)] bg-[#05100e] shadow-[0_34px_80px_rgba(0,0,0,0.55)]">
-            <Image src={customHero} alt="High-performance code stack" width={800} height={360} className="block h-[360px] w-full object-cover opacity-95 transition-transform duration-[600ms] ease-in-out group-hover:scale-[1.06]" />
+            <Image src={customHero} alt="High-performance code stack" width={800} height={360} priority className="block h-[360px] w-full object-cover opacity-95 transition-transform duration-[600ms] ease-in-out group-hover:scale-[1.06]" />
             <div className="pointer-events-none absolute inset-0 [background:linear-gradient(180deg,rgba(5,16,14,0)_40%,rgba(5,16,14,0.6)_100%)]" />
             <div className="pointer-events-none absolute bottom-[10px] left-[20px] right-[20px] rounded-[12px] border border-[rgba(56,224,196,0.2)] bg-[rgba(6,58,52,0.55)] px-[20px] py-[10px] [backdrop-filter:blur(8px)]">
               <span className="mb-[2px] block font-jet text-[11.5px] font-bold tracking-[0.18em] text-[#38e0c4]">BESPOKE SOFTWARE DEV</span>

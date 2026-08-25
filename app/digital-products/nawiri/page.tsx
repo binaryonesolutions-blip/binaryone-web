@@ -45,7 +45,7 @@ export default function NawiriPage() {
           </div>
         </div>
         <div className="order-1 lg:order-none group relative flex h-[440px] items-center justify-center overflow-hidden rounded-[16px] border border-[rgba(45,212,191,0.35)] bg-[#11203A] shadow-[0_24px_64px_rgba(0,0,0,0.4)]">
-          <Image src={nawiriRetail} alt="Kenyan retail loyalty moment" fill sizes="620px" className="object-cover [object-position:center_45%] transition-transform duration-500 ease-in-out group-hover:scale-[1.06]" />
+          <Image src={nawiriRetail} alt="Kenyan retail loyalty moment" fill priority sizes="620px" className="object-cover [object-position:center_45%] transition-transform duration-500 ease-in-out group-hover:scale-[1.06]" />
           <div className="pointer-events-none absolute inset-0 [background:linear-gradient(180deg,rgba(10,22,40,0)_40%,rgba(10,22,40,0.65)_100%)]" />
           <div className="pointer-events-none absolute bottom-[16px] left-[20px] right-[20px] rounded-[12px] border border-[rgba(158,255,90,0.22)] bg-[rgba(10,22,40,0.62)] px-[20px] py-[10px] [backdrop-filter:blur(8px)]">
             <span className="mb-[2px] block font-jet text-[11.5px] font-bold tracking-[0.18em] text-[#9EFF5A]">LAST-MILE LOYALTY</span>

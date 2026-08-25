@@ -78,7 +78,7 @@ export default function RootLayout({
       <body>
         <StructuredData />
         <HashScroll />
-        {children}
+        <main>{children}</main>
       </body>
     </html>
   );

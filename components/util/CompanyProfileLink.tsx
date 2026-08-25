@@ -15,7 +15,6 @@ export default function CompanyProfileLink({
       href="/company-profile"
       target="_blank"
       rel="noopener"
-      aria-label="View and download the company profile"
       className={`inline-flex items-center gap-[8px] font-inter text-[13.5px] font-medium underline underline-offset-[3px] [text-decoration-thickness:1px] ${text} ${className}`}
     >
       <svg viewBox="0 0 24 24" className="h-[21px] w-[21px] flex-shrink-0" fill="none" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">

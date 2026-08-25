@@ -36,7 +36,7 @@ export default function AboutPage() {
           <p className="font-inter text-[15px] lg:text-[17.5px] leading-[1.65] text-[#3e4947] [text-wrap:pretty]">Binary One Solutions is a Nairobi-based digital transformation consulting firm helping medium-sized and larger organisations make better technology decisions, run IT more reliably and build digital tools that create measurable business value. Our team brings over 20 years of cross-industry experience, including work with Fortune 500 companies.</p>
         </div>
         <div className="order-first lg:order-none group flex h-[380px] items-center justify-center overflow-hidden rounded-[16px] border border-[#E5E7EB]">
-          <Image src={aboutHero} alt="Binary One boardroom, Nairobi" className="h-full w-full object-cover [object-position:58%_42%] transition-transform duration-500 ease-in-out group-hover:scale-[1.06]" />
+          <Image src={aboutHero} alt="Binary One boardroom, Nairobi" priority className="h-full w-full object-cover [object-position:58%_42%] transition-transform duration-500 ease-in-out group-hover:scale-[1.06]" />
         </div>
       </section>
 
