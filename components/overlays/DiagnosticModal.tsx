@@ -48,6 +48,7 @@ export function DiagnosticTrigger({ variant }: { variant: "hero" | "card" }) {
 interface Answer {
   score: number;
   category: DiagCategory;
+  option: number; // index of the chosen option, for the response summary
 }
 
 // Full 8-question Enterprise IT & AI Diagnostic engine (Guide §9.1). Markup matches
@@ -96,8 +97,8 @@ export function DiagnosticModal() {
   const progressPct = Math.round((answered / total) * 100);
   const canGoBack = !isResults && step > 0;
 
-  const choose = (score: number, category: DiagCategory) => {
-    setAnswers((a) => [...a, { score, category }]);
+  const choose = (score: number, category: DiagCategory, option: number) => {
+    setAnswers((a) => [...a, { score, category, option }]);
     setStep((s) => s + 1);
   };
 
@@ -205,6 +206,14 @@ export function DiagnosticModal() {
                   setBookingError("");
                   fd.set("score", `${pct}% (${score}/${maxScore})`);
                   fd.set("grade", grade);
+                  // Per-question response summary for the notification email.
+                  fd.set("answers", JSON.stringify(
+                    DIAG_QUESTIONS.map((q, i) => {
+                      const ans = answers[i];
+                      const opt = ans ? q.options[ans.option] : undefined;
+                      return { q: q.text, a: opt ? opt.text : "(no answer)", score: ans ? ans.score : 0, max: 3 };
+                    }),
+                  ));
                   setBookingError("");
                   setBookingSending(true);
                   try {
@@ -276,7 +285,7 @@ export function DiagnosticModal() {
           {q.options.map((opt, i) => (
             <button
               key={i}
-              onClick={() => choose(opt.score, q.category)}
+              onClick={() => choose(opt.score, q.category, i)}
               className="flex w-full cursor-pointer items-start gap-[13px] rounded-[13px] border border-[#e4ded9] bg-white px-[16px] py-[13px] text-left transition-[border-color,box-shadow,transform] duration-200 hover:border-[#0f766e] hover:shadow-[0_6px_20px_rgba(15,118,110,0.12)]"
             >
               <span className="inline-flex h-[26px] w-[26px] flex-shrink-0 items-center justify-center rounded-[7px] bg-[rgba(15,118,110,0.10)] font-jet text-[12px] font-bold text-[#0f766e]">{String.fromCharCode(65 + i)}</span>

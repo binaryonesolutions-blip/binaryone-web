@@ -1,7 +1,7 @@
 "use server";
 
 import { deliverNotification, deliverAdvisoryInvite } from "@/lib/forms/delivery";
-import { fieldsEmail, escapeHtml, subjectLine } from "@/lib/forms/format";
+import { fieldsEmail, escapeHtml, subjectLine, responsesSection } from "@/lib/forms/format";
 
 export type ActionResult = { ok: boolean; error?: string; preview?: boolean };
 const OK = (preview: boolean): ActionResult => ({ ok: true, preview });
@@ -90,10 +90,20 @@ export async function submitDiagnostic(_prev: ActionResult | null, fd: FormData)
   if (!name || !org || !email) return FAIL("Please complete the required fields.");
   if (!isEmail(email)) return FAIL("Please enter a valid work email.");
   const title = "Enterprise IT & AI Diagnostic";
-  const html = fieldsEmail(title, "A visitor finished the diagnostic and asked for a follow-up.", [
-    ["Name", name], ["Organisation", org], ["Work email", email],
-    ["Phone", s(fd, "phone")], ["Readiness score", s(fd, "score")], ["Grade", s(fd, "grade")],
-  ]);
+  let responses: { q: string; a: string; score: number; max: number }[] = [];
+  try {
+    const parsed = JSON.parse(s(fd, "answers") || "[]");
+    if (Array.isArray(parsed)) responses = parsed;
+  } catch { /* ignore malformed answers payload */ }
+  const html = fieldsEmail(
+    title,
+    "A visitor finished the diagnostic and asked for a follow-up.",
+    [
+      ["Name", name], ["Organisation", org], ["Work email", email],
+      ["Phone", s(fd, "phone")], ["Readiness score", s(fd, "score")], ["Grade", s(fd, "grade")],
+    ],
+    responsesSection(responses),
+  );
   return send(subjectLine(title, org), html, email);
 }
 
