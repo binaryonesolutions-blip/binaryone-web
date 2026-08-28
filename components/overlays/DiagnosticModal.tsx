@@ -233,7 +233,10 @@ export function DiagnosticModal() {
                   <input name="name" type="text" placeholder="Full name" required className="w-full rounded-[10px] border border-white/[0.14] bg-white/[0.06] px-[14px] py-[12px] font-inter text-[14px] text-white placeholder:text-[#8fa8a1]" />
                   <input name="email" type="email" inputMode="email" value={diagEmail} onChange={(e) => { setDiagEmail(e.target.value); setDiagErrEmail(false); }} placeholder="Work email" className="w-full rounded-[10px] border bg-white/[0.06] px-[14px] py-[12px] font-inter text-[14px] text-white placeholder:text-[#8fa8a1]" style={{ borderColor: diagErrEmail ? "#ff8a8a" : "rgba(255,255,255,0.14)" }} />
                 </div>
-                <input name="org" type="text" placeholder="Organisation" className="w-full rounded-[10px] border border-white/[0.14] bg-white/[0.06] px-[14px] py-[12px] font-inter text-[14px] text-white placeholder:text-[#8fa8a1]" />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-[12px]">
+                  <input name="org" type="text" placeholder="Organisation" className="w-full rounded-[10px] border border-white/[0.14] bg-white/[0.06] px-[14px] py-[12px] font-inter text-[14px] text-white placeholder:text-[#8fa8a1]" />
+                  <input name="phone" type="tel" inputMode="numeric" onInput={(e) => { const el = e.currentTarget; const v = el.value.replace(/[^0-9+ ]/g, ""); if (v !== el.value) el.value = v; }} placeholder="Phone" className="w-full rounded-[10px] border border-white/[0.14] bg-white/[0.06] px-[14px] py-[12px] font-inter text-[14px] text-white placeholder:text-[#8fa8a1]" />
+                </div>
                 <textarea name="message" placeholder="What's the most pressing priority?" rows={3} className="w-full resize-y rounded-[10px] border border-white/[0.14] bg-white/[0.06] px-[14px] py-[12px] font-inter text-[14px] text-white placeholder:text-[#8fa8a1]" />
                 {diagErrEmail && <p className="font-inter text-[12.5px] text-[#ffb4a8]">Enter a valid email address, including @ and a domain (e.g. name@company.co.ke).</p>}
                 <label className="flex cursor-pointer items-start gap-[9px] font-inter text-[12px] leading-[1.5]" style={{ color: diagErrConsent ? "#ff8a8a" : "#a9c4be" }}>
