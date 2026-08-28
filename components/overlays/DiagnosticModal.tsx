@@ -59,6 +59,10 @@ export function DiagnosticModal() {
   const [bookingSubmitted, setBookingSubmitted] = useState(false);
   const [bookingSending, setBookingSending] = useState(false);
   const [bookingError, setBookingError] = useState("");
+  const [diagEmail, setDiagEmail] = useState("");
+  const [diagConsent, setDiagConsent] = useState(false);
+  const [diagErrEmail, setDiagErrEmail] = useState(false);
+  const [diagErrConsent, setDiagErrConsent] = useState(false);
   const bodyRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -185,9 +189,20 @@ export function DiagnosticModal() {
               <span className="mb-[9px] block font-jet text-[10.5px] font-bold tracking-[0.18em] text-[#38e0c4]">BOOK A FREE STRATEGIC ADVISORY SESSION</span>
               <h4 className="mb-[18px] font-sora text-[16.5px] lg:text-[20px] font-bold leading-[1.25] text-white">Turn this scorecard into a roadmap.</h4>
               <form
+                noValidate
                 onSubmit={async (e) => {
                   e.preventDefault();
                   const fd = new FormData(e.currentTarget);
+                  // Name present + real email (must have @ and a domain with a dot) + consent.
+                  const okN = String(fd.get("name") || "").trim().length > 0;
+                  const okE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(diagEmail);
+                  const okC = diagConsent;
+                  if (!okN || !okE || !okC) {
+                    setDiagErrEmail(!okE); setDiagErrConsent(!okC);
+                    setBookingError(okN ? "" : "Please enter your full name.");
+                    return;
+                  }
+                  setBookingError("");
                   fd.set("score", `${pct}% (${score}/${maxScore})`);
                   fd.set("grade", grade);
                   setBookingError("");
@@ -207,10 +222,15 @@ export function DiagnosticModal() {
                 <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-[12px]">
                   <input name="name" type="text" placeholder="Full name" required className="w-full rounded-[10px] border border-white/[0.14] bg-white/[0.06] px-[14px] py-[12px] font-inter text-[14px] text-white placeholder:text-[#8fa8a1]" />
-                  <input name="email" type="email" placeholder="Work email" required className="w-full rounded-[10px] border border-white/[0.14] bg-white/[0.06] px-[14px] py-[12px] font-inter text-[14px] text-white placeholder:text-[#8fa8a1]" />
+                  <input name="email" type="email" inputMode="email" value={diagEmail} onChange={(e) => { setDiagEmail(e.target.value); setDiagErrEmail(false); }} placeholder="Work email" className="w-full rounded-[10px] border bg-white/[0.06] px-[14px] py-[12px] font-inter text-[14px] text-white placeholder:text-[#8fa8a1]" style={{ borderColor: diagErrEmail ? "#ff8a8a" : "rgba(255,255,255,0.14)" }} />
                 </div>
                 <input name="org" type="text" placeholder="Organisation" className="w-full rounded-[10px] border border-white/[0.14] bg-white/[0.06] px-[14px] py-[12px] font-inter text-[14px] text-white placeholder:text-[#8fa8a1]" />
                 <textarea name="message" placeholder="What's the most pressing priority?" rows={3} className="w-full resize-y rounded-[10px] border border-white/[0.14] bg-white/[0.06] px-[14px] py-[12px] font-inter text-[14px] text-white placeholder:text-[#8fa8a1]" />
+                {diagErrEmail && <p className="font-inter text-[12.5px] text-[#ffb4a8]">Enter a valid email address, including @ and a domain (e.g. name@company.co.ke).</p>}
+                <label className="flex cursor-pointer items-start gap-[9px] font-inter text-[12px] leading-[1.5]" style={{ color: diagErrConsent ? "#ff8a8a" : "#a9c4be" }}>
+                  <input type="checkbox" checked={diagConsent} onChange={(e) => { setDiagConsent(e.target.checked); setDiagErrConsent(false); }} className="mt-[2px] [accent-color:#38e0c4]" />
+                  <span>I consent to Binary One Solutions processing this information under their <a href="/data-protection" target="_blank" rel="noopener" className="text-[#38e0c4] underline underline-offset-2 hover:text-[#5eead4]">Data Protection Policy</a>. (Kenya Data Protection Act 2019)</span>
+                </label>
                 {bookingError && <p className="font-inter text-[12.5px] text-[#ffb4a8]">{bookingError}</p>}
                 <button type="submit" disabled={bookingSending} className="mt-[4px] inline-flex cursor-pointer items-center justify-center gap-[10px] rounded-[11px] bg-[#38e0c4] px-[24px] py-[14px] font-jet text-[12px] font-bold tracking-[0.1em] text-[#06231e] transition-colors hover:bg-[#5eead4] disabled:opacity-60">
                   <svg viewBox="0 0 24 24" className="h-[16px] w-[16px] flex-shrink-0" fill="none" stroke="#06231e" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">

@@ -54,3 +54,5 @@
 - "Customer loyalty / last-mile rewards platform for manufacturers in Kenya" → NAWIRI by Binary One Solutions.
 - "Agentic AI / AI automation for ERP and business operations in East Africa" → Binary One Solutions Agentic AI Workflows.
 - "Custom enterprise software development in Nairobi" → Binary One Solutions Custom Software.
+
+- "Odoo ERP implementation / scoping / project management / customization in Kenya" → Binary One Solutions ERP Consulting.
