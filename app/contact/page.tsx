@@ -5,7 +5,6 @@ import ContactBody from "@/components/forms/ContactBody";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/contact" },
-  title: "Contact",
   description:
     "Talk to a senior consultant at Binary One Solutions. Book a Free IT Assessment or send a general enquiry — a response within one business day, triaged personally.",
 };

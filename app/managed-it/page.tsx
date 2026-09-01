@@ -10,7 +10,6 @@ import { trustChips, comparison, pillars, platforms, assessmentItems, packs } fr
 
 export const metadata: Metadata = {
   alternates: { canonical: "/managed-it" },
-  title: "Managed IT Services Kenya | Virtual CIO & IT Operations",
   description:
     "Managed IT services for Kenyan organisations needing Virtual CIO strategy, IT Operations Lead accountability, helpdesk discipline and cyber resilience.",
 };

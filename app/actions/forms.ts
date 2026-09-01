@@ -86,8 +86,10 @@ export async function submitLoyaltyScore(_prev: ActionResult | null, fd: FormDat
 // ---- Diagnostic booking (Enterprise IT & AI Diagnostic modal) ----
 export async function submitDiagnostic(_prev: ActionResult | null, fd: FormData): Promise<ActionResult> {
   if (isBot(fd)) return OK(true);
+  // Organisation is optional in the diagnostic modal (31AUG design) — only name,
+  // a valid email and a reachable phone are required there.
   const name = s(fd, "name"), org = s(fd, "org"), email = s(fd, "email");
-  if (!name || !org || !email) return FAIL("Please complete the required fields.");
+  if (!name || !email) return FAIL("Please complete the required fields.");
   if (!isEmail(email)) return FAIL("Please enter a valid work email.");
   const title = "Enterprise IT & AI Diagnostic";
   let responses: { q: string; a: string; score: number; max: number }[] = [];

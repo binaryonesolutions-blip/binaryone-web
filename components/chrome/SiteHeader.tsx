@@ -27,7 +27,7 @@ export default function SiteHeader({ active = "", sticky = false, solid = false 
       : `${base} bg-[#EDF1F2]`;
   return (
     <header className={headerClass}>
-      <Link href={routes.home} className="flex items-center">
+      <Link href={routes.home} className="flex flex-shrink-0 items-center">
         <Image
           src={logoLight}
           alt="Binary One Solutions — Towards Digital Transformation"
@@ -41,7 +41,7 @@ export default function SiteHeader({ active = "", sticky = false, solid = false 
       <MobileNav active={active} />
 
       {/* Desktop nav (>= lg) */}
-      <nav className="hidden items-center gap-[32px] font-inter text-[14.5px] font-medium lg:flex">
+      <nav className="hidden flex-shrink-0 flex-nowrap items-center gap-[32px] whitespace-nowrap font-inter text-[14.5px] font-medium lg:flex">
         {primaryNav.slice(0, 3).map((item) => (
           <Link
             key={item.href}
@@ -66,7 +66,7 @@ export default function SiteHeader({ active = "", sticky = false, solid = false 
 
         <Link
           href={routes.assessment}
-          className="inline-flex items-center gap-[10px] rounded-[11px] border border-[rgba(56,224,196,0.75)] bg-[#d9f5ef] px-[20px] py-[11px] font-inter text-[14.5px] font-semibold text-[#06332e] shadow-[0_1px_2px_rgba(6,35,30,0.10),0_4px_14px_rgba(6,35,30,0.08)] transition-[background,border-color,box-shadow,transform] duration-[250ms] ease-in-out hover:-translate-y-[2px] hover:border-[#38e0c4] hover:bg-[#bfeee4] hover:shadow-[0_0_0_1px_rgba(56,224,196,0.6),0_0_22px_rgba(56,224,196,0.42),0_8px_20px_rgba(6,35,30,0.26)]"
+          className="inline-flex flex-shrink-0 items-center gap-[8px] whitespace-nowrap rounded-[10px] border border-[rgba(56,224,196,0.75)] bg-[#d9f5ef] px-[14px] py-[9px] font-inter text-[13.5px] font-semibold text-[#06332e] shadow-[0_1px_2px_rgba(6,35,30,0.10),0_4px_14px_rgba(6,35,30,0.08)] transition-[background,border-color,box-shadow,transform] duration-[250ms] ease-in-out hover:-translate-y-[2px] hover:border-[#38e0c4] hover:bg-[#bfeee4] hover:shadow-[0_0_0_1px_rgba(56,224,196,0.6),0_0_22px_rgba(56,224,196,0.42),0_8px_20px_rgba(6,35,30,0.26)]"
         >
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0f766e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
             <rect x="3" y="5" width="18" height="16" rx="3" />

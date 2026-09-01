@@ -14,18 +14,16 @@ const inputCls =
 export default function AssessmentForm() {
   const [state, action, pending] = useActionState(submitAssessment, null);
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [consent, setConsent] = useState(false);
   const [errEmail, setErrEmail] = useState(false);
+  const [errPhone, setErrPhone] = useState(false);
   const [errConsent, setErrConsent] = useState(false);
-  const phoneNumeric = (e: React.FormEvent<HTMLInputElement>) => {
-    const el = e.currentTarget;
-    const v = el.value.replace(/[^0-9+ ]/g, "");
-    if (v !== el.value) el.value = v;
-  };
   function gate(e: React.FormEvent<HTMLFormElement>) {
     const okE = email.indexOf("@") > 0;
+    const okP = phone.replace(/[^0-9]/g, "").length >= 9;
     const okC = consent;
-    if (!okE || !okC) { e.preventDefault(); setErrEmail(!okE); setErrConsent(!okC); }
+    if (!okE || !okP || !okC) { e.preventDefault(); setErrEmail(!okE); setErrPhone(!okP); setErrConsent(!okC); }
   }
 
   if (state?.ok) {
@@ -45,10 +43,10 @@ export default function AssessmentForm() {
       {/* honeypot */}
       <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-[14px]">
-        <input required name="name" placeholder="Name *" className={inputCls} />
-        <input required name="org" placeholder="Organisation *" className={inputCls} />
+        <input required name="name" placeholder="Name" className={inputCls} />
+        <input required name="org" placeholder="Organisation" className={inputCls} />
         <input required name="email" type="email" placeholder="Work email *" value={email} onChange={(e) => { setEmail(e.target.value); setErrEmail(false); }} className={inputCls} />
-        <input required name="phone" type="tel" inputMode="numeric" onInput={phoneNumeric} placeholder="Phone *" className={inputCls} />
+        <input required name="phone" type="tel" inputMode="numeric" placeholder="Phone *" value={phone} onChange={(e) => { setPhone(e.target.value.replace(/[^0-9+ ]/g, "")); setErrPhone(false); }} className={inputCls} style={errPhone ? { borderColor: "#c1121f" } : undefined} />
       </div>
       <input required name="users" type="number" placeholder="Number of users / workstations *" className={inputCls} />
       <select required name="concern" defaultValue="" className={`${inputCls} text-[#3e4947]`}>
@@ -69,6 +67,7 @@ export default function AssessmentForm() {
         </span>
       </label>
       {errEmail && <span className="font-inter text-[12.5px] font-medium leading-[1.5] text-[#c1121f]">Enter a valid email address, including @.</span>}
+      {errPhone && <span className="font-inter text-[12.5px] font-medium leading-[1.5] text-[#c1121f]">Enter a phone number we can reach you on.</span>}
       {state?.error && <p className="font-inter text-[13.5px] text-[#c0392b]">{state.error}</p>}
       <button
         type="submit"

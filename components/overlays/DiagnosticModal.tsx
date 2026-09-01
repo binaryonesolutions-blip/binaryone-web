@@ -61,8 +61,10 @@ export function DiagnosticModal() {
   const [bookingSending, setBookingSending] = useState(false);
   const [bookingError, setBookingError] = useState("");
   const [diagEmail, setDiagEmail] = useState("");
+  const [diagPhone, setDiagPhone] = useState("");
   const [diagConsent, setDiagConsent] = useState(false);
   const [diagErrEmail, setDiagErrEmail] = useState(false);
+  const [diagErrPhone, setDiagErrPhone] = useState(false);
   const [diagErrConsent, setDiagErrConsent] = useState(false);
   const bodyRef = useRef<HTMLDivElement>(null);
 
@@ -197,9 +199,10 @@ export function DiagnosticModal() {
                   // Name present + real email (must have @ and a domain with a dot) + consent.
                   const okN = String(fd.get("name") || "").trim().length > 0;
                   const okE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(diagEmail);
+                  const okP = diagPhone.replace(/[^0-9]/g, "").length >= 9;
                   const okC = diagConsent;
-                  if (!okN || !okE || !okC) {
-                    setDiagErrEmail(!okE); setDiagErrConsent(!okC);
+                  if (!okN || !okE || !okP || !okC) {
+                    setDiagErrEmail(!okE); setDiagErrPhone(!okP); setDiagErrConsent(!okC);
                     setBookingError(okN ? "" : "Please enter your full name.");
                     return;
                   }
@@ -235,10 +238,11 @@ export function DiagnosticModal() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-[12px]">
                   <input name="org" type="text" placeholder="Organisation" className="w-full rounded-[10px] border border-white/[0.14] bg-white/[0.06] px-[14px] py-[12px] font-inter text-[14px] text-white placeholder:text-[#8fa8a1]" />
-                  <input name="phone" type="tel" inputMode="numeric" onInput={(e) => { const el = e.currentTarget; const v = el.value.replace(/[^0-9+ ]/g, ""); if (v !== el.value) el.value = v; }} placeholder="Phone" className="w-full rounded-[10px] border border-white/[0.14] bg-white/[0.06] px-[14px] py-[12px] font-inter text-[14px] text-white placeholder:text-[#8fa8a1]" />
+                  <input name="phone" type="tel" inputMode="numeric" value={diagPhone} onChange={(e) => { setDiagPhone(e.target.value.replace(/[^0-9+ ]/g, "")); setDiagErrPhone(false); }} placeholder="Phone *" className="w-full rounded-[10px] border bg-white/[0.06] px-[14px] py-[12px] font-inter text-[14px] text-white placeholder:text-[#8fa8a1]" style={{ borderColor: diagErrPhone ? "#ff8a8a" : "rgba(255,255,255,0.14)" }} />
                 </div>
                 <textarea name="message" placeholder="What's the most pressing priority?" rows={3} className="w-full resize-y rounded-[10px] border border-white/[0.14] bg-white/[0.06] px-[14px] py-[12px] font-inter text-[14px] text-white placeholder:text-[#8fa8a1]" />
                 {diagErrEmail && <p className="font-inter text-[12.5px] text-[#ffb4a8]">Enter a valid email address, including @ and a domain (e.g. name@company.co.ke).</p>}
+                {diagErrPhone && <p className="font-inter text-[12.5px] text-[#ffb4a8]">Enter a phone number we can reach you on.</p>}
                 <label className="flex cursor-pointer items-start gap-[9px] font-inter text-[12px] leading-[1.5]" style={{ color: diagErrConsent ? "#ff8a8a" : "#a9c4be" }}>
                   <input type="checkbox" checked={diagConsent} onChange={(e) => { setDiagConsent(e.target.checked); setDiagErrConsent(false); }} className="mt-[2px] [accent-color:#38e0c4]" />
                   <span>I consent to Binary One Solutions processing this information under their <a href="/data-protection" target="_blank" rel="noopener" className="text-[#38e0c4] underline underline-offset-2 hover:text-[#5eead4]">Data Protection Policy</a>. (Kenya Data Protection Act 2019)</span>

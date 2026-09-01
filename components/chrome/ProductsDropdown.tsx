@@ -85,7 +85,7 @@ export default function ProductsDropdown({ active = false }: { active?: boolean 
       </button>
 
       {open && (
-        <div className="absolute left-1/2 top-[34px] z-[100] w-[360px] -translate-x-1/2 rounded-[12px] border border-[#E5E7EB] bg-white pt-[18px] pb-[8px] shadow-[0_12px_32px_rgba(0,0,0,0.08)]">
+        <div className="absolute left-1/2 top-[34px] z-[100] w-[408px] -translate-x-1/2 whitespace-normal rounded-[12px] border border-[#E5E7EB] bg-white pt-[18px] pb-[8px] shadow-[0_12px_32px_rgba(0,0,0,0.08)]">
           <span className="block border-b border-[#E5E7EB] px-[24px] pb-[14px] pt-[2px] font-jet text-[11px] font-bold tracking-[0.14em] text-[#0f766e]">
             DIGITAL SOLUTIONS &amp; PLATFORMS
           </span>

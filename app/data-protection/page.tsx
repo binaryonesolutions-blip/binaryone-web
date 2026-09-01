@@ -6,7 +6,6 @@ import { lastUpdated } from "@/content/dataProtection";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/data-protection" },
-  title: "Data Protection Policy",
   description:
     "Binary One Solutions' commitment to the Kenya Data Protection Act, 2019 — boardroom-grade controls, ODPC registration, statutory data-subject rights and a DSAR portal.",
 };

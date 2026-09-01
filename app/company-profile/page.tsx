@@ -7,7 +7,6 @@ import logoDark from "@/public/assets/b1s-logo-dark-crisp.webp";
 // Standalone company-profile viewer (19AUG design "Company Profile Viewer"):
 // branded header + Download PDF button over the profile embedded inline.
 export const metadata: Metadata = {
-  title: "Company Profile",
   description:
     "Binary One Solutions company profile — Managed IT, Virtual CIO, ERP consulting and digital products for Kenyan and East African organisations.",
   alternates: { canonical: "/company-profile" },

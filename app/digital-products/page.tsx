@@ -9,7 +9,6 @@ import nawiriLogo from "@/public/assets/nawiri-logo.webp";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/digital-products" },
-  title: "Digital Products",
   description:
     "NAWIRI, Agentic AI and Custom Software Builds — how Binary One packages fifteen years of bespoke development into products you can buy, measure and govern.",
 };

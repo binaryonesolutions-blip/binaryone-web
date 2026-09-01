@@ -21,7 +21,7 @@ export default function NawiriNav({
       {/* Mini general nav */}
       <div className="flex h-[40px] items-center justify-between bg-[#071120] px-5 sm:px-8 lg:px-[64px]">
         <Link href={routes.home} className="font-inter text-[12px] font-semibold text-[#94A3B8] hover:text-[#9EFF5A]">← binaryone.co.ke</Link>
-        <nav className="hidden items-center gap-[24px] font-inter text-[12px] font-medium lg:flex">
+        <nav className="hidden flex-shrink-0 flex-nowrap items-center gap-[24px] whitespace-nowrap font-inter text-[12px] font-medium lg:flex">
           <Link href={routes.home} className="text-[#94A3B8] hover:text-[#9EFF5A]">Home</Link>
           <Link href={routes.managedIt} className="text-[#94A3B8] hover:text-[#9EFF5A]">Managed IT</Link>
           <Link href={routes.erp} className="text-[#94A3B8] hover:text-[#9EFF5A]">ERP Consulting</Link>
@@ -43,7 +43,7 @@ export default function NawiriNav({
           <span className="hidden h-[22px] w-[1px] bg-[rgba(45,212,191,0.4)] sm:block" />
           <span className="font-inter text-[12px] font-medium text-[#94A3B8]">by Binary One Solutions</span>
         </div>
-        <nav className="flex items-center gap-[16px] font-inter text-[14.5px] font-medium sm:gap-[32px]">
+        <nav className="flex flex-shrink-0 flex-nowrap items-center gap-[16px] whitespace-nowrap font-inter text-[14.5px] font-medium sm:gap-[32px]">
           <span className="hidden items-center gap-[32px] md:flex">
             {sectionLinks.map((l) => (
               <a key={l.href} href={l.href} className="text-[#E2E8F0]">{l.label}</a>
@@ -51,7 +51,7 @@ export default function NawiriNav({
           </span>
           <a
             href={ctaHref}
-            className="inline-flex items-center gap-[10px] rounded-[11px] border border-[rgba(158,255,90,0.45)] bg-[#071A2E] px-[20px] py-[11px] font-inter text-[14.5px] font-semibold text-white transition-[background,border-color,box-shadow,transform] duration-[250ms] hover:-translate-y-[2px] hover:border-[#9EFF5A] hover:bg-[#0d2942] hover:shadow-[0_0_0_1px_rgba(158,255,90,0.6),0_0_22px_rgba(158,255,90,0.42),0_8px_20px_rgba(4,12,24,0.4)]"
+            className="inline-flex flex-shrink-0 items-center gap-[8px] whitespace-nowrap rounded-[10px] border border-[rgba(158,255,90,0.45)] bg-[#071A2E] px-[14px] py-[9px] font-inter text-[13.5px] font-semibold text-white transition-[background,border-color,box-shadow,transform] duration-[250ms] hover:-translate-y-[2px] hover:border-[#9EFF5A] hover:bg-[#0d2942] hover:shadow-[0_0_0_1px_rgba(158,255,90,0.6),0_0_22px_rgba(158,255,90,0.42),0_8px_20px_rgba(4,12,24,0.4)]"
           >
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9EFF5A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
               <rect x="3" y="5" width="18" height="16" rx="3" /><path d="M8 3v4" /><path d="M16 3v4" /><path d="M3 10h18" />

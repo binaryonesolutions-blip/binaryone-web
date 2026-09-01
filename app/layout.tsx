@@ -35,9 +35,19 @@ const caveat = Caveat({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://binaryone.co.ke"),
-  title: {
-    default: "Binary One Solutions | Managed IT, ERP & NAWIRI Loyalty Kenya",
-    template: "%s | Binary One Solutions",
+  // Site-wide document title on every route (client instruction, 31 Aug 2026).
+  // A plain string with no template so per-page titles never override the tab or
+  // the Google result title. Per-page meta stays available for Open Graph only.
+  title: "Binary One Solutions | Digital Transformation Solutions - Kenya",
+  icons: {
+    icon: [
+      { url: "/favicon/favicon-16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon/favicon-48.png", sizes: "48x48", type: "image/png" },
+      { url: "/favicon/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/favicon/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/favicon/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
   description:
     "Nairobi-based Managed IT, Virtual CIO, ERP consulting and NAWIRI loyalty solutions for growing Kenyan organisations. Book a Free IT Assessment.",

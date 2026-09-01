@@ -6,7 +6,6 @@ import { routes } from "@/content/nav";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/insights" },
-  title: "Insights",
   description:
     "Technical briefs, advisory papers and practical IT strategies written by Binary One's partners and systems architects for business leaders in East Africa.",
 };
