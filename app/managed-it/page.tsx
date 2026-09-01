@@ -198,7 +198,8 @@ export default function ManagedIT() {
 
       {/* ===== SERVICE PACKS ===== */}
       <div className="bg-white px-5 sm:px-8 lg:px-[64px] py-[96px]">
-        <h2 className="mb-[48px] font-sora text-[36px] font-bold leading-[1.2] tracking-[-0.02em] text-[#1c1b1b]">Our Managed IT <span className="text-[#12b886]">Service Packs</span></h2>
+        <h2 className="mb-[16px] font-sora text-[36px] font-bold leading-[1.2] tracking-[-0.02em] text-[#1c1b1b]">Our Managed IT <span className="text-[#12b886]">Service Packs</span></h2>
+        <p className="mb-[48px] max-w-[760px] font-inter text-[15.5px] lg:text-[17px] leading-[1.65] text-[#3e4947] [text-wrap:pretty]">Flexible monthly retainers — a fractional Virtual CIO (vCIO) plus a named IT Operations Lead, right-sized to your team and scaled as you grow, from a couple of days a week to a full-time embedded engineer.</p>
         <div className="mb-[32px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[24px]">
           {packs.map((pack) => (
             <div key={pack.name} className="flex flex-col gap-[16px] rounded-[16px] border border-[#d3e9e3] p-[36px] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_10px_28px_rgba(15,118,110,0.10)] [background:linear-gradient(135deg,rgba(15,118,110,0.14)_0%,rgba(23,168,146,0.06)_34%,#FFFFFF_68%)]">
