@@ -73,7 +73,7 @@ export default function Home() {
           </div>
           <div className="order-2 lg:order-2">
             <div className="group relative flex h-[280px] sm:h-[380px] lg:h-[460px] items-center justify-center overflow-hidden rounded-t-[16px] border border-b-0 border-[#E5E7EB]">
-              <Image src="/assets/it-icons-banner.webp" alt="Managed IT icons over Nairobi skyline" fill priority sizes="640px" className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-[1.06]" />
+              <Image src="/assets/it-icons-banner.webp" alt="Managed IT icons over Nairobi skyline" fill priority sizes="640px" className="object-cover" />
               <div className="pointer-events-none absolute inset-0 overflow-hidden">
                 <div className="b1-decorative absolute -top-[20%] -bottom-[20%] left-0 w-[34%] [background:linear-gradient(90deg,transparent,rgba(180,255,236,0.16)_45%,rgba(210,255,244,0.28)_50%,rgba(180,255,236,0.16)_55%,transparent)] [mix-blend-mode:screen] [filter:blur(2px)] [animation:hpSheen_7s_linear_infinite]" />
                 <div className="b1-decorative absolute bottom-[11%] left-1/2 h-[3px] w-[44%] -translate-x-1/2 rounded-[50%] [background:radial-gradient(closest-side,rgba(120,245,218,0.75),transparent)] [filter:blur(2px)] [mix-blend-mode:screen] [animation:hpDepth_6.5s_ease-out_infinite] [animation-delay:1s]" />

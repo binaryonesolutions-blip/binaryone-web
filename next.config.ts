@@ -35,14 +35,18 @@ const nextConfig: NextConfig = {
     ];
   },
   async redirects() {
-    // Canonicalise on the apex: www.binaryone.co.ke -> binaryone.co.ke.
     return [
+      // Canonicalise on the apex: www.binaryone.co.ke -> binaryone.co.ke.
       {
         source: "/:path*",
         has: [{ type: "host", value: "www.binaryone.co.ke" }],
         destination: "https://binaryone.co.ke/:path*",
         permanent: true,
       },
+      // Legacy URLs from the previous site still indexed by Google -> new routes
+      // (301, preserves ranking). Extend from the Search Console coverage report.
+      { source: "/about-us", destination: "/about", permanent: true },
+      { source: "/contact-us", destination: "/contact", permanent: true },
     ];
   },
 };
