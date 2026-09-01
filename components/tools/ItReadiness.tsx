@@ -80,7 +80,7 @@ export default function ItReadiness() {
               <span className="font-inter text-[14px] leading-[1.5] text-[#3e4947]">{packWhy}</span>
             </div>
             <button onClick={() => { setSent(false); setCounts({ ...ZERO }); setName(""); setOrg(""); setEmail(""); setPhone(""); setConsent(false); setError(""); }} className="cursor-pointer border-none bg-transparent p-0 font-inter text-[14.5px] font-semibold text-[#005c55] [border-bottom:1.5px_solid_#005c55] hover:text-[#006e1b]">Start over</button>
-            <CompanyProfileLink tone="light" />
+            <CompanyProfileLink tone="light" className="self-end" />
           </div>
         ) : (
           <div className="flex flex-col gap-[26px]">
