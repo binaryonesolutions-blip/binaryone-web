@@ -18,7 +18,8 @@ const PRODUCT_ROUTES: string[] = [
 // `sticky` uses the blurred translucent variant (e.g. Managed IT page).
 export default function SiteHeader({ active = "", sticky = false, solid = false }: { active?: string; sticky?: boolean; solid?: boolean }) {
   const productActive = PRODUCT_ROUTES.includes(active);
-  const gutters = "px-5 sm:px-8 lg:px-[64px]";
+  // §2.1 padding ladder: ≥1440 = 64px, 1180–1439 = 32px (sm:px-8), <1180 mobile.
+  const gutters = "px-5 sm:px-8 min-[1440px]:px-[64px]";
   const base = `flex h-[76px] items-center justify-between border-b border-[#E0E5E6] ${gutters}`;
   const headerClass = solid
     ? `sticky top-0 z-50 ${base} bg-[#EDF1F2]`
@@ -27,13 +28,13 @@ export default function SiteHeader({ active = "", sticky = false, solid = false 
       : `${base} bg-[#EDF1F2]`;
   return (
     <header className={headerClass}>
-      <Link href={routes.home} className="flex flex-shrink-0 items-center">
+      <Link href={routes.home} className="flex min-w-0 items-center min-[1180px]:flex-shrink-0">
         <Image
           src={logoLight}
           alt="Binary One Solutions — Towards Digital Transformation"
           height={45}
           priority
-          className="block h-[36px] w-auto sm:h-[45px]"
+          className="block h-auto max-h-[36px] w-auto max-w-full sm:max-h-[45px]"
         />
       </Link>
 
@@ -41,7 +42,7 @@ export default function SiteHeader({ active = "", sticky = false, solid = false 
       <MobileNav active={active} />
 
       {/* Desktop nav (>= lg) */}
-      <nav className="hidden flex-shrink-0 flex-nowrap items-center gap-[32px] whitespace-nowrap font-inter text-[14.5px] font-medium lg:flex">
+      <nav className="hidden flex-shrink-0 flex-nowrap items-center gap-[20px] whitespace-nowrap font-inter text-[14.5px] font-medium min-[1180px]:flex min-[1440px]:gap-[32px]">
         {primaryNav.slice(0, 3).map((item) => (
           <Link
             key={item.href}

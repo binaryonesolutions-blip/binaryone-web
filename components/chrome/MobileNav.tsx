@@ -28,14 +28,30 @@ export default function MobileNav({ active = "" }: { active?: string }) {
     }`;
 
   return (
-    <div className="lg:hidden">
+    <div className="flex items-center gap-[10px] min-[1180px]:hidden">
+      {/* §2.1: below 1180px the Book CTA is retained at right; <480px its label
+          reduces to the calendar icon + "Assessment". */}
+      <Link
+        href={routes.assessment}
+        className="inline-flex flex-shrink-0 items-center gap-[8px] whitespace-nowrap rounded-[10px] border border-[rgba(56,224,196,0.75)] bg-[#d9f5ef] px-[14px] py-[9px] font-inter text-[13.5px] font-semibold text-[#06332e] shadow-[0_1px_2px_rgba(6,35,30,0.10),0_4px_14px_rgba(6,35,30,0.08)] hover:bg-[#bfeee4]"
+      >
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0f766e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
+          <rect x="3" y="5" width="18" height="16" rx="3" />
+          <path d="M8 3v4" />
+          <path d="M16 3v4" />
+          <path d="M3 10h18" />
+        </svg>
+        <span className="hidden min-[480px]:inline">Book a Free IT Assessment</span>
+        <span className="min-[480px]:hidden">Assessment</span>
+      </Link>
+
       {/* Hamburger */}
       <button
         type="button"
         aria-label="Open menu"
         aria-expanded={open}
         onClick={() => setOpen(true)}
-        className="flex h-[44px] w-[44px] items-center justify-center rounded-[10px] text-[#1c1b1b] hover:bg-black/[0.05]"
+        className="flex h-[44px] w-[44px] flex-shrink-0 items-center justify-center rounded-[10px] text-[#1c1b1b] hover:bg-black/[0.05]"
       >
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
           <path d="M4 6h16M4 12h16M4 18h16" />
