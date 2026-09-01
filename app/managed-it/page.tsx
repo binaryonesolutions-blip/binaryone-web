@@ -27,7 +27,7 @@ export default function ManagedIT() {
       {/* ===== HERO ===== */}
       <div className="relative overflow-hidden [background:linear-gradient(180deg,#071e1b_0%,#0a2724_48%,#6f8f86_78%,#F8FAFB_100%)]">
         <div className="pointer-events-none absolute inset-0 [background-image:linear-gradient(90deg,rgba(56,224,196,0.05)_1px,transparent_1px)] [background-size:72px_100%] [mask-image:linear-gradient(180deg,#000_82%,transparent_99%)]" />
-        <div className="relative grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] items-center gap-[28px] lg:gap-[64px] px-5 sm:px-8 lg:px-[64px] pb-[80px] pt-[88px]">
+        <div className="relative grid grid-cols-1 lg:grid-cols-[2fr_1fr] items-center gap-[28px] lg:gap-[64px] px-5 sm:px-8 lg:px-[64px] pb-[80px] pt-[88px]">
           {/* Mobile-only eyebrow — sits above the hero image like a title */}
           <span className="order-1 inline-flex w-fit items-center gap-[10px] rounded-[999px] border border-[rgba(56,224,196,0.35)] bg-[rgba(56,224,196,0.06)] px-[20px] py-[9px] font-jet text-[13px] font-bold tracking-[0.14em] text-[#38e0c4] lg:hidden">
             <span className="h-[8px] w-[8px] rounded-full bg-[#38e0c4]" />MANAGED IT SERVICES
@@ -42,7 +42,7 @@ export default function ManagedIT() {
             <p className="mb-[36px] max-w-[640px] font-inter text-[15.5px] min-[1024px]:text-[16.5px] min-[1440px]:text-[18px] font-semibold leading-[1.7] text-[#e6efec] [text-wrap:pretty]">
               We AIM-IT: Assess, Implement, Manage IT — for medium-sized and larger Kenyan organisations who are tired of break-fix vendors and want governance-grade IT without the cost of a full-time CIO.
             </p>
-            <div className="mb-[44px] flex flex-col items-start gap-[14px]">
+            <div className="mb-[44px] flex flex-col items-start gap-[14px] min-[1280px]:flex-row min-[1280px]:items-center min-[1280px]:gap-[20px]">
               <Link href={routes.managedItReadiness} className="inline-flex items-center justify-center gap-[12px] rounded-[14px] bg-[#38e0c4] px-[26px] py-[15px] min-[1440px]:px-[30px] min-[1440px]:py-[17px] font-inter text-[14.5px] min-[1440px]:text-[16px] font-bold text-[#0c1512] shadow-[0_8px_24px_rgba(56,224,196,0.25)] hover:bg-[#5ceace]">
                 <svg viewBox="0 0 24 24" className="h-[20px] w-[20px] flex-shrink-0"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" fill="none" stroke="#0c1512" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 Perform a Managed IT Readiness Assessment
