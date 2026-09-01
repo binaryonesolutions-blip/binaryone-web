@@ -18,7 +18,7 @@ const company = [
   { label: "Careers", href: routes.enquiry },
 ];
 const mapsHref =
-  "https://www.google.com/maps/search/?api=1&query=PQ2W%2BJX7%2C+Ngong+Rd%2C+Nairobi";
+  "https://www.google.com/maps/search/?api=1&query=St+Charles+Lwanga+House%2C+Ngong+Road%2C+Nairobi";
 
 export default function SiteFooter() {
   return (
