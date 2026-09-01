@@ -24,7 +24,7 @@ export default function ERPConsulting() {
       {/* ===== HERO ===== */}
       <div className="relative overflow-hidden [background:linear-gradient(180deg,#071e1b_0%,#0a2724_48%,#6f8f86_78%,#F8FAFB_100%)]">
         <div className="pointer-events-none absolute inset-0 [background-image:linear-gradient(90deg,rgba(56,224,196,0.05)_1px,transparent_1px)] [background-size:72px_100%] [mask-image:linear-gradient(180deg,#000_82%,transparent_99%)]" />
-        <div className="relative grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] items-center gap-[28px] lg:gap-[64px] px-5 sm:px-8 lg:px-[64px] pb-[80px] pt-[88px]">
+        <div className="relative grid grid-cols-1 lg:grid-cols-[2fr_1fr] items-center gap-[28px] lg:gap-[64px] px-5 sm:px-8 lg:px-[64px] pb-[80px] pt-[88px]">
           {/* Mobile-only eyebrow — sits above the hero image like a title */}
           <span className="order-1 inline-flex w-fit items-center gap-[10px] rounded-[999px] border border-[rgba(56,224,196,0.35)] bg-[rgba(56,224,196,0.06)] px-[20px] py-[9px] font-jet text-[13px] font-bold tracking-[0.14em] text-[#38e0c4] lg:hidden">
             <span className="h-[8px] w-[8px] rounded-full bg-[#38e0c4]" />INDEPENDENT ERP ADVISORY &amp; PROJECT MANAGEMENT
@@ -33,18 +33,18 @@ export default function ERPConsulting() {
             <span className="mb-[30px] hidden items-center gap-[10px] rounded-[999px] border border-[rgba(56,224,196,0.35)] bg-[rgba(56,224,196,0.06)] px-[20px] py-[9px] font-jet text-[13px] font-bold tracking-[0.14em] text-[#38e0c4] lg:inline-flex">
               <span className="h-[8px] w-[8px] rounded-full bg-[#38e0c4]" />INDEPENDENT ERP ADVISORY &amp; PROJECT MANAGEMENT
             </span>
-            <h1 className="mb-[30px] font-sora text-[30px] sm:text-[40px] lg:text-[54px] font-bold leading-[1.16] tracking-[-0.02em] text-white [text-wrap:pretty]">
+            <h1 className="mb-[30px] font-sora text-[30px] min-[640px]:text-[40px] min-[1024px]:text-[46px] min-[1440px]:text-[54px] font-bold leading-[1.16] tracking-[-0.02em] text-white [text-wrap:pretty]">
               An ERP implementation fails or succeeds <span className="text-[#38e0c4]">long before the software is installed.</span>
             </h1>
-            <p className="mb-[36px] max-w-[640px] font-inter text-[15.5px] lg:text-[18px] font-semibold leading-[1.7] text-[#e6efec] [text-wrap:pretty]">
+            <p className="mb-[36px] max-w-[640px] font-inter text-[15.5px] min-[1024px]:text-[16.5px] min-[1440px]:text-[18px] font-semibold leading-[1.7] text-[#e6efec] [text-wrap:pretty]">
               Independent ERP advisory, data governance and Odoo or SAP preparation for growing East African businesses that cannot afford a failed transition.
             </p>
-            <div className="mb-[44px] flex flex-col sm:flex-row sm:items-center gap-[16px] sm:gap-[20px]">
-              <Link href={routes.erpPitfalls} className="inline-flex items-center gap-[12px] rounded-[14px] bg-[#38e0c4] px-[30px] py-[17px] font-inter text-[14.5px] lg:text-[16px] font-bold text-[#0c1512] shadow-[0_8px_24px_rgba(56,224,196,0.25)] hover:bg-[#5ceace]">
-                <svg viewBox="0 0 24 24" className="h-[20px] w-[20px]"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5V5.5M19 18v3H6.5M8.5 7.5h7M8.5 11h5" fill="none" stroke="#0c1512" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            <div className="mb-[44px] flex flex-col items-start gap-[14px] min-[1280px]:flex-row min-[1280px]:items-center min-[1280px]:gap-[20px]">
+              <Link href={routes.erpPitfalls} className="inline-flex items-center justify-center gap-[12px] rounded-[14px] bg-[#38e0c4] px-[26px] py-[15px] min-[1440px]:px-[30px] min-[1440px]:py-[17px] font-inter text-[14.5px] min-[1440px]:text-[16px] font-bold text-[#0c1512] shadow-[0_8px_24px_rgba(56,224,196,0.25)] hover:bg-[#5ceace]">
+                <svg viewBox="0 0 24 24" className="h-[20px] w-[20px] flex-shrink-0"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5V5.5M19 18v3H6.5M8.5 7.5h7M8.5 11h5" fill="none" stroke="#0c1512" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 Open the ERP Pitfalls Guide
               </Link>
-              <Link href={routes.enquiry} className="inline-block rounded-[14px] border-[1.5px] border-[rgba(56,224,196,0.5)] bg-[rgba(255,255,255,0.06)] px-[28px] py-[15.5px] font-inter text-[14.5px] lg:text-[16px] font-semibold text-[#38e0c4] hover:bg-[rgba(56,224,196,0.12)] hover:text-[#5ceace]">Book a Free ERP Consultation</Link>
+              <Link href={routes.enquiry} className="inline-flex items-center justify-center rounded-[14px] border-[1.5px] border-[rgba(56,224,196,0.5)] bg-[rgba(255,255,255,0.06)] px-[26px] py-[13.5px] min-[1440px]:px-[28px] min-[1440px]:py-[15.5px] font-inter text-[14.5px] min-[1440px]:text-[16px] font-semibold text-[#38e0c4] hover:bg-[rgba(56,224,196,0.12)] hover:text-[#5ceace]">Book a Free ERP Consultation</Link>
             </div>
             <div className="border-t border-[#1c1b1b] pt-[28px]">
               <span className="mb-[16px] block font-jet text-[13px] font-bold tracking-[0.14em] text-[#5eead4]">OUR ERP ADVISORY APPROACH</span>
