@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { routes } from "@/content/nav";
 import { FIELDS, packFor, type CounterKey } from "@/content/itReadiness";
+import { submitReadiness } from "@/app/actions/forms";
 import CompanyProfileLink from "@/components/util/CompanyProfileLink";
 
 const FIELD =
@@ -16,20 +17,42 @@ const ZERO: Record<CounterKey, number> = { computers: 0, laptops: 0, servers: 0,
 export default function ItReadiness() {
   const [counts, setCounts] = useState<Record<CounterKey, number>>({ ...ZERO });
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
+  const [name, setName] = useState("");
+  const [org, setOrg] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [consent, setConsent] = useState(false);
   const [errEmail, setErrEmail] = useState(false);
+  const [errPhone, setErrPhone] = useState(false);
   const [errConsent, setErrConsent] = useState(false);
-  const phoneNumeric = (e: React.FormEvent<HTMLInputElement>) => {
-    const el = e.currentTarget;
-    const v = el.value.replace(/[^0-9+ ]/g, "");
-    if (v !== el.value) el.value = v;
-  };
-  function submit() {
+
+  async function submit() {
     const okE = email.indexOf("@") > 0;
+    const okP = phone.replace(/[^0-9]/g, "").length >= 9;
     const okC = consent;
-    if (!okE || !okC) { setErrEmail(!okE); setErrConsent(!okC); return; }
-    setSent(true);
+    if (!name.trim() || !okE || !okP || !okC) {
+      setErrEmail(!okE); setErrPhone(!okP); setErrConsent(!okC);
+      setError(name.trim() ? "" : "Please enter your name.");
+      return;
+    }
+    const { packName, packFit, packWhy } = packFor(counts);
+    const fd = new FormData();
+    fd.set("name", name); fd.set("org", org); fd.set("email", email); fd.set("phone", phone);
+    (Object.keys(counts) as CounterKey[]).forEach((k) => fd.set(k, String(counts[k])));
+    fd.set("pack", packName); fd.set("packFit", packFit || ""); fd.set("packWhy", packWhy);
+    setError("");
+    setSending(true);
+    try {
+      const res = await submitReadiness(null, fd);
+      if (res.ok) setSent(true);
+      else setError(res.error || "Something went wrong.");
+    } catch {
+      setError("Something went wrong. Please email info@binaryone.co.ke.");
+    } finally {
+      setSending(false);
+    }
   }
 
   const cap = (k: CounterKey) => FIELDS.find((f) => f.key === k)!.max;
@@ -56,7 +79,7 @@ export default function ItReadiness() {
               {packFit && <span className="font-inter text-[13px] font-semibold text-[#0f766e]">{packFit}</span>}
               <span className="font-inter text-[14px] leading-[1.5] text-[#3e4947]">{packWhy}</span>
             </div>
-            <button onClick={() => { setSent(false); setCounts({ ...ZERO }); }} className="cursor-pointer border-none bg-transparent p-0 font-inter text-[14.5px] font-semibold text-[#005c55] [border-bottom:1.5px_solid_#005c55] hover:text-[#006e1b]">Start over</button>
+            <button onClick={() => { setSent(false); setCounts({ ...ZERO }); setName(""); setOrg(""); setEmail(""); setPhone(""); setConsent(false); setError(""); }} className="cursor-pointer border-none bg-transparent p-0 font-inter text-[14.5px] font-semibold text-[#005c55] [border-bottom:1.5px_solid_#005c55] hover:text-[#006e1b]">Start over</button>
             <CompanyProfileLink tone="light" />
           </div>
         ) : (
@@ -74,18 +97,21 @@ export default function ItReadiness() {
                 </div>
               </div>
             ))}
+            <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" onChange={() => {}} value="" />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-[14px]">
-              <input placeholder="Name *" className={FIELD} />
-              <input placeholder="Organisation *" className={FIELD} />
+              <input placeholder="Name *" value={name} onChange={(e) => { setName(e.target.value); setError(""); }} className={FIELD} />
+              <input placeholder="Organisation" value={org} onChange={(e) => setOrg(e.target.value)} className={FIELD} />
               <input placeholder="Work email *" type="email" value={email} onChange={(e) => { setEmail(e.target.value); setErrEmail(false); }} className={FIELD} />
-              <input placeholder="Phone *" type="tel" inputMode="numeric" onInput={phoneNumeric} className={FIELD} />
+              <input placeholder="Phone *" type="tel" inputMode="numeric" value={phone} onChange={(e) => { setPhone(e.target.value.replace(/[^0-9+ ]/g, "")); setErrPhone(false); }} className={FIELD} style={errPhone ? { borderColor: "#c1121f" } : undefined} />
             </div>
             <label className="flex cursor-pointer items-start gap-[10px] font-inter text-[13px] leading-[1.5]" style={{ color: errConsent ? "#c1121f" : "#3e4947" }}>
               <input type="checkbox" checked={consent} onChange={(e) => { setConsent(e.target.checked); setErrConsent(false); }} className="mt-[2px] [accent-color:#006e1b]" />
               <span>I consent to Binary One Solutions processing this information under their <Link href={routes.dataProtection} className="text-[#0f766e] [border-bottom:1px_solid_rgba(15,118,110,0.4)] hover:text-[#12897f]">Data Protection Policy</Link>.</span>
             </label>
             {errEmail && <span className="font-inter text-[12.5px] font-medium leading-[1.5] text-[#c1121f]">Enter a valid email address, including @.</span>}
-            <button onClick={submit} className="cursor-pointer self-start rounded-[12px] border-none bg-[#0f766e] px-[28px] py-[15px] font-inter text-[14.5px] lg:text-[16px] font-semibold text-white shadow-[0_1px_2px_rgba(15,118,110,0.20),0_6px_16px_rgba(15,118,110,0.14)] hover:bg-[#0d655e]">Submit my readiness profile</button>
+            {errPhone && <span className="font-inter text-[12.5px] font-medium leading-[1.5] text-[#c1121f]">Enter a phone number we can reach you on.</span>}
+            {error && <p className="font-inter text-[13.5px] text-[#c0392b]">{error}</p>}
+            <button onClick={submit} disabled={sending} className="cursor-pointer self-start rounded-[12px] border-none bg-[#0f766e] px-[28px] py-[15px] font-inter text-[14.5px] lg:text-[16px] font-semibold text-white shadow-[0_1px_2px_rgba(15,118,110,0.20),0_6px_16px_rgba(15,118,110,0.14)] hover:bg-[#0d655e] disabled:opacity-60">{sending ? "Sending…" : "Submit my readiness profile"}</button>
           </div>
         )}
       </div>

@@ -83,6 +83,23 @@ export async function submitLoyaltyScore(_prev: ActionResult | null, fd: FormDat
   return send(subjectLine(title, org), html, email);
 }
 
+// ---- Managed IT Readiness assessment (/managed-it/readiness) ----
+export async function submitReadiness(_prev: ActionResult | null, fd: FormData): Promise<ActionResult> {
+  if (isBot(fd)) return OK(true);
+  const name = s(fd, "name"), org = s(fd, "org"), email = s(fd, "email");
+  if (!name || !email) return FAIL("Please complete the required fields.");
+  if (!isEmail(email)) return FAIL("Please enter a valid work email.");
+  const title = "Managed IT Readiness Assessment";
+  const html = fieldsEmail(title, "A visitor completed the Managed IT readiness assessment.", [
+    ["Name", name], ["Organisation", org], ["Work email", email], ["Phone", s(fd, "phone")],
+    ["Computers", s(fd, "computers")], ["Laptops", s(fd, "laptops")], ["Servers", s(fd, "servers")],
+    ["Branches", s(fd, "branches")], ["Staff", s(fd, "staff")],
+    ["Indicative service pack", s(fd, "pack")], ["Fit", s(fd, "packFit")],
+    ["Why this pack", s(fd, "packWhy")],
+  ]);
+  return send(subjectLine(title, org || name), html, email);
+}
+
 // ---- Diagnostic booking (Enterprise IT & AI Diagnostic modal) ----
 export async function submitDiagnostic(_prev: ActionResult | null, fd: FormData): Promise<ActionResult> {
   if (isBot(fd)) return OK(true);
