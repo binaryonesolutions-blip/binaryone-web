@@ -7,6 +7,9 @@ import { QUESTIONS, BANDS } from "@/content/loyaltySelfScore";
 import { submitLoyaltyScore } from "@/app/actions/forms";
 import CompanyProfileLink from "@/components/util/CompanyProfileLink";
 
+// 1–4 rating labels, so the notification email reads the answers, not bare numbers.
+const RATING = ["", "Not true of us", "Rarely true", "Mostly true", "Fully true of us"];
+
 // Loyalty Programme Maturity Self-Score (Guide §9). Score each of 10 statements
 // 1–4; total maps to one of four maturity eras, then a lead-capture unlock.
 export default function LoyaltySelfScore() {
@@ -40,6 +43,12 @@ export default function LoyaltySelfScore() {
     fd.set("email", fEmail);
     fd.set("score", `${total} / 40`);
     fd.set("band", band?.name ?? "");
+    fd.set("answers", JSON.stringify(
+      QUESTIONS.map((q, i) => {
+        const v = answers[i] ?? 0;
+        return { q: q.text, a: RATING[v] ?? "(no answer)", score: v, max: 4 };
+      }),
+    ));
     try {
       const res = await submitLoyaltyScore(null, fd);
       if (res.ok) setSent(true);

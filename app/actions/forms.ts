@@ -76,10 +76,15 @@ export async function submitLoyaltyScore(_prev: ActionResult | null, fd: FormDat
   if (!name || !org || !email) return FAIL("Please complete the required fields.");
   if (!isEmail(email)) return FAIL("Please enter a valid work email.");
   const title = "NAWIRI Loyalty Self-Score";
+  let responses: { q: string; a: string; score: number; max: number }[] = [];
+  try {
+    const parsed = JSON.parse(s(fd, "answers") || "[]");
+    if (Array.isArray(parsed)) responses = parsed;
+  } catch { /* ignore malformed answers payload */ }
   const html = fieldsEmail(title, "A lead completed the NAWIRI maturity self-score.", [
     ["Name", name], ["Organisation", org], ["Work email", email],
     ["Score", s(fd, "score")], ["Band", s(fd, "band")],
-  ]);
+  ], responsesSection(responses));
   return send(subjectLine(title, org), html, email);
 }
 
