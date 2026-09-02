@@ -120,6 +120,7 @@ export async function submitDiagnostic(_prev: ActionResult | null, fd: FormData)
     [
       ["Name", name], ["Organisation", org], ["Work email", email],
       ["Phone", s(fd, "phone")], ["Readiness score", s(fd, "score")], ["Grade", s(fd, "grade")],
+      ["Most pressing priority", s(fd, "message")],
     ],
     responsesSection(responses),
   );
