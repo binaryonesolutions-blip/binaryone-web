@@ -82,7 +82,7 @@ export async function submitLoyaltyScore(_prev: ActionResult | null, fd: FormDat
     if (Array.isArray(parsed)) responses = parsed;
   } catch { /* ignore malformed answers payload */ }
   const html = fieldsEmail(title, "A lead completed the NAWIRI maturity self-score.", [
-    ["Name", name], ["Organisation", org], ["Work email", email],
+    ["Name", name], ["Organisation", org], ["Work email", email], ["Phone", s(fd, "phone")],
     ["Score", s(fd, "score")], ["Band", s(fd, "band")],
   ], responsesSection(responses));
   return send(subjectLine(title, org), html, email);

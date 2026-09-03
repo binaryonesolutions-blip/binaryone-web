@@ -41,7 +41,7 @@ export interface ProductDropdownRow {
 export const productsDropdown: ProductDropdownRow[] = [
   {
     icon: "nawiri",
-    title: "NAWIRI Platform",
+    title: "NAWIRI Loyalty Platform",
     desc: "Digital Loyalty & Last-mile intelligence",
     href: routes.nawiri,
   },

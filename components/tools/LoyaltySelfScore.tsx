@@ -18,6 +18,7 @@ export default function LoyaltySelfScore() {
   const [fName, setFName] = useState("");
   const [fOrg, setFOrg] = useState("");
   const [fEmail, setFEmail] = useState("");
+  const [fPhone, setFPhone] = useState("");
   const [consent, setConsent] = useState(false);
   const [emailTouched, setEmailTouched] = useState(false);
   const [sending, setSending] = useState(false);
@@ -30,7 +31,8 @@ export default function LoyaltySelfScore() {
   const barWidth = Math.round((total / 40) * 100) + "%";
 
   const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fEmail);
-  const canSend = !!(fName.trim() && fOrg.trim() && emailValid && consent);
+  const phoneValid = fPhone.replace(/[^0-9]/g, "").length >= 9;
+  const canSend = !!(fName.trim() && fOrg.trim() && emailValid && phoneValid && consent);
   const showEmailError = emailTouched && !emailValid && fEmail.length > 0;
 
   async function unlock() {
@@ -41,6 +43,7 @@ export default function LoyaltySelfScore() {
     fd.set("name", fName);
     fd.set("org", fOrg);
     fd.set("email", fEmail);
+    fd.set("phone", fPhone);
     fd.set("score", `${total} / 40`);
     fd.set("band", band?.name ?? "");
     fd.set("answers", JSON.stringify(
@@ -112,10 +115,11 @@ export default function LoyaltySelfScore() {
               <p className="font-inter text-[15px] font-medium text-[#64748B]">Answer all 10 statements to unlock your maturity band and the written report.</p>
             ) : !sent ? (
               <>
-                <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr_1.2fr_auto] items-center gap-[14px]">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1fr_auto] items-center gap-[14px]">
                   <input placeholder="Name *" value={fName} onChange={(e) => setFName(e.target.value)} className="box-border w-full rounded-[10px] border border-[rgba(45,212,191,0.35)] bg-[#11203A] px-[16px] py-[14px] font-inter text-[15px] text-white outline-none focus:border-[#9EFF5A]" />
                   <input placeholder="Organisation *" value={fOrg} onChange={(e) => setFOrg(e.target.value)} className="box-border w-full rounded-[10px] border border-[rgba(45,212,191,0.35)] bg-[#11203A] px-[16px] py-[14px] font-inter text-[15px] text-white outline-none focus:border-[#9EFF5A]" />
                   <input placeholder="Work email *" type="email" value={fEmail} onChange={(e) => { setFEmail(e.target.value); setEmailTouched(true); }} style={{ borderColor: showEmailError ? "#FF8A8A" : "rgba(45,212,191,0.35)" }} className="box-border w-full rounded-[10px] border bg-[#11203A] px-[16px] py-[14px] font-inter text-[15px] text-white outline-none focus:border-[#9EFF5A]" />
+                  <input placeholder="Phone *" type="tel" inputMode="numeric" value={fPhone} onChange={(e) => setFPhone(e.target.value.replace(/[^0-9+ ]/g, ""))} className="box-border w-full rounded-[10px] border border-[rgba(45,212,191,0.35)] bg-[#11203A] px-[16px] py-[14px] font-inter text-[15px] text-white outline-none focus:border-[#9EFF5A]" />
                   <button onClick={unlock} disabled={!canSend || sending} style={{ background: canSend ? "#9EFF5A" : "#5C6B57", opacity: canSend ? 1 : 0.5, cursor: canSend ? "pointer" : "not-allowed" }} className="whitespace-nowrap rounded-[12px] border-none px-[26px] py-[15px] font-sora text-[15px] font-bold text-[#0A1628] hover:bg-[#B4FF7E]">{sending ? "Computing…" : "Compute my report"}</button>
                 </div>
                 {error && <p className="mt-[10px] font-inter text-[13px] text-[#ffb4a8]">{error}</p>}
