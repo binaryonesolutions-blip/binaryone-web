@@ -43,7 +43,7 @@ export default function NawiriPage() {
             <a href="#features" className="border-b-[1.5px] border-[#2dd4bf] pb-[2px] font-inter text-[15.5px] font-semibold text-white hover:border-[#9EFF5A] hover:text-[#9EFF5A]">See the features →</a>
           </div>
         </div>
-        <div className="order-1 lg:order-none group relative flex h-[440px] items-center justify-center overflow-hidden rounded-[16px] border border-[rgba(45,212,191,0.35)] bg-[#11203A] shadow-[0_24px_64px_rgba(0,0,0,0.4)]">
+        <div className="order-1 lg:order-none group relative flex h-[440px] items-center justify-center overflow-hidden rounded-[16px] border border-[rgba(45,212,191,0.35)] bg-[#11203A] [transform:translateZ(0)] shadow-[0_24px_64px_rgba(0,0,0,0.4)]">
           <Image src={nawiriRetail} alt="Kenyan retail loyalty moment" fill priority sizes="620px" className="object-cover [object-position:center_45%] transition-transform duration-500 ease-in-out group-hover:scale-[1.06]" />
           <div className="pointer-events-none absolute inset-0 [background:linear-gradient(180deg,rgba(10,22,40,0)_40%,rgba(10,22,40,0.65)_100%)]" />
           <div className="pointer-events-none absolute bottom-[16px] left-[20px] right-[20px] rounded-[12px] border border-[rgba(158,255,90,0.22)] bg-[rgba(10,22,40,0.62)] px-[20px] py-[10px] [backdrop-filter:blur(8px)]">

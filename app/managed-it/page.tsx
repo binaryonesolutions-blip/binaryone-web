@@ -58,7 +58,7 @@ export default function ManagedIT() {
               ))}
             </div>
           </div>
-          <div className="order-2 lg:order-none group relative h-[420px] overflow-hidden rounded-[20px] shadow-[0_24px_64px_rgba(0,0,0,0.45)]">
+          <div className="order-2 lg:order-none group relative h-[420px] overflow-hidden rounded-[20px] [transform:translateZ(0)] shadow-[0_24px_64px_rgba(0,0,0,0.45)]">
             <Image src="/assets/managed-it-hero-v4.webp" alt="Managed IT operations environment" fill priority sizes="560px" className="object-cover [object-position:center_55%] transition-transform duration-500 ease-in-out group-hover:scale-[1.06]" />
             <div className="absolute bottom-[10px] left-[20px] right-[20px] rounded-[12px] border border-[rgba(56,224,196,0.2)] bg-[rgba(6,58,52,0.55)] px-[20px] py-[10px] [backdrop-filter:blur(8px)]">
               <span className="mb-[2px] block font-jet text-[11.5px] font-bold tracking-[0.18em] text-[#38e0c4]">MANAGED IT SERVICES</span>

@@ -28,7 +28,7 @@ export default function MobileNav({ active = "" }: { active?: string }) {
     }`;
 
   return (
-    <div className="min-[1180px]:hidden">
+    <div className="min-[1024px]:hidden">
       {/* Hamburger only in the mobile bar; the Book CTA lives inside the drawer. */}
       <button
         type="button"

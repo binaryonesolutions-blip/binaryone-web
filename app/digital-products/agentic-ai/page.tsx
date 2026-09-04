@@ -95,7 +95,7 @@ export default function AgenticAiPage() {
         </div>
 
         {/* Bot mesh panel */}
-        <div className="order-2 lg:order-none group relative h-[440px] overflow-hidden rounded-[16px] border border-[rgba(30,41,59,0.9)] bg-[#020617] shadow-[0_24px_60px_rgba(0,0,0,0.45)]">
+        <div className="order-2 lg:order-none group relative h-[440px] overflow-hidden rounded-[16px] border border-[rgba(30,41,59,0.9)] bg-[#020617] [transform:translateZ(0)] shadow-[0_24px_60px_rgba(0,0,0,0.45)]">
           <Image
             src={agenticHero}
             alt="Agentic AI workflows and bot mesh network"
@@ -229,7 +229,7 @@ export default function AgenticAiPage() {
       <section className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] items-start gap-[64px] border-t border-white/10 px-5 sm:px-8 lg:px-[64px] py-[88px]">
         <div>
           <h2 className="mb-[28px] font-sora text-[25px] sm:text-[31px] lg:text-[38px] font-bold leading-[1.15] tracking-[-0.02em] text-white">Readiness signals.</h2>
-          <div className="group relative overflow-hidden rounded-[16px] border border-[rgba(45,212,191,0.22)] bg-[#040d0b] shadow-[0_20px_48px_rgba(0,0,0,0.4)]">
+          <div className="group relative overflow-hidden rounded-[16px] border border-[rgba(45,212,191,0.22)] bg-[#040d0b] [transform:translateZ(0)] shadow-[0_20px_48px_rgba(0,0,0,0.4)]">
             <Image
               src={agenticNeural}
               alt="Neural network intelligence"

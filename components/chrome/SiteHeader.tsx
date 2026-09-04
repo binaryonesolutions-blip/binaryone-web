@@ -18,7 +18,7 @@ const PRODUCT_ROUTES: string[] = [
 // `sticky` uses the blurred translucent variant (e.g. Managed IT page).
 export default function SiteHeader({ active = "", sticky = false, solid = false }: { active?: string; sticky?: boolean; solid?: boolean }) {
   const productActive = PRODUCT_ROUTES.includes(active);
-  // §2.1 padding ladder: ≥1440 = 64px, 1180–1439 = 32px (sm:px-8), <1180 mobile.
+  // §2.1 padding ladder: ≥1440 = 64px, 1024–1439 = 32px (sm:px-8), <1024 mobile.
   const gutters = "px-5 sm:px-8 min-[1440px]:px-[64px]";
   const base = `flex h-[76px] items-center justify-between border-b border-[#E0E5E6] ${gutters}`;
   const headerClass = solid
@@ -28,7 +28,7 @@ export default function SiteHeader({ active = "", sticky = false, solid = false 
       : `${base} bg-[#EDF1F2]`;
   return (
     <header className={headerClass}>
-      <Link href={routes.home} className="flex min-w-0 items-center min-[1180px]:flex-shrink-0">
+      <Link href={routes.home} className="flex min-w-0 items-center min-[1024px]:flex-shrink-0">
         <Image
           src={logoLight}
           alt="Binary One Solutions — Towards Digital Transformation"
@@ -42,7 +42,7 @@ export default function SiteHeader({ active = "", sticky = false, solid = false 
       <MobileNav active={active} />
 
       {/* Desktop nav (>= lg) */}
-      <nav className="hidden flex-shrink-0 flex-nowrap items-center gap-[20px] whitespace-nowrap font-inter text-[14.5px] font-medium min-[1180px]:flex min-[1440px]:gap-[32px]">
+      <nav className="hidden flex-shrink-0 flex-nowrap items-center gap-[16px] whitespace-nowrap font-inter text-[14.5px] font-medium min-[1024px]:flex min-[1180px]:gap-[20px] min-[1440px]:gap-[32px]">
         {primaryNav.slice(0, 3).map((item) => (
           <Link
             key={item.href}
@@ -67,7 +67,7 @@ export default function SiteHeader({ active = "", sticky = false, solid = false 
 
         <Link
           href={routes.assessment}
-          className="inline-flex flex-shrink-0 items-center gap-[8px] whitespace-nowrap rounded-[10px] border border-[rgba(56,224,196,0.75)] bg-[#d9f5ef] px-[14px] py-[9px] font-inter text-[13.5px] font-semibold text-[#06332e] shadow-[0_1px_2px_rgba(6,35,30,0.10),0_4px_14px_rgba(6,35,30,0.08)] transition-[background,border-color,box-shadow,transform] duration-[250ms] ease-in-out hover:-translate-y-[2px] hover:border-[#38e0c4] hover:bg-[#bfeee4] hover:shadow-[0_0_0_1px_rgba(56,224,196,0.6),0_0_22px_rgba(56,224,196,0.42),0_8px_20px_rgba(6,35,30,0.26)]"
+          className="hidden flex-shrink-0 items-center gap-[8px] whitespace-nowrap rounded-[10px] border border-[rgba(56,224,196,0.75)] bg-[#d9f5ef] px-[14px] py-[9px] min-[1180px]:inline-flex font-inter text-[13.5px] font-semibold text-[#06332e] shadow-[0_1px_2px_rgba(6,35,30,0.10),0_4px_14px_rgba(6,35,30,0.08)] transition-[background,border-color,box-shadow,transform] duration-[250ms] ease-in-out hover:-translate-y-[2px] hover:border-[#38e0c4] hover:bg-[#bfeee4] hover:shadow-[0_0_0_1px_rgba(56,224,196,0.6),0_0_22px_rgba(56,224,196,0.42),0_8px_20px_rgba(6,35,30,0.26)]"
         >
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0f766e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
             <rect x="3" y="5" width="18" height="16" rx="3" />

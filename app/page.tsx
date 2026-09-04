@@ -113,7 +113,7 @@ export default function Home() {
       <div className="px-5 sm:px-8 lg:px-[64px] pb-[96px]">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-[24px]">
           {routeCards.map((c) => (
-            <div key={c.kicker} className="group flex flex-col overflow-hidden rounded-[16px] border border-[#E5E7EB] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-[0_1px_2px_rgba(0,0,0,0.05),0_14px_36px_rgba(15,118,110,0.10)]">
+            <div key={c.kicker} className="group flex flex-col overflow-hidden rounded-[16px] border border-[#E5E7EB] bg-white [transform:translateZ(0)] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-[0_1px_2px_rgba(0,0,0,0.05),0_14px_36px_rgba(15,118,110,0.10)]">
               <Link href={c.href} className="relative block h-[170px] overflow-hidden">
                 <Image src={c.img} alt={c.alt} fill sizes="440px" className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-[1.06]" style={{ objectPosition: c.objPos }} />
               </Link>
