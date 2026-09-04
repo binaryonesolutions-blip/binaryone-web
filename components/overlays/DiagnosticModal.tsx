@@ -10,7 +10,7 @@ import {
   gradeFor,
   type DiagCategory,
 } from "@/content/diagnostic";
-import { submitDiagnostic } from "@/app/actions/forms";
+import { submitDiagnostic } from "@/lib/forms/client";
 
 const OPEN_EVENT = "b1-open-diagnostic";
 

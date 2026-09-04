@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { routes } from "@/content/nav";
 import { FIELDS, packFor, type CounterKey } from "@/content/itReadiness";
-import { submitReadiness } from "@/app/actions/forms";
+import { submitReadiness } from "@/lib/forms/client";
 import CompanyProfileLink from "@/components/util/CompanyProfileLink";
 
 const FIELD =

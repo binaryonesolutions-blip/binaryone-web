@@ -1,0 +1,9 @@
+# Cloudflare Pages redirects (ported from the old next.config redirects()).
+
+# Legacy URLs from the previous site still indexed by Google -> new routes.
+/about-us    /about      301
+/contact-us  /contact    301
+
+# NOTE: www -> apex canonicalisation is NOT done here — Pages _redirects cannot
+# match on hostname. Add a Cloudflare Redirect Rule in the dashboard:
+#   If hostname equals www.binaryone.co.ke -> https://binaryone.co.ke/${path} (301).

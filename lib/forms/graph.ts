@@ -1,15 +1,16 @@
 // Microsoft Graph client — app-only (client-credentials) flow.
 // Requires an Azure AD app registration with APPLICATION permissions:
 //   Mail.Send  and  Calendars.ReadWrite  (admin-consented).
-// All calls are plain fetch() so they run on the Cloudflare Workers runtime.
-import { getEnv } from "./env";
+// All calls are plain fetch() so they run on the Cloudflare Workers runtime
+// (Pages Function). Secrets are threaded in via the `env` argument.
+import type { Secrets } from "./env";
 
 const GRAPH = "https://graph.microsoft.com/v1.0";
 
-async function getToken(): Promise<string> {
-  const tenant = getEnv("AZURE_TENANT_ID");
-  const clientId = getEnv("AZURE_CLIENT_ID");
-  const clientSecret = getEnv("AZURE_CLIENT_SECRET");
+async function getToken(env: Secrets): Promise<string> {
+  const tenant = env.AZURE_TENANT_ID;
+  const clientId = env.AZURE_CLIENT_ID;
+  const clientSecret = env.AZURE_CLIENT_SECRET;
   if (!tenant || !clientId || !clientSecret) throw new Error("graph-not-configured");
 
   const res = await fetch(
@@ -30,14 +31,14 @@ async function getToken(): Promise<string> {
   return json.access_token;
 }
 
-export async function graphSendMail(opts: {
+export async function graphSendMail(env: Secrets, opts: {
   from: string;
   to: string[];
   subject: string;
   html: string;
   replyTo?: string;
 }): Promise<void> {
-  const token = await getToken();
+  const token = await getToken(env);
   const message = {
     subject: opts.subject,
     body: { contentType: "HTML", content: opts.html },
@@ -60,7 +61,7 @@ export async function graphSendMail(opts: {
   if (!res.ok) throw new Error(`graph-sendmail ${res.status}: ${await res.text()}`);
 }
 
-export async function graphCreateEvent(opts: {
+export async function graphCreateEvent(env: Secrets, opts: {
   organizer: string; // mailbox that owns the event (the partner)
   subject: string;
   bodyHtml: string;
@@ -70,7 +71,7 @@ export async function graphCreateEvent(opts: {
   attendees: { address: string; name?: string }[];
   location?: string;
 }): Promise<{ id: string; webLink?: string }> {
-  const token = await getToken();
+  const token = await getToken(env);
   const event = {
     subject: opts.subject,
     body: { contentType: "HTML", content: opts.bodyHtml },

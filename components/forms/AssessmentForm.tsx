@@ -3,7 +3,7 @@
 import { useActionState, useState } from "react";
 import Link from "next/link";
 import { routes } from "@/content/nav";
-import { submitAssessment } from "@/app/actions/forms";
+import { submitAssessment } from "@/lib/forms/client";
 import CompanyProfileLink from "@/components/util/CompanyProfileLink";
 
 // Inline Free IT Assessment form on the Managed IT page (design §Free IT Assessment).

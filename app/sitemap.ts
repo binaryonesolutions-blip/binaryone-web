@@ -1,5 +1,8 @@
 import type { MetadataRoute } from "next";
 
+// Emit a static sitemap.xml at build time (required with output:'export').
+export const dynamic = "force-static";
+
 const BASE = "https://binaryone.co.ke";
 
 // path, changeFrequency, priority

@@ -1,9 +1,13 @@
-"use server";
+// Server-side form handling, ported from the old `app/actions/forms.ts` server
+// actions. Runs inside the Pages Function (functions/api/submit.ts). Every
+// handler takes the posted FormData plus the runtime `env` (secrets) and
+// returns an ActionResult. Delivery is I/O (Microsoft Graph fetch), so this is
+// safe well within the free Cloudflare limits.
+import { deliverNotification, deliverAdvisoryInvite } from "./delivery";
+import { fieldsEmail, escapeHtml, subjectLine, responsesSection } from "./format";
+import type { Secrets } from "./env";
+import type { ActionResult } from "./types";
 
-import { deliverNotification, deliverAdvisoryInvite } from "@/lib/forms/delivery";
-import { fieldsEmail, escapeHtml, subjectLine, responsesSection } from "@/lib/forms/format";
-
-export type ActionResult = { ok: boolean; error?: string; preview?: boolean };
 const OK = (preview: boolean): ActionResult => ({ ok: true, preview });
 const FAIL = (error: string): ActionResult => ({ ok: false, error });
 
@@ -13,9 +17,9 @@ const isEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 // return success without delivering.
 const isBot = (fd: FormData) => s(fd, "website") !== "";
 
-async function send(subject: string, html: string, replyTo?: string): Promise<ActionResult> {
+async function send(env: Secrets, subject: string, html: string, replyTo?: string): Promise<ActionResult> {
   try {
-    const { preview } = await deliverNotification(subject, html, replyTo);
+    const { preview } = await deliverNotification(env, subject, html, replyTo);
     return OK(preview);
   } catch (err) {
     console.error("[forms] delivery failed:", err);
@@ -24,7 +28,7 @@ async function send(subject: string, html: string, replyTo?: string): Promise<Ac
 }
 
 // ---- Free IT Assessment (Managed IT page + Contact assessment tab) ----
-export async function submitAssessment(_prev: ActionResult | null, fd: FormData): Promise<ActionResult> {
+async function submitAssessment(fd: FormData, env: Secrets): Promise<ActionResult> {
   if (isBot(fd)) return OK(true);
   const name = s(fd, "name"), org = s(fd, "org"), email = s(fd, "email");
   if (!name || !org || !email) return FAIL("Please complete the required fields.");
@@ -36,11 +40,11 @@ export async function submitAssessment(_prev: ActionResult | null, fd: FormData)
     ["Current IT setup", s(fd, "setup")], ["Main concern", s(fd, "concern")],
     ["Preferred date", s(fd, "meetingDate")], ["Message", s(fd, "message")],
   ]);
-  return send(subjectLine(title, org), html, email);
+  return send(env, subjectLine(title, org), html, email);
 }
 
 // ---- General enquiry (Contact enquiry tab) ----
-export async function submitEnquiry(_prev: ActionResult | null, fd: FormData): Promise<ActionResult> {
+async function submitEnquiry(fd: FormData, env: Secrets): Promise<ActionResult> {
   if (isBot(fd)) return OK(true);
   const name = s(fd, "name"), email = s(fd, "email"), message = s(fd, "message");
   if (!name || !email || !message) return FAIL("Please complete the required fields.");
@@ -51,11 +55,11 @@ export async function submitEnquiry(_prev: ActionResult | null, fd: FormData): P
     ["Email", email], ["Phone", s(fd, "phone")], ["Product of interest", s(fd, "topic")],
     ["Message", message],
   ]);
-  return send(subjectLine(title, s(fd, "org") || name), html, email);
+  return send(env, subjectLine(title, s(fd, "org") || name), html, email);
 }
 
 // ---- Data Subject Access Request (Data Protection portal) ----
-export async function submitDsar(_prev: ActionResult | null, fd: FormData): Promise<ActionResult> {
+async function submitDsar(fd: FormData, env: Secrets): Promise<ActionResult> {
   if (isBot(fd)) return OK(true);
   const name = s(fd, "name"), email = s(fd, "email"), type = s(fd, "type");
   if (!name || !email || !type) return FAIL("Please complete the required fields.");
@@ -66,11 +70,11 @@ export async function submitDsar(_prev: ActionResult | null, fd: FormData): Prom
     ["Ticket", ticket], ["Request type", type], ["Name", name],
     ["Email", email], ["Phone", s(fd, "phone")], ["Details", s(fd, "details")],
   ]);
-  return send(subjectLine(title, ticket ? `${type} (${ticket})` : type), html, email);
+  return send(env, subjectLine(title, ticket ? `${type} (${ticket})` : type), html, email);
 }
 
 // ---- Loyalty maturity self-score lead capture ----
-export async function submitLoyaltyScore(_prev: ActionResult | null, fd: FormData): Promise<ActionResult> {
+async function submitLoyaltyScore(fd: FormData, env: Secrets): Promise<ActionResult> {
   if (isBot(fd)) return OK(true);
   const name = s(fd, "name"), org = s(fd, "org"), email = s(fd, "email");
   if (!name || !org || !email) return FAIL("Please complete the required fields.");
@@ -85,11 +89,11 @@ export async function submitLoyaltyScore(_prev: ActionResult | null, fd: FormDat
     ["Name", name], ["Organisation", org], ["Work email", email], ["Phone", s(fd, "phone")],
     ["Score", s(fd, "score")], ["Band", s(fd, "band")],
   ], responsesSection(responses));
-  return send(subjectLine(title, org), html, email);
+  return send(env, subjectLine(title, org), html, email);
 }
 
 // ---- Managed IT Readiness assessment (/managed-it/readiness) ----
-export async function submitReadiness(_prev: ActionResult | null, fd: FormData): Promise<ActionResult> {
+async function submitReadiness(fd: FormData, env: Secrets): Promise<ActionResult> {
   if (isBot(fd)) return OK(true);
   const name = s(fd, "name"), org = s(fd, "org"), email = s(fd, "email");
   if (!name || !email) return FAIL("Please complete the required fields.");
@@ -102,11 +106,11 @@ export async function submitReadiness(_prev: ActionResult | null, fd: FormData):
     ["Indicative service pack", s(fd, "pack")], ["Fit", s(fd, "packFit")],
     ["Why this pack", s(fd, "packWhy")],
   ]);
-  return send(subjectLine(title, org || name), html, email);
+  return send(env, subjectLine(title, org || name), html, email);
 }
 
 // ---- Diagnostic booking (Enterprise IT & AI Diagnostic modal) ----
-export async function submitDiagnostic(_prev: ActionResult | null, fd: FormData): Promise<ActionResult> {
+async function submitDiagnostic(fd: FormData, env: Secrets): Promise<ActionResult> {
   if (isBot(fd)) return OK(true);
   // Organisation is optional in the diagnostic modal (31AUG design) — only name,
   // a valid email and a reachable phone are required there.
@@ -129,7 +133,7 @@ export async function submitDiagnostic(_prev: ActionResult | null, fd: FormData)
     ],
     responsesSection(responses),
   );
-  return send(subjectLine(title, org), html, email);
+  return send(env, subjectLine(title, org), html, email);
 }
 
 // ---- Boardroom Advisory booking (Contact advisory modal) ----
@@ -144,22 +148,11 @@ const addMinutes = (hhmm: string, mins: number) => {
   return `${String(Math.floor(t / 60)).padStart(2, "0")}:${String(t % 60).padStart(2, "0")}`;
 };
 
-export type AdvisoryInput = {
-  partnerName: string;
-  dateISO: string; // YYYY-MM-DD
-  dateLabel: string;
-  slot: string; // e.g. "09:00 AM"
-  name: string;
-  org: string;
-  email: string;
-  phone?: string;
-  agenda?: string;
-  website?: string; // honeypot
-};
-
-export async function bookAdvisory(input: AdvisoryInput): Promise<ActionResult> {
-  if (input.website) return OK(true);
-  const { partnerName, dateISO, slot, name, org, email } = input;
+async function bookAdvisory(fd: FormData, env: Secrets): Promise<ActionResult> {
+  if (isBot(fd)) return OK(true);
+  const partnerName = s(fd, "partnerName"), dateISO = s(fd, "dateISO"), slot = s(fd, "slot");
+  const name = s(fd, "name"), org = s(fd, "org"), email = s(fd, "email");
+  const dateLabel = s(fd, "dateLabel"), phone = s(fd, "phone"), agenda = s(fd, "agenda");
   if (!partnerName || !dateISO || !slot || !name || !org || !email)
     return FAIL("Please complete the required fields.");
   if (!isEmail(email)) return FAIL("Please enter a valid work email.");
@@ -171,16 +164,16 @@ export async function bookAdvisory(input: AdvisoryInput): Promise<ActionResult> 
   const title = "Boardroom Advisory";
   const subject = `${title} — Binary One × ${org}`; // calendar event / meeting title
   const bodyHtml = `<p>Boardroom advisory session with <b>${escapeHtml(partnerName)}</b> and ${escapeHtml(name)} (${escapeHtml(org)}).</p>${
-    input.agenda ? `<p><b>Agenda:</b> ${escapeHtml(input.agenda)}</p>` : ""
+    agenda ? `<p><b>Agenda:</b> ${escapeHtml(agenda)}</p>` : ""
   }`;
   const notifyHtml = fieldsEmail(title, "A new advisory session was booked from the website.", [
-    ["Partner", partnerName], ["Date", input.dateLabel], ["Time (EAT)", slot],
+    ["Partner", partnerName], ["Date", dateLabel], ["Time (EAT)", slot],
     ["Name", name], ["Organisation", org], ["Email", email],
-    ["Phone", input.phone], ["Agenda", input.agenda],
+    ["Phone", phone], ["Agenda", agenda],
   ]);
 
   try {
-    const { preview } = await deliverAdvisoryInvite({
+    const { preview } = await deliverAdvisoryInvite(env, {
       subject, notifySubject: subjectLine(title, org), bodyHtml, startISO, endISO,
       timeZone: "E. Africa Standard Time",
       requesterName: name, requesterEmail: email, partnerName,
@@ -191,4 +184,22 @@ export async function bookAdvisory(input: AdvisoryInput): Promise<ActionResult> 
     console.error("[forms] advisory booking failed:", err);
     return FAIL("We couldn't confirm that slot. Please email info@binaryone.co.ke.");
   }
+}
+
+const HANDLERS: Record<string, (fd: FormData, env: Secrets) => Promise<ActionResult>> = {
+  assessment: submitAssessment,
+  enquiry: submitEnquiry,
+  dsar: submitDsar,
+  loyalty: submitLoyaltyScore,
+  readiness: submitReadiness,
+  diagnostic: submitDiagnostic,
+  advisory: bookAdvisory,
+};
+
+// Single entry point for the Pages Function: dispatch on the `type` field.
+export async function handleSubmit(fd: FormData, env: Secrets): Promise<ActionResult> {
+  const type = String(fd.get("type") ?? "").trim();
+  const handler = HANDLERS[type];
+  if (!handler) return FAIL("Unknown form type.");
+  return handler(fd, env);
 }

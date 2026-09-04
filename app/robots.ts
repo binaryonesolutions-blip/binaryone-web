@@ -1,5 +1,8 @@
 import type { MetadataRoute } from "next";
 
+// Emit a static robots.txt at build time (required with output:'export').
+export const dynamic = "force-static";
+
 const BASE = "https://binaryone.co.ke";
 
 // Explicitly welcome search engines AND the major AI/LLM crawlers, so the site

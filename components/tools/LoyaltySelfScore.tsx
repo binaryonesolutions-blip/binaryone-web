@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { routes } from "@/content/nav";
 import { QUESTIONS, BANDS } from "@/content/loyaltySelfScore";
-import { submitLoyaltyScore } from "@/app/actions/forms";
+import { submitLoyaltyScore } from "@/lib/forms/client";
 import CompanyProfileLink from "@/components/util/CompanyProfileLink";
 
 // 1–4 rating labels, so the notification email reads the answers, not bare numbers.

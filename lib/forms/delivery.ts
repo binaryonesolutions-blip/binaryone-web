@@ -1,23 +1,24 @@
 // Delivery abstraction. When Graph secrets are present, sends real email /
 // calendar invites; otherwise runs in "preview" mode (logs the payload) so the
 // whole form pipeline works locally without any credentials.
-import { graphConfigured, senderAddress, notifyAddress } from "./env";
+import { graphConfigured, senderAddress, notifyAddress, type Secrets } from "./env";
 import { graphSendMail, graphCreateEvent } from "./graph";
 
 export async function deliverNotification(
+  env: Secrets,
   subject: string,
   html: string,
   replyTo?: string,
 ): Promise<{ preview: boolean }> {
-  if (!graphConfigured()) {
-    console.log("[forms:preview] email →", notifyAddress(), "|", subject, {
+  if (!graphConfigured(env)) {
+    console.log("[forms:preview] email →", notifyAddress(env), "|", subject, {
       replyTo,
     });
     return { preview: true };
   }
-  await graphSendMail({
-    from: senderAddress(),
-    to: [notifyAddress()],
+  await graphSendMail(env, {
+    from: senderAddress(env),
+    to: [notifyAddress(env)],
     subject,
     html,
     replyTo,
@@ -25,7 +26,7 @@ export async function deliverNotification(
   return { preview: false };
 }
 
-export async function deliverAdvisoryInvite(opts: {
+export async function deliverAdvisoryInvite(env: Secrets, opts: {
   subject: string;
   notifySubject: string;
   bodyHtml: string;
@@ -39,7 +40,7 @@ export async function deliverAdvisoryInvite(opts: {
   location?: string;
   notifyHtml: string;
 }): Promise<{ preview: boolean }> {
-  if (!graphConfigured()) {
+  if (!graphConfigured(env)) {
     console.log("[forms:preview] advisory invite →", opts.requesterEmail, "|", opts.subject, {
       notifySubject: opts.notifySubject,
       partner: opts.partnerName,
@@ -54,8 +55,8 @@ export async function deliverAdvisoryInvite(opts: {
       : []),
   ];
   // Event owned by the shared mailbox; requester (+partner) invited.
-  await graphCreateEvent({
-    organizer: senderAddress(),
+  await graphCreateEvent(env, {
+    organizer: senderAddress(env),
     subject: opts.subject,
     bodyHtml: opts.bodyHtml,
     startISO: opts.startISO,
@@ -65,9 +66,9 @@ export async function deliverAdvisoryInvite(opts: {
     location: opts.location,
   });
   // Internal heads-up to the team inbox as well.
-  await graphSendMail({
-    from: senderAddress(),
-    to: [notifyAddress()],
+  await graphSendMail(env, {
+    from: senderAddress(env),
+    to: [notifyAddress(env)],
     subject: opts.notifySubject,
     html: opts.notifyHtml,
     replyTo: opts.requesterEmail,

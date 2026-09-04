@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { submitDsar } from "@/app/actions/forms";
+import { submitDsar } from "@/lib/forms/client";
 import Link from "next/link";
 import { routes } from "@/content/nav";
 import { navDefs, pillars, sections, rights, type NavIcon, type PillarIcon } from "@/content/dataProtection";

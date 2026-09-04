@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { routes } from "@/content/nav";
-import { submitAssessment, submitEnquiry, bookAdvisory } from "@/app/actions/forms";
+import { submitAssessment, submitEnquiry, bookAdvisory } from "@/lib/forms/client";
 import CompanyProfileLink from "@/components/util/CompanyProfileLink";
 
 const FIELD =
