@@ -38,8 +38,9 @@ function advisoryDates(): { label: string; iso: string }[] {
   return out;
 }
 
-// Exact pin coordinates (31AUG design) so the embed drops on the office, not the Plus Code area.
-const mapSrc = "https://maps.google.com/maps?q=" + encodeURIComponent("-1.29850,36.79738") + "&z=16&output=embed";
+// Search by the business name so the map labels the pin "Binary One Solutions"
+// (the verified Google listing sits at the correct spot on Ngong Road).
+const mapSrc = "https://maps.google.com/maps?q=" + encodeURIComponent("Binary One Solutions, Ngong Road, Nairobi") + "&z=16&output=embed";
 
 const HONEYPOT = <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />;
 
@@ -273,7 +274,7 @@ export default function ContactBody() {
         <div className="overflow-hidden rounded-[16px] border border-[#E5E7EB] bg-white shadow-[0_1px_2px_rgba(6,35,30,0.05),0_18px_40px_-30px_rgba(6,35,30,0.35)]">
           <div className="flex items-center justify-between gap-[12px] border-b border-[#E5E7EB] px-[16px] py-[12px]">
             <span className="inline-flex items-center gap-[9px] font-jet text-[10.5px] font-bold tracking-[0.16em] text-[#0f766e]"><svg viewBox="0 0 24 24" className="h-[15px] w-[15px] flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z" /><circle cx="12" cy="10" r="2.5" /></svg>NGONG ROAD, NAIROBI</span>
-            <a href="https://www.google.com/maps/search/?api=1&query=St+Charles+Lwanga+House%2C+Ngong+Road%2C+Nairobi" target="_blank" rel="noopener" className="whitespace-nowrap font-inter text-[12px] font-semibold text-[#0f766e] hover:text-[#12897f]">Open in Maps ↗</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Binary+One+Solutions%2C+Ngong+Road%2C+Nairobi" target="_blank" rel="noopener" className="whitespace-nowrap font-inter text-[12px] font-semibold text-[#0f766e] hover:text-[#12897f]">Open in Maps ↗</a>
           </div>
           <div className="h-[320px]">
             <iframe src={mapSrc} className="block h-full w-full border-none" loading="lazy" title="Binary One Solutions location" />
