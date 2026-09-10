@@ -67,10 +67,13 @@ export default function Home() {
           <div className="order-2 lg:order-2">
             <div className="group relative flex aspect-[8/5] items-center justify-center overflow-hidden rounded-t-[16px] border border-b-0 border-[#E5E7EB]">
               <Image src="/assets/it-icons-banner-v2.webp" alt="Managed IT, ERP Consulting and Digital Products over the Nairobi skyline" fill priority sizes="640px" className="object-cover" />
+              <div className="pointer-events-none absolute inset-0 overflow-hidden">
+                <div className="b1-decorative absolute bottom-[10%] left-1/2 h-[3px] w-[46%] -translate-x-1/2 rounded-[50%] [background:radial-gradient(closest-side,rgba(120,245,218,0.8),transparent)] [filter:blur(2px)] [mix-blend-mode:screen] [animation:hpDepth_6.5s_ease-out_infinite]" />
+              </div>
             </div>
-            <div className="relative overflow-hidden rounded-b-[16px] border border-t-0 border-[#E5E7EB] px-[22px] py-[16px] text-center [background:linear-gradient(100deg,#14a08c_0%,#12869a_55%,#1b6f9e_100%)]">
-              <span className="relative block font-jet text-[15px] lg:text-[17px] font-bold uppercase tracking-[0.16em] text-[#5df0d0]">Binary ONE Solutions</span>
-              <span className="relative mt-[5px] block font-inter text-[15.5px] text-white">Home of Digital Transformation</span>
+            <div className="relative overflow-hidden rounded-b-[16px] border border-t-0 border-[#E5E7EB] px-[22px] py-[11px] text-center [background:linear-gradient(100deg,#14a08c_0%,#12869a_55%,#1b6f9e_100%)]">
+              <span className="relative block font-jet text-[13.5px] lg:text-[16px] font-bold uppercase tracking-[0.16em] text-[#5df0d0]">Binary ONE Solutions</span>
+              <span className="relative mt-[3px] block font-inter text-[14px] lg:text-[15px] text-white">Home of Digital Transformation</span>
             </div>
           </div>
         </div>
