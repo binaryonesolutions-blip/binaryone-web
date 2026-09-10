@@ -51,7 +51,7 @@ export const clients: Client[] = [
   { name: "Pacific Petroleum 'Dubai & East Africa'", logo: "/assets/pacific-petroleum-mark.webp", logoW: 52, logoH: 52, tileLift: 0, showName: true },
   { name: "Tosha Energy", logo: "/assets/tosha-energy-logo.webp", logoW: 52, logoH: 52, tileLift: 0, showName: true },
   { name: "Royal Oven Tanzania", logo: "/assets/royal-oven-logo.webp", logoW: 58, logoH: 72, tileLift: -6, showName: true },
-  { name: "African Eagle", logo: "/assets/african-eagle-logo.webp", logoW: 118, logoH: 52, tileLift: 0, showName: false },
+  { name: "African Eagle", logo: "/assets/african-eagle-logo.webp", logoW: 96, logoH: 52, tileLift: 0, showName: false },
   { name: "KN Law LLP", logo: "/assets/kn-law-logo.webp", logoW: 62, logoH: 62, tileLift: -8, showName: true },
   { name: "Ahmednasir Abdullahi Advocates LLP", logo: "/assets/logo-ahmednasir.webp", logoW: 44, logoH: 44, tileLift: 0, showName: true },
   { name: "KELIN Kenya NGO", logo: "/assets/kelin-logo.webp", logoW: 94, logoH: 52, tileLift: 0, showName: true },
@@ -59,5 +59,5 @@ export const clients: Client[] = [
   { name: "Nairobi City County", logo: "/assets/nairobi-county-logo.webp", logoW: 52, logoH: 52, tileLift: 0, showName: true },
   { name: "Maakiou Coffee Estate", logo: "/assets/maakiou-logo.webp", logoW: 52, logoH: 52, tileLift: 0, showName: true },
   { name: "PEMBE Millers", logo: "/assets/pembe-logo.webp", logoW: 52, logoH: 52, tileLift: 0, showName: true },
-  { name: "Mogo Finance", logo: "/assets/mogo-logo.webp", logoW: 124, logoH: 44, tileLift: 0, showName: false },
+  { name: "Mogo Finance", logo: "/assets/mogo-logo.webp", logoW: 96, logoH: 52, tileLift: 0, showName: false },
 ];
