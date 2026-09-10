@@ -7,13 +7,6 @@ import { DiagnosticTrigger, DiagnosticModal } from "@/components/overlays/Diagno
 import { routes } from "@/content/nav";
 import { trustChips, whyPoints, processSteps, testimonials, clients } from "@/content/home";
 
-const flashDots = [
-  { left: 8, top: 55, delay: 2.3 }, { left: 32, top: 54, delay: 3.33 },
-  { left: 44, top: 55, delay: 3.84 }, { left: 76, top: 57, delay: 5.21 },
-  { left: 93, top: 49, delay: 5.94 }, { left: 49, top: 66, delay: 4.06 },
-  { left: 86, top: 65, delay: 5.64 },
-];
-
 const routeCards = [
   { kicker: "MANAGED IT SERVICES", href: routes.managedIt, img: "/assets/about-midsection.webp", alt: "Managed IT operations in Nairobi", objPos: "center 62%", title: "IT leadership plus daily support.", copy: "A structured Managed IT service led by a Virtual CIO and delivered through an IT Operations Lead, service desk discipline, on-site support and practical technology governance.", cta: "Engage our Managed IT + vCIO Services →" },
   { kicker: "ERP CONSULTING", href: routes.erp, img: "/assets/home-erp-card.webp", alt: "Grain milling facility with engineering controls", objPos: "center", title: "Avoid the ERP nightmare.", copy: "Vendor-neutral ERP readiness, selection support and implementation governance for organisations outgrowing QuickBooks, Sage, Tally or fragmented spreadsheets.", cta: "Commission an ERP Readiness Assessment →" },
@@ -72,15 +65,8 @@ export default function Home() {
             </div>
           </div>
           <div className="order-2 lg:order-2">
-            <div className="group relative flex h-[280px] sm:h-[380px] lg:h-[460px] items-center justify-center overflow-hidden rounded-t-[16px] border border-b-0 border-[#E5E7EB]">
-              <Image src="/assets/it-icons-banner.webp" alt="Managed IT icons over Nairobi skyline" fill priority sizes="640px" className="object-cover" />
-              <div className="pointer-events-none absolute inset-0 overflow-hidden">
-                <div className="b1-decorative absolute -top-[20%] -bottom-[20%] left-0 w-[34%] [background:linear-gradient(90deg,transparent,rgba(180,255,236,0.16)_45%,rgba(210,255,244,0.28)_50%,rgba(180,255,236,0.16)_55%,transparent)] [mix-blend-mode:screen] [filter:blur(2px)] [animation:hpSheen_7s_linear_infinite]" />
-                <div className="b1-decorative absolute bottom-[11%] left-1/2 h-[3px] w-[44%] -translate-x-1/2 rounded-[50%] [background:radial-gradient(closest-side,rgba(120,245,218,0.75),transparent)] [filter:blur(2px)] [mix-blend-mode:screen] [animation:hpDepth_6.5s_ease-out_infinite] [animation-delay:1s]" />
-                {flashDots.map((d, i) => (
-                  <span key={i} className="b1-decorative absolute h-[3px] w-[3px] rounded-full bg-[#bafff0] opacity-0 shadow-[0_0_5px_1px_rgba(160,255,230,0.8)] [animation:hpFlash_7s_linear_infinite]" style={{ left: `${d.left}%`, top: `${d.top}%`, animationDelay: `${d.delay}s` }} />
-                ))}
-              </div>
+            <div className="group relative flex aspect-[8/5] items-center justify-center overflow-hidden rounded-t-[16px] border border-b-0 border-[#E5E7EB]">
+              <Image src="/assets/it-icons-banner-v2.webp" alt="Managed IT, ERP Consulting and Digital Products over the Nairobi skyline" fill priority sizes="640px" className="object-cover" />
             </div>
             <div className="relative overflow-hidden rounded-b-[16px] border border-t-0 border-[#E5E7EB] px-[22px] py-[16px] text-center [background:linear-gradient(100deg,#14a08c_0%,#12869a_55%,#1b6f9e_100%)]">
               <span className="relative block font-jet text-[15px] lg:text-[17px] font-bold uppercase tracking-[0.16em] text-[#5df0d0]">Binary ONE Solutions</span>
