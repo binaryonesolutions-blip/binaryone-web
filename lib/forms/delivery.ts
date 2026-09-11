@@ -1,7 +1,7 @@
 // Delivery abstraction. When Graph secrets are present, sends real email /
 // calendar invites; otherwise runs in "preview" mode (logs the payload) so the
 // whole form pipeline works locally without any credentials.
-import { graphConfigured, senderAddress, notifyAddress, type Secrets } from "./env";
+import { graphConfigured, senderAddress, notifyAddress, organizerAddress, type Secrets } from "./env";
 import { graphSendMail, graphCreateEvent } from "./graph";
 
 export async function deliverNotification(
@@ -54,9 +54,10 @@ export async function deliverAdvisoryInvite(env: Secrets, opts: {
       ? [{ address: opts.partnerEmail, name: opts.partnerName }]
       : []),
   ];
-  // Event owned by the shared mailbox; requester (+partner) invited.
+  // Event owned by HK's mailbox (organizerAddress) so HK can edit the invite;
+  // the notification email below still goes through info@ (senderAddress).
   await graphCreateEvent(env, {
-    organizer: senderAddress(env),
+    organizer: organizerAddress(env),
     subject: opts.subject,
     bodyHtml: opts.bodyHtml,
     startISO: opts.startISO,

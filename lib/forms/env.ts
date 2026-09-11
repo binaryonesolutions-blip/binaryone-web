@@ -12,3 +12,7 @@ export function graphConfigured(env: Secrets): boolean {
 // Mailbox that sends + receives form notifications. Overridable via secrets.
 export const senderAddress = (env: Secrets) => env.GRAPH_SENDER || "info@binaryone.co.ke";
 export const notifyAddress = (env: Secrets) => env.NOTIFY_TO || "info@binaryone.co.ke";
+// Mailbox that OWNS the advisory calendar events (the organizer, so this person
+// can edit the invites). Emails still go through info@ above. Overridable via
+// the CALENDAR_ORGANIZER secret.
+export const organizerAddress = (env: Secrets) => env.CALENDAR_ORGANIZER || "hk@binaryone.co.ke";
