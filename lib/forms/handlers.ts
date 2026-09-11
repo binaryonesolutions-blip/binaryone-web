@@ -196,9 +196,10 @@ const HANDLERS: Record<string, (fd: FormData, env: Secrets) => Promise<ActionRes
   advisory: bookAdvisory,
 };
 
-// Single entry point for the Pages Function: dispatch on the `type` field.
+// Single entry point for the Pages Function: dispatch on the reserved `_form`
+// field (not "type", which the DSAR form uses for its own request type).
 export async function handleSubmit(fd: FormData, env: Secrets): Promise<ActionResult> {
-  const type = String(fd.get("type") ?? "").trim();
+  const type = String(fd.get("_form") ?? "").trim();
   const handler = HANDLERS[type];
   if (!handler) return FAIL("Unknown form type.");
   return handler(fd, env);

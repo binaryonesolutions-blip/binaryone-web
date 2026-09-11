@@ -15,8 +15,10 @@ async function post(fd: FormData): Promise<ActionResult> {
   }
 }
 
+// Use a reserved field name for the form discriminator so it never collides
+// with a real form field (the DSAR form has its own "type" field).
 function tagged(type: string, fd: FormData): FormData {
-  fd.set("type", type);
+  fd.set("_form", type);
   return fd;
 }
 
@@ -29,7 +31,7 @@ export const submitDiagnostic = (_prev: ActionResult | null, fd: FormData) => po
 
 export async function bookAdvisory(input: AdvisoryInput): Promise<ActionResult> {
   const fd = new FormData();
-  fd.set("type", "advisory");
+  fd.set("_form", "advisory");
   fd.set("partnerName", input.partnerName);
   fd.set("dateISO", input.dateISO);
   fd.set("dateLabel", input.dateLabel);
