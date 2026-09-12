@@ -39,7 +39,7 @@ export async function deliverAdvisoryInvite(env: Secrets, opts: {
   partnerEmail?: string;
   location?: string;
   notifyHtml: string;
-}): Promise<{ preview: boolean; debug?: { organizer: string; eventId?: string; eventLink?: string } }> {
+}): Promise<{ preview: boolean }> {
   if (!graphConfigured(env)) {
     console.log("[forms:preview] advisory invite →", opts.requesterEmail, "|", opts.subject, {
       notifySubject: opts.notifySubject,
@@ -56,9 +56,8 @@ export async function deliverAdvisoryInvite(env: Secrets, opts: {
   ];
   // Event owned by HK's mailbox (organizerAddress) so HK can edit the invite;
   // the notification email below still goes through info@ (senderAddress).
-  const organizer = organizerAddress(env);
-  const created = await graphCreateEvent(env, {
-    organizer,
+  await graphCreateEvent(env, {
+    organizer: organizerAddress(env),
     subject: opts.subject,
     bodyHtml: opts.bodyHtml,
     startISO: opts.startISO,
@@ -75,5 +74,5 @@ export async function deliverAdvisoryInvite(env: Secrets, opts: {
     html: opts.notifyHtml,
     replyTo: opts.requesterEmail,
   });
-  return { preview: false, debug: { organizer, eventId: created.id, eventLink: created.webLink } };
+  return { preview: false };
 }
