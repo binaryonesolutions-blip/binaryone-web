@@ -1,6 +1,6 @@
 // Shared form result + advisory input shapes, used by both the client fetch
 // wrappers (lib/forms/client.ts) and the Pages Function handler.
-export type ActionResult = { ok: boolean; error?: string; preview?: boolean };
+export type ActionResult = { ok: boolean; error?: string; preview?: boolean; _debug?: unknown };
 
 export type AdvisoryInput = {
   partnerName: string;

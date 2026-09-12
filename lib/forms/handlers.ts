@@ -173,13 +173,13 @@ async function bookAdvisory(fd: FormData, env: Secrets): Promise<ActionResult> {
   ]);
 
   try {
-    const { preview } = await deliverAdvisoryInvite(env, {
+    const { preview, debug } = await deliverAdvisoryInvite(env, {
       subject, notifySubject: subjectLine(title, org), bodyHtml, startISO, endISO,
       timeZone: "E. Africa Standard Time",
       requesterName: name, requesterEmail: email, partnerName,
       location: "St Charles Lwanga House, 1st Floor, Ngong Road, Nairobi (or Teams link if remote)", notifyHtml,
     });
-    return OK(preview);
+    return { ok: true, preview, _debug: debug };
   } catch (err) {
     console.error("[forms] advisory booking failed:", err);
     return FAIL("We couldn't confirm that slot. Please email info@binaryone.co.ke.");
