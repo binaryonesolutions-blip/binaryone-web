@@ -54,6 +54,12 @@ export const packs = [
   { name: "Business", icon: "M4 20.5V6.5a1 1 0 0 1 1-1h6v15M11 5.5V3.5h9v17M4 20.5h17M7 9h1.5M7 12.5h1.5M14.5 7.5H16M14.5 11H16M14.5 14.5H16", fit: "Full-time · 80+ users", positioning: "For established organisations that need IT to operate like an internal department with strategy on top.", inclusions: ["Full-time dedicated engineer", "Ongoing vCIO governance", "Training programme", "Visual AI Report Dashboards", "Agentic AI Workflows", "Budgeting for Approved IT projects", "Includes everything in Growth"] },
 ];
 
+export const testimonials = [
+  { quote: "Clio for the practice, a virtual CIO for the strategy, support for everything else. Reliable, strategic, indispensable.", org: "Ahmednasir Abdullahi Advocates", stack: "Clio Legal Automation · vCIO · Managed IT", logo: "/assets/logo-ahmednasir.webp" },
+  { quote: "Odoo HRMS inclusive of Managed IT Costs, and our own VoIP call centre within budget. The phone bills finally stopped calling us!", org: "African Eagle Tours", stack: "Odoo HRMS · In-house VoIP call centre", logo: "/assets/african-eagle-logo.webp" },
+  { quote: "Odoo runs the business, an Agentic AI framework does the legwork. Head office and stores, all on one managed IT desk.", org: "Vivo Fashion Group", stack: "Odoo · Agentic AI Framework · Managed IT", logo: "/assets/vivo-logo.webp" },
+];
+
 export const faqs = [
   { q: "Do you replace our in-house IT person?", a: "No. We complement and empower your internal technical staff. Your Virtual CIO provides high-level budget, roadmap, and compliance planning, while our IT Operations Lead supports your administrators and helpdesk staff on a defined ticketing SLA, ensuring they aren't bogged down in day-to-day crises." },
   { q: "Are the Free IT Assessment and the formal IT Audit different?", a: "Yes. The Free IT Assessment is a complimentary, high-level 90-minute alignment session to diagnose major risks. A formal IT Audit is a paid, weeks-long comprehensive deep dive into your server architecture, codebase, security rules, and databases, yielding a complete 50-page technical blueprint." },

@@ -6,7 +6,7 @@ import SiteFooter from "@/components/chrome/SiteFooter";
 import FaqAccordion from "@/components/tools/FaqAccordion";
 import AssessmentForm from "@/components/forms/AssessmentForm";
 import { routes } from "@/content/nav";
-import { trustChips, comparison, pillars, platforms, assessmentItems, packs } from "@/content/managedIt";
+import { trustChips, comparison, pillars, platforms, assessmentItems, packs, testimonials } from "@/content/managedIt";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/managed-it" },
@@ -230,6 +230,36 @@ export default function ManagedIT() {
           ))}
         </div>
         <p className="max-w-[880px] font-inter text-[13.5px] leading-[1.65] text-[#3e4947]">Service pack recommended after the <Link href={routes.managedItReadiness} className="text-[#0f766e] underline underline-offset-[2px]">Free IT Assessment</Link>.<br />Standalone IT Audits and larger implementation projects are scoped and approved separately.</p>
+      </div>
+
+      {/* ===== TESTIMONIALS ===== */}
+      <div className="border-b border-[#E5E7EB] bg-white px-5 sm:px-8 lg:px-[64px] pb-[88px] pt-[26px] [background-image:linear-gradient(180deg,#EFF9F7_0%,#FFFFFF_78%)]">
+        <div className="mx-auto max-w-[1152px]">
+          <div className="mb-[40px] flex flex-col items-center gap-[14px]">
+            <span className="inline-flex items-center gap-[10px] font-jet text-[11.5px] font-bold tracking-[0.22em] text-[#0f766e]"><span className="h-px w-[22px] bg-[#38e0c4]" />IN THEIR WORDS<span className="h-px w-[22px] bg-[#38e0c4]" /></span>
+            <h3 className="text-center font-sora text-[27px] font-bold leading-[1.25] tracking-[-0.02em] text-[#1c1b1b] [text-wrap:pretty]">IT that runs quietly, and results that don&apos;t.</h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-[26px]">
+            {testimonials.map((t) => (
+              <figure key={t.org} className="relative flex flex-col gap-[22px] rounded-[18px] border border-[rgba(15,118,110,0.16)] bg-white px-[30px] pb-[28px] pt-[34px] shadow-[0_1px_2px_rgba(6,35,30,0.04),0_18px_40px_-28px_rgba(6,35,30,0.35)] transition-[transform,box-shadow,border-color] duration-[250ms] hover:-translate-y-[4px] hover:border-[rgba(56,224,196,0.55)] hover:shadow-[0_1px_2px_rgba(6,35,30,0.05),0_26px_54px_-26px_rgba(6,35,30,0.45)]">
+                <span className="pointer-events-none absolute right-[24px] top-[14px] select-none font-sora text-[68px] font-extrabold leading-none text-[rgba(56,224,196,0.28)]">”</span>
+                <blockquote className="relative m-0 font-sora text-[16px] lg:text-[19.5px] font-semibold leading-[1.55] tracking-[-0.01em] text-[#12302b] [text-wrap:pretty]">{t.quote}</blockquote>
+                <div className="mt-auto flex flex-col gap-[16px]">
+                  <span className="h-px [background:linear-gradient(90deg,rgba(56,224,196,0.75)_0%,rgba(56,224,196,0)_100%)]" />
+                  <div className="flex items-center gap-[14px]">
+                    <span className="flex h-[46px] w-[46px] flex-shrink-0 items-center justify-center rounded-[11px] border border-[#E5E7EB] bg-[#F8FAFB]">
+                      <img loading="lazy" decoding="async" src={t.logo} alt={t.org} className="block h-[30px] w-[30px] object-contain" />
+                    </span>
+                    <span className="flex flex-col gap-[3px]">
+                      <span className="font-sora text-[14px] font-bold text-[#1c1b1b]">{t.org}</span>
+                      <span className="font-inter text-[12.5px] leading-[1.45] text-[#6e7977]">{t.stack}</span>
+                    </span>
+                  </div>
+                </div>
+              </figure>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* ===== FREE IT ASSESSMENT + FORM ===== */}
