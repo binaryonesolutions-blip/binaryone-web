@@ -243,7 +243,7 @@ export default function Home() {
       {/* ERP (light) */}
       <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr_auto] items-center gap-[28px] lg:gap-[48px] border-b border-[#E5E7EB] bg-white p-8 sm:p-10 lg:p-[64px]">
         <div className="flex w-full lg:w-[280px] flex-col gap-[4px]">
-          <span className="font-sora text-[60px] font-extrabold leading-none text-[#17a892]">Free</span>
+          <span className="font-sora text-[60px] font-extrabold leading-none text-[#17a892]">Kick Off</span>
           <span className="whitespace-nowrap font-inter text-[13px] font-medium tracking-[0.08em] text-[#6e7977]">ERP READINESS ASSESSMENT</span>
         </div>
         <div>

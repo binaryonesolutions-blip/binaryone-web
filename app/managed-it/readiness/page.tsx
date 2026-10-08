@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import ItReadiness from "@/components/tools/ItReadiness";
+import SiteFooter from "@/components/chrome/SiteFooter";
 import { routes } from "@/content/nav";
 import logoLight from "@/public/assets/b1s-logo-light.webp";
 
@@ -38,11 +39,7 @@ export default function ItReadinessPage() {
 
       <ItReadiness />
 
-      {/* Footer strip */}
-      <footer className="flex items-center justify-between bg-[#071e1b] px-5 sm:px-8 lg:px-[64px] py-[32px] font-inter text-[13.5px] text-[#9fbcb7]">
-        <span>© 2026 Binary One Solutions Ltd · Nairobi, Kenya</span>
-        <span className="inline-flex items-center gap-[9px]">Possibilities<span className="b1-decorative h-[6px] w-[6px] flex-shrink-0 rounded-full bg-[#7cdc79] shadow-[0_0_4px_rgba(124,220,121,0.95),0_0_10px_rgba(124,220,121,0.55),0_0_18px_rgba(124,220,121,0.28)] [animation:b1-beacon_2.4s_ease-in-out_infinite]" />Realised</span>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
