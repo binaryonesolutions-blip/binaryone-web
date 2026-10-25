@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Image from "next/image";
 import SiteHeader from "@/components/chrome/SiteHeader";
@@ -6,11 +7,12 @@ import { routes } from "@/content/nav";
 import { heroChips, buildVsBuy, builds, stack, delivery } from "@/content/customSoftware";
 import customHero from "@/public/assets/custom-software-hero.webp";
 
-export const metadata: Metadata = {
-  alternates: { canonical: "/digital-products/custom-software" },
+export const metadata: Metadata = pageMeta({
+  path: "/digital-products/custom-software",
+  title: "Custom Enterprise Software Kenya | Web, Mobile & API Builds",
   description:
     "Bespoke high-performing custom applications, secure integrations and mobile platforms — engineered for organisations with unique operating models. Build the things worth building.",
-};
+});
 
 export default function CustomSoftwarePage() {
   return (

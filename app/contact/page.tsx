@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import SiteHeader from "@/components/chrome/SiteHeader";
 import SiteFooter from "@/components/chrome/SiteFooter";
 import ContactBody from "@/components/forms/ContactBody";
 
-export const metadata: Metadata = {
-  alternates: { canonical: "/contact" },
+export const metadata: Metadata = pageMeta({
+  path: "/contact",
+  title: "Contact Binary One Solutions | Book a Free IT Assessment",
   description:
     "Talk to a senior consultant at Binary One Solutions. Book a Free IT Assessment or send a general enquiry — a response within one business day, triaged personally.",
-};
+});
 
 export default function ContactPage() {
   return (

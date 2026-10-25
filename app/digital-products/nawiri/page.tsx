@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Image from "next/image";
 import NawiriNav from "@/components/chrome/NawiriNav";
@@ -10,11 +11,12 @@ import nawiriGrowth from "@/public/assets/nawiri-growth.webp";
 import crownLogo from "@/public/assets/logo-crown-paints.webp";
 import isuzuLogo from "@/public/assets/isuzu-logo.webp";
 
-export const metadata: Metadata = {
-  alternates: { canonical: "/digital-products/nawiri" },
+export const metadata: Metadata = pageMeta({
+  path: "/digital-products/nawiri",
+  title: "NAWIRI Digital Loyalty | FMCG Loyalty Platform Kenya",
   description:
     "NAWIRI is a mobile-first loyalty platform connecting Kenyan and East African manufacturers directly to the painters, mechanics, fundis and farmers who influence what gets bought. Own the last mile.",
-};
+});
 
 export default function NawiriPage() {
   return (

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 import SiteHeader from "@/components/chrome/SiteHeader";
@@ -6,11 +7,12 @@ import SiteFooter from "@/components/chrome/SiteFooter";
 import { routes } from "@/content/nav";
 import { heroChips, risks, failTiles, failures, stages, vendors, whyOdoo, proofs } from "@/content/erp";
 
-export const metadata: Metadata = {
-  alternates: { canonical: "/erp-consulting" },
+export const metadata: Metadata = pageMeta({
+  path: "/erp-consulting",
+  title: "ERP Consulting Kenya | Vendor-Neutral Odoo, SAP, Sage Audit",
   description:
     "Vendor-neutral ERP consulting for Kenyan businesses outgrowing QuickBooks, Tally or Sage. Assess readiness before you sign. Commission an ERP assessment.",
-};
+});
 
 const Icon = ({ d, cls = "h-[26px] w-[26px]", w = 1.7 }: { d: string; cls?: string; w?: number }) => (
   <svg viewBox="0 0 24 24" className={cls}><path d={d} fill="none" stroke="#0f766e" strokeWidth={w} strokeLinecap="round" strokeLinejoin="round" /></svg>

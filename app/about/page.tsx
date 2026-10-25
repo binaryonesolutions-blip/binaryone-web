@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Image, { type StaticImageData } from "next/image";
 import SiteHeader from "@/components/chrome/SiteHeader";
@@ -15,11 +16,12 @@ import mary from "@/public/assets/about-leader-4.webp";
 import deliveryTeam from "@/public/assets/delivery-team.webp";
 import edwin from "@/public/assets/edwin-kairu.webp";
 
-export const metadata: Metadata = {
-  alternates: { canonical: "/about" },
+export const metadata: Metadata = pageMeta({
+  path: "/about",
+  title: "About Binary One Solutions | 15+ Years, Nairobi-based",
   description:
     "Binary One Solutions is a Nairobi-based digital transformation consulting firm helping organisations make better technology decisions, run IT reliably and build digital tools that create measurable value.",
-};
+});
 
 const leaderPhotos: Record<string, StaticImageData> = { humphrey, mike, eugene, mary };
 

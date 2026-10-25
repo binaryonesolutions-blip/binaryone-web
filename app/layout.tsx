@@ -35,9 +35,10 @@ const caveat = Caveat({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://binaryone.co.ke"),
-  // Site-wide document title on every route (client instruction, 31 Aug 2026).
-  // A plain string with no template so per-page titles never override the tab or
-  // the Google result title. Per-page meta stays available for Open Graph only.
+  // Fallback document title only. Per-page titles are now set on each route via
+  // lib/seo.pageMeta (SEO checklist §B, 18 Oct 2026 — supersedes the 31 Aug 2026
+  // site-wide single-title instruction). Any route without its own title falls
+  // back to this string.
   title: "Binary One Solutions | Digital Transformation Solutions - Kenya",
   icons: {
     icon: [
@@ -52,10 +53,8 @@ export const metadata: Metadata = {
   description:
     "Nairobi-based Managed IT, Virtual CIO, ERP consulting and NAWIRI loyalty solutions for growing Kenyan organisations. Book a Free IT Assessment.",
   applicationName: "Binary One Solutions",
-  keywords: [
-    "Managed IT Kenya", "Virtual CIO Nairobi", "ERP consulting Kenya",
-    "NAWIRI loyalty", "Agentic AI", "custom software Nairobi", "IT governance",
-  ],
+  // No `keywords` meta — Google ignores it and it was duplicated site-wide
+  // (SEO checklist §C4). Per-page keywords intentionally omitted.
   openGraph: {
     type: "website",
     siteName: "Binary One Solutions",

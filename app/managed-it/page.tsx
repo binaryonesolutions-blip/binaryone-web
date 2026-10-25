@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 import SiteHeader from "@/components/chrome/SiteHeader";
@@ -8,11 +9,12 @@ import AssessmentForm from "@/components/forms/AssessmentForm";
 import { routes } from "@/content/nav";
 import { trustChips, comparison, pillars, platforms, assessmentItems, packs, testimonials } from "@/content/managedIt";
 
-export const metadata: Metadata = {
-  alternates: { canonical: "/managed-it" },
+export const metadata: Metadata = pageMeta({
+  path: "/managed-it",
+  title: "Managed IT Services Kenya | Virtual CIO & IT Operations",
   description:
     "Managed IT services for Kenyan organisations needing Virtual CIO strategy, IT Operations Lead accountability, helpdesk discipline and cyber resilience.",
-};
+});
 
 const leaders = [
   { img: "/assets/humphrey-kirui-v2.webp", alt: "Humphrey Kirui, Virtual CIO", role: "Virtual CIO", copy: "Formulates the IT Strategy and owns the roadmap. Turns IT Audit gaps into strategic management reviews, governs the IT team and vendors, recommends budgets and aligns every IT decision to business priorities." },
@@ -236,7 +238,7 @@ export default function ManagedIT() {
       <div className="border-b border-[#E5E7EB] bg-white px-5 sm:px-8 lg:px-[64px] pb-[88px] pt-[26px] [background-image:linear-gradient(180deg,#EFF9F7_0%,#FFFFFF_78%)]">
         <div className="mx-auto max-w-[1152px]">
           <div className="mb-[40px] flex flex-col items-center gap-[14px]">
-            <span className="inline-flex items-center gap-[10px] font-jet text-[11.5px] font-bold tracking-[0.22em] text-[#0f766e]"><span className="h-px w-[22px] bg-[#38e0c4]" />IN THEIR WORDS<span className="h-px w-[22px] bg-[#38e0c4]" /></span>
+            <span className="inline-flex items-center gap-[10px] font-jet text-[11.5px] font-bold tracking-[0.22em] text-[#0f766e]"><span className="h-px w-[22px] bg-[#38e0c4]" />CLIENT SUCCESSES<span className="h-px w-[22px] bg-[#38e0c4]" /></span>
             <h3 className="text-center font-sora text-[27px] font-bold leading-[1.25] tracking-[-0.02em] text-[#1c1b1b] [text-wrap:pretty]">IT that runs quietly, and results that don&apos;t.</h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-[26px]">

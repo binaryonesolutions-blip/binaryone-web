@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import SiteHeader from "@/components/chrome/SiteHeader";
 import SiteFooter from "@/components/chrome/SiteFooter";
 import InsightsBriefs from "@/components/tools/InsightsBriefs";
 import { routes } from "@/content/nav";
 
-export const metadata: Metadata = {
-  alternates: { canonical: "/insights" },
+export const metadata: Metadata = pageMeta({
+  path: "/insights",
+  title: "Insights | IT, ERP & AI Briefs for Kenyan Organisations",
   description:
     "Technical briefs, advisory papers and practical IT strategies written by Binary One's partners and systems architects for business leaders in East Africa.",
-};
+});
 
 export default function InsightsPage() {
   return (

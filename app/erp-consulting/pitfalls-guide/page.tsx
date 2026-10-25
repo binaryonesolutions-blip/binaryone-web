@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Image from "next/image";
 import SiteFooter from "@/components/chrome/SiteFooter";
@@ -8,11 +9,12 @@ import { pitfalls, lenses, stages } from "@/content/erpPitfalls";
 import logoLight from "@/public/assets/b1s-logo-light.webp";
 import pitfallsSquare from "@/public/assets/erp-pitfalls-square.webp";
 
-export const metadata: Metadata = {
-  alternates: { canonical: "/erp-consulting/pitfalls-guide" },
+export const metadata: Metadata = pageMeta({
+  path: "/erp-consulting/pitfalls-guide",
+  title: "The ERP Pitfalls Guide | Binary One Solutions",
   description:
     "Seven ways ERP programmes quietly go wrong in East Africa — what each looks like from the inside, what it costs, and the vendor-neutral antidote we apply before a licence is signed.",
-};
+});
 
 export default function ErpPitfallsPage() {
   return (

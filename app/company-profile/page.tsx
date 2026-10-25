@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Image from "next/image";
 import { routes } from "@/content/nav";
@@ -6,12 +7,13 @@ import logoDark from "@/public/assets/b1s-logo-dark-crisp.webp";
 
 // Standalone company-profile viewer (19AUG design "Company Profile Viewer"):
 // branded header + Download PDF button over the profile embedded inline.
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
+  path: "/company-profile",
+  title: "Company Profile | Binary One Solutions",
   description:
     "Binary One Solutions company profile — Managed IT, Virtual CIO, ERP consulting and digital products for Kenyan and East African organisations.",
-  alternates: { canonical: "/company-profile" },
   robots: { index: false, follow: true },
-};
+});
 
 const PDF = "/binaryone-company-profile.pdf";
 

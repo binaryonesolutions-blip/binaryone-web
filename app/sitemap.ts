@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { briefs } from "@/content/insights";
 
 // Emit a static sitemap.xml at build time (required with output:'export').
 export const dynamic = "force-static";
@@ -25,10 +26,18 @@ const ROUTES: [string, MetadataRoute.Sitemap[number]["changeFrequency"], number]
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  return ROUTES.map(([path, changeFrequency, priority]) => ({
+  const pages = ROUTES.map(([path, changeFrequency, priority]) => ({
     url: `${BASE}${path}`,
     lastModified: now,
     changeFrequency,
     priority,
   }));
+  // Permanent Insights article pages (SEO checklist §E2).
+  const articles = briefs.map((b) => ({
+    url: `${BASE}/insights/${b.slug}`,
+    lastModified: now,
+    changeFrequency: "yearly" as const,
+    priority: 0.5,
+  }));
+  return [...pages, ...articles];
 }

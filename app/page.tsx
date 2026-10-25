@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 import SiteHeader from "@/components/chrome/SiteHeader";
@@ -26,7 +27,12 @@ const logoTile = (c: (typeof clients)[number]) => (
   </div>
 );
 
-export const metadata: Metadata = { alternates: { canonical: "/" } };
+export const metadata: Metadata = pageMeta({
+  path: "/",
+  title: "Binary One Solutions | Managed IT, ERP & NAWIRI Loyalty Kenya",
+  description:
+    "Nairobi-based Managed IT, Virtual CIO, ERP consulting and NAWIRI loyalty solutions for growing Kenyan organisations. Book a Free IT Assessment.",
+});
 
 export default function Home() {
   return (

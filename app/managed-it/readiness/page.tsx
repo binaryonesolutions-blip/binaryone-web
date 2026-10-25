@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Image from "next/image";
 import ItReadiness from "@/components/tools/ItReadiness";
@@ -6,11 +7,12 @@ import SiteFooter from "@/components/chrome/SiteFooter";
 import { routes } from "@/content/nav";
 import logoLight from "@/public/assets/b1s-logo-light.webp";
 
-export const metadata: Metadata = {
-  alternates: { canonical: "/managed-it/readiness" },
+export const metadata: Metadata = pageMeta({
+  path: "/managed-it/readiness",
+  title: "Managed IT Readiness Assessment | Binary One Solutions",
   description:
     "Tell us the shape of your IT environment and we'll size the right Managed IT service pack before your Free IT Assessment — no obligation, no sales pitch.",
-};
+});
 
 export default function ItReadinessPage() {
   return (

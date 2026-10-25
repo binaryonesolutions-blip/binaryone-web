@@ -1,7 +1,9 @@
 // Insights page — transcribed verbatim from design-refs/Insights.dc.html.
+import { routes } from "@/content/nav";
 
 export interface Brief {
-  thumb: string; // image key resolved in the client component
+  slug: string; // permanent article URL: /insights/<slug>
+  thumb: string; // image key resolved in the component
   category: string;
   date: string;
   dateLong: string;
@@ -11,10 +13,13 @@ export interface Brief {
   initials: string;
   role: string;
   body: string[];
+  // In-article link to the relevant service page (SEO checklist §E2).
+  service: { href: string; label: string };
 }
 
 export const briefs: Brief[] = [
   {
+    slug: "where-erp-projects-actually-go-wrong",
     thumb: "erp",
     category: "ERP GOVERNANCE",
     date: "OCTOBER 12, 2025",
@@ -37,8 +42,10 @@ export const briefs: Brief[] = [
       "Our consulting sequence exists for exactly this reason. Audit first, then a readiness score, then gap analysis, then structured vendor selection, then implementation governance, then the post-go-live audit — six stages, each one closing a specific pitfall rather than adding process for its own sake.",
       "None of this is theory and none of it is expensive at the right moment. Every one of these problems costs least before contracts are signed and data is migrated. If you are somewhere in that window, walk your programme through the ERP Pitfalls Guide and score it green, amber or red. Optimism is the most expensive input in an ERP budget — and it is the one thing no vendor will flag for you.",
     ],
+    service: { href: routes.erp, label: "ERP Consulting" },
   },
   {
+    slug: "rewarding-the-last-mile",
     thumb: "nawiri",
     category: "DIGITAL LOYALTY",
     date: "NOVEMBER 3, 2025",
@@ -58,8 +65,10 @@ export const briefs: Brief[] = [
       "What the brand owner gets: Named repeat buyers, redemption by region and SKU, tier movement, lapsed users and campaign cost per active buyer — a direct channel to the last mile instead of an estimate from a distributor report.",
       "We build, host and support it. Onboarding, field and attendant training, a support line, and a dashboard your brand and trade teams can act on the same week.",
     ],
+    service: { href: routes.nawiri, label: "NAWIRI Digital Loyalty" },
   },
   {
+    slug: "inside-our-managed-it-desk",
     thumb: "managedit",
     category: "MANAGED IT",
     date: "JANUARY 14, 2026",
@@ -80,5 +89,6 @@ export const briefs: Brief[] = [
       "A helpdesk your staff can reach: One number, one email, one portal. Routine requests are triaged and resolved fast; anything sensitive, judgement-heavy or user-facing goes straight to a person, with site visits where remote support is not enough.",
       "Reporting against SLAs: Monthly reporting shows availability, incidents caught before impact, response times and recurring root causes — so IT spend becomes a conversation about evidence rather than opinion.",
     ],
+    service: { href: routes.managedIt, label: "Managed IT" },
   },
 ];

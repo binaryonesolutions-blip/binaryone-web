@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Image from "next/image";
 import SiteHeader from "@/components/chrome/SiteHeader";
@@ -16,11 +17,12 @@ import {
 import agenticHero from "@/public/assets/agentic-hero.webp";
 import agenticNeural from "@/public/assets/agentic-neural.webp";
 
-export const metadata: Metadata = {
-  alternates: { canonical: "/digital-products/agentic-ai" },
+export const metadata: Metadata = pageMeta({
+  path: "/digital-products/agentic-ai",
+  title: "Agentic AI Workflows Kenya | Practical Enterprise Automation",
   description:
     "Cognitive AI agents deployed into Odoo and SAP layers — they cross-check files, audit bills and reconcile records in the background, under human-in-the-loop governance.",
-};
+});
 
 function ModuleGlyph({ icon }: { icon: ModuleIcon }) {
   const common = { viewBox: "0 0 24 24", width: 24, height: 24, fill: "none", stroke: "currentColor", strokeWidth: 2, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };

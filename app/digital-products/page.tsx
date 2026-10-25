@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Image from "next/image";
 import SiteHeader from "@/components/chrome/SiteHeader";
@@ -7,11 +8,12 @@ import { routes } from "@/content/nav";
 import { heroChips, products, type ProductIcon } from "@/content/digitalProducts";
 import nawiriLogo from "@/public/assets/nawiri-logo.webp";
 
-export const metadata: Metadata = {
-  alternates: { canonical: "/digital-products" },
+export const metadata: Metadata = pageMeta({
+  path: "/digital-products",
+  title: "Digital Products Kenya | NAWIRI, Agentic AI & Software",
   description:
     "NAWIRI, Agentic AI and Custom Software Builds — how Binary One packages fifteen years of bespoke development into products you can buy, measure and govern.",
-};
+});
 
 function ProductGlyph({ icon }: { icon: ProductIcon }) {
   if (icon === "nawiri") {

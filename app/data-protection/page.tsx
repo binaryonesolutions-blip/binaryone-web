@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import SiteHeader from "@/components/chrome/SiteHeader";
 import SiteFooter from "@/components/chrome/SiteFooter";
 import DataProtectionBody from "@/components/tools/DataProtectionBody";
 import { lastUpdated } from "@/content/dataProtection";
 
-export const metadata: Metadata = {
-  alternates: { canonical: "/data-protection" },
+export const metadata: Metadata = pageMeta({
+  path: "/data-protection",
+  title: "Data Protection Policy | Binary One Solutions",
   description:
     "Binary One Solutions' commitment to the Kenya Data Protection Act, 2019 — boardroom-grade controls, ODPC registration, statutory data-subject rights and a DSAR portal.",
-};
+});
 
 export default function DataProtectionPage() {
   return (
